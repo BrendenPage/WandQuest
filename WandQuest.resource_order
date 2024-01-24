@@ -41,6 +41,7 @@
     {"name":"oShield","order":5,"path":"objects/oShield/oShield.yy",},
     {"name":"oPlayer","order":10,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oFireball","order":4,"path":"objects/oFireball/oFireball.yy",},
+    {"name":"oCollide","order":17,"path":"objects/oCollide/oCollide.yy",},
     {"name":"Room2","order":1,"path":"rooms/Room2/Room2.yy",},
     {"name":"sWarp","order":10,"path":"sprites/sWarp/sWarp.yy",},
     {"name":"oAttack_Card","order":2,"path":"objects/oAttack_Card/oAttack_Card.yy",},
