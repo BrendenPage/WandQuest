@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Decrease cooldowns + manage sprites
 // You can write your code in this editor
 var spell = false;
 var shuffle = false;
