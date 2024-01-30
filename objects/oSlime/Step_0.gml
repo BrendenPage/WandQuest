@@ -15,4 +15,4 @@ with(slime_hurtbox) {
 	y = other.y + y_offset
 }
 
-move_and_collide(1,1,oCollide)
+script_execute(state)
