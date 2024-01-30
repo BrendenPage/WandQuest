@@ -8,14 +8,6 @@ if (place_meeting(x, y, oPlayer)) {
 with(hitbox) {
 	x = other.x + x_offset
 	y = other.y + y_offset
-	with(oHurtbox){
-		if (place_meeting(x,y,other) && other.owner != owner) {
-			var msg = string(other.owner)
-			show_debug_message(msg)
-			show_debug_message(owner)
-			show_debug_message(other.owner != owner)
-		}
-	}
 }
 
 with(slime_hurtbox) {
