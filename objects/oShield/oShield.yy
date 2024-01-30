@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Specials",
+    "path": "folders/Objects/Specials.yy",
   },
   "parentObjectId": {
     "name": "oSpecial_Card",

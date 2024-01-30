@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Attacks",
+    "path": "folders/Objects/Attacks.yy",
   },
   "parentObjectId": {
     "name": "oAttack_Card",
