@@ -44,6 +44,7 @@
     {"name":"sUiMapEast","order":4,"path":"sprites/sUiMapEast/sUiMapEast.yy",},
     {"name":"sMapBackground","order":1,"path":"sprites/sMapBackground/sMapBackground.yy",},
     {"name":"oWand","order":3,"path":"objects/oWand/oWand.yy",},
+    {"name":"oEnemyParent","order":1,"path":"objects/oEnemyParent/oEnemyParent.yy",},
     {"name":"sFreezeTime","order":1,"path":"sprites/sFreezeTime/sFreezeTime.yy",},
     {"name":"sWand","order":3,"path":"sprites/sWand/sWand.yy",},
     {"name":"sFireball","order":1,"path":"sprites/sFireball/sFireball.yy",},

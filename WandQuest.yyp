@@ -75,6 +75,7 @@
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"sRefresh","path":"sprites/sRefresh/sRefresh.yy",},},
     {"id":{"name":"oWand","path":"objects/oWand/oWand.yy",},},
+    {"id":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},},
     {"id":{"name":"sFreezeTime","path":"sprites/sFreezeTime/sFreezeTime.yy",},},
     {"id":{"name":"sWand","path":"sprites/sWand/sWand.yy",},},
     {"id":{"name":"sFireball","path":"sprites/sFireball/sFireball.yy",},},
