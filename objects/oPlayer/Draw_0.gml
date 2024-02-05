@@ -3,6 +3,8 @@
 //draw_self()
 //draw_text(x,y,"21")
 
+if (global.game_paused) exit
+
 var healthbar_length = 500
 var healthbar_height = 30
 var healthbar_center = room_width/2

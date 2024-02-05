@@ -10,5 +10,5 @@ invincible = false
 i_frames = 20
 remaining_i_frames = 0
 
-max_health = 1000
+max_health = 100
 remaining_health = max_health

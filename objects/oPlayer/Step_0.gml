@@ -1,3 +1,19 @@
+if (keyboard_check_pressed(ord("P"))) {
+	room_goto(Pause)
+	global.game_paused = true
+}
+
+if (global.game_paused) {
+	visible = false
+	exit
+} else {
+	visible = true
+}
+
+if (remaining_health == 0) {
+	die()
+}
+
 move_speed = SPEED*speed_modifier;
 var _key_left = keyboard_check(ord("A"))
 var _key_right = keyboard_check(ord("D"))
