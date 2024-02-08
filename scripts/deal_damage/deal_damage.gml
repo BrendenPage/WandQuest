@@ -9,5 +9,6 @@ function deal_damage(entity, damage){
 		entity.invincible = true
 		entity.remaining_i_frames = entity.i_frames
 	}
-	show_debug_message(string(damage) + " damage dealt to " + string(entity))
+	entity.remaining_health = max(0,entity.remaining_health - damage)
+	show_debug_message(entity.remaining_health)
 }
