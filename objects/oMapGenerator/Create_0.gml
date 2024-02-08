@@ -5,12 +5,13 @@ randomize()
 total_rooms = ROOM_COUNT
 map_size = 10
 
-length_max = 1
+length_max = 5
+length_min = length_max/1.5
 
-arm_length[0] = irandom_range(1,length_max)
-arm_length[1] = irandom_range(1,length_max)
-arm_length[2] = irandom_range(1,length_max)
-arm_length[3] = irandom_range(1,length_max)
+arm_length[0] = irandom_range(length_min,length_max)
+arm_length[1] = irandom_range(length_min,length_max)
+arm_length[2] = irandom_range(length_min,length_max)
+arm_length[3] = irandom_range(length_min,length_max)
 
 // These determine where each arm is currently located, there will be
 // one branch per cardinal direction

@@ -23,12 +23,12 @@
     {"name":"Deck Other","order":21,"path":"folders/Sprites/Deck Other.yy",},
     {"name":"Enemies","order":17,"path":"folders/Sprites/Enemies.yy",},
     {"name":"Hitbox and Hurtbox","order":23,"path":"folders/Sprites/Hitbox and Hurtbox.yy",},
+    {"name":"Map","order":24,"path":"folders/Sprites/Map.yy",},
     {"name":"Player","order":18,"path":"folders/Sprites/Player.yy",},
     {"name":"Room","order":22,"path":"folders/Sprites/Room.yy",},
     {"name":"Specials","order":20,"path":"folders/Sprites/Specials.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Map","order":24,"path":"folders/Sprites/Map.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sFrostCone","order":2,"path":"sprites/sFrostCone/sFrostCone.yy",},

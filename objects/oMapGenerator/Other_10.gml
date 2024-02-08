@@ -7,17 +7,25 @@ arm_length[to_check_arm_index]--
 
 var _possible_directions = []
 // populate possible directions with the directions allowed by the map construction
-if (map[_cell_x+1, _cell_y] == 0 and _cell_x+1 < map_size) {
-	array_push(_possible_directions, "right")
+if (_cell_x+1 < map_size) {
+	if (map[_cell_x+1, _cell_y] == 0){
+		array_push(_possible_directions, "right")
+	}
 }
-if (map[_cell_x-1, _cell_y] == 0 and _cell_x-1 >= 0) {
-	array_push(_possible_directions, "left")
+if (_cell_x-1 >= 0) {
+	if (map[_cell_x-1, _cell_y] == 0) {
+		array_push(_possible_directions, "left")
+	}
 }
-if (map[_cell_x, _cell_y+1] == 0 and _cell_y+1 < map_size) {
-	array_push(_possible_directions, "up")
+if (_cell_y+1 < map_size) {
+	if (map[_cell_x, _cell_y+1] == 0) {
+		array_push(_possible_directions, "up")
+	}
 }
-if (map[_cell_x, _cell_y-1] == 0 and _cell_y-1 >= 0) {
-	array_push(_possible_directions, "down")
+if (_cell_y-1 >= 0) {
+	if (map[_cell_x, _cell_y-1] == 0) {
+		array_push(_possible_directions, "down")
+	}
 }
 
 switch(to_check_arm_index) {

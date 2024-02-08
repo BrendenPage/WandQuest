@@ -34,12 +34,12 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Deck Other","folderPath":"folders/Sprites/Deck Other.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemies","folderPath":"folders/Sprites/Enemies.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox and Hurtbox","folderPath":"folders/Sprites/Hitbox and Hurtbox.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Map","folderPath":"folders/Sprites/Map.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Room","folderPath":"folders/Sprites/Room.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Specials","folderPath":"folders/Sprites/Specials.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Map","folderPath":"folders/Sprites/Map.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gcmt-dll.dll","CopyToMask":0,"filePath":"datafiles/GMRoomPack",},
