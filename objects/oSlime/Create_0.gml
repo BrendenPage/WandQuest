@@ -16,3 +16,4 @@ max_stamina = 1.75
 
 state = slime_idle_wait
 state_ctr = idle_wait_time
+
