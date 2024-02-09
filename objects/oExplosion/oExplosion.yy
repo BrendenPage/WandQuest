@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sExplosion",
-    "path": "sprites/sExplosion/sExplosion.yy",
+    "name": "sAttacks",
+    "path": "sprites/sAttacks/sAttacks.yy",
   },
   "spriteMaskId": null,
   "visible": true,

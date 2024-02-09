@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sDuck",
-    "path": "sprites/sDuck/sDuck.yy",
+    "name": "sSpecials",
+    "path": "sprites/sSpecials/sSpecials.yy",
   },
   "spriteMaskId": null,
   "visible": true,

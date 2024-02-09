@@ -4,13 +4,13 @@
 if (global.game_paused) exit
 
 with (oPlayer){
-	var healthbar_length = 500
-	var healthbar_height = 30
-	var healthbar_center = display_get_gui_width()/2
-
-	draw_healthbar(healthbar_center - healthbar_length/2,45,
-					healthbar_center + healthbar_length/2,20,
+	draw_healthbar(other.gui_center - other.healthbar_length/2,45,
+					other.gui_center + other.healthbar_length/2,20,
 					remaining_health/max_health * 100,
 					c_red,c_green,c_green,0,true,true)
-	draw_text(healthbar_center - 350,20,"Health:")
 }
+
+draw_text(gui_center - 350,20,"Health:")
+
+draw_sprite(sAttacks,3,attack_position,gui_bottom)
+draw_sprite(sSpecials,3,special_position,gui_bottom)
