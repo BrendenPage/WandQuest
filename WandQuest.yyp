@@ -44,6 +44,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Specials","folderPath":"folders/Sprites/Specials.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GUI","folderPath":"folders/Objects/GUI.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gcmt-dll.dll","CopyToMask":0,"filePath":"datafiles/GMRoomPack",},
@@ -86,6 +87,7 @@
     {"id":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},},
     {"id":{"name":"sFreezeTime","path":"sprites/sFreezeTime/sFreezeTime.yy",},},
     {"id":{"name":"sDoorE","path":"sprites/sDoorE/sDoorE.yy",},},
+    {"id":{"name":"oGUI","path":"objects/oGUI/oGUI.yy",},},
     {"id":{"name":"oButtonResume","path":"objects/oButtonResume/oButtonResume.yy",},},
     {"id":{"name":"sDoorW","path":"sprites/sDoorW/sDoorW.yy",},},
     {"id":{"name":"sWand","path":"sprites/sWand/sWand.yy",},},
