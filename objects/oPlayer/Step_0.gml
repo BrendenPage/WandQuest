@@ -19,7 +19,6 @@ var _key_left = keyboard_check(ord("A"))
 var _key_right = keyboard_check(ord("D"))
 var _key_up = keyboard_check(ord("W"))
 var _key_down = keyboard_check(ord("S"))
-var _key_attack = mouse_check_button(mb_left)
 
 var _x_input = _key_right - _key_left
 var _y_input = _key_down - _key_up
@@ -34,6 +33,9 @@ if (remaining_i_frames == 0) {
 	invincible = false
 }
 
+
+// Player Attack
+var _key_attack = mouse_check_button(mb_left)
 //player aiming
 aim_dir = point_direction(x,y,mouse_x,mouse_y);
 
