@@ -14,7 +14,6 @@ refresh = 1
 // Game map
 map = ds_grid_create(map_size, map_size)
 sprite_map = ds_grid_create(map_size, map_size)
-
 length_max = 4
 length_min = length_max/1.5
 
