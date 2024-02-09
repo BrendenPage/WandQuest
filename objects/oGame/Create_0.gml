@@ -5,3 +5,6 @@
 // Tile size
 #macro TS 36
 player = instance_create_layer(ROOM_START_X, ROOM_START_Y, "Instances", oPlayer)
+gui = instance_create_layer(0,0, "Instances", oGUI)
+
+show_debug_message("Hey")
