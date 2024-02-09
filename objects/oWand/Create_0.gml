@@ -1,1 +1,1 @@
-depth = oPlayerBody.depth + 1;
+depth = oPlayer.depth + 1;

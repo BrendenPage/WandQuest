@@ -37,9 +37,9 @@ if (remaining_i_frames == 0) {
 //player aiming
 aim_dir = point_direction(x,y,mouse_x,mouse_y);
 
-// Shoot attack projectile (only firebolt for now)
-if attack_timer > 0 {attack_timer--;}
+attack_timer = max(attack_timer - 1, 0)
 
+// Shoot attack projectile (only firebolt for now)
 if _key_attack && attack_timer <= 0 {
 	//reset the timer
 	attack_timer = attack_cookdown;
@@ -47,13 +47,13 @@ if _key_attack && attack_timer <= 0 {
 	//create the projectile
 	var _x_offset = lengthdir_x(wand_len , aim_dir);
 	var _y_offset = lengthdir_y(wand_len , aim_dir);
-	var _firebolt_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, firebolt_obj);
+	// TODO: replace fire
+	var _firebolt_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, oFireboltProjectile);
 
 	// change the bullet's direction
 	with(_firebolt_inst){
 		dir  = other.aim_dir;	
 	}
-	
 }
 
 
