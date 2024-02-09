@@ -7,6 +7,7 @@
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
     {"name":"Attacks","order":23,"path":"folders/Objects/Attacks.yy",},
     {"name":"Enemies","order":21,"path":"folders/Objects/Enemies.yy",},
+    {"name":"GUI","order":29,"path":"folders/Objects/GUI.yy",},
     {"name":"Hitbox and Hurtbox","order":26,"path":"folders/Objects/Hitbox and Hurtbox.yy",},
     {"name":"Menu","order":28,"path":"folders/Objects/Menu.yy",},
     {"name":"Player","order":22,"path":"folders/Objects/Player.yy",},
@@ -33,7 +34,6 @@
     {"name":"Specials","order":20,"path":"folders/Sprites/Specials.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"GUI","order":29,"path":"folders/Objects/GUI.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Pause","order":4,"path":"rooms/Pause/Pause.yy",},

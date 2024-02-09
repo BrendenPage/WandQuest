@@ -18,6 +18,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attacks","folderPath":"folders/Objects/Attacks.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemies","folderPath":"folders/Objects/Enemies.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GUI","folderPath":"folders/Objects/GUI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox and Hurtbox","folderPath":"folders/Objects/Hitbox and Hurtbox.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Menu","folderPath":"folders/Objects/Menu.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Objects/Player.yy",},
@@ -44,7 +45,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Specials","folderPath":"folders/Sprites/Specials.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GUI","folderPath":"folders/Objects/GUI.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gcmt-dll.dll","CopyToMask":0,"filePath":"datafiles/GMRoomPack",},
@@ -103,7 +103,6 @@
     {"id":{"name":"sPlayerHurtbox","path":"sprites/sPlayerHurtbox/sPlayerHurtbox.yy",},},
     {"id":{"name":"oSlime","path":"objects/oSlime/oSlime.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
-    {"id":{"name":"sDuck","path":"sprites/sDuck/sDuck.yy",},},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},},
     {"id":{"name":"sSpecials","path":"sprites/sSpecials/sSpecials.yy",},},
     {"id":{"name":"sEnemyHurtbox","path":"sprites/sEnemyHurtbox/sEnemyHurtbox.yy",},},
