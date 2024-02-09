@@ -7,4 +7,8 @@ function die(){
 	
 	// Reset the player's stats to their original values
 	remaining_health = max_health
+	with(oGame){
+		instance_destroy(self)
+	}
+	show_debug_message("Dead")
 }

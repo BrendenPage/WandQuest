@@ -4,8 +4,7 @@ depth = -100
 speed_modifier = 1;
 global.game_paused = false // TODO: REMOVE
 
-
-hurtbox = hurtbox_create(50,80,-25,-50,false)
+hurtbox = hurtbox_create(25,40,-15,-25,false)
 hat = instance_create_layer(x + -25,y + -50,"Instances",oPlayerHat)
 body = instance_create_layer(x + -25,y + -50,"Instances",oPlayerBody)
 wand = instance_create_layer(x + -25,y + -50,"Instances",oWand)
