@@ -2,6 +2,7 @@
 // You can write your code in this editor
 randomize()
 #macro ROOM_COUNT 40
+global.room_list = ["D1", "D2", "D3", "D4", "D5"]
 total_rooms = ROOM_COUNT
 map_size = 10
 // Weight placed on preferentially generating rooms towards

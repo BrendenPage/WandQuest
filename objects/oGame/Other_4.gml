@@ -8,6 +8,7 @@ global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
 
 // Loop through each tile and add a single solid if its a wall
 var _map = layer_tilemap_get_id("tiles_wall")
+// Determine at this point what doors need to exist in this room and insert them accordingly
 // create each 1x1 solid
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
@@ -23,7 +24,6 @@ for (var _y = 0; _y < _h; _y++) {
 
 //add solid instances to grid
 mp_grid_add_instances(global.mp_grid, oCollide, true);
-
 //loop through grid positions again.  Get solid id and if a solid is to the right, absorb it.
 for (var yy = 0; yy < _h; ++yy) {
     for (var xx = 0; xx < _w; ++xx) {
