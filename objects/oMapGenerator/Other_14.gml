@@ -1,5 +1,4 @@
 /// @description Trigger extend event on each arm
-// DEPRICATED, CHANGED TO EVENT 4
 to_check_arm_index = 0 
 if (arm_length[to_check_arm_index] > 0) {
 	event_user(0)
@@ -24,7 +23,6 @@ var _done = true
 
 for (var _i = 0; _i < 4; _i++) {
 	if (arm_length[_i] != 0) {
-		alarm[0] = refresh
 		_done = false
 		break
 	}
@@ -32,4 +30,6 @@ for (var _i = 0; _i < 4; _i++) {
 
 if (_done) {
 	event_user(2)
+} else {
+	event_user(4)
 }

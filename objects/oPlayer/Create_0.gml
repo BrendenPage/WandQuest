@@ -1,9 +1,9 @@
-SPEED = 10;
+SPEED = 4;
 image_index = 0;
 depth = -100
 speed_modifier = 1;
 global.game_paused = false // TODO: REMOVE
-
+show_debug_message("HELP MEEE")
 hurtbox = hurtbox_create(25,40,-15,-25,false)
 hat = instance_create_layer(x + -25,y + -50,"Instances",oPlayerHat)
 body = instance_create_layer(x + -25,y + -50,"Instances",oPlayerBody)

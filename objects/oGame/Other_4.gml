@@ -9,6 +9,18 @@ global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
 // Loop through each tile and add a single solid if its a wall
 var _map = layer_tilemap_get_id("tiles_wall")
 // Determine at this point what doors need to exist in this room and insert them accordingly
+if (map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
+	open_west_door()
+}
+if (map_gen.dependency_map[current_room_x, current_room_y] & SOUTH) {
+	open_south_door()
+}
+if (map_gen.dependency_map[current_room_x, current_room_y] & EAST) {
+	open_east_door()
+}
+if (map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
+	open_north_door()
+}
 // create each 1x1 solid
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
@@ -65,6 +77,5 @@ for (var yy = 0; yy < _h; ++yy) {
 
 // Insert warp points, these should be at the center of each cardinal
 // direction for each direction that has a door
-
-
+set_warp_points()
 

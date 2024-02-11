@@ -6,7 +6,11 @@ x = 316
 y = 172
 
 for (var _i = 0; _i < map_size; _i++) {
-	for (var _j = 0; _j < map_size; _j++) { 
-		draw_sprite(map_sprites[map[_i, _j]], 0, x + (_i*18), y + (_j*18))
+	for (var _j = 0; _j < map_size; _j++) {
+		if (map[_i, _j] > 4) {
+			draw_sprite(sUiMapSpecial, 0, x + (_i*18), y + (_j*18))
+		} else {
+			draw_sprite(map_sprites[map[_i, _j]], 0, x + (_i*18), y + (_j*18))
+		}
 	}
 }
