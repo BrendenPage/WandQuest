@@ -63,6 +63,7 @@
     {"name":"oButtonResume","order":3,"path":"objects/oButtonResume/oButtonResume.yy",},
     {"name":"sDoorW","order":2,"path":"sprites/sDoorW/sDoorW.yy",},
     {"name":"sWand","order":3,"path":"sprites/sWand/sWand.yy",},
+    {"name":"oProjectileParent","order":1,"path":"objects/oProjectileParent/oProjectileParent.yy",},
     {"name":"sFireball","order":1,"path":"sprites/sFireball/sFireball.yy",},
     {"name":"oDoor","order":2,"path":"objects/oDoor/oDoor.yy",},
     {"name":"oChest","order":5,"path":"objects/oChest/oChest.yy",},

@@ -95,6 +95,7 @@
     {"id":{"name":"oButtonResume","path":"objects/oButtonResume/oButtonResume.yy",},},
     {"id":{"name":"sDoorW","path":"sprites/sDoorW/sDoorW.yy",},},
     {"id":{"name":"sWand","path":"sprites/sWand/sWand.yy",},},
+    {"id":{"name":"oProjectileParent","path":"objects/oProjectileParent/oProjectileParent.yy",},},
     {"id":{"name":"sFireball","path":"sprites/sFireball/sFireball.yy",},},
     {"id":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},},
     {"id":{"name":"sUiMapNothing","path":"sprites/sUiMapNothing/sUiMapNothing.yy",},},
