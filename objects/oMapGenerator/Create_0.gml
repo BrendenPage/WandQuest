@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-randomize()
+//randomize()
 #macro ROOM_COUNT 40
 
 global.map_gen = self
@@ -25,7 +25,13 @@ in_use_rooms = ds_list_create()
 // Map that holds room metadata
 room_sizes = ds_map_create()
 // Map that holds the actual rooms
-room_map[map_size - 1, map_size - 1] = Menu
+for (var _i = 0; _i < map_size; _i++) {
+	for (var _j = 0; _j < map_size; _j++) {
+		room_map[_i, _j] = 0
+	}
+}
+
+show_debug_message(string(room_map))
 // Minimap?
 sprite_map = ds_grid_create(map_size, map_size)
 length_max = 4

@@ -24,3 +24,9 @@
 #macro TS 36
 
 game_setup = false
+
+player = undefined
+gui = undefined
+current_room_x = undefined
+current_room_y = undefined
+seen_room_set = undefined

@@ -90,7 +90,12 @@ function set_warp_points() {
 		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & NORTH) {
 			// There is an opening to the north
 			var _warp = instance_create_layer(room_width/2, 0, "Instances", oWarp)
-			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y+1]
+			
+			printArray2d(global.map_gen.room_map)
+			show_debug_message("current room: " + room_get_name(room))
+			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y-1]
+			show_debug_message("north room: " + room_get_name(_warp.target_room))
+			show_debug_message("end")
 			_warp.target_x = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[0]/2
 			_warp.target_y = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[1] - TS*2
 			_warp.down = -1
@@ -98,7 +103,7 @@ function set_warp_points() {
 		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & SOUTH) {
 			// There is an opening to the west
 			var _warp = instance_create_layer(room_width/2, room_height, "Instances", oWarp)
-			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y-1]
+			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y+1]
 			_warp.target_x = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[0]/2
 			_warp.target_y = TS*2
 			_warp.down = 1

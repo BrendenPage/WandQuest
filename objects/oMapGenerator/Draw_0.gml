@@ -10,8 +10,12 @@ for (var _i = 0; _i < map_size; _i++) {
 		if (map[_i, _j] > 4) {
 			draw_sprite(sUiMapSpecial, 0, x + (_i*18), y + (_j*18))
 		} else {
-			draw_sprite(map_sprites[map[_i, _j]], 0, x + (_i*18), y + (_j*18))
+			if (_i == map_size/2 and _j = map_size/2) {
+				draw_sprite(sUiMapHome, 0, x + (_i*18), y + (_j*18))
+			} else {
+				draw_sprite(map_sprites[map[_i, _j]], 0, x + (_i*18), y + (_j*18))
+			}
+			
 		}
 	}
 }
-*/

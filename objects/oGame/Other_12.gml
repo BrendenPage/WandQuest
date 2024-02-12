@@ -11,3 +11,4 @@ gui = instance_create_layer(0,0, "Instances", oGUI)
 current_room_x = global.map_gen.map_size/2
 current_room_y = global.map_gen.map_size/2
 game_setup=true
+seen_room_set = ds_map_create()
