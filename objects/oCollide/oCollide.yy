@@ -26,6 +26,9 @@
   "properties": [],
   "solid": true,
   "spriteId": null,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sWall",
+    "path": "sprites/sWall/sWall.yy",
+  },
   "visible": true,
 }

@@ -1,5 +1,5 @@
 /// @description Trigger extend event on each arm
-
+// DEPRICATED, CHANGED TO EVENT 4
 to_check_arm_index = 0 
 if (arm_length[to_check_arm_index] > 0) {
 	event_user(0)

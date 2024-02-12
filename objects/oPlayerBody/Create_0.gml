@@ -1,1 +1,1 @@
-depth = oWand.depth + 1;
+depth = global.game.player.depth;

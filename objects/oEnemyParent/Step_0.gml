@@ -3,4 +3,5 @@
 
 if (remaining_health == 0){
 	instance_destroy()
+	set_warp_points()
 }

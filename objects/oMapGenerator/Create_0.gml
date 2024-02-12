@@ -1,7 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-randomize()
+//randomize()
 #macro ROOM_COUNT 40
+
+global.map_gen = self
+room_list = [D1, D2, D3, D4, D5]
 total_rooms = ROOM_COUNT
 map_size = 10
 // Weight placed on preferentially generating rooms towards
@@ -11,14 +14,31 @@ forward_weight = 4
 to_check_arm_index = 0
 // Frame rate of map generation
 refresh = 1
+done = false
 // Game map
-map = ds_grid_create(map_size, map_size)
-sprite_map = ds_grid_create(map_size, map_size)
+map = []
+// Map that holds info about adjacent rooms
+dependency_map = []
+// Holds all duplicated rooms so we can have a minimal number for room creation
+free_rooms = ds_list_create()
+in_use_rooms = ds_list_create()
+// Map that holds room metadata
+room_sizes = ds_map_create()
+// Map that holds the actual rooms
+for (var _i = 0; _i < map_size; _i++) {
+	for (var _j = 0; _j < map_size; _j++) {
+		room_map[_i, _j] = 0
+	}
+}
 
+show_debug_message(string(room_map))
+// Minimap?
+sprite_map = ds_grid_create(map_size, map_size)
 length_max = 4
 length_min = length_max/1.5
-
+done = false
 // Begin map generation
 event_user(1)
+
 
 map_sprites = [sUiMapNothing, sUiMapWest, sUiMapNorth, sUiMapEast, sUiMapSouth, sUiMapHome]
