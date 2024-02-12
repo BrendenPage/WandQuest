@@ -1,3 +1,4 @@
+global.game.player = self
 SPEED = 4;
 image_index = 0;
 depth = -100

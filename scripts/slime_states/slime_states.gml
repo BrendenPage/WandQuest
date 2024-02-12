@@ -5,7 +5,7 @@ function slime_idle_wait(){
 	state_ctr = max(0,state_ctr - 1)
 	stamina = min(max_stamina, stamina + 0.01)
 	
-	var _dist = point_distance(x,y,oPlayer.x,oPlayer.y)
+	var _dist = point_distance(x,y,global.game.player.x,global.game.player.y)
 	if(_dist < dash_proximity && stamina >= 1) {
 		state = slime_dash_windup
 		state_ctr = dash_windup_time
@@ -14,7 +14,7 @@ function slime_idle_wait(){
 	if(state_ctr == 0){
 		state = slime_idle_move
 		state_ctr = idle_move_time
-		idle_move_dir = (point_direction(x,y,oPlayer.x,oPlayer.y) + irandom_range(-45,45)) % 360
+		idle_move_dir = (point_direction(x,y,global.game.player.x,global.game.player.y) + irandom_range(-45,45)) % 360
 	}
 }
 
@@ -22,7 +22,7 @@ function slime_idle_wait(){
 function slime_idle_move(){
 	state_ctr = max(0,state_ctr - 1)
 	
-	var _dist = point_distance(x,y,oPlayer.x,oPlayer.y)
+	var _dist = point_distance(x,y,global.game.player.x,global.game.player.y)
 	if(_dist < dash_proximity && stamina >= 1) {
 		state = slime_dash_windup
 		state_ctr = dash_windup_time
@@ -40,13 +40,13 @@ function slime_idle_move(){
 function slime_dash_windup(){
 	state_ctr = max(0,state_ctr - 1)
 	// opposite direction
-	var _dir = (180 + point_direction(x,y,oPlayer.x,oPlayer.y)) % 360
+	var _dir = (180 + point_direction(x,y,global.game.player.x,global.game.player.y)) % 360
 	mag_dir_move_and_collide(speed_,_dir)
 	if(state_ctr == 0) {
 		stamina -= 1
 		state = slime_dashing
 		state_ctr = active_dash_time
-		dash_dir = point_direction(x,y,oPlayer.x,oPlayer.y)
+		dash_dir = point_direction(x,y,global.game.player.x,global.game.player.y)
 	}
 }
 

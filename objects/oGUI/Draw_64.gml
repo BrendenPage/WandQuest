@@ -3,7 +3,7 @@
 
 if (global.game_paused) exit
 
-with (oPlayer){
+with (global.game.player){
 	draw_healthbar(other.gui_center - other.healthbar_length/2,45,
 					other.gui_center + other.healthbar_length/2,20,
 					remaining_health/max_health * 100,

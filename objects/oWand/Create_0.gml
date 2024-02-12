@@ -1,1 +1,1 @@
-depth = oPlayer.depth + 1;
+depth = global.game.player.depth + 1;
