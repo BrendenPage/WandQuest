@@ -20,15 +20,20 @@ pos_arm_x[3] = map_size/2
 pos_arm_y[3] = map_size/2 - 1
 map = []
 dependency_map = []
-room_map = []
 
 for (var _i = 0; _i < map_size; _i++) {
 	for (var _j = 0; _j < map_size; _j++) {
 		map[_i, _j] = 0
 		dependency_map[_i, _j] = 0
-		room_map[_i, _j] = noone
 	}
 }
+
+for (var _i = 0; _i < ds_list_size(in_use_rooms); _i++) {
+	ds_list_add(free_rooms, ds_list_find_value(in_use_rooms, _i))
+}
+
+ds_list_clear(in_use_rooms)
+
 for (var _i = 0; _i < 4; _i++) {
 	map[pos_arm_x[_i], pos_arm_y[_i]] = _i + 1
 }

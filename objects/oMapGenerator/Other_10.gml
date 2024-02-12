@@ -1,8 +1,6 @@
 /// @description Check to extend map arm from current position
-
 var _cell_x = pos_arm_x[to_check_arm_index]
 var _cell_y = pos_arm_y[to_check_arm_index]
-
 var _possible_directions = []
 // populate possible directions with the directions allowed by the map construction
 if (_cell_x+1 < map_size) {
@@ -74,6 +72,7 @@ if (array_length(_possible_directions) > 0) {
 	arm_length[to_check_arm_index]--
 } else {
 	// No possible direction to move, retry map generation
+	show_debug_message("Could not generate arm" + string(to_check_arm_index) + ", restarting map generation")
 	event_user(1)
 }
 
