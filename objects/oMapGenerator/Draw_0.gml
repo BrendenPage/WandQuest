@@ -14,3 +14,4 @@ for (var _i = 0; _i < map_size; _i++) {
 		}
 	}
 }
+*/
