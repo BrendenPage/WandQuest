@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+/*
 draw_sprite_ext(sMapBackground, 0, 316, 172, 5000, 5000, 0, c_white, 0.9)
 x = 316
 y = 172
@@ -14,3 +15,4 @@ for (var _i = 0; _i < map_size; _i++) {
 		}
 	}
 }
+*/
