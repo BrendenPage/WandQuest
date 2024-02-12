@@ -71,34 +71,34 @@ function set_warp_points() {
 	if (instance_number(oEnemyParent) == 0) {
 		// All enemies have been defeated
 		// Populate warp points
-		if (global.game.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & WEST) {
+		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & WEST) {
 			// There is an opening to the west
 			var _warp = instance_create_layer(0, room_height/2, "Instances", oWarp)
-			_warp.target_room = global.game.map_gen.room_map[global.game.current_room_x-1, global.game.current_room_y]
+			_warp.target_room = global.map_gen.room_map[global.game.current_room_x-1, global.game.current_room_y]
 			_warp.target_x = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[0] - TS*2
 			_warp.target_y = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[1]/2
 			_warp.right = -1
 		}
-		if (global.game.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & EAST) {
+		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & EAST) {
 			// There is an opening to the east
 			var _warp = instance_create_layer(room_width, room_height/2, "Instances", oWarp)
-			_warp.target_room = global.game.map_gen.room_map[global.game.current_room_x+1, global.game.current_room_y]
+			_warp.target_room = global.map_gen.room_map[global.game.current_room_x+1, global.game.current_room_y]
 			_warp.target_x = TS*2
 			_warp.target_y = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[1]/2
 			_warp.right = 1
 		}
-		if (global.game.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & NORTH) {
+		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & NORTH) {
 			// There is an opening to the north
 			var _warp = instance_create_layer(room_width/2, 0, "Instances", oWarp)
-			_warp.target_room = global.game.map_gen.room_map[global.game.current_room_x, global.game.current_room_y+1]
+			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y+1]
 			_warp.target_x = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[0]/2
 			_warp.target_y = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[1] - TS*2
 			_warp.down = -1
 		}
-		if (global.game.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & SOUTH) {
+		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & SOUTH) {
 			// There is an opening to the west
 			var _warp = instance_create_layer(room_width/2, room_height, "Instances", oWarp)
-			_warp.target_room = global.game.map_gen.room_map[global.game.current_room_x, global.game.current_room_y-1]
+			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y-1]
 			_warp.target_x = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[0]/2
 			_warp.target_y = TS*2
 			_warp.down = 1

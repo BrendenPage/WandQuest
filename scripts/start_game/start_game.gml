@@ -6,7 +6,7 @@ function start_game(){
 	layer_set_target_room(START_ROOM)
 	show_debug_message("Hello")
 	show_debug_message("Number of games: " + string(instance_number(oGame)))
-	instance_create_layer(0,0,"Instances", oGame)
+	room_instance_add(START_ROOM, 0, 0, oGame)
 	show_debug_message("Number of games: " + string(instance_number(oGame)))
 	global.game_paused = false
 	global.current_room = START_ROOM

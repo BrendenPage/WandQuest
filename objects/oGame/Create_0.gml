@@ -31,6 +31,3 @@ gui = instance_create_layer(0,0, "Instances", oGUI)
 // Used to track current room index into oMapGenerator.dependency_map
 current_room_x = global.map_gen.map_size/2
 current_room_y = global.map_gen.map_size/2
-
-event_user(0)
-event_user(1)

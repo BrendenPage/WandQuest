@@ -4,5 +4,5 @@
 event_inherited();
 
 if (ready) {
-	start_game()	
+	start_game()
 }
