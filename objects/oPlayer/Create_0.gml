@@ -20,6 +20,7 @@ aim_dir = 0;
 	//Colddown for attack
 	//might need modification after deck rotation is implemented 
 	attack_timer = 0;
+	attack_cookdown = 1;
 	
 	firebolt_obj = oFireboltProjectile; 
 	wand_len = 5 + (sprite_get_bbox_right(sPlayer))
