@@ -12,19 +12,19 @@ global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
 var _map = layer_tilemap_get_id("tiles_wall")
 // Determine at this point what doors need to exist in this room and insert them accordingly
 if (global.map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
-	show_debug_message("Open west")
+	//show_debug_message("Open west")
 	open_west_door()
 }
 if (global.map_gen.dependency_map[current_room_x, current_room_y] & SOUTH) {
-	show_debug_message("Open south")
+	//show_debug_message("Open south")
 	open_south_door()
 }
 if (global.map_gen.dependency_map[current_room_x, current_room_y] & EAST) {
-	show_debug_message("Open east")
+	//show_debug_message("Open east")
 	open_east_door()
 }
 if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
-	show_debug_message("Open north")
+	//show_debug_message("Open north")
 	open_north_door()
 }
 set_warp_points()
@@ -82,4 +82,4 @@ for (var yy = 0; yy < _h; ++yy) {
 	}
 }
 
-ds_map_add(seen_room_set, room, true)
+ds_map_add(global.seen_room_set, room, true)

@@ -1,33 +1,25 @@
-global.game.player = self
-SPEED = 4;
-image_index = 0;
-depth = -100
-speed_modifier = 1;
-global.game_paused = false // TODO: REMOVE
-show_debug_message("HELP MEEE")
-hurtbox = hurtbox_create(25,40,-15,-25,false)
-hat = instance_create_layer(x + -25,y + -50,"Instances",oPlayerHat)
-body = instance_create_layer(x + -25,y + -50,"Instances",oPlayerBody)
-wand = instance_create_layer(x + -25,y + -50,"Instances",oWand)
+SPEED = undefined;
+speed_modifier = undefined;
+hurtbox = undefined
+hat = undefined
+body = undefined
+wand = undefined
 
-hurtbox.persistent = true
+invincible = undefined
+i_frames = undefined
+remaining_i_frames = undefined
 
-invincible = false
-i_frames = 20
-remaining_i_frames = 0
+max_health = undefined
+remaining_health = undefined
 
-max_health = 100
-remaining_health = max_health
-
-aim_dir = 0;
+aim_dir = undefined;
 
 // Attack Projectile info
 
 //Colddown for attack
 //might need modification after deck rotation is implemented 
-attack_timer = 0;
-attack_cookdown = 15;
+attack_timer = undefined;
+attack_cookdown = undefined;
 
-wand_len = 5 + (sprite_get_bbox_right(sPlayer))
-	+ (sprite_get_bbox_right(sWand));//length from the center of Player to the tip of the wand + 5
+wand_len = undefined;//length from the center of Player to the tip of the wand + 5
 

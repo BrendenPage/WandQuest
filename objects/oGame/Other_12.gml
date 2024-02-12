@@ -17,4 +17,13 @@ with(player){
 current_room_x = global.map_gen.map_size/2
 current_room_y = global.map_gen.map_size/2
 game_setup=true
-seen_room_set = ds_map_create()
+
+if (!variable_global_exists("seen_room_set")) {
+	// If the room has ever been seen before on
+	// any playthrough. Used to set up collision etc.
+	global.seen_room_set = ds_map_create()
+}
+
+// If the room has been seen on this playthrough.
+// Used to populate enemies
+this_run_seen_room_set = ds_map_create()
