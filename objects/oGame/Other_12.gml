@@ -27,3 +27,17 @@ if (!variable_global_exists("seen_room_set")) {
 // If the room has been seen on this playthrough.
 // Used to populate enemies
 this_run_seen_room_set = ds_map_create()
+
+for (var _i = 0; _i < global.map_gen.map_size; _i++) {
+	for (var _j = 0; _j < global.map_gen.map_size; _j++) {
+		if (_i == global.map_gen.map_size/2 and _j == global.map_gen.map_size/2) {
+			visible_minimap[_i, _j] = NORTH | EAST | SOUTH | WEST
+		} else {
+			visible_minimap[_i, _j] = 0
+		}
+	}
+}
+minimap_width = 3
+minimap_height = 3
+minimap_seed_x = global.map_gen.map_size/2-1
+minimap_seed_y = global.map_gen.map_size/2-1
