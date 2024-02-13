@@ -16,6 +16,8 @@
 #macro SHADOW_RIGHT 72
 #macro TILE_CLEAR 0
 #macro SHADOW_CLEAR 48
+#macro BASE_SPAWN_RATE 0.02
+#macro ENEMY_SPAWN_NEAR_PLAYER_TILE_THRESHOLD 4
 
 // Camera macros
 #macro VIEWPORT_WIDTH 960
@@ -35,3 +37,7 @@ minimap_width = 0
 minimap_height = 0
 minimap_seed_x = 0
 minimap_seed_y = 0
+enemy_list = [oSlime, oGun, oRedGun]
+enemy_spawn_rates = [.8, .15, .05]
+wing_spawn_rate_modifier = [1, 1, 1, 1]
+

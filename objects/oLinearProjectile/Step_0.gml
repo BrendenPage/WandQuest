@@ -15,7 +15,13 @@ var _xspd = lengthdir_x(spd, dir);
 var _yspd = lengthdir_y(spd, dir);
 
 //collision 
-if place_meeting(x,y,oCollide){instance_destroy(self)}
+//if place_meeting(x,y,oCollide){instance_destroy(self)}
+
+with (oCollide) {
+	if place_meeting(x,y,other) and !(object_is_ancestor(object_index,oEnemyParent) or object_is_ancestor(object_index,oPlayer)) {
+		instance_destroy(other)
+	}
+}
 
 x += _xspd;
 y += _yspd;

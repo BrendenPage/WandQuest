@@ -27,7 +27,6 @@ if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
 	//show_debug_message("Open north")
 	open_north_door()
 }
-set_warp_points()
 // create each 1x1 solid
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
