@@ -98,6 +98,7 @@
     {"id":{"name":"gun_states","path":"scripts/gun_states/gun_states.yy",},},
     {"id":{"name":"sHitbox","path":"sprites/sHitbox/sHitbox.yy",},},
     {"id":{"name":"sMapBackground","path":"sprites/sMapBackground/sMapBackground.yy",},},
+    {"id":{"name":"sMinimapYAH","path":"sprites/sMinimapYAH/sMinimapYAH.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"sRefresh","path":"sprites/sRefresh/sRefresh.yy",},},
     {"id":{"name":"oWand","path":"objects/oWand/oWand.yy",},},

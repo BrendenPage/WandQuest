@@ -67,6 +67,7 @@
     {"name":"oPlayerAttackDeck","order":1,"path":"objects/oPlayerAttackDeck/oPlayerAttackDeck.yy",},
     {"name":"gun_states","order":12,"path":"scripts/gun_states/gun_states.yy",},
     {"name":"sMapBackground","order":1,"path":"sprites/sMapBackground/sMapBackground.yy",},
+    {"name":"sMinimapYAH","order":16,"path":"sprites/sMinimapYAH/sMinimapYAH.yy",},
     {"name":"oWand","order":3,"path":"objects/oWand/oWand.yy",},
     {"name":"sFreezeTime","order":1,"path":"sprites/sFreezeTime/sFreezeTime.yy",},
     {"name":"sDoorE","order":4,"path":"sprites/sDoorE/sDoorE.yy",},
