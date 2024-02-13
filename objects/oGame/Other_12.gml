@@ -7,11 +7,19 @@ with(gui){
 	event_user(0)
 }
 
+//Under construction
+attack_deck = instance_create_layer(0,0,"Instances",oPlayerAttackDeck)
+with(attack_deck){
+	// set up the attack_deck
+	event_user(0)
+}
+
 player = instance_create_layer(ROOM_START_X, ROOM_START_Y, "Instances", oPlayer)
 with(player){
 	// set up the player
 	event_user(0)
 }
+
 
 // Used to track current room index into oMapGenerator.dependency_map
 current_room_x = global.map_gen.map_size/2

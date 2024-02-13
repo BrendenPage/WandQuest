@@ -27,8 +27,9 @@ aim_dir = 0
 //might need modification after deck rotation is implemented 
 attack_timer = 0
 
-attack_spell = global.attack_spell_list.firebolt
-//attack_spell = oPlayerAttackDeck.deck[0]
+//attack_spell = global.attack_spell_struct.firebolt
+attack_spell = global.game.attack_deck.deck[0]
+show_debug_message(attack_spell.description_text)
 
 //length from the center of Player to the tip of the wand + spell offset
 wand_len = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 

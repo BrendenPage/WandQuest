@@ -1,6 +1,8 @@
 /**
  * Constructs an attack spell object.
  *
+ * @param {string} _spell_name - The name of the spell
+ *								 Defaults to "Firebolt" if not specified.
  * @param {sprite} _sprite - The sprite used to visually represent the spell. 
  *                           Defaults to sFireboltProjectile if not specified.
  * @param {object} _projectile_obj - The projectile object that the spell casts. 
@@ -15,6 +17,7 @@
  *										 Defaults to 0 if not specified.
  */
 function create_attack_spell(
+	_spell_name = "Firebolt",
 	_sprite = sFireboltProjectile,
 	_projectile_obj = oFireboltProjectile,
 	_cooldown = 15,
@@ -31,8 +34,10 @@ function create_attack_spell(
 }
 
 
-global.attack_spell_list = {
-	firebolt : new create_attack_spell(
+global.attack_spell_struct ={
+
+	firebolt: new create_attack_spell(
+		"Firebolt",
 		sFireboltProjectile,
 		oFireboltProjectile,
 		15,
@@ -40,14 +45,12 @@ global.attack_spell_list = {
 		"Firebolt. Long Range. Single Attack. Low Damage. Low Cooldown. ",
 		20
 	),
-	
-	flame_burst : new create_attack_spell(
+	flame_burst: new create_attack_spell(
+		"Flame Burst",
 		sFlameBrustProjectile,
 		oFlameBrustProjectile,
 		20,
 		50,
 		"Flame Burst. Short Range, AOE Attack. High Damage. Medium Cooldown.",
 		40
-	)
-	
-}
+	)}

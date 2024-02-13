@@ -43,6 +43,7 @@ attack_timer = max(attack_timer - 1, 0)
 
 // Shoot attack projectile 
 if _key_attack && attack_timer <= 0 {
+	
 	//reset the timer
 	attack_timer = attack_spell.cooldown;
 	
