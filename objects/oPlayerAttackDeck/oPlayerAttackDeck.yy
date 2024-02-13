@@ -1,19 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oFireball",
+  "name": "oPlayerAttackDeck",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Attacks",
-    "path": "folders/Objects/Attacks.yy",
+    "name": "Player Deck",
+    "path": "folders/Objects/Player Deck.yy",
   },
   "parentObjectId": {
-    "name": "oAttack_Card_outdated",
-    "path": "objects/oAttack_Card_outdated/oAttack_Card_outdated.yy",
+    "name": "oPlayerDeckParent",
+    "path": "objects/oPlayerDeckParent/oPlayerDeckParent.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -30,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "sFireball",
-    "path": "sprites/sFireball/sFireball.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

@@ -17,8 +17,8 @@
     "path": "folders/Objects/Specials.yy",
   },
   "parentObjectId": {
-    "name": "oDeck",
-    "path": "objects/oDeck/oDeck.yy",
+    "name": "oDeck_outdated",
+    "path": "objects/oDeck_outdated/oDeck_outdated.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

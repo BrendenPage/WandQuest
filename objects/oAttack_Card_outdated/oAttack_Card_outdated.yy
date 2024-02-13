@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oAttack_Card",
+  "name": "oAttack_Card_outdated",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
