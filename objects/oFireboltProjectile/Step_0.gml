@@ -1,3 +1,5 @@
+event_inherited()
+
 //move
 xspd = lengthdir_x(spd, dir);
 yspd = lengthdir_y(spd, dir);
@@ -10,16 +12,6 @@ y += yspd;
 
 //clean up
 //destroy
-
-var ref = self
-
-with (hitbox) {
-	with(oHurtbox){
-		if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
-			instance_destroy(ref);
-		}
-	}
-}
 
 
 
