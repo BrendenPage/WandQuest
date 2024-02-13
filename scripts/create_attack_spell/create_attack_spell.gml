@@ -2,7 +2,7 @@
  * Constructs an attack spell object.
  *
  * @param {string} _spell_name - The name of the spell
- *								 Defaults to "Firebolt" if not specified.
+ *								 Defaults to "Default Firebolt" if not specified.
  * @param {sprite} _sprite - The sprite used to visually represent the spell. 
  *                           Defaults to sFireboltProjectile if not specified.
  * @param {object} _projectile_obj - The projectile object that the spell casts. 
@@ -17,7 +17,7 @@
  *										 Defaults to 0 if not specified.
  */
 function create_attack_spell(
-	_spell_name = "Firebolt",
+	_spell_name = "Default Firebolt",
 	_sprite = sFireboltProjectile,
 	_projectile_obj = oFireboltProjectile,
 	_cooldown = 15,
