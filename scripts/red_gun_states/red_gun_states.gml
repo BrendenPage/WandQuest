@@ -41,8 +41,6 @@ function red_gun_idle(){
 	
 	// face the player
 	
-	show_debug_message(state_ctr)
-	
 	var original_angle = image_angle
 	with (oPlayer) {
 		var _dir = point_direction(other.x,other.y,x,y)
@@ -68,7 +66,6 @@ function red_gun_idle(){
 		state_ctr = RED_GUN_TIMERS.RED_GUN_IDLE
 		state = red_gun_idle
 		move_dir = random(360)
-		show_debug_message(move_dir)
 	}
 	
 	shot_ctr = max(0,shot_ctr - 1)

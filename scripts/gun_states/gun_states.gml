@@ -46,7 +46,6 @@ function gun_idle(){
 		state_ctr = GUN_TIMERS.GUN_IDLE
 		state = gun_idle
 		move_dir = random(360)
-		show_debug_message(move_dir)
 	}
 	
 	shot_ctr = max(0,shot_ctr - 1)
