@@ -37,5 +37,5 @@ minimap_width = 0
 minimap_height = 0
 minimap_seed_x = 0
 minimap_seed_y = 0
-enemy_list = [oSlime, oGun]
+enemy_list = [oSlime, oGun, oRedGun]
 wing_spawn_rate_modifier = [1, 1, 1, 1]
