@@ -13,10 +13,6 @@ y += yspd;
 
 if place_meeting(x,y,oHurtbox){ destroy = true;}
 
-if destroy == true{
-	instance_destroy(hitbox);
-	instance_destroy();
 
-}
 
 if point_distance(xstart,ystart,x,y) > max_dist{ destroy = true;}

@@ -5,7 +5,7 @@ SPEED = 4;
 image_index = 0;
 depth = -100
 speed_modifier = 1;
-hurtbox = hurtbox_create(25,40,-15,-25,false)
+hurtbox = hurtbox_create(25,40,0,0,false)
 hat = instance_create_layer(x + -25,y + -50,"Instances",oPlayerHat)
 body = instance_create_layer(x + -25,y + -50,"Instances",oPlayerBody)
 wand = instance_create_layer(x + -25,y + -50,"Instances",oWand)
@@ -23,10 +23,11 @@ aim_dir = 0;
 
 // Attack Projectile info
 
-//Colddown for attack
+//Cooldown for attack
 //might need modification after deck rotation is implemented 
 attack_timer = 0;
-attack_cookdown = 15;
+attack_spell = global.attack_spell_list.firebolt;
 
-wand_len = 5 + (sprite_get_bbox_right(sPlayer))
-	+ (sprite_get_bbox_right(sWand));//length from the center of Player to the tip of the wand + 5
+
+wand_len = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
+	+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand));//length from the center of Player to the tip of the wand + 5
