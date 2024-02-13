@@ -1,18 +1,18 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oPlayerOneHitProjectile",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "oLastingProjectile",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Player Projectiles",
-    "path": "folders/Objects/Player Projectiles.yy",
+    "name": "Projectiles",
+    "path": "folders/Objects/Projectiles.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oProjectileParent",
+    "path": "objects/oProjectileParent/oProjectileParent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

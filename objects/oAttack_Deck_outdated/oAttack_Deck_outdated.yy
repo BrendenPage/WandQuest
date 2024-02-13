@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oAttack_Deck",
+  "name": "oAttack_Deck_outdated",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":37,"eventType":5,"isDnD":false,},
@@ -18,8 +18,8 @@
     "path": "folders/Objects/Attacks.yy",
   },
   "parentObjectId": {
-    "name": "oDeck",
-    "path": "objects/oDeck/oDeck.yy",
+    "name": "oDeck_outdated",
+    "path": "objects/oDeck_outdated/oDeck_outdated.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
