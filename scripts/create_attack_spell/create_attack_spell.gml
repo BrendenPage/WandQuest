@@ -28,14 +28,14 @@ global.attack_spell_list = {
 		sFireboltProjectile,
 		oFireboltProjectile,
 		15,
-		""
+		"Firebolt. Long Range. Single Attack. Low Damage. Low Cooldown. "
 	),
 	
 	flame_burst : new create_attack_spell(
 		sFlameBrustProjectile,
 		oFlameBrustProjectile,
 		20,
-		""
+		"Flame Burst. Short Range, AOE Attack. High Damage. Medium Cooldown."
 	)
 	
 }
