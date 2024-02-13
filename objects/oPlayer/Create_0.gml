@@ -10,16 +10,14 @@ hat = instance_create_layer(x + -25,y + -50,"Instances",oPlayerHat)
 body = instance_create_layer(x + -25,y + -50,"Instances",oPlayerBody)
 wand = instance_create_layer(x + -25,y + -50,"Instances",oWand)
 
-hurtbox.persistent = true
+invincible = undefined
+i_frames = undefined
+remaining_i_frames = undefined
 
-invincible = false
-i_frames = 20
-remaining_i_frames = 0
+max_health = undefined
+remaining_health = undefined
 
-max_health = 100
-remaining_health = max_health
-
-aim_dir = 0;
+aim_dir = undefined;
 
 // Attack Projectile info
 	
