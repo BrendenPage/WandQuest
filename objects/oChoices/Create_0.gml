@@ -14,7 +14,8 @@ for(i = 0; i<3; i++) {
 	} else {
 		sprite = sSpecials
 	}
-	choice_ind = irandom_range(2,sprite_get_number(sprite) - 1)
+	//choice_ind = irandom_range(2,sprite_get_number(sprite) - 1)
+	choice_ind = irandom_range(3,4)
 	
 	choices[i].if_attack = if_attack
 	choices[i].choice_ind = choice_ind
@@ -24,5 +25,10 @@ for(i = 0; i<3; i++) {
 	choices[i].x_offset = 200 * i - 200
 	
 	// TODO: Set the choice explanation accordingly
-	// choices[i].choice_explanation = 
+	if choice_ind == 3{
+		choices[i].choice_explanation = global.attack_spell_list.firebolt.description_text
+	}else{
+		choices[i].choice_explanation = global.attack_spell_list.flame_burst.description_text
+	}
+	
 }

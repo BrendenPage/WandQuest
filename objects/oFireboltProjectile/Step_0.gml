@@ -1,3 +1,5 @@
+event_inherited()
+
 //move
 xspd = lengthdir_x(spd, dir);
 yspd = lengthdir_y(spd, dir);
@@ -21,6 +23,4 @@ with (hitbox) {
 	}
 }
 
-
-
-if point_distance(xstart,ystart,x,y) > max_dist{ destroy = true;}
+if point_distance(xstart,ystart,x,y) > max_dist{ instance_destroy(self)}

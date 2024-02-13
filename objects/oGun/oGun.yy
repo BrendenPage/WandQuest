@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oSlime",
+  "name": "oGun",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"max_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"100",},
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"remaining_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"100",},
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"55",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_y_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_start","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"0",},
     {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_y_start","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"0",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"max_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"remaining_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
   ],
   "parent": {
     "name": "Enemies",
@@ -37,10 +37,10 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": true,
+  "solid": false,
   "spriteId": {
-    "name": "sSlime",
-    "path": "sprites/sSlime/sSlime.yy",
+    "name": "sGun",
+    "path": "sprites/sGun/sGun.yy",
   },
   "spriteMaskId": null,
   "visible": true,
