@@ -2,7 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 // @description a state where the slime waits in place.
 function slime_idle_wait(){
-	state_ctr = max(0,state_ctr - 1)
 	stamina = min(max_stamina, stamina + 0.01)
 	
 	var _dist = point_distance(x,y,global.game.player.x,global.game.player.y)
@@ -20,8 +19,6 @@ function slime_idle_wait(){
 
 // @description a state where the slime moves a short distance towards the player
 function slime_idle_move(){
-	state_ctr = max(0,state_ctr - 1)
-	
 	var _dist = point_distance(x,y,global.game.player.x,global.game.player.y)
 	if(_dist < dash_proximity && stamina >= 1) {
 		state = slime_dash_windup
@@ -38,7 +35,6 @@ function slime_idle_move(){
 
 // @description a state where the slime moves slightly away from the player, preparing to dash
 function slime_dash_windup(){
-	state_ctr = max(0,state_ctr - 1)
 	// opposite direction
 	var _dir = (180 + point_direction(x,y,global.game.player.x,global.game.player.y)) % 360
 	mag_dir_move_and_collide(speed_,_dir)
@@ -52,7 +48,6 @@ function slime_dash_windup(){
 
 // @description a state where the slime is dashing towards the player
 function slime_dashing(){
-	state_ctr = max(0,state_ctr - 1)
 	mag_dir_move_and_collide(speed_ * 4,dash_dir)
 	if (state_ctr == 0) {
 		state_ctr = idle_wait_time

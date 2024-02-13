@@ -70,6 +70,7 @@
     {"id":{"name":"oExplosion","path":"objects/oExplosion/oExplosion.yy",},},
     {"id":{"name":"sChoices","path":"sprites/sChoices/sChoices.yy",},},
     {"id":{"name":"sFlameBurst","path":"sprites/sFlameBurst/sFlameBurst.yy",},},
+    {"id":{"name":"gun_states","path":"scripts/gun_states/gun_states.yy",},},
     {"id":{"name":"oWarp","path":"objects/oWarp/oWarp.yy",},},
     {"id":{"name":"sUiMapSouth","path":"sprites/sUiMapSouth/sUiMapSouth.yy",},},
     {"id":{"name":"oPlayerOneHitProjectile","path":"objects/oPlayerOneHitProjectile/oPlayerOneHitProjectile.yy",},},

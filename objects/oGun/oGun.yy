@@ -2,14 +2,27 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "oGun",
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+  ],
   "managed": true,
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_y_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_start","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"0",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_y_start","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"0",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"max_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"remaining_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"value":"50",},
+  ],
   "parent": {
     "name": "Enemies",
     "path": "folders/Objects/Enemies.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oEnemyParent",
+    "path": "objects/oEnemyParent/oEnemyParent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -25,7 +38,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "sGun",
+    "path": "sprites/sGun/sGun.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
