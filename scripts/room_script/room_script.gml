@@ -106,3 +106,9 @@ function set_warp_points() {
 	}
 }
 
+function enemy_spawn_rate(_i, _j) {
+	if (global.map_gen.map[_i, _j] > 4) {
+		return 0
+	}
+	return BASE_SPAWN_RATE*global.game.wing_spawn_rate_modifier[global.map_gen.map[_i,_j]-1]
+}
