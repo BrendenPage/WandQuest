@@ -1,8 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oFireboltProjectile",
+  "name": "oLinearProjectileParent",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
@@ -12,8 +13,8 @@
     "path": "folders/Objects/Projectiles.yy",
   },
   "parentObjectId": {
-    "name": "oLinearProjectile",
-    "path": "objects/oLinearProjectile/oLinearProjectile.yy",
+    "name": "oProjectileParent",
+    "path": "objects/oProjectileParent/oProjectileParent.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -30,13 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "sFireboltProjectile",
-    "path": "sprites/sFireboltProjectile/sFireboltProjectile.yy",
-  },
-  "spriteMaskId": {
-    "name": "sFireboltProjectile",
-    "path": "sprites/sFireboltProjectile/sFireboltProjectile.yy",
-  },
+  "spriteId": null,
+  "spriteMaskId": null,
   "visible": true,
 }

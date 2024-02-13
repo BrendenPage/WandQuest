@@ -26,7 +26,7 @@ aim_dir = 0
 //Cooldown for attack
 //might need modification after deck rotation is implemented 
 attack_timer = 0
-attack_spell = global.attack_spell_list.flame_burst
+attack_spell = global.attack_spell_list.firebolt
 
 //length from the center of Player to the tip of the wand + spell offset
 wand_len = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
