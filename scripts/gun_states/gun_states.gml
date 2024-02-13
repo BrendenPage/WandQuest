@@ -5,13 +5,18 @@ enum GUN_STATE_TIMES{
 	GUN_IDLE = 30,
 }
 
-// not a state. Shoots a bullet
+// not a state. Shoots a bullet in a direction
 function shoot(_dir) {
 	var _total_offset = 40
 	var _x_off = lengthdir_x(_total_offset, _dir);
 	var _y_off = lengthdir_y(_total_offset, _dir);
 	bullet = instance_create_depth(x+_x_off,y+_y_off,depth-1,oGunBullet)
 	bullet.dir = _dir
+}
+
+// not a state. Shoots bullets in a spread by the player
+function scattershot() {
+	
 }
 
 function gun_idle(){
@@ -41,7 +46,7 @@ function gun_idle(){
 	
 	with (oPlayer) {
 		var _dir_to_player = point_direction(other.x,other.y,x,y)
-		_dir_to_player += random_range(-25,25)
+		_dir_to_player += random_range(-5,5)
 	}
 	shoot(_dir_to_player)
 	
