@@ -11,13 +11,10 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Player Projectiles",
-    "path": "folders/Objects/Player Projectiles.yy",
+    "name": "Projectiles",
+    "path": "folders/Objects/Projectiles.yy",
   },
-  "parentObjectId": {
-    "name": "oPlayerProjectileParent",
-    "path": "objects/oPlayerProjectileParent/oPlayerProjectileParent.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

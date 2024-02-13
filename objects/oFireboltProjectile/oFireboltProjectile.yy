@@ -4,19 +4,16 @@
   "name": "oFireboltProjectile",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Player Projectiles",
-    "path": "folders/Objects/Player Projectiles.yy",
+    "name": "Projectiles",
+    "path": "folders/Objects/Projectiles.yy",
   },
   "parentObjectId": {
-    "name": "oPlayerOneHitProjectile",
-    "path": "objects/oPlayerOneHitProjectile/oPlayerOneHitProjectile.yy",
+    "name": "oLinearProjectile",
+    "path": "objects/oLinearProjectile/oLinearProjectile.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

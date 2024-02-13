@@ -11,7 +11,7 @@ idle_wait_time = 25
 idle_move_time = 30
 dash_windup_time = 15
 active_dash_time = 45
-stamina = 1.75
+stamina = 0.5
 max_stamina = 1.75
 
 state = slime_idle_wait
