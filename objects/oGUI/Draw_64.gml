@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-#macro MINIMAP_OFFSET_X 120
-#macro MINIMAP_OFFSET_Y 40
+#macro MINIMAP_OFFSET 40
+#macro MINIMAP_ELEMENT_SIZE 15
+//#macro MINIMAP_ELEMENT_SCALING (MINIMAP_ELEMENT_SIZE/sprite_get_width(sMinimapHome))
+#macro MINIMAP_SIZE 140
 if (global.game_paused) exit
 
 gui_center = display_get_gui_width()/2
@@ -16,8 +18,7 @@ with (global.game.player){
 }
 
 draw_text(gui_center - 350,20,"Health:")
-
-//bound_minimap()
+draw_bounded_minimap()
 
 draw_sprite(sAttacks,3,attack_position,gui_bottom)
 draw_sprite(sSpecials,3,special_position,gui_bottom)
