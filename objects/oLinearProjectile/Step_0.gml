@@ -15,7 +15,7 @@ var _xspd = lengthdir_x(spd, dir);
 var _yspd = lengthdir_y(spd, dir);
 
 //collision 
-//if place_meeting(x,y,oCollide){instance_destroy(self)}
+if place_meeting(x,y,oCollide){instance_destroy(self)}
 
 x += _xspd;
 y += _yspd;
