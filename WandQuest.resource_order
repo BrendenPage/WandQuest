@@ -45,7 +45,6 @@
     {"name":"sFlameBurst","order":2,"path":"sprites/sFlameBurst/sFlameBurst.yy",},
     {"name":"gun_states","order":11,"path":"scripts/gun_states/gun_states.yy",},
     {"name":"oWarp","order":1,"path":"objects/oWarp/oWarp.yy",},
-    {"name":"sUiMapSouth","order":5,"path":"sprites/sUiMapSouth/sUiMapSouth.yy",},
     {"name":"oPlayerOneHitProjectile","order":3,"path":"objects/oPlayerOneHitProjectile/oPlayerOneHitProjectile.yy",},
     {"name":"oPlayerLastingProjectile","order":4,"path":"objects/oPlayerLastingProjectile/oPlayerLastingProjectile.yy",},
     {"name":"macros","order":4,"path":"scripts/macros/macros.yy",},
