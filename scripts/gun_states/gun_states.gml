@@ -55,7 +55,7 @@ function gun_idle(){
 		}
 		_dir_to_player += random_range(-5,5)
 		gun_shoot(_dir_to_player)
-		shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN
+		shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN + irandom_range(-10,10)
 	}
 	
 }

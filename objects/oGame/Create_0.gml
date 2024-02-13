@@ -20,8 +20,8 @@
 #macro ENEMY_SPAWN_NEAR_PLAYER_TILE_THRESHOLD 4
 
 // Camera macros
-#macro VIEWPORT_WIDTH 960
-#macro VIEWPORT_HEIGHT 540
+#macro VIEWPORT_WIDTH 720
+#macro VIEWPORT_HEIGHT 405
 // Tile size
 #macro TS 36
 
