@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+instance_destroy(hurtbox);
 
-event_inherited();
 
-script_execute(state)
+
+
 

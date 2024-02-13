@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-event_inherited();
+x = owner.x + x_offset
+y = owner.y + y_offset
 
-script_execute(state)
+
+
 

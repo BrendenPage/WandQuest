@@ -1,10 +1,13 @@
-dir = 0;
+event_inherited();
+
+hitbox = hitbox_create(64, 20, 0, 0, false);
+	
 spd = 10;
 xspd = 0;
 yspd = 0;
-damage = 10;
+damage = 1;
 
 // clean up
 max_dist = 1300;
-destroy = false;
+
 

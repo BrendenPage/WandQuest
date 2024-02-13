@@ -11,10 +11,13 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectiles",
-    "path": "folders/Objects/Player/Projectiles.yy",
+    "name": "Player Projectiles",
+    "path": "folders/Objects/Player Projectiles.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oPlayerProjectileParent",
+    "path": "objects/oPlayerProjectileParent/oPlayerProjectileParent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -34,6 +37,9 @@
     "name": "sFireboltProjectile",
     "path": "sprites/sFireboltProjectile/sFireboltProjectile.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sFireboltProjectile",
+    "path": "sprites/sFireboltProjectile/sFireboltProjectile.yy",
+  },
   "visible": true,
 }

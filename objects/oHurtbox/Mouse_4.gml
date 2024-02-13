@@ -1,4 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (global.game_paused) exit
-deal_damage(owner, 10)
+
+//if (global.game_paused) exit
+//deal_damage(owner, 10)
