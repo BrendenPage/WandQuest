@@ -3,15 +3,23 @@ xspd = lengthdir_x(spd, dir);
 yspd = lengthdir_y(spd, dir);
 
 //collision 
-if place_meeting(x,y,oCollide){ destroy = true;}
+if place_meeting(x,y,oCollide){instance_destroy(self)}
 
 x += xspd;
 y += yspd;
 
 //clean up
-//destory
+//destroy
 
-if place_meeting(x,y,oHurtbox){ destroy = true;}
+var ref = self
+
+with (hitbox) {
+	with(oHurtbox){
+		if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
+			instance_destroy(ref);
+		}
+	}
+}
 
 
 
