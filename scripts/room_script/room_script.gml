@@ -68,6 +68,9 @@ function open_south_door() {
 // warp points
 
 function set_warp_points() {
+	while(instance_number(oWarp)) {
+		instance_destroy(instance_find(oWarp, 0))
+	}
 	if (instance_number(oEnemyParent) == 0) {
 		// All enemies have been defeated
 		// Populate warp points
@@ -111,4 +114,22 @@ function enemy_spawn_rate(_i, _j) {
 		return 0
 	}
 	return BASE_SPAWN_RATE*global.game.wing_spawn_rate_modifier[global.map_gen.map[_i,_j]-1]
+}
+
+function choose_enemy() {
+	with (global.game) {
+		var _seed = random(1)
+		show_debug_message("seed: " + string(_seed))
+		var _index = 0
+		for (var _i = 0; _i < array_length(enemy_spawn_rates); _i++) {
+			if (_seed < enemy_spawn_rates[_i]) {
+				_index = _i
+			} else {
+				_seed -= enemy_spawn_rates[_i]
+				show_debug_message("updated seed: " + string(_seed))
+			}
+		}
+		return enemy_list[_index]
+	}
+	
 }
