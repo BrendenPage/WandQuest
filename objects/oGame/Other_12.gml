@@ -37,7 +37,8 @@ for (var _i = 0; _i < global.map_gen.map_size; _i++) {
 		}
 	}
 }
-minimap_width = 3
-minimap_height = 3
+
+visible_width = 3
+visible_height = 3
 minimap_seed_x = global.map_gen.map_size/2-1
 minimap_seed_y = global.map_gen.map_size/2-1

@@ -20,4 +20,7 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 	}
 	ds_map_add(this_run_seen_room_set, room, true)
 }
+
+update_bounded_minimap()
+
 event_user(1)

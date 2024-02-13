@@ -33,12 +33,8 @@ for (var _i = 0; _i < map_size; _i++) {
 
 show_debug_message(string(room_map))
 // Minimap?
-sprite_map = ds_grid_create(map_size, map_size)
 length_max = 4
 length_min = length_max/1.5
 done = false
 // Begin map generation
 event_user(1)
-
-
-map_sprites = [sUiMapNothing, sUiMapWest, sUiMapNorth, sUiMapEast, sUiMapSouth, sUiMapHome]
