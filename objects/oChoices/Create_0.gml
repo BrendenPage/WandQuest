@@ -25,7 +25,10 @@ for(i = 0; i<3; i++) {
 	choices[i].x_offset = 200 * i - 200
 	
 	// TODO: Set the choice explanation accordingly
+	if choice_ind == 3{
+		choices[i].choice_explanation = global.attack_spell_list.firebolt.description_text
+	}else{
+		choices[i].choice_explanation = global.attack_spell_list.flame_burst.description_text
+	}
 	
-	
-	// choices[i].choice_explanation = 
 }

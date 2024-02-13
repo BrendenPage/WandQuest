@@ -19,15 +19,16 @@ remaining_i_frames = 0
 max_health = 100
 remaining_health = max_health
 
-aim_dir = 0;
+aim_dir = 0
 
 // Attack Projectile info
 
 //Cooldown for attack
 //might need modification after deck rotation is implemented 
-attack_timer = 0;
-attack_spell = global.attack_spell_list.firebolt;
+attack_timer = 0
+attack_spell = global.attack_spell_list.flame_burst
 
-
+//length from the center of Player to the tip of the wand + spell offset
 wand_len = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
-	+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand));//length from the center of Player to the tip of the wand + 5
+	+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand))
+	+ attack_spell.offset_from_center;
