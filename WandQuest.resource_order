@@ -113,6 +113,7 @@
     {"name":"sArrow","order":8,"path":"sprites/sArrow/sArrow.yy",},
     {"name":"sShield","order":3,"path":"sprites/sShield/sShield.yy",},
     {"name":"oGunBullet","order":5,"path":"objects/oGunBullet/oGunBullet.yy",},
+    {"name":"oButtonDeck","order":6,"path":"objects/oButtonDeck/oButtonDeck.yy",},
     {"name":"oMapGenerator","order":8,"path":"objects/oMapGenerator/oMapGenerator.yy",},
     {"name":"oPlayerSpecialDeck","order":2,"path":"objects/oPlayerSpecialDeck/oPlayerSpecialDeck.yy",},
     {"name":"slime_boss_states","order":3,"path":"scripts/slime_boss_states/slime_boss_states.yy",},

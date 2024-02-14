@@ -156,6 +156,7 @@
     {"id":{"name":"sShield","path":"sprites/sShield/sShield.yy",},},
     {"id":{"name":"oGunBullet","path":"objects/oGunBullet/oGunBullet.yy",},},
     {"id":{"name":"oHurtbox","path":"objects/oHurtbox/oHurtbox.yy",},},
+    {"id":{"name":"oButtonDeck","path":"objects/oButtonDeck/oButtonDeck.yy",},},
     {"id":{"name":"oMapGenerator","path":"objects/oMapGenerator/oMapGenerator.yy",},},
     {"id":{"name":"oPlayerSpecialDeck","path":"objects/oPlayerSpecialDeck/oPlayerSpecialDeck.yy",},},
     {"id":{"name":"slime_boss_states","path":"scripts/slime_boss_states/slime_boss_states.yy",},},
