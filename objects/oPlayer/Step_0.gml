@@ -14,6 +14,20 @@ if (remaining_health == 0) {
 	die()
 }
 
+var in_puddle = false
+with(oSlimePuddle) {
+	if (place_meeting(x,y,other)) {
+		in_puddle = true
+	}
+}
+
+if (in_puddle) {
+	speed_modifier = 0.5
+} else {
+	speed_modifier = 1
+}
+
+
 move_speed = SPEED*speed_modifier;
 var _key_left = keyboard_check(ord("A"))
 var _key_right = keyboard_check(ord("D"))

@@ -8,8 +8,8 @@
 /// @returns the hurtbox
 function hurtbox_create(_x_scl, _y_scl, _x_offset, _y_offset, _if_enemy){
 	var _hurtbox = instance_create_layer(x + _x_offset,y + _y_offset,"DamageBoxes",oHurtbox)
-	_hurtbox.image_xscale = _x_scl/2
-	_hurtbox.image_yscale = _y_scl/2
+	_hurtbox.image_xscale = _x_scl/2 * self.image_xscale
+	_hurtbox.image_yscale = _y_scl/2 * self.image_yscale
 	_hurtbox.x_offset = _x_offset
 	_hurtbox.y_offset = _y_offset
 	_hurtbox.if_enemy = _if_enemy
@@ -28,8 +28,8 @@ function hurtbox_create(_x_scl, _y_scl, _x_offset, _y_offset, _if_enemy){
 /// @returns the hitbox
 function hitbox_create(_x_scl, _y_scl, _x_offset, _y_offset, _if_enemy){
 	var _hitbox = instance_create_layer(x + _x_offset,y + _y_offset,"DamageBoxes",oHitbox)
-	_hitbox.image_xscale = _x_scl/2
-	_hitbox.image_yscale = _y_scl/2
+	_hitbox.image_xscale = _x_scl/2 * self.image_xscale
+	_hitbox.image_yscale = _y_scl/2 * self.image_yscale
 	_hitbox.x_offset = _x_offset
 	_hitbox.y_offset = _y_offset
 	_hitbox.if_enemy = _if_enemy

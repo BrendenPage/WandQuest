@@ -20,5 +20,5 @@ with (global.game.player){
 draw_text(gui_center - 350,20,"Health:")
 draw_bounded_minimap()
 
-draw_sprite(sAttacks,3,attack_position,gui_bottom)
-draw_sprite(sSpecials,3,special_position,gui_bottom)
+//draw_sprite(sAttacks,3,attack_position,gui_bottom)
+//draw_sprite(sSpecials,3,special_position,gui_bottom)

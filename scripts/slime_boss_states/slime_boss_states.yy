@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "slime_states",
+  "name": "slime_boss_states",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

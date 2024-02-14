@@ -13,7 +13,7 @@ wand = instance_create_layer(x + -25,y + -50,"Instances",oWand)
 hurtbox.persistent = true
 
 invincible = false
-i_frames = 20
+i_frames = 45
 remaining_i_frames = 0
 
 max_health = 100
@@ -28,7 +28,7 @@ aim_dir = 0
 attack_timer = 0
 
 //attack_spell = global.attack_spell_struct.firebolt
-attack_spell = global.game.attack_deck.deck[0]
+attack_spell = global.game.attack_deck.deck[1]
 show_debug_message(attack_spell.description_text)
 
 //length from the center of Player to the tip of the wand + spell offset

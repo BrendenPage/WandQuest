@@ -1,9 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oFlameBrustProjectile",
+  "name": "oSlimeBall",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -12,8 +13,8 @@
     "path": "folders/Objects/Projectiles.yy",
   },
   "parentObjectId": {
-    "name": "oLastingProjectile",
-    "path": "objects/oLastingProjectile/oLastingProjectile.yy",
+    "name": "oLinearProjectile",
+    "path": "objects/oLinearProjectile/oLinearProjectile.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sFlameBrustProjectile",
-    "path": "sprites/sFlameBrustProjectile/sFlameBrustProjectile.yy",
+    "name": "sSlimeBall",
+    "path": "sprites/sSlimeBall/sSlimeBall.yy",
   },
   "spriteMaskId": null,
   "visible": true,
