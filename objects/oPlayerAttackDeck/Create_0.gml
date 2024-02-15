@@ -12,7 +12,7 @@ deck = array_create(0);
 
 array_push(deck, global.attack_spell_struct.firebolt)
 array_push(deck, global.attack_spell_struct.firebolt)
-array_push(deck, global.attack_spell_struct.flame_burst)
+//array_push(deck, global.attack_spell_struct.flame_burst)
 
 
 
