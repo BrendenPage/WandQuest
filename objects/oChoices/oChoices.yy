@@ -31,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "sChoices",
-    "path": "sprites/sChoices/sChoices.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

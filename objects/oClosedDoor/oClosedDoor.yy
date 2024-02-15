@@ -1,10 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oAugmentChoices",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "oClosedDoor",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -12,8 +10,8 @@
     "path": "folders/Objects/Room.yy",
   },
   "parentObjectId": {
-    "name": "oChoices",
-    "path": "objects/oChoices/oChoices.yy",
+    "name": "oCollide",
+    "path": "objects/oCollide/oCollide.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -29,8 +27,11 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": false,
-  "spriteId": null,
+  "solid": true,
+  "spriteId": {
+    "name": "sWall",
+    "path": "sprites/sWall/sWall.yy",
+  },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
