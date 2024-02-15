@@ -12,6 +12,7 @@ for (var _i = 0; _i < 3; _i++) {
 		sprite = sSpecials
 		choices[_i].choice_type = CHOICE_TYPE.SPECIAL
 	}
+	
 	choice_ind = irandom_range(2,sprite_get_number(sprite) - 1)
 	
 	choices[_i].choice_ind = choice_ind
