@@ -1,7 +1,7 @@
 
 cur_deck_index = 0
 max_deck_size = 8
-cur_deck_size = 3
+cur_deck_size = 2
 cooldown_modifier = 1
 shuffle_cooldown = 90
 
@@ -12,7 +12,7 @@ deck = array_create(0);
 
 array_push(deck, global.attack_spell_struct.firebolt)
 array_push(deck, global.attack_spell_struct.firebolt)
-array_push(deck, global.attack_spell_struct.flame_burst)
+//array_push(deck, global.attack_spell_struct.flame_burst)
 
 
 
