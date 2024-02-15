@@ -13,7 +13,7 @@ show_debug_message("Deck created")
 // might change to different cards for testing purposes
 
 array_push(deck, global.attack_spell_struct.firebolt)
-array_push(deck, global.attack_spell_struct.flame_burst)
+array_push(deck, global.attack_spell_struct.firebolt)
 
 
 
