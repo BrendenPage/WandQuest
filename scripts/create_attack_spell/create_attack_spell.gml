@@ -27,7 +27,9 @@ function create_attack_spell(
 	_damage = 10,
 	_description_text = "",
 	_offset_from_center = 0) constructor{
-	
+		
+	spell_name = _spell_name
+	spell_index = _spell_index
 	sprite = _sprite;
 	projectile_obj = _projectile_obj;
 	cooldown = _cooldown;
