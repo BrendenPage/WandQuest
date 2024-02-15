@@ -84,7 +84,7 @@
     {"id":{"name":"oSlimeBoss","path":"objects/oSlimeBoss/oSlimeBoss.yy",},},
     {"id":{"name":"oLastingProjectile","path":"objects/oLastingProjectile/oLastingProjectile.yy",},},
     {"id":{"name":"sAugments","path":"sprites/sAugments/sAugments.yy",},},
-    {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
+    {"id":{"name":"tile_macros","path":"scripts/tile_macros/tile_macros.yy",},},
     {"id":{"name":"oFlameBrustProjectile","path":"objects/oFlameBrustProjectile/oFlameBrustProjectile.yy",},},
     {"id":{"name":"oDeckMenu","path":"objects/oDeckMenu/oDeckMenu.yy",},},
     {"id":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},

@@ -3,5 +3,6 @@
 
 instance_destroy(player)
 instance_destroy(gui)
+ds_map_destroy(enemy_scale)
 
 show_debug_message("Destroyed")

@@ -53,7 +53,7 @@
     {"name":"oLinearProjectile","order":3,"path":"objects/oLinearProjectile/oLinearProjectile.yy",},
     {"name":"oSlimeBoss","order":5,"path":"objects/oSlimeBoss/oSlimeBoss.yy",},
     {"name":"oLastingProjectile","order":4,"path":"objects/oLastingProjectile/oLastingProjectile.yy",},
-    {"name":"macros","order":4,"path":"scripts/macros/macros.yy",},
+    {"name":"tile_macros","order":4,"path":"scripts/tile_macros/tile_macros.yy",},
     {"name":"oFlameBrustProjectile","order":2,"path":"objects/oFlameBrustProjectile/oFlameBrustProjectile.yy",},
     {"name":"oDeckMenu","order":7,"path":"objects/oDeckMenu/oDeckMenu.yy",},
     {"name":"Room3","order":2,"path":"rooms/Room3/Room3.yy",},

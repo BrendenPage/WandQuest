@@ -6,3 +6,9 @@ function move_towards_player(){
 		path_start(path, speed_, path_action_stop, false)
 	}
 }
+
+function scale_enemy(_enemy) {
+	var _wing_scale = 1
+	_enemy.image_xscale = ds_map_find_value(enemy_scale, _enemy.object_index)*_wing_scale
+	_enemy.image_yscale = ds_map_find_value(enemy_scale, _enemy.object_index)*_wing_scale
+}
