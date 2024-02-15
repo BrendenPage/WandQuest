@@ -12,3 +12,4 @@ state = gun_idle
 move_dir = 0
 speed_ = 1
 damage = 3
+projectile_enemy = true

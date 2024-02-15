@@ -112,6 +112,7 @@
     {"name":"bound_minimap","order":10,"path":"scripts/bound_minimap/bound_minimap.yy",},
     {"name":"deal_damage","order":3,"path":"scripts/deal_damage/deal_damage.yy",},
     {"name":"die","order":6,"path":"scripts/die/die.yy",},
+    {"name":"enemy","order":14,"path":"scripts/enemy/enemy.yy",},
     {"name":"sMinimapWest","order":14,"path":"sprites/sMinimapWest/sMinimapWest.yy",},
     {"name":"oFreezeTime","order":1,"path":"objects/oFreezeTime/oFreezeTime.yy",},
     {"name":"Death","order":5,"path":"rooms/Death/Death.yy",},

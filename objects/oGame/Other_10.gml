@@ -34,7 +34,7 @@ for (var _y = 0; _y < _h; _y++) {
 		var _t1 = tilemap_get(_map, _x, _y)
 		if (_t1 >= 1 and _t1 <= 47) {
 			// The tile we are looking at is a wall
-			instance_create_layer(_x * TS, _y * TS, "Collisions", oCollide)
+			instance_create_layer(_x * TS, _y * TS, "Collisions", oWall)
 		}
 	}
 }
@@ -42,14 +42,14 @@ for (var _y = 0; _y < _h; _y++) {
 
 
 //add solid instances to grid
-mp_grid_add_instances(global.mp_grid, oCollide, true);
+mp_grid_add_instances(global.mp_grid, oWall, true);
 //loop through grid positions again.  Get solid id and if a solid is to the right, absorb it.
 for (var yy = 0; yy < _h; ++yy) {
     for (var xx = 0; xx < _w; ++xx) {
 	    var _t1 = tilemap_get(_map, xx, yy);
 		if _t1 >= 1 and _t1 <= 47 {
 			//get solid id at this position(using a smaller tile size, as there is overlap)
-			var _inst = collision_point(xx * TS, yy * TS, oCollide, 0, 1);
+			var _inst = collision_point(xx * TS, yy * TS, oWall, 0, 1);
 			//if no solid found, move to the next grid position
 			if _inst == noone continue;
 			
@@ -57,7 +57,7 @@ for (var yy = 0; yy < _h; ++yy) {
 			with(_inst) {
 				do {
 					var _change = false;
-					var _inst_next = instance_place(x + 1, y, oCollide);
+					var _inst_next = instance_place(x + 1, y, oWall);
 					if _inst_next != noone {
 						image_xscale++;
 						instance_destroy(_inst_next);
@@ -66,7 +66,7 @@ for (var yy = 0; yy < _h; ++yy) {
 				} until _change == false;
 				
 				//merge with any solids above that are the same shape
-				var _inst_above = instance_place(x, y - 1, oCollide);
+				var _inst_above = instance_place(x, y - 1, oWall);
 				if _inst_above != noone and _inst_above.bbox_left == bbox_left and _inst_above.bbox_right == bbox_right {
 					y = _inst_above.y;
 					image_yscale += _inst_above.image_yscale;
