@@ -76,7 +76,7 @@ if _key_attack && (attack_timer <= 0) && (shuffle_timer <= 0){
 	//create the projectile
 	var _x_offset = lengthdir_x(dist_from_center_to_wand_tip , aim_dir);
 	var _y_offset = lengthdir_y(dist_from_center_to_wand_tip , aim_dir);
-	// TODO: replace fire
+
 	var _projectile_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, attack_spell.projectile_obj);
 
 	// change the bullet's direction
