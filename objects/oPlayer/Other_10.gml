@@ -28,8 +28,9 @@ attack_deck_obj = global.game.attack_deck
 attack_deck_obj.persistent = true
 attack_spell = attack_deck_obj.deck[0]
 
-//Cooldown for attack
+//Cooldown for attack and shuffle
 attack_timer = attack_spell.cooldown
+shuffle_timer = 0
 
 //length from the center of Player to the tip of the wand + spell offset
 dist_from_center_to_wand_tip = 0

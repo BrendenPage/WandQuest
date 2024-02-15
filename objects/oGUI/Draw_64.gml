@@ -20,7 +20,10 @@ with (global.game.player){
 draw_text(gui_center - 350,20,"Health:")
 draw_bounded_minimap()
 
-
 var _card_index = oPlayer.attack_deck_obj.deck[oPlayer.attack_deck_obj.cur_deck_index].spell_index
+if(oPlayer.shuffle_timer != 0){//shuffling
+	_card_index = 1 //shuffle sprite
+}
+
 draw_sprite(sAttacks,_card_index,attack_position,gui_bottom)
 //draw_sprite(sSpecials,3,special_position,gui_bottom)
