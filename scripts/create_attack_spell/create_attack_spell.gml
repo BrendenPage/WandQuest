@@ -3,6 +3,8 @@
  *
  * @param {string} _spell_name - The name of the spell
  *								 Defaults to "Default Firebolt" if not specified.
+ * @param {int} _spell_index - The index of the attack spell card. The index is align with the order of sAttacks
+ *							   Defaults to -1 if not specified.
  * @param {sprite} _sprite - The sprite used to visually represent the spell. 
  *                           Defaults to sFireboltProjectile if not specified.
  * @param {object} _projectile_obj - The projectile object that the spell casts. 
@@ -18,6 +20,7 @@
  */
 function create_attack_spell(
 	_spell_name = "Default Firebolt",
+	_spell_index = -1,
 	_sprite = sFireboltProjectile,
 	_projectile_obj = oFireboltProjectile,
 	_cooldown = 15,
@@ -38,6 +41,7 @@ global.attack_spell_struct ={
 
 	firebolt: new create_attack_spell(
 		"Firebolt",
+		3,
 		sFireboltProjectile,
 		oFireboltProjectile,
 		30,
@@ -45,8 +49,10 @@ global.attack_spell_struct ={
 		"Firebolt. Long Range. Single Attack. Low Damage. Low Cooldown. ",
 		20
 	),
+	
 	flame_burst: new create_attack_spell(
 		"Flame Burst",
+		4,
 		sFlameBrustProjectile,
 		oFlameBrustProjectile,
 		20,
