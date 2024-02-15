@@ -22,7 +22,7 @@ for (var _i = 0; _i < 3; _i++) {
 	
 
 	if (if_attack == true){
-		// TODO: remove placeholder after all card are implemented
+		// TODO: remove placeholder after all cards are implemented
 		if choice_ind != 3 && choice_ind != 4{
 			choices[_i].choice_explanation = "Description Placeholder. "
 		}else{
