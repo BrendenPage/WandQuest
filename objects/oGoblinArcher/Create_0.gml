@@ -6,7 +6,7 @@
 // Inherit the parent event
 event_inherited();
 
-damage = 15
+damage = 3
 speed_ = 0.5
 
 move_dir = irandom(360)
