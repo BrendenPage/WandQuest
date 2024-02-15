@@ -43,4 +43,4 @@ minimap_seed_y = 0
 enemy_list = [oSlime, oGun, oRedGun]
 enemy_spawn_rates = [.8, .15, .05]
 wing_spawn_rate_modifier = [1, 1, 1, 1]
-
+attack_deck = undefined
