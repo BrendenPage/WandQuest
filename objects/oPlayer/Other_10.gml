@@ -24,12 +24,12 @@ aim_dir = 0
 
 // Attack Projectile info
 
-//Cooldown for attack
-attack_timer = 0
-
 attack_deck_obj = global.game.attack_deck
 attack_deck_obj.persistent = true
 attack_spell = attack_deck_obj.deck[0]
+
+//Cooldown for attack
+attack_timer = attack_spell.cooldown
 
 //length from the center of Player to the tip of the wand + spell offset
 dist_from_center_to_wand_tip = 0
