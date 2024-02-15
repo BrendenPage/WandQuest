@@ -20,10 +20,17 @@ for (var _i = 0; _i < 3; _i++) {
 	choices[_i].image_index = choice_ind
 	choices[_i].x_offset = 200 * _i - 200
 	
-	// TODO: Set the choice explanation accordingly
-	if choice_ind == 3{
-		choices[_i].choice_explanation = global.attack_spell_struct.firebolt.description_text
+
+	if (if_attack == true){
+		// TODO: remove placeholder after all card are implemented
+		if choice_ind != 3 && choice_ind != 4{
+			choices[_i].choice_explanation = "Description Placeholder. "
+		}else{
+			var temp_spell = ds_map_find_value(global.attack_spell_map,choice_ind)
+			choices[_i].choice_explanation = temp_spell.description_text
+		}
 	}else{
-		choices[_i].choice_explanation = global.attack_spell_struct.flame_burst.description_text
+		choices[_i].choice_explanation = "Description Placeholder. "
 	}
+
 }

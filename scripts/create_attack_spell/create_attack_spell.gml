@@ -36,7 +36,24 @@ function create_attack_spell(
 	offset_from_center = _offset_from_center;
 }
 
-
+/**
+ * Global Attack Spell Struct:
+ * 
+ * This object serves as a collection of attack spells available in the game. 
+ * Each spell is represented by a key-value pair, where the key is the name of the spell
+ * and the value is an instance of the create_attack_spell constructor function.
+ * 
+ * The structure of each spell instance includes various properties such as the spell's name,
+ * index, sprite, projectile object, cooldown, damage, description text, and offset from center.
+ * 
+ * Usage:
+ * You can access individual spells by their keys, for example:
+ * 
+ * global.attack_spell_struct.firebolt
+ * global.attack_spell_struct.flame_burst
+ * 
+ * These instances provide access to the properties and behavior of each spell in the game.
+ */
 global.attack_spell_struct ={
 
 	firebolt: new create_attack_spell(
@@ -59,4 +76,31 @@ global.attack_spell_struct ={
 		50,
 		"Flame Burst. Short Range, AOE Attack. High Damage. Medium Cooldown.",
 		40
-	)}
+	)
+}
+
+/**
+ * Global Attack Spell Map:
+ * 
+ * This data structure stores instances of attack spells, mapped to their respective spell indexes.
+ * 
+ * Usage:
+ * - Use ds_map_add to add attack spell instances to the map, with the spell's index as the key.
+ * - To access an attack spell instance by its index, use ds_map_find_value with the desired index.
+ * 
+ * Example:
+ * ```
+ * // Add attack spell instances to the map
+ * ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt);
+ * ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst);
+ * 
+ * // Accessing an attack spell instance by index
+ * var spellIndex = 3;
+ * var spellInstance = ds_map_find_value(global.attack_spell_map, spellIndex);
+ * ```
+ */
+global.attack_spell_map = ds_map_create();
+
+ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt);
+ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst);
+

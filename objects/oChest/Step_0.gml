@@ -11,7 +11,7 @@ if (if_card) {
 
 
 if (place_meeting(x,y,player)) {
-	instance_create_depth(0,0,-1000,choices_type)
+	instance_create_depth(0,0,-1000,oCardChoices)
 	global.game_paused = true
 	instance_destroy(self)
 }
