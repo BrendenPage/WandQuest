@@ -181,6 +181,7 @@
     {"id":{"name":"oShield","path":"objects/oShield/oShield.yy",},},
     {"id":{"name":"GMRoomPack","path":"scripts/GMRoomPack/GMRoomPack.yy",},},
     {"id":{"name":"DSpecial","path":"rooms/DSpecial/DSpecial.yy",},},
+    {"id":{"name":"sChoices","path":"sprites/sChoices/sChoices.yy",},},
     {"id":{"name":"D4","path":"rooms/D4/D4.yy",},},
     {"id":{"name":"sMinimapUnknownSpecial","path":"sprites/sMinimapUnknownSpecial/sMinimapUnknownSpecial.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},

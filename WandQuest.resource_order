@@ -133,6 +133,7 @@
     {"name":"sChest","order":7,"path":"sprites/sChest/sChest.yy",},
     {"name":"oShield","order":3,"path":"objects/oShield/oShield.yy",},
     {"name":"DSpecial","order":12,"path":"rooms/DSpecial/DSpecial.yy",},
+    {"name":"sChoices","order":8,"path":"sprites/sChoices/sChoices.yy",},
     {"name":"D4","order":9,"path":"rooms/D4/D4.yy",},
     {"name":"sMinimapUnknownSpecial","order":10,"path":"sprites/sMinimapUnknownSpecial/sMinimapUnknownSpecial.yy",},
     {"name":"sPlayerBody","order":1,"path":"sprites/sPlayerBody/sPlayerBody.yy",},
