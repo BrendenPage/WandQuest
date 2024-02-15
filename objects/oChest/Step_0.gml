@@ -4,7 +4,7 @@
 player = global.game.player
 
 if (place_meeting(x,y,player)) {
-	instance_create_depth(0,0,-1000,oChoices)
+	instance_create_depth(0,0,-1000,oAugmentChoices)
 	global.game_paused = true
 	instance_destroy(self)
 }

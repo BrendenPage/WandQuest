@@ -1,22 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oButtonDeck",
+  "name": "oAugmentChoices",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
-  "overriddenProperties": [
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oButtonParent","path":"objects/oButtonParent/oButtonParent.yy",},"propertyId":{"name":"button_text","path":"objects/oButtonParent/oButtonParent.yy",},"value":"View Deck",},
-  ],
+  "overriddenProperties": [],
   "parent": {
-    "name": "Menu",
-    "path": "folders/Objects/Menu.yy",
+    "name": "Room",
+    "path": "folders/Objects/Room.yy",
   },
   "parentObjectId": {
-    "name": "oButtonParent",
-    "path": "objects/oButtonParent/oButtonParent.yy",
+    "name": "oChoices",
+    "path": "objects/oChoices/oChoices.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -34,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sButton",
-    "path": "sprites/sButton/sButton.yy",
+    "name": "sChoices",
+    "path": "sprites/sChoices/sChoices.yy",
   },
   "spriteMaskId": null,
   "visible": true,
