@@ -27,6 +27,8 @@
 #macro SOUTH_DOOR_OFFSET (3 * DOOR_SPRITE_NUM)
 #macro OPEN_DOOR_OFFSET 2
 
+#macro PROJECTILE_AGGRO 300
+
 // Camera macros
 #macro VIEWPORT_SCALE 1
 #macro VIEWPORT_WIDTH 960
@@ -50,3 +52,4 @@ enemy_list = [oSlime, oGun, oRedGun]
 enemy_spawn_rates = [.8, .15, .05]
 wing_spawn_rate_modifier = [1, 1, 1, 1]
 attack_deck = undefined
+global.paths_list = []

@@ -59,7 +59,12 @@ function red_gun_idle(){
 	}
 	
 	// move in the direction
-	mag_dir_move_and_collide(speed_,move_dir)
+	if (_dist > attack_distance or collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
+		move_towards_player()
+	} else {
+		path_end()
+		mag_dir_move_and_collide(speed_,move_dir)
+	}
 	
 	
 	if (state_ctr == 0) {

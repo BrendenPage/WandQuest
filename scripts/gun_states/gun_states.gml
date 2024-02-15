@@ -38,8 +38,15 @@ function gun_idle(){
 		image_angle = original_angle
 	}
 	
+	var _dist = distance_to_object(global.game.player)
 	// move in the direction
-	mag_dir_move_and_collide(speed_,move_dir)
+	if (_dist > attack_distance or collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
+		move_towards_player()
+	} else {
+		path_end()
+		mag_dir_move_and_collide(speed_,move_dir)
+	}
+	
 	
 	
 	if (state_ctr == 0) {
@@ -55,7 +62,9 @@ function gun_idle(){
 			_dir_to_player = point_direction(other.x,other.y,x,y)
 		}
 		_dir_to_player += random_range(-5,5)
-		gun_shoot(_dir_to_player)
-		shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN + irandom_range(-10,10)
+		if (!collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
+			gun_shoot(_dir_to_player)
+			shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN + irandom_range(-10,10)
+		}
 	}
 }

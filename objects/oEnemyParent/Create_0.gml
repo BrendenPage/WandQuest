@@ -12,5 +12,6 @@ attacking = false
 // distance to start
 alert_distance = 160
 path = path_add()
+array_push(global.paths_list, path)
 attack_distance = 0
 projectile_enemy = false

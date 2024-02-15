@@ -5,4 +5,4 @@
 
 // Inherit the parent event
 event_inherited();
-
+move_towards_player()

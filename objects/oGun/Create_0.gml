@@ -10,6 +10,7 @@ shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN
 
 state = gun_idle
 move_dir = 0
-speed_ = 1
+speed_ = 2
 damage = 3
 projectile_enemy = true
+attack_distance = PROJECTILE_AGGRO
