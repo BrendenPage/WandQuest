@@ -32,13 +32,9 @@ if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
 		var _t1 = tilemap_get(_map, _x, _y)
-		var _t2 = tilemap_get(_door_map, _x, _y)
 		if (_t1 >= 1 and _t1 <= 47) {
 			// The tile we are looking at is a wall
 			instance_create_layer(_x * TS, _y * TS, "Collisions", oCollide)
-		}
-		if (is_tile_closed_door(_t2)) {
-			instance_create_layer(_x * TS, _y * TS, "Instances", oClosedDoor)
 		}
 	}
 }
@@ -85,5 +81,14 @@ for (var yy = 0; yy < _h; ++yy) {
 		}
 	}
 }
+for (var _y = 0; _y < _h; _y++) {
+	for (var _x = 0; _x < _w; _x++) {
+		var _t2 = tilemap_get(_door_map, _x, _y)
+		if (is_tile_closed_door(_t2)) {
+			instance_create_layer(_x * TS, _y * TS, "Instances", oClosedDoor)
+		}
+	}
+}
+
 
 ds_map_add(global.seen_room_set, room, true)
