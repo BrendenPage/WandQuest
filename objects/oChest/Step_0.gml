@@ -3,8 +3,15 @@
 
 player = global.game.player
 
+if (if_card) {
+	choices_type = oCardChoices
+} else {
+	choices_type = oAugmentChoices
+}
+
+
 if (place_meeting(x,y,player)) {
-	instance_create_depth(0,0,-1000,oChoices)
+	instance_create_depth(0,0,-1000,oCardChoices)
 	global.game_paused = true
 	instance_destroy(self)
 }

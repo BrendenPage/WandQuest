@@ -50,3 +50,10 @@ visible_width = 3
 visible_height = 3
 minimap_seed_x = global.map_gen.map_size/2-1
 minimap_seed_y = global.map_gen.map_size/2-1
+
+special_types = ds_list_create()
+ds_list_add(special_types,0)
+ds_list_add(special_types,1)
+ds_list_add(special_types,irandom(1))
+ds_list_add(special_types,irandom(1))
+ds_list_shuffle(special_types)
