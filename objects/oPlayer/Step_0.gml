@@ -56,10 +56,14 @@ if (remaining_i_frames == 0) {
 //player aiming
 aim_dir = point_direction(x,y,mouse_x,mouse_y);
 
-attack_timer = max(attack_timer - 1, 0)
+shuffle_timer = max(shuffle_timer - 1, 0)
+
+if(shuffle_timer == 0){
+	attack_timer = max(attack_timer - 1, 0)
+}
 
 // Shoot attack projectile 
-if _key_attack && (attack_timer <= 0){
+if _key_attack && (attack_timer <= 0) && (shuffle_timer <= 0){
 		
 	//reset the timer
 	attack_timer = attack_spell.cooldown;
@@ -86,6 +90,7 @@ if _key_attack && (attack_timer <= 0){
 	}else{
 		attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
 		attack_deck_obj.cur_deck_index = 0
+		shuffle_timer = attack_deck_obj.shuffle_cooldown
 	}
 	
 	attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
