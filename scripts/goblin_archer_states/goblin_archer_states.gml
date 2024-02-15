@@ -33,7 +33,7 @@ function goblin_archer_idle(){
 		state = goblin_archer_idle
 	}
 	
-	if (shot_ctr == 0) {
+	if (shot_ctr == 0 and !collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true) and _dist < attack_distance + ATTACK_RANGE_BUFFER) {
 		with (oPlayer) {
 			var _dir_to_player = point_direction(other.x,other.y,x,y)
 		}

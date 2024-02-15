@@ -28,6 +28,7 @@
 #macro OPEN_DOOR_OFFSET 2
 
 #macro PROJECTILE_AGGRO 300
+#macro ATTACK_RANGE_BUFFER 80
 
 // Camera macros
 #macro VIEWPORT_SCALE 1

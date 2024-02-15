@@ -58,6 +58,7 @@ function red_gun_idle(){
 		image_angle = original_angle
 	}
 	
+	var _dist = distance_to_object(global.game.player)
 	// move in the direction
 	if (_dist > attack_distance or collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
 		move_towards_player()

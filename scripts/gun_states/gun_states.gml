@@ -56,15 +56,13 @@ function gun_idle(){
 	}
 	
 	shot_ctr = max(0,shot_ctr - 1)
-	if (shot_ctr == 0) {
+	if (shot_ctr == 0 and !collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true) and _dist < attack_distance + ATTACK_RANGE_BUFFER) {
 		var _dir_to_player = 0
 		with (oPlayer) {
 			_dir_to_player = point_direction(other.x,other.y,x,y)
 		}
 		_dir_to_player += random_range(-5,5)
-		if (!collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
-			gun_shoot(_dir_to_player)
-			shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN + irandom_range(-10,10)
-		}
+		gun_shoot(_dir_to_player)
+		shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN + irandom_range(-10,10)
 	}
 }
