@@ -53,7 +53,7 @@ function open_south_door() {
 }
 
 // Check for enemies in current room instance, if none exist, insert correct
-// warp points
+// warp points, check for wing completion
 
 function set_warp_points() {
 	while(instance_number(oWarp)) {
@@ -159,19 +159,19 @@ function lock_door(_door) {
 	var _t2 = tilemap_get(_door_map, _door.x/TS, _door.y/TS)
 	_t2 = _t2 - 1 - (_t2+1) % 2
 	// Check if east of start room
-	if (global.game.current_room_x == 6 and (_t2 == WEST_DOOR_OFFSET)) {
+	if (global.game.current_room_x == 6 and (_t2 == WEST_DOOR_OFFSET) and !global.game.wing_clear[0]) {
 		_door.locked = true
 	}
 	// Check if West of start room
-	if (global.game.current_room_x == 4 and (_t2 == EAST_DOOR_OFFSET)) {
+	if (global.game.current_room_x == 4 and (_t2 == EAST_DOOR_OFFSET) and !global.game.wing_clear[2]) {
 		_door.locked = true
 	}
 	// Check if North of start room
-	if (global.game.current_room_y == 4 and (_t2 == SOUTH_DOOR_OFFSET)) {
+	if (global.game.current_room_y == 4 and (_t2 == SOUTH_DOOR_OFFSET) and !global.game.wing_clear[3]) {
 		_door.locked = true
 	}
 	// Check if South of start room
-	if (global.game.current_room_y == 6 and (_t2 == NORTH_DOOR_OFFSET)) {
+	if (global.game.current_room_y == 6 and (_t2 == NORTH_DOOR_OFFSET) and !global.game.wing_clear[1]) {
 		_door.locked = true
 	}
 }
