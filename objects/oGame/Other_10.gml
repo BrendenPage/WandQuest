@@ -87,7 +87,7 @@ for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
 		var _t2 = tilemap_get(_door_map, _x, _y)
 		if (is_tile_closed_door(_t2)) {
-			instance_create_layer(_x * TS, _y * TS, "Instances", oClosedDoor)
+			lock_door(instance_create_layer(_x * TS, _y * TS, "Instances", oClosedDoor))
 		}
 	}
 }

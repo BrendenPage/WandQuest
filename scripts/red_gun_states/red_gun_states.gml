@@ -54,7 +54,7 @@ function red_gun_idle(){
 	}
 	
 	// don't rotate if it'll move into a collision
-	if (place_meeting(x,y,oCollide)) {
+	if (place_meeting(x,y,[oWall, oPlayer])) {
 		image_angle = original_angle
 	}
 	

@@ -20,12 +20,17 @@ function slime_idle_wait(){
 // @description a state where the slime moves a short distance towards the player
 function slime_idle_move(){
 	var _dist = distance_to_object(global.game.player)
+	var _dir = point_direction(x,y,global.game.player.x,global.game.player.y)
 	if(_dist < dash_proximity and stamina >= 1 and collision_line(x, y, global.game.player.x, global.game.player.y, oWall, true, true)) {
 		state = slime_dash_windup
 		state_ctr = dash_windup_time
 	}
-	
-	move_towards_player()
+	if(_dist < TS) {
+		path_end()
+		mag_dir_move_and_collide_enemy(_speed, _dir)
+	} else {
+		move_towards_player()
+	}
 	
 	if(state_ctr == 0){
 		path_end()

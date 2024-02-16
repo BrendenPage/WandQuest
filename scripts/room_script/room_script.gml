@@ -153,3 +153,25 @@ function choose_enemy() {
 		return enemy_list[_index]
 	}
 }
+
+function lock_door(_door) {
+	var _door_map = layer_tilemap_get_id("tiles_door")
+	var _t2 = tilemap_get(_door_map, _door.x/TS, _door.y/TS)
+	_t2 = _t2 - 1 - (_t2+1) % 2
+	// Check if east of start room
+	if (global.game.current_room_x == 6 and (_t2 == WEST_DOOR_OFFSET)) {
+		_door.locked = true
+	}
+	// Check if West of start room
+	if (global.game.current_room_x == 4 and (_t2 == EAST_DOOR_OFFSET)) {
+		_door.locked = true
+	}
+	// Check if North of start room
+	if (global.game.current_room_y == 4 and (_t2 == SOUTH_DOOR_OFFSET)) {
+		_door.locked = true
+	}
+	// Check if South of start room
+	if (global.game.current_room_y == 6 and (_t2 == NORTH_DOOR_OFFSET)) {
+		_door.locked = true
+	}
+}
