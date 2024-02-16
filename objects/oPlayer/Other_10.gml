@@ -22,15 +22,30 @@ remaining_health = max_health
 
 aim_dir = 0
 
-// Attack Projectile info
-
+// Attack deck initialization
 attack_deck_obj = global.game.attack_deck
 attack_deck_obj.persistent = true
 attack_spell = attack_deck_obj.deck[0]
 
-//Cooldown for attack and shuffle
+// Special deck initialization
+special_deck_obj = global.game.special_deck
+special_deck_obj.persistent = true
+//special_spell = special_deck_obj.deck[0]
+
+//Cooldown for attack, special, and shuffle
 attack_timer = attack_spell.cooldown
-shuffle_timer = 0
+AT_shuffle_timer = 0
+special_timer = 120
+show_debug_message(string(special_timer))
+
+
+if (instance_exists(oShieldEffect)) {
+    show_debug_message(string(oShieldEffect.cooldown));
+} else {
+    show_debug_message("oShieldEffect does not exist.");
+}
+
+SP_shuffle_timer = 0
 
 //length from the center of Player to the tip of the wand + spell offset
 dist_from_center_to_wand_tip = 0

@@ -7,10 +7,16 @@ with(gui){
 	event_user(0)
 }
 
-//Under construction
+
 attack_deck = instance_create_layer(0,0,"Instances",oPlayerAttackDeck)
 with(attack_deck){
 	// set up the attack_deck
+	event_user(0)
+}
+
+special_deck = instance_create_layer(0,0,"Instances",oPlayerSpecialDeck)
+with(special_deck){
+	// set up the special_deck
 	event_user(0)
 }
 
