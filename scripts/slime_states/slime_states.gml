@@ -40,7 +40,7 @@ function slime_dash_windup(){
 	path_end()
 	// opposite direction
 	var _dir = (180 + point_direction(x,y,global.game.player.x,global.game.player.y)) % 360
-	mag_dir_move_and_collide(speed_,_dir)
+	mag_dir_move_and_collide_enemy(speed_,_dir)
 	if(state_ctr == 0) {
 		stamina -= 1
 		state = slime_dashing
@@ -52,7 +52,7 @@ function slime_dash_windup(){
 // @description a state where the slime is dashing towards the player
 function slime_dashing(){
 	path_end()
-	mag_dir_move_and_collide(speed_ * 4,dash_dir)
+	mag_dir_move_and_collide_enemy(speed_ * 4,dash_dir)
 	if (state_ctr == 0) {
 		state_ctr = idle_wait_time
 		state = slime_idle_wait

@@ -79,6 +79,7 @@
     {"name":"Sprite47","order":2,"path":"sprites/Sprite47/Sprite47.yy",},
     {"name":"sMapBackground","order":1,"path":"sprites/sMapBackground/sMapBackground.yy",},
     {"name":"sMinimapYAH","order":16,"path":"sprites/sMinimapYAH/sMinimapYAH.yy",},
+    {"name":"sControls","order":9,"path":"sprites/sControls/sControls.yy",},
     {"name":"oWand","order":3,"path":"objects/oWand/oWand.yy",},
     {"name":"sFreezeTime","order":1,"path":"sprites/sFreezeTime/sFreezeTime.yy",},
     {"name":"oRedGun","order":4,"path":"objects/oRedGun/oRedGun.yy",},

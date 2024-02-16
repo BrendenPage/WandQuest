@@ -81,6 +81,8 @@ for (var yy = 0; yy < _h; ++yy) {
 		}
 	}
 }
+
+// Add closed doors, doors will be opened if enemies are not populated
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
 		var _t2 = tilemap_get(_door_map, _x, _y)

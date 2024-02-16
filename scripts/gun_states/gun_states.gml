@@ -44,7 +44,7 @@ function gun_idle(){
 		move_towards_player()
 	} else {
 		path_end()
-		mag_dir_move_and_collide(speed_,move_dir)
+		mag_dir_move_and_collide_enemy(speed_,move_dir)
 	}
 	
 	

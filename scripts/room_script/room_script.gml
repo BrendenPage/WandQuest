@@ -95,26 +95,34 @@ function set_warp_points() {
 			_warp.down = 1
 		}
 		// Open doors
-		var _found_closed_doors = false
-		while (instance_number(oClosedDoor) > 0) {
-			instance_destroy(instance_find(oClosedDoor, 0))
-			_found_closed_doors = true
-		}
-		if (true) {
-			// Open the door tiles
-			var _w = ceil(room_width/TS)
-			var _h = ceil(room_height/TS)
-			var _map = layer_tilemap_get_id("tiles_door")
-			for (var _y = 0; _y < room_width; _y++) {
-				for (var _x = 0; _x < _w; _x++) {
-					var _t1 = tilemap_get(_map, _x, _y)
-					if (is_tile_closed_door(_t1)) {
-						// The tile we are looking at is a closed door
-						show_debug_message(_t1)
-						tilemap_set(_map, _t1 + OPEN_DOOR_OFFSET, _x, _y)
-					}
+		var _found_closed_doors = []
+		var _doors_found = 0
+		var _found_all_doors = false
+
+		while (true) {
+			_closed_door = instance_find(oClosedDoor, _doors_found)
+			if (_closed_door) {
+				if (!_closed_door.locked) {
+					array_push(_found_closed_doors, _closed_door)
 				}
+				_doors_found++
+			} else {
+				break
 			}
+		}
+
+		while (array_length(_found_closed_doors)) {
+			_closed_door = array_pop(_found_closed_doors)
+			var _x = _closed_door.x/TS
+			var _y = _closed_door.y/TS
+			// Open the door tiles
+			var _map = layer_tilemap_get_id("tiles_door")
+			var _t1 = tilemap_get(_map, _x, _y)
+			if (is_tile_closed_door(_t1)) {
+				// The tile we are looking at is a closed door
+				tilemap_set(_map, _t1 + OPEN_DOOR_OFFSET, _x, _y)
+			}
+			instance_destroy(_closed_door)
 		}
 	}
 }

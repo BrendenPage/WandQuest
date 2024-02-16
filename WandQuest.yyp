@@ -113,6 +113,7 @@
     {"id":{"name":"sMinimapYAH","path":"sprites/sMinimapYAH/sMinimapYAH.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
     {"id":{"name":"sRefresh","path":"sprites/sRefresh/sRefresh.yy",},},
+    {"id":{"name":"sControls","path":"sprites/sControls/sControls.yy",},},
     {"id":{"name":"oWand","path":"objects/oWand/oWand.yy",},},
     {"id":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},},
     {"id":{"name":"sFreezeTime","path":"sprites/sFreezeTime/sFreezeTime.yy",},},
