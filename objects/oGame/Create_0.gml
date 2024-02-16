@@ -2,32 +2,22 @@
 // First x and y of player
 #macro ROOM_START_X room_width/2
 #macro ROOM_START_Y room_height/2
-#macro WEST_WALL_TILE_TOP 38
-#macro WEST_WALL_TILE_BOTTOM 36
-#macro EAST_WALL_TILE_TOP 40
-#macro EAST_WALL_TILE_BOTTOM 34
-#macro NORTH_WALL_TILE_LEFT WEST_WALL_TILE_TOP
-#macro NORTH_WALL_TILE_RIGHT EAST_WALL_TILE_TOP
-#macro SOUTH_WALL_TILE_LEFT WEST_WALL_TILE_BOTTOM
-#macro SOUTH_WALL_TILE_RIGHT EAST_WALL_TILE_BOTTOM
-#macro SHADOW_TOP 68
-#macro SHADOW_BOTTOM 76
-#macro SHADOW_LEFT 64
-#macro SHADOW_RIGHT 72
-#macro TILE_CLEAR 0
-#macro SHADOW_CLEAR 48
-#macro BASE_SPAWN_RATE 0.02
-#macro ENEMY_SPAWN_NEAR_PLAYER_TILE_THRESHOLD 4
-#macro SLIME_SCALE 0.7
-#macro DOOR_LEFT 1
-#macro DOOR_RIGHT 2
-#macro DOOR_SPRITE_NUM 4
-#macro WEST_DOOR_OFFSET (1 * DOOR_SPRITE_NUM)
-#macro EAST_DOOR_OFFSET (2 * DOOR_SPRITE_NUM)
-#macro SOUTH_DOOR_OFFSET (3 * DOOR_SPRITE_NUM)
-#macro OPEN_DOOR_OFFSET 2
+#macro START_ROOM DStart
+#macro MENU_ROOM Menu
+#macro DEATH_ROOM Death
 
+// Enemy spawn
+#macro BASE_SPAWN_RATE 0.02
+#macro ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD 200
+#macro SLIME_SCALE 0.7
+#macro MAX_ENEMIES 5
+#macro MIN_ENEMIES 2
+
+// At what distance should a ranged enemy
+// shift to shooting and moving erratically
 #macro PROJECTILE_AGGRO 300
+// Buffer on projectile_aggro for when an enemy
+// can shoot
 #macro ATTACK_RANGE_BUFFER 80
 
 // Camera macros
@@ -54,3 +44,13 @@ enemy_spawn_rates = [.8, .15, .05]
 wing_spawn_rate_modifier = [1, 1, 1, 1]
 attack_deck = undefined
 global.paths_list = []
+enemy_scale = ds_map_create()
+show_debug_message("Slime: " + string(oSlime))
+ds_map_add(enemy_scale, oSlime, 0.7)
+ds_map_add(enemy_scale, oGun, 0.9)
+ds_map_add(enemy_scale, oRedGun, 0.9)
+ds_map_add(enemy_scale, oGoblinArcher, 1)
+ds_map_add(enemy_scale, oGoblinWarrior, 1)
+locked_doors = []
+// ESWN
+wings_cleared = [false, false, false, false]

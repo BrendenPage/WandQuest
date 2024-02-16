@@ -34,7 +34,7 @@ function gun_idle(){
 	}
 	
 	// don't rotate if it'll move into a collision
-	if (place_meeting(x,y,oCollide)) {
+	if (place_meeting(x,y,[oWall, oPlayer])) {
 		image_angle = original_angle
 	}
 	
@@ -44,7 +44,7 @@ function gun_idle(){
 		move_towards_player()
 	} else {
 		path_end()
-		mag_dir_move_and_collide(speed_,move_dir)
+		mag_dir_move_and_collide_enemy(speed_,move_dir)
 	}
 	
 	

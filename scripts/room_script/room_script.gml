@@ -53,7 +53,7 @@ function open_south_door() {
 }
 
 // Check for enemies in current room instance, if none exist, insert correct
-// warp points
+// warp points, check for wing completion
 
 function set_warp_points() {
 	while(instance_number(oWarp)) {
@@ -95,26 +95,34 @@ function set_warp_points() {
 			_warp.down = 1
 		}
 		// Open doors
-		var _found_closed_doors = false
-		while (instance_number(oClosedDoor) > 0) {
-			instance_destroy(instance_find(oClosedDoor, 0))
-			_found_closed_doors = true
-		}
-		if (true) {
-			// Open the door tiles
-			var _w = ceil(room_width/TS)
-			var _h = ceil(room_height/TS)
-			var _map = layer_tilemap_get_id("tiles_door")
-			for (var _y = 0; _y < room_width; _y++) {
-				for (var _x = 0; _x < _w; _x++) {
-					var _t1 = tilemap_get(_map, _x, _y)
-					if (is_tile_closed_door(_t1)) {
-						// The tile we are looking at is a closed door
-						show_debug_message(_t1)
-						tilemap_set(_map, _t1 + OPEN_DOOR_OFFSET, _x, _y)
-					}
+		var _found_closed_doors = []
+		var _doors_found = 0
+		var _found_all_doors = false
+
+		while (true) {
+			_closed_door = instance_find(oClosedDoor, _doors_found)
+			if (_closed_door) {
+				if (!_closed_door.locked or global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]) {
+					array_push(_found_closed_doors, _closed_door)
 				}
+				_doors_found++
+			} else {
+				break
 			}
+		}
+
+		while (array_length(_found_closed_doors)) {
+			_closed_door = array_pop(_found_closed_doors)
+			var _x = _closed_door.x/TS
+			var _y = _closed_door.y/TS
+			// Open the door tiles
+			var _map = layer_tilemap_get_id("tiles_door")
+			var _t1 = tilemap_get(_map, _x, _y)
+			if (is_tile_closed_door(_t1)) {
+				// The tile we are looking at is a closed door
+				tilemap_set(_map, _t1 + OPEN_DOOR_OFFSET, _x, _y)
+			}
+			instance_destroy(_closed_door)
 		}
 	}
 }
@@ -144,4 +152,54 @@ function choose_enemy() {
 		}
 		return enemy_list[_index]
 	}
+}
+
+function lock_door(_door) {
+	var _door_map = layer_tilemap_get_id("tiles_door")
+	var _t2 = tilemap_get(_door_map, _door.x/TS, _door.y/TS)
+	_t2 = _t2 - 1 - (_t2+1) % 2
+	// Check if east of start room
+	if (global.game.current_room_x == 6 and global.game.current_room_y = 5 and (_t2 == WEST_DOOR_OFFSET) and !global.game.wings_cleared[0]) {
+		_door.locked = true
+	}
+	// Check if West of start room
+	if (global.game.current_room_x == 4 and global.game.current_room_y = 5 and (_t2 == EAST_DOOR_OFFSET) and !global.game.wings_cleared[2]) {
+		_door.locked = true
+	}
+	// Check if North of start room
+	if (global.game.current_room_y == 4 and global.game.current_room_x = 5 and (_t2 == SOUTH_DOOR_OFFSET) and !global.game.wings_cleared[3]) {
+		_door.locked = true
+	}
+	// Check if South of start room
+	if (global.game.current_room_y == 6 and global.game.current_room_x = 5 and (_t2 == 0) and !global.game.wings_cleared[1]) {
+		_door.locked = true
+	}
+}
+
+// ESWN 0-3, start room is -1
+function get_room_wing_type(_x, _y) {
+	if (_x == global.map_gen.map_size/2 and _y == global.map_gen.map_size/2){
+		return -1
+	}
+	return (global.map_gen.map[_x,_y] -  1) % 4
+}
+
+// Check if the wing has been cleared and set appropriate values if so
+function clear_wing(_wing) {
+	if (room == DStart or global.game.wings_cleared[_wing]) {
+		return
+	}
+	var _map = global.map_gen.map
+	var _seen= global.game.visible_minimap
+	for (var _i = 0; _i < global.map_gen.map_size; _i++) {
+		for (var _j = 0; _j < global.map_gen.map_size; _j++) {
+			if (get_room_wing_type(_i, _j) == _wing and !_seen[_i, _j]) {
+				// We have not explored the entire wing
+				show_debug_message("Need to explore: (" + string(_i) + ", " + string(_j)+ ")")
+				exit
+			}
+		}
+	}
+	show_debug_message("Wing cleared: " + string(_wing))
+	global.game.wings_cleared[_wing] = true
 }
