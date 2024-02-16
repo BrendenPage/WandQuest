@@ -10,7 +10,7 @@
 #macro BASE_SPAWN_RATE 0.02
 #macro ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD 200
 #macro SLIME_SCALE 0.7
-#macro MAX_ENEMIES 7
+#macro MAX_ENEMIES 5
 #macro MIN_ENEMIES 2
 
 // At what distance should a ranged enemy

@@ -171,7 +171,7 @@ function lock_door(_door) {
 		_door.locked = true
 	}
 	// Check if South of start room
-	if (global.game.current_room_y == 6 and (_t2 == NORTH_DOOR_OFFSET) and !global.game.wings_cleared[1]) {
+	if (global.game.current_room_y == 6 and (_t2 == 0) and !global.game.wings_cleared[1]) {
 		_door.locked = true
 	}
 }

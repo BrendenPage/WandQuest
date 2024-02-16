@@ -27,7 +27,7 @@ function slime_idle_move(){
 	}
 	if(_dist < TS) {
 		path_end()
-		mag_dir_move_and_collide_enemy(_speed, _dir)
+		mag_dir_move_and_collide_enemy(speed_, _dir)
 	} else {
 		move_towards_player()
 	}
