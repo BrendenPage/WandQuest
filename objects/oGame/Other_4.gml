@@ -26,5 +26,6 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 
 set_warp_points()
 update_bounded_minimap()
+clear_wing(get_room_wing_type(current_room_x, current_room_y))
 
 event_user(1)

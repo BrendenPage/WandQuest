@@ -53,4 +53,4 @@ ds_map_add(enemy_scale, oGoblinArcher, 1)
 ds_map_add(enemy_scale, oGoblinWarrior, 1)
 locked_doors = []
 // ESWN
-wings_cleared = [true, true, true, true]
+wings_cleared = [false, false, false, false]
