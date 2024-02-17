@@ -12,7 +12,7 @@ while(_enemies_spawned < _enemy_count) {
 		    var _t1 = tilemap_get(_map, xx, yy);
 			if !(_t1 >= 1 and _t1 <= 47) {
 				if (point_distance(xx*TS, yy*TS, player.x, player.y) >= ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD) {
-					if (random(1) <= 0.05) {
+					if (random(1) <= 0.005) {
 						var _enemy = instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", choose_enemy(_projectile_enemies-- > 0))
 						_enemies_spawned++
 						scale_enemy(_enemy)
