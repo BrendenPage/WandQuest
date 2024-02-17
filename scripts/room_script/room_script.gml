@@ -127,6 +127,16 @@ function set_warp_points() {
 	}
 }
 
+function num_wings_cleared() {
+	var _ret = 0
+	for (var _i = 0; _i < array_length(global.game.wings_cleared); _i++) {
+		if (global.game.wings_cleared[_i]) {
+			_ret++
+		}
+	}
+	return _ret
+}
+
 function is_tile_closed_door(_tile) {
 	var _temp = _tile - (_tile + 1) % 2
 	return _temp == DOOR_LEFT or _temp == WEST_DOOR_OFFSET + 1 or _temp == EAST_DOOR_OFFSET+ 1 or _temp == SOUTH_DOOR_OFFSET+ 1
@@ -136,21 +146,32 @@ function enemy_spawn_rate(_i, _j) {
 	if (global.map_gen.map[_i, _j] > 4) {
 		return 0
 	}
-	return BASE_SPAWN_RATE*global.game.wing_spawn_rate_modifier[global.map_gen.map[_i,_j]-1]
+	return global.game.wing_spawn_rate[num_wings_cleared()]
 }
 
-function choose_enemy() {
+// Return an enemy chosen from either the ranged or melee enemy lists
+// based on passed variable
+function choose_enemy(_ranged) {
 	with (global.game) {
+		var _enemy_list = []
+		var _spawn_rates = []
+		if (_ranged) {
+			_enemy_list = ranged_enemies
+			_spawn_rates = ranged_spawn_rates
+		} else {
+			_enemy_list = melee_enemies
+			_spawn_rates = melee_spawn_rates
+		}
 		var _seed = random(1)
 		var _index = 0
-		for (var _i = 0; _i < array_length(enemy_spawn_rates); _i++) {
-			if (_seed < enemy_spawn_rates[_i]) {
+		for (var _i = 0; _i < array_length(_spawn_rates); _i++) {
+			if (_seed < _spawn_rates[_i]) {
 				_index = _i
 			} else {
-				_seed -= enemy_spawn_rates[_i]
+				_seed -= _spawn_rates[_i]
 			}
 		}
-		return enemy_list[_index]
+		return _enemy_list[_index]
 	}
 }
 
@@ -184,6 +205,10 @@ function get_room_wing_type(_x, _y) {
 	return (global.map_gen.map[_x,_y] -  1) % 4
 }
 
+function is_wing_cleared() {
+	return global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]
+}
+
 // Check if the wing has been cleared and set appropriate values if so
 function clear_wing(_wing) {
 	if (room == DStart or global.game.wings_cleared[_wing]) {
@@ -193,13 +218,11 @@ function clear_wing(_wing) {
 	var _seen= global.game.visible_minimap
 	for (var _i = 0; _i < global.map_gen.map_size; _i++) {
 		for (var _j = 0; _j < global.map_gen.map_size; _j++) {
-			if (get_room_wing_type(_i, _j) == _wing and !_seen[_i, _j]) {
+			if (global.map_gen.map[_i, _j]-1 == _wing and !_seen[_i, _j]) {
 				// We have not explored the entire wing
-				show_debug_message("Need to explore: (" + string(_i) + ", " + string(_j)+ ")")
 				exit
 			}
 		}
 	}
-	show_debug_message("Wing cleared: " + string(_wing))
 	global.game.wings_cleared[_wing] = true
 }

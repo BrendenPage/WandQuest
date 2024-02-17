@@ -39,13 +39,14 @@ minimap_width = 0
 minimap_height = 0
 minimap_seed_x = 0
 minimap_seed_y = 0
-enemy_list = [oSlime, oGun, oRedGun]
-enemy_spawn_rates = [.8, .15, .05]
-wing_spawn_rate_modifier = [1, 1, 1, 1]
+melee_enemies = [oSlime, oGoblinWarrior]
+ranged_enemies = [oGun, oGoblinArcher, oRedGun]
+melee_spawn_rates = [0.9, 0.1]
+ranged_spawn_rates = [0.8, 0.15, 0.05]
+wing_spawn_rate = [0.8, 1, 1.5, 2]
 attack_deck = undefined
 global.paths_list = []
 enemy_scale = ds_map_create()
-show_debug_message("Slime: " + string(oSlime))
 ds_map_add(enemy_scale, oSlime, 0.7)
 ds_map_add(enemy_scale, oGun, 0.9)
 ds_map_add(enemy_scale, oRedGun, 0.9)

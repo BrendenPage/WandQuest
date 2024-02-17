@@ -4,6 +4,10 @@
 if (remaining_health == 0){
 	instance_destroy()
 	set_warp_points()
+	if (instance_number(oEnemyParent) == 0 and is_wing_cleared()) {
+		instance_create_depth(0,0,-1000,oCardChoices)
+		global.game_paused = true
+	}
 }
 
 if instance_exists(hitbox) {
