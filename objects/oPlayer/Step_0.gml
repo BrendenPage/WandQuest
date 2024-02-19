@@ -100,3 +100,7 @@ if _key_attack && (attack_timer <= 0) && (shuffle_timer <= 0){
 #endregion
 
 
+if (knockback_frames > 0) {
+	mag_dir_move_and_collide(knockback_spd,knockback_dir)
+	knockback_frames = max(0,knockback_frames - 1)
+}

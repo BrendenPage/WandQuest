@@ -15,3 +15,9 @@ path = path_add()
 array_push(global.paths_list, path)
 attack_distance = 0
 projectile_enemy = false
+
+knockback_dir = 0
+knockback_frames = 0
+knockback_spd = 0
+
+damage = 0

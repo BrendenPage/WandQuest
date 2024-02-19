@@ -1,5 +1,12 @@
-// @description deals "damage" damage to "entity"
+// @description deals damager's damage to entity
 function deal_damage(entity, damage){
+	// knockback
+	var _knockback_dir = point_direction(other.x,other.y,entity.x,entity.y)
+	entity.knockback_dir = _knockback_dir
+	entity.knockback_spd = 5
+	entity.knockback_frames = 5
+	
+	
 	if variable_instance_exists(entity, "invincible") {
 		if (entity.invincible) {
 			return;
