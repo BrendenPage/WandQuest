@@ -16,6 +16,7 @@ function arrow_shoot(_dir) {
 
 
 function goblin_archer_idle(){
+	var _dist = distance_to_object(global.game.player)
 	if (_dist > attack_distance or collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
 		move_towards_player()
 	} else {
@@ -34,7 +35,7 @@ function goblin_archer_idle(){
 	}
 	
 	if (shot_ctr == 0 and !collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true) and _dist < attack_distance + ATTACK_RANGE_BUFFER) {
-		with (oPlayer) {
+		with (global.game.player) {
 			var _dir_to_player = point_direction(other.x,other.y,x,y)
 		}
 		_dir_to_player += random_range(-5,5)
