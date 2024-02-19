@@ -11,6 +11,11 @@ for (var _i = 0; _i < 4; _i++) {
 	for (var _j = 0; _j < 2; _j++) {
 		attacks[_i,_j] = instance_create_depth(x + _width * (_i + 1) / 10,y + 2 * _height / 7 + _j * _height / 4,depth-1,oDeckMenuChoice)
 		specials[_i,_j] = instance_create_depth(x + _width * (_i + 1) / 10 + _width / 2,y + 2 * _height / 7 + _j * _height / 4,depth-1,oDeckMenuChoice)
+		
+		attacks[_i,_j].image_xscale = 0.7
+		attacks[_i,_j].image_yscale = 0.7
+		specials[_i,_j].image_xscale = 0.7
+		specials[_i,_j].image_yscale = 0.7
 	}
 }
 //instance_create_depth(_attack_top_left_x,_attack_top_left_y + 300,depth-1,oDeckMenuChoice)

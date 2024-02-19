@@ -24,3 +24,8 @@ remaining_i_frames = max(0,remaining_i_frames - 1)
 if (remaining_i_frames == 0) {
 	invincible = false
 }
+
+if (knockback_frames > 0) {
+	mag_dir_move_and_collide(knockback_spd,knockback_dir)
+	knockback_frames = max(0,knockback_frames - 1)
+}

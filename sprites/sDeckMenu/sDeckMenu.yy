@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "sDeckMenu",
-  "bbox_bottom": 399,
+  "bbox_bottom": 463,
   "bbox_left": 0,
-  "bbox_right": 799,
+  "bbox_right": 499,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 400,
+  "height": 464,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9e2b8e4c-b0c5-43a3-9dee-25e3c6746c91","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 800,
+  "width": 500,
 }

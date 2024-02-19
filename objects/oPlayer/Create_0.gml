@@ -29,3 +29,7 @@ SP_shuffle_timer = undefined
 
 
 wand_len = undefined//length from the center of Player to the tip of the wand + 5
+
+knockback_dir = 0
+knockback_frames = 0
+knockback_spd = 0
