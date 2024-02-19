@@ -35,15 +35,11 @@ special_deck_obj.persistent = true
 //Cooldown for attack, special, and shuffle
 attack_timer = attack_spell.cooldown
 AT_shuffle_timer = 0
+
+//TODO: change special_timer after create_special_spell is implemented
 special_timer = 120
-show_debug_message(string(special_timer))
+//special_timer = oShieldEffect.cooldown
 
-
-if (instance_exists(oShieldEffect)) {
-    show_debug_message(string(oShieldEffect.cooldown));
-} else {
-    show_debug_message("oShieldEffect does not exist.");
-}
 
 SP_shuffle_timer = 0
 

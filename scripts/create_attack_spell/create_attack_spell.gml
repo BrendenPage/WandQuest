@@ -9,13 +9,13 @@
  *                           Defaults to sFireboltProjectile if not specified.
  * @param {object} _projectile_obj - The projectile object that the spell casts. 
  *                                  Defaults to oFireboltProjectile if not specified.
- * @param {number} _cooldown - The cooldown time in frames between spell casts. 
+ * @param {int} _cooldown - The cooldown time in frames between spell casts. 
  *                             Defaults to 15 if not specified.
- * @param {number} _damage  - The damage of the spell.
+ * @param {int} _damage  - The damage of the spell.
  *							  Defaults to 10 if not specified.
  * @param {string} _description_text - The description text of the spell.
  *									   Defaults to "" if not specified.
- * @param {number} _offset_from_center - The offset in pixel from the origin of the sprite to the leftside of the collision mask
+ * @param {int} _offset_from_center - The offset in pixel from the origin of the sprite to the leftside of the collision mask
  *										 Defaults to 0 if not specified.
  */
 function create_attack_spell(

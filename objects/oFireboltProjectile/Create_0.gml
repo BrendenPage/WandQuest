@@ -9,3 +9,4 @@ damage = global.attack_spell_struct.firebolt.damage;
 max_dist = 1300;
 
 
+
