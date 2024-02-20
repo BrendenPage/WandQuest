@@ -1,7 +1,6 @@
 
 cur_deck_index = 0
 max_deck_size = 8
-cur_deck_size = 2
 cooldown_modifier = 1
 shuffle_cooldown = 60
 
@@ -13,7 +12,7 @@ deck = array_create(0);
 array_push(deck, global.special_spell_struct.shield)
 array_push(deck, global.special_spell_struct.shield)
 
-
+cur_deck_size = array_length(deck)
 
 
 

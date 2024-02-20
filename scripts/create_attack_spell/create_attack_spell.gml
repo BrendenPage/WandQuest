@@ -89,6 +89,17 @@ global.attack_spell_struct ={
 		40,
 		"Lightning Bolt. Medium range. AOE attack. Medium Damage. Medium cooldown",
 		175
+	),
+	
+	magic_missile: new create_attack_spell(
+		"Magic Missile",
+		6,
+		sMagicMissileProjectile,
+		oMagicMissileProjectile,
+		30,
+		15,
+		"Magic Missile. Long range. Shoot in 5 darts. Low damage per dart. Medium cooldown",
+		0
 	)
 	
 }
@@ -117,4 +128,5 @@ global.attack_spell_map = ds_map_create()
 ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt)
 ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst)
 ds_map_add(global.attack_spell_map, 5, global.attack_spell_struct.lightning_bolt)
+ds_map_add(global.attack_spell_map, 6, global.attack_spell_struct.magic_missile)
 

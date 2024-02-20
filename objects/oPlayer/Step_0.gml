@@ -55,7 +55,7 @@ if (remaining_i_frames == 0) {
 #region
 
 //player aiming
-aim_dir = point_direction(x,y,mouse_x,mouse_y);
+aim_dir = point_direction(x,y,mouse_x,mouse_y)
 
 // Shuffle & attack timer count down
 AT_shuffle_timer = max(AT_shuffle_timer - 1, 0)
@@ -75,25 +75,12 @@ if(AT_shuffle_timer == 0) {
 // Shoot attack projectile 
 if _key_attack && (attack_timer <= 0) && (AT_shuffle_timer <= 0){
 
-	//reset the timer
+	// reset the timer
 	attack_timer = attack_spell.cooldown
 	
-	//length from the center of Player to the tip of the wand + spell offset
-	dist_from_center_to_wand_tip = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
-		+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand))
-		+ attack_spell.offset_from_center;
-	
-	//create the projectile
-	var _x_offset = lengthdir_x(dist_from_center_to_wand_tip , aim_dir)
-	var _y_offset = lengthdir_y(dist_from_center_to_wand_tip , aim_dir)
+	// generate projectile
+	cast_attack_spell(attack_spell,aim_dir)
 
-	var _projectile_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-99, attack_spell.projectile_obj)
-
-	// change the bullet's direction
-	with(_projectile_inst){
-		dir  = other.aim_dir
-	}
-	
 	// set the next card
 	if (attack_deck_obj.cur_deck_index + 1 < attack_deck_obj.cur_deck_size){
 		attack_deck_obj.cur_deck_index++

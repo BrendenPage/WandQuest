@@ -8,7 +8,7 @@ ind = clicked_choice.choice_ind
 // TODO: Actually add the attack to the deck
 if (choice_type == CHOICE_TYPE.ATTACK) {
 	show_debug_message("This is an attack")
-	if(ind != 3 && ind != 4 && ind != 5){// 3 = firebolt, 4 = flame brust, 5 = lightning bolt
+	if(choice_ind < 3 ||  choice_ind > 6){
 		show_debug_message("This spell has not been implemented yet")
 	}else{
 		var _chosen_attack_spell = ds_map_find_value(global.attack_spell_map, ind)
