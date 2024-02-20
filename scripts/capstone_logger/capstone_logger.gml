@@ -1,6 +1,7 @@
 // Generated at 2024-02-19 17:11:32 (1614ms) for v2.3.1+
 /// @lint nullToAny true
 // Feather disable all
+exit
 #region metatype
 globalvar haxe_type_markerValue; haxe_type_markerValue = [];
 globalvar mt_Array;
@@ -460,7 +461,7 @@ HxOverrides.indexOf = method(HxOverrides, function(_a, _obj, _i) {
 		if (_i < 0) _i = 0;
 	}
 	while (_i < _len) {
-		if (a[i] === obj) return _i;
+		if (_a[_i] == _obj) return _i;
 		_i++;
 	}
 	return -1;
@@ -474,7 +475,7 @@ HxOverrides.lastIndexOf = method(HxOverrides, function(_a, _obj, _i) {
 		_i += _len;
 	}
 	while (_i >= 0) {
-		if (a[i] === obj) return _i;
+		if (_a[_i] == _obj) return _i;
 		_i--;
 	}
 	return -1;
@@ -1443,7 +1444,7 @@ Type.getClassFields = method(Type, function(_c) {
 	throw string("Type.getClassFields is not supported.");
 });
 /// @hint Type.typeof(v:any)->ValueType
-Type.typeof = method(Type, function(_v) {
+Type.typeof_ = method(Type, function(_v) {
 	if (_v == undefined) return ValueType_TNull;
 	if (is_bool(_v)) return ValueType_TBool;
 	if (is_int32(_v) || is_int64(_v)) return ValueType_TInt;
@@ -2590,262 +2591,262 @@ haxe__Int32_Int32_Impl_.i_clamp = method(haxe__Int32_Int32_Impl_, function(_x) {
 #endregion
 
 #region int64
-globalvar int64; int64 = {}
+globalvar int64_; int64_ = {}
 /// @hint int64.copy(this1:haxe__Int64___Int64)->int64
-int64.copy = method(int64, function(_this1) {
+int64_.copy = method(int64, function(_this1) {
 	return _this1;
 });
 /// @hint int64.make(high:haxe_Int32, low:haxe_Int32)->int64
-int64.make = method(int64, function(_high, _low) {
+int64_.make = method(int64, function(_high, _low) {
 	return (((_high << 32) | _low) | 0);
 });
 /// @hint int64.ofInt(x:int)->int64
-int64.ofInt = method(int64, function(_x) {
+int64_.ofInt = method(int64, function(_x) {
 	return (_x | 0);
 });
 /// @hint int64.toInt(x:int64)->int
-int64.toInt = method(int64, function(_x) {
+int64_.toInt = method(int64, function(_x) {
 	return (int64.ushr(_x, 0) div 1);
 });
 /// @hint int64.is(val:any)->bool
-int64.is = method(int64, function(_val) {
+int64_.is = method(int64, function(_val) {
 	return is_int64(_val);
 });
 /// @hint int64.isInt64(val:any)->bool
-int64.isInt64 = method(int64, function(_val) {
+int64_.isInt64 = method(int64, function(_val) {
 	return is_int64(_val);
 });
 /// @hint int64.get_raw(this1:haxe__Int64___Int64)->int
-int64.get_raw = method(int64, function(_this1) {
+int64_.get_raw = method(int64, function(_this1) {
 	return _this1;
 });
 /// @hint int64.mkr(v:int)->int64
-int64.mkr = method(int64, function(_v) {
+int64_.mkr = method(int64, function(_v) {
 	return _v;
 });
 /// @hint int64.isNeg(x:int64)->bool
-int64.isNeg = method(int64, function(_x) {
+int64_.isNeg = method(int64, function(_x) {
 	return _x < 0;
 });
 /// @hint int64.isZero(x:int64)->bool
-int64.isZero = method(int64, function(_x) {
+int64_.isZero = method(int64, function(_x) {
 	return _x == 0;
 });
 /// @hint int64.compare(a:int64, b:int64)->int
-int64.compare = method(int64, function(_a, _b) {
+int64_.compare = method(int64, function(_a, _b) {
 	return _a - _b;
 });
 /// @hint int64.ucompare(a:int64, b:int64)->int
-int64.ucompare = method(int64, function(_a, _b) {
+int64_.ucompare = method(int64, function(_a, _b) {
 	var _diff = (((_a >> 32) & $FFFFFFFF)) - (((_b >> 32) & $FFFFFFFF));
 	if (_diff == 0) return ((_a & $FFFFFFFF)) - ((_b & $FFFFFFFF)); else return _diff;
 });
 /// @hint int64.toStr(x:int64)->string
-int64.toStr = method(int64, function(_x) {
+int64_.toStr = method(int64, function(_x) {
 	return string(_x);
 });
 /// @hint int64.toString(this1:haxe__Int64___Int64)->string
-int64.toString = method(int64, function(_this1) {
+int64_.toString = method(int64, function(_this1) {
 	return string(_this1);
 });
 /// @hint int64.parseString(s:string)->int64
-int64.parseString = method(int64, function(_s) {
+int64_.parseString = method(int64, function(_s) {
 	return int64(_s);
 });
 /// @hint int64.fromFloat(f:number)->int64
-int64.fromFloat = method(int64, function(_f) {
+int64_.fromFloat = method(int64, function(_f) {
 	return int64(_f);
 });
 /// @hint int64.divMod(dividend:int64, divisor:int64)->haxe_Int64_DivMod
-int64.divMod = method(int64, function(_dividend, _divisor) {
+int64_.divMod = method(int64, function(_dividend, _divisor) {
 	if (_divisor == 0) throw string("divide by zero");
 	return { quotient: ((_dividend / _divisor) | 0), modulus: ((_dividend % _divisor) | 0) }
 });
 /// @hint int64.neg(x:int64)->int64
-int64.neg = method(int64, function(_x) {
+int64_.neg = method(int64, function(_x) {
 	return -_x;
 });
 /// @hint int64.add(a:int64, b:int64)->int64
-int64.add = method(int64, function(_a, _b) {
+int64_.add = method(int64, function(_a, _b) {
 	return _a + _b;
 });
 /// @hint int64.addInt(a:int64, b:int)->int64
-int64.addInt = method(int64, function(_a, _b) {
+int64_.addInt = method(int64, function(_a, _b) {
 	return _a + _b;
 });
 /// @hint int64.sub(a:int64, b:int64)->int64
-int64.sub = method(int64, function(_a, _b) {
+int64_.sub = method(int64, function(_a, _b) {
 	return _a - _b;
 });
 /// @hint int64.subInt(a:int64, b:int)->int64
-int64.subInt = method(int64, function(_a, _b) {
+int64_.subInt = method(int64, function(_a, _b) {
 	return _a - _b;
 });
 /// @hint int64.intSub(a:int, b:int64)->int64
-int64.intSub = method(int64, function(_a, _b) {
+int64_.intSub = method(int64, function(_a, _b) {
 	return _a - _b;
 });
 /// @hint int64.mul(a:int64, b:int64)->int64
-int64.mul = method(int64, function(_a, _b) {
+int64_.mul = method(int64, function(_a, _b) {
 	return _a * _b;
 });
 /// @hint int64.mulInt(a:int64, b:int)->int64
-int64.mulInt = method(int64, function(_a, _b) {
+int64_.mulInt = method(int64, function(_a, _b) {
 	return _a * _b;
 });
 /// @hint int64.i_div(a:int64, b:int64)->int64
-int64.i_div = method(int64, function(_a, _b) {
+int64_.i_div = method(int64, function(_a, _b) {
 	return (_a / _b | 0);
 });
 /// @hint int64.divInt(a:int64, b:int)->int64
-int64.divInt = method(int64, function(_a, _b) {
+int64_.divInt = method(int64, function(_a, _b) {
 	return (_a / _b | 0);
 });
 /// @hint int64.intDiv(a:int, b:int64)->int64
-int64.intDiv = method(int64, function(_a, _b) {
+int64_.intDiv = method(int64, function(_a, _b) {
 	return (_a / _b | 0);
 });
 /// @hint int64.i_mod(a:int64, b:int64)->int64
-int64.i_mod = method(int64, function(_a, _b) {
+int64_.i_mod = method(int64, function(_a, _b) {
 	return _a % _b;
 });
 /// @hint int64.modInt(a:int64, b:int)->int64
-int64.modInt = method(int64, function(_a, _b) {
+int64_.modInt = method(int64, function(_a, _b) {
 	return _a % _b;
 });
 /// @hint int64.intMod(a:int, b:int64)->int64
-int64.intMod = method(int64, function(_a, _b) {
+int64_.intMod = method(int64, function(_a, _b) {
 	return _a % _b;
 });
 /// @hint int64.eq(a:int64, b:int64)->bool
-int64.eq = method(int64, function(_a, _b) {
+int64_.eq = method(int64, function(_a, _b) {
 	return _a == _b;
 });
 /// @hint int64.eqInt(a:int64, b:int)->bool
-int64.eqInt = method(int64, function(_a, _b) {
+int64_.eqInt = method(int64, function(_a, _b) {
 	return _a == _b;
 });
 /// @hint int64.neq(a:int64, b:int64)->bool
-int64.neq = method(int64, function(_a, _b) {
+int64_.neq = method(int64, function(_a, _b) {
 	return _a != _b;
 });
 /// @hint int64.neqInt(a:int64, b:int)->bool
-int64.neqInt = method(int64, function(_a, _b) {
+int64_.neqInt = method(int64, function(_a, _b) {
 	return _a != _b;
 });
 /// @hint int64.lt(a:int64, b:int64)->bool
-int64.lt = method(int64, function(_a, _b) {
+int64_.lt = method(int64, function(_a, _b) {
 	return _a < _b;
 });
 /// @hint int64.ltInt(a:int64, b:int)->bool
-int64.ltInt = method(int64, function(_a, _b) {
+int64_.ltInt = method(int64, function(_a, _b) {
 	return _a < _b;
 });
 /// @hint int64.intLt(a:int, b:int64)->bool
-int64.intLt = method(int64, function(_a, _b) {
+int64_.intLt = method(int64, function(_a, _b) {
 	return _a < _b;
 });
 /// @hint int64.lte(a:int64, b:int64)->bool
-int64.lte = method(int64, function(_a, _b) {
+int64_.lte = method(int64, function(_a, _b) {
 	return _a <= _b;
 });
 /// @hint int64.lteInt(a:int64, b:int)->bool
-int64.lteInt = method(int64, function(_a, _b) {
+int64_.lteInt = method(int64, function(_a, _b) {
 	return _a <= _b;
 });
 /// @hint int64.intLte(a:int, b:int64)->bool
-int64.intLte = method(int64, function(_a, _b) {
+int64_.intLte = method(int64, function(_a, _b) {
 	return _a <= _b;
 });
 /// @hint int64.gt(a:int64, b:int64)->bool
-int64.gt = method(int64, function(_a, _b) {
+int64_.gt = method(int64, function(_a, _b) {
 	return _a > _b;
 });
 /// @hint int64.gtInt(a:int64, b:int)->bool
-int64.gtInt = method(int64, function(_a, _b) {
+int64_.gtInt = method(int64, function(_a, _b) {
 	return _a > _b;
 });
 /// @hint int64.intGt(a:int, b:int64)->bool
-int64.intGt = method(int64, function(_a, _b) {
+int64_.intGt = method(int64, function(_a, _b) {
 	return _a > _b;
 });
 /// @hint int64.gte(a:int64, b:int64)->bool
-int64.gte = method(int64, function(_a, _b) {
+int64_.gte = method(int64, function(_a, _b) {
 	return _a >= _b;
 });
 /// @hint int64.gteInt(a:int64, b:int)->bool
-int64.gteInt = method(int64, function(_a, _b) {
+int64_.gteInt = method(int64, function(_a, _b) {
 	return _a >= _b;
 });
 /// @hint int64.intGte(a:int, b:int64)->bool
-int64.intGte = method(int64, function(_a, _b) {
+int64_.intGte = method(int64, function(_a, _b) {
 	return _a >= _b;
 });
 /// @hint int64.bitNot(a:int64)->int64
-int64.bitNot = method(int64, function(_a) {
+int64_.bitNot = method(int64, function(_a) {
 	return ~_a;
 });
 /// @hint int64.i_and(a:int64, b:int64)->int64
-int64.i_and = method(int64, function(_a, _b) {
+int64_.i_and = method(int64, function(_a, _b) {
 	return (_a & _b);
 });
 /// @hint int64.i_or(a:int64, b:int64)->int64
-int64.i_or = method(int64, function(_a, _b) {
+int64_.i_or = method(int64, function(_a, _b) {
 	return (_a | _b);
 });
 /// @hint int64.i_xor(a:int64, b:int64)->int64
-int64.i_xor = method(int64, function(_a, _b) {
+int64_.i_xor = method(int64, function(_a, _b) {
 	return (_a ^ _b);
 });
 /// @hint int64.shl(a:int64, b:int)->int64
-int64.shl = method(int64, function(_a, _b) {
+int64_.shl = method(int64, function(_a, _b) {
 	return (_a << _b);
 });
 /// @hint int64.shr(a:int64, b:int)->int64
-int64.shr = method(int64, function(_a, _b) {
+int64_.shr = method(int64, function(_a, _b) {
 	return (_a >> _b);
 });
 /// @hint int64.ushr(a:int64, b:int)->int64
-int64.ushr = method(int64, function(_a, _b) {
+int64_.ushr = method(int64, function(_a, _b) {
 	if (_b == 0) return _a;
 	if (_b >= 32) return (((((_a >> 32) & $FFFFFFFF) >> _b - 32)) | 0);
 	return (((((((_a >> 32) & $FFFFFFFF) >> _b)) << 32) | ((((((_a >> 32) << 32 - _b) & $FFFFFFFF)) | ((((((_a & $FFFFFFFF)) div 1) & $FFFFFFFF) >> _b))))) | 0);
 });
 /// @hint int64.preInc(this1:haxe__Int64___Int64)->int64
-int64.preInc = method(int64, function(_this1) {
+int64_.preInc = method(int64, function(_this1) {
 	return ++_this1;
 });
 /// @hint int64.preDec(this1:haxe__Int64___Int64)->int64
-int64.preDec = method(int64, function(_this1) {
+int64_.preDec = method(int64, function(_this1) {
 	return --_this1;
 });
 /// @hint int64.postInc(this1:haxe__Int64___Int64)->int64
-int64.postInc = method(int64, function(_this1) {
+int64_.postInc = method(int64, function(_this1) {
 	_this1 += 1;
 	return _this1 - 1;
 });
 /// @hint int64.postDec(this1:haxe__Int64___Int64)->int64
-int64.postDec = method(int64, function(_this1) {
+int64_.postDec = method(int64, function(_this1) {
 	_this1 -= 1;
 	return _this1 + 1;
 });
 /// @hint {int} int64.high
 /// @hint int64.get_high(this1:haxe__Int64___Int64)->int
-int64.get_high = method(int64, function(_this1) {
+int64_.get_high = method(int64, function(_this1) {
 	return (_this1 >> 32);
 });
 /// @hint int64.set_high(this1:haxe__Int64___Int64, v:int)->int
-int64.set_high = method(int64, function(_this1, _v) {
+int64_.set_high = method(int64, function(_this1, _v) {
 	_this1 = (((_this1 & $FFFFFFFF)) | (_v << 32));
 	return _v;
 });
 /// @hint {int} int64.low
 /// @hint int64.get_low(this1:haxe__Int64___Int64)->int
-int64.get_low = method(int64, function(_this1) {
+int64_.get_low = method(int64, function(_this1) {
 	return (((_this1 & $FFFFFFFF)) div 1);
 });
 /// @hint int64.set_low(this1:haxe__Int64___Int64, v:int)->int
-int64.set_low = method(int64, function(_this1, _v) {
+int64_.set_low = method(int64, function(_this1, _v) {
 	_this1 = ((_this1 & ~4294967295) | ((_v & $FFFFFFFF)));
 	return _v;
 });
