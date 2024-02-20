@@ -32,5 +32,5 @@
     "path": "sprites/sDeckMenuEmptyChoice/sDeckMenuEmptyChoice.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -2,10 +2,13 @@
 // You can write your code in this editor
 event_inherited()
 
-if d_menu == undefined {
-	d_menu = instance_create_layer(x+200,y-200,layer,oDeckMenu)
-} else {
-	instance_destroy(d_menu)
-	d_menu = undefined
+
+global.deck_menu.visible = not global.deck_menu.visible
+
+for (var _i = 0; _i < 4; _i++) {
+	for (var _j = 0; _j < 2; _j++) {
+		global.attacks[_i,_j].visible = not global.attacks[_i,_j].visible
+		global.specials[_i,_j].visible = not global.specials[_i,_j].visible
+	}
 }
 

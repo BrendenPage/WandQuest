@@ -3,6 +3,7 @@
 
 draw_self()
 
+
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
@@ -18,9 +19,12 @@ var _top_text_y = _top_bd * 9 / 10 + _bot_bd / 10
 var _attack_middle_x = _left_bd / 2 + _middle_x / 2
 var _specials_middle_x = _middle_x / 2 + _right_bd / 2
 
+var _num_attacks = oPlayer.attack_deck_obj.cur_deck_size
+var _num_specials = 2
 
-draw_text(_attack_middle_x,_top_text_y, "Active Attacks (" + string(num_attacks) + "/8):")
-draw_text(_specials_middle_x,_top_text_y, "Active Specials (" + string(num_specials) + "/8):")
+
+draw_text(_attack_middle_x,_top_text_y, "Attacks (" + string(_num_attacks) + "/8):")
+draw_text(_specials_middle_x,_top_text_y, "Specials (" + string(_num_specials) + "/8):")
 
 var _text_height = _bot_bd * 7 / 8 + _top_bd / 8
 
