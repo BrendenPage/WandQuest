@@ -20,7 +20,7 @@ var _attack_middle_x = _left_bd / 2 + _middle_x / 2
 var _specials_middle_x = _middle_x / 2 + _right_bd / 2
 
 var _num_attacks = oPlayer.attack_deck_obj.cur_deck_size
-var _num_specials = 2
+var _num_specials = oPlayer.special_deck_obj.cur_deck_size
 
 
 draw_text(_attack_middle_x,_top_text_y, "Attacks (" + string(_num_attacks) + "/8):")
@@ -31,6 +31,7 @@ var _text_height = _bot_bd * 7 / 8 + _top_bd / 8
 for(var _i = 0; _i < 4; _i++) {
 	for(var _j = 0; _j < 2; _j++) {
 		if (position_meeting(mouse_x,mouse_y,attacks[_i,_j]) and attacks[_i,_j].sprite_index == sAttacks) {
+
 			draw_text(_middle_x,_text_height, attacks[_i,_j].choice_explanation)
 		}
 		
