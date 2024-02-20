@@ -87,7 +87,7 @@ function set_warp_points() {
 			_warp.down = -1
 		}
 		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & SOUTH) {
-			// There is an opening to the west
+			// There is an opening to the south
 			var _warp = instance_create_layer(room_width/2, room_height, "Instances", oWarp)
 			_warp.target_room = global.map_gen.room_map[global.game.current_room_x, global.game.current_room_y+1]
 			_warp.target_x = ds_map_find_value(global.map_gen.room_sizes, _warp.target_room)[0]/2
@@ -124,6 +124,19 @@ function set_warp_points() {
 			}
 			instance_destroy(_closed_door)
 		}
+	}
+}
+
+function set_wing_warp() {
+	var _warp_map = ds_map_find_value(global.map_gen.warp_map, room)
+	if (DEBUG) {
+		show_debug_message("Setting wing warp")
+	}
+
+	show_debug_message("Warp map len: " + string(array_length(_warp_map)))
+	for (var _i = 0; _i < array_length(_warp_map); _i++) {
+		show_debug_message("Placing warp")
+		var _warp = instance_create_layer(_warp_map[_i,0], _warp_map[_i,1], "Instances", oWingWarp)
 	}
 }
 
@@ -205,13 +218,27 @@ function get_room_wing_type(_x, _y) {
 	return (global.map_gen.map[_x,_y] -  1) % 4
 }
 
+function is_boss_room() {
+	with (global.map_gen) {
+		for (var _i = 0; _i < array_length(boss_rooms); _i++) {
+			if (room == boss_rooms[_i]) {
+				return true
+			}
+		}
+		return false
+	}
+}
+
 function is_wing_cleared() {
+	if (room == DBoss1) {
+		return false
+	}
 	return global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]
 }
 
 // Check if the wing has been cleared and set appropriate values if so
 function clear_wing(_wing) {
-	if (room == DStart or global.game.wings_cleared[_wing]) {
+	if (!is_normal_room(global.game.current_room_x, global.game.current_room_y) or global.game.wings_cleared[_wing]) {
 		return
 	}
 	var _map = global.map_gen.map
@@ -224,5 +251,11 @@ function clear_wing(_wing) {
 			}
 		}
 	}
+	set_wing_warp()
 	global.game.wings_cleared[_wing] = true
+	show_debug_message("Num wings cleared: " + string(num_wings_cleared()))
+}
+
+function is_normal_room(_x, _y) {
+	return global.map_gen.map[_x, _y] <= 4
 }

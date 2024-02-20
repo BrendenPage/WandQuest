@@ -8,6 +8,7 @@ if (remaining_health == 0){
 		instance_create_depth(0,0,-1000,oCardChoices)
 		global.game_paused = true
 	}
+	exit
 }
 
 if instance_exists(hitbox) {
@@ -29,3 +30,5 @@ if (knockback_frames > 0) {
 	mag_dir_move_and_collide(knockback_spd,knockback_dir)
 	knockback_frames = max(0,knockback_frames - 1)
 }
+
+scale_enemy()

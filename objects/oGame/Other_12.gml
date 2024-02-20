@@ -1,6 +1,14 @@
 /// @description Start the game
 // You can write your code in this editor
 
+
+if (not variable_global_exists("tutorial_seen")) {
+	global.tutorial_seen = true
+	tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oTutorial)
+	tutorial.image_xscale = room_width*2/5
+	tutorial.image_yscale = room_height*2/5
+}
+
 gui = instance_create_layer(0,0, "Instances", oGUI)
 with(gui){
 	// set up the gui
