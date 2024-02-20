@@ -71,3 +71,7 @@ ds_list_add(special_types,1)
 ds_list_add(special_types,irandom(1))
 ds_list_add(special_types,irandom(1))
 ds_list_shuffle(special_types)
+
+locked_doors = []
+// ESWN
+wings_cleared = [false, false, false, false]
