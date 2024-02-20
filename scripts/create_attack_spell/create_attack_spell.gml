@@ -76,9 +76,21 @@ global.attack_spell_struct ={
 		oFlameBurstProjectile,
 		20,
 		150,
-		"Flame Burst. Short Range, AOE Attack. High Damage. Low Cooldown.",
+		"Flame Burst. Short Range. AOE Attack. High Damage. Low Cooldown.",
 		40
+	),
+	
+	lightning_bolt: new create_attack_spell(
+		"Lightning Bolt",
+		5,
+		sLightningBoltProjectile,
+		oLightningBoltProjectile,
+		35,
+		40,
+		"Lightning Bolt. Medium range. AOE attack. Medium Damage. Medium cooldown",
+		175
 	)
+	
 }
 
 /**
@@ -104,4 +116,5 @@ global.attack_spell_map = ds_map_create()
 
 ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt)
 ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst)
+ds_map_add(global.attack_spell_map, 5, global.attack_spell_struct.lightning_bolt)
 

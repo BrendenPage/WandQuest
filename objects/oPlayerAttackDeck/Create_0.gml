@@ -9,8 +9,11 @@ deck = array_create(0);
 
 array_push(deck, global.attack_spell_struct.firebolt)
 array_push(deck, global.attack_spell_struct.firebolt)
+
 //array_push(deck, global.attack_spell_struct.flame_burst)
 
+//array_push(deck, global.attack_spell_struct.lightning_bolt)
+//array_push(deck, global.attack_spell_struct.lightning_bolt)
 cur_deck_size = array_length(deck)
 
 

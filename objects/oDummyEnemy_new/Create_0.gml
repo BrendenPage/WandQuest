@@ -13,4 +13,4 @@ event_inherited();
 hurtbox = hurtbox_create(70,70,0,0,true);
 
 	
-remaining_health = 10;
+remaining_health = 1000;
