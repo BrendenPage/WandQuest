@@ -5,7 +5,8 @@ global.enemy_scale = {
 	"oGun": 0.9,
 	"oRedGun": 0.9,
 	"oGoblinArcher": 1,
-	"oGoblinWarrior": 1
+	"oGoblinWarrior": 1,
+	"oSlimeBoss": 1.5
 }
 
 function move_towards_player(){
