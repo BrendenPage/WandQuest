@@ -72,8 +72,8 @@ global.attack_spell_struct ={
 	flame_burst: new create_attack_spell(
 		"Flame Burst",
 		4,
-		sFlameBrustProjectile,
-		oFlameBrustProjectile,
+		sFlameBurstProjectile,
+		oFlameBurstProjectile,
 		20,
 		150,
 		"Flame Burst. Short Range. AOE Attack. High Damage. Low Cooldown.",

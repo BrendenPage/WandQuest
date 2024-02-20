@@ -1,21 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oFlameBrustProjectile",
+  "name": "obj_dialog",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":63,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectiles",
-    "path": "folders/Objects/Projectiles.yy",
+    "name": "Example",
+    "path": "folders/Extensions/http.gml/Example.yy",
   },
-  "parentObjectId": {
-    "name": "oLastingProjectile",
-    "path": "objects/oLastingProjectile/oLastingProjectile.yy",
-  },
-  "persistent": false,
+  "parentObjectId": null,
+  "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
@@ -30,10 +28,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "sFlameBrustProjectile",
-    "path": "sprites/sFlameBrustProjectile/sFlameBrustProjectile.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

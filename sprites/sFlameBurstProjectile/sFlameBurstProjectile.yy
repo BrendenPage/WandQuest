@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sFlameBrustProjectile",
+  "name": "sFlameBurstProjectile",
   "bbox_bottom": 90,
   "bbox_left": 61,
   "bbox_right": 91,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sFlameBrustProjectile",
+    "name": "sFlameBurstProjectile",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d2e8a8d6-cce2-4fe1-b9e7-dfef79f10146","path":"sprites/sFlameBrustProjectile/sFlameBrustProjectile.yy",},},},"Disabled":false,"id":"d4439079-e1e0-4d91-bb0b-493c45d9dbec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d2e8a8d6-cce2-4fe1-b9e7-dfef79f10146","path":"sprites/sFlameBurstProjectile/sFlameBurstProjectile.yy",},},},"Disabled":false,"id":"d4439079-e1e0-4d91-bb0b-493c45d9dbec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

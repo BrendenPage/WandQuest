@@ -24,7 +24,7 @@ function create_special_spell(
 	_sprite = sShieldEffect,
 	_special_obj = oShieldEffect,
 	_cooldown = 120,
-	_duration = 100,
+	_duration = 40,
 	_description_text = ""
 )constructor{
 	spell_name = _spell_name
@@ -58,7 +58,7 @@ global.special_spell_struct = {
 		sShieldEffect,
 		oShieldEffect,
 		150,
-		100,
+		40,
 		"Block any damage for a short time, medium cooldown"
 	)
 	
