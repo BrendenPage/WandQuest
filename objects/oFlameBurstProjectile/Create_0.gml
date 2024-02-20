@@ -1,5 +1,5 @@
 event_inherited()
-duration = 8
+duration = 12
 
 damage = global.attack_spell_struct.flame_burst.damage
 

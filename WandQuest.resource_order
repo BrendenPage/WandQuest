@@ -40,8 +40,12 @@
     {"name":"Specials","order":3,"path":"folders/Sprites/Specials.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+<<<<<<< HEAD
     {"name":"http.gml","order":1,"path":"folders/Extensions/http.gml.yy",},
     {"name":"Example","order":1,"path":"folders/Extensions/http.gml/Example.yy",},
+=======
+    {"name":"backup sprites","order":13,"path":"folders/Sprites/backup sprites.yy",},
+>>>>>>> refs/remotes/origin/main
   ],
   "ResourceOrderSettings": [
     {"name":"sDeckMenuEmptyChoice","order":3,"path":"sprites/sDeckMenuEmptyChoice/sDeckMenuEmptyChoice.yy",},
@@ -63,7 +67,7 @@
     {"name":"oSlimeBoss","order":5,"path":"objects/oSlimeBoss/oSlimeBoss.yy",},
     {"name":"oLastingProjectile","order":4,"path":"objects/oLastingProjectile/oLastingProjectile.yy",},
     {"name":"tile_macros","order":4,"path":"scripts/tile_macros/tile_macros.yy",},
-    {"name":"oFlameBrustProjectile","order":2,"path":"objects/oFlameBrustProjectile/oFlameBrustProjectile.yy",},
+    {"name":"oFlameBurstProjectile","order":2,"path":"objects/oFlameBurstProjectile/oFlameBurstProjectile.yy",},
     {"name":"oButtonTutorialEnd","order":9,"path":"objects/oButtonTutorialEnd/oButtonTutorialEnd.yy",},
     {"name":"oDeckMenu","order":7,"path":"objects/oDeckMenu/oDeckMenu.yy",},
     {"name":"Room3","order":2,"path":"rooms/Room3/Room3.yy",},
@@ -76,6 +80,7 @@
     {"name":"obj_tester","order":4,"path":"objects/obj_tester/obj_tester.yy",},
     {"name":"oDummyEnemy_new","order":1,"path":"objects/oDummyEnemy_new/oDummyEnemy_new.yy",},
     {"name":"oButtonQuit","order":2,"path":"objects/oButtonQuit/oButtonQuit.yy",},
+    {"name":"sLightningBoltProjectile","order":6,"path":"sprites/sLightningBoltProjectile/sLightningBoltProjectile.yy",},
     {"name":"oChoice","order":4,"path":"objects/oChoice/oChoice.yy",},
     {"name":"sShieldEffectBackup","order":1,"path":"sprites/sShieldEffectBackup/sShieldEffectBackup.yy",},
     {"name":"D2","order":7,"path":"rooms/D2/D2.yy",},
@@ -99,8 +104,12 @@
     {"name":"oRedGun","order":4,"path":"objects/oRedGun/oRedGun.yy",},
     {"name":"oButtonResume","order":3,"path":"objects/oButtonResume/oButtonResume.yy",},
     {"name":"sWand","order":3,"path":"sprites/sWand/sWand.yy",},
+<<<<<<< HEAD
     {"name":"sSlimeBall","order":6,"path":"sprites/sSlimeBall/sSlimeBall.yy",},
     {"name":"obj_dialog","order":3,"path":"objects/obj_dialog/obj_dialog.yy",},
+=======
+    {"name":"sSlimeBall","order":3,"path":"sprites/sSlimeBall/sSlimeBall.yy",},
+>>>>>>> refs/remotes/origin/main
     {"name":"oProjectileParent","order":1,"path":"objects/oProjectileParent/oProjectileParent.yy",},
     {"name":"oBossWarp","order":10,"path":"objects/oBossWarp/oBossWarp.yy",},
     {"name":"sFireball","order":1,"path":"sprites/sFireball/sFireball.yy",},
@@ -114,6 +123,7 @@
     {"name":"sDoor_Set_36x36","order":3,"path":"sprites/sDoor_Set_36x36/sDoor_Set_36x36.yy",},
     {"name":"oDeck_outdated","order":1,"path":"objects/oDeck_outdated/oDeck_outdated.yy",},
     {"name":"sMinimapHome","order":11,"path":"sprites/sMinimapHome/sMinimapHome.yy",},
+    {"name":"oLightningBoltProjectile","order":9,"path":"objects/oLightningBoltProjectile/oLightningBoltProjectile.yy",},
     {"name":"oChoices","order":3,"path":"objects/oChoices/oChoices.yy",},
     {"name":"oLightningBolt","order":3,"path":"objects/oLightningBolt/oLightningBolt.yy",},
     {"name":"oButtonPlay","order":1,"path":"objects/oButtonPlay/oButtonPlay.yy",},
@@ -145,9 +155,9 @@
     {"name":"sMapTutorial","order":5,"path":"sprites/sMapTutorial/sMapTutorial.yy",},
     {"name":"Death","order":5,"path":"rooms/Death/Death.yy",},
     {"name":"sMinimapUnknownNormal","order":7,"path":"sprites/sMinimapUnknownNormal/sMinimapUnknownNormal.yy",},
-    {"name":"sGunBullet","order":5,"path":"sprites/sGunBullet/sGunBullet.yy",},
+    {"name":"sGunBullet","order":2,"path":"sprites/sGunBullet/sGunBullet.yy",},
     {"name":"sSlimeBoss","order":4,"path":"sprites/sSlimeBoss/sSlimeBoss.yy",},
-    {"name":"sArrow","order":8,"path":"sprites/sArrow/sArrow.yy",},
+    {"name":"sArrow","order":5,"path":"sprites/sArrow/sArrow.yy",},
     {"name":"sShield","order":3,"path":"sprites/sShield/sShield.yy",},
     {"name":"oGunBullet","order":5,"path":"objects/oGunBullet/oGunBullet.yy",},
     {"name":"oButtonDeck","order":6,"path":"objects/oButtonDeck/oButtonDeck.yy",},

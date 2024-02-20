@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oFlameBrustProjectile",
+  "name": "oLightningBoltProjectile",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sFlameBrustProjectile",
-    "path": "sprites/sFlameBrustProjectile/sFlameBrustProjectile.yy",
+    "name": "sLightningBoltProjectile",
+    "path": "sprites/sLightningBoltProjectile/sLightningBoltProjectile.yy",
   },
   "spriteMaskId": null,
   "visible": true,

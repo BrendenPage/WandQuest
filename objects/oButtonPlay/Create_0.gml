@@ -3,5 +3,4 @@
 randomize()
 button_text = "Loading"
 ready = false
-created_game = false
 instance_create_layer(0,0, "Instances", oMapGenerator)
