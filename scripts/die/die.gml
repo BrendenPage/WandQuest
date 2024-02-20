@@ -6,7 +6,7 @@ function die(){
 	// Reset the player's stats to their original values
 	remaining_health = max_health
 	with(global.game){
-		instance_destroy(self)
+		event_user(5)
 	}
 	show_debug_message("Dead")
 }

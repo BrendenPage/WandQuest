@@ -3,6 +3,10 @@ if (room==Pause){
 	exit
 }
 
+if (room == Death or room == Menu) {
+	exit
+}
+
 if (!game_setup and room==START_ROOM) {
 	event_user(2)
 } else if (room == START_ROOM) {

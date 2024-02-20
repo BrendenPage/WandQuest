@@ -59,7 +59,7 @@
     {"name":"oSlimeBoss","order":5,"path":"objects/oSlimeBoss/oSlimeBoss.yy",},
     {"name":"oLastingProjectile","order":4,"path":"objects/oLastingProjectile/oLastingProjectile.yy",},
     {"name":"tile_macros","order":4,"path":"scripts/tile_macros/tile_macros.yy",},
-    {"name":"oFlameBrustProjectile","order":2,"path":"objects/oFlameBrustProjectile/oFlameBrustProjectile.yy",},
+    {"name":"oFlameBurstProjectile","order":2,"path":"objects/oFlameBurstProjectile/oFlameBurstProjectile.yy",},
     {"name":"oButtonTutorialEnd","order":9,"path":"objects/oButtonTutorialEnd/oButtonTutorialEnd.yy",},
     {"name":"oDeckMenu","order":7,"path":"objects/oDeckMenu/oDeckMenu.yy",},
     {"name":"Room3","order":2,"path":"rooms/Room3/Room3.yy",},

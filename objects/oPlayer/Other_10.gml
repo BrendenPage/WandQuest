@@ -14,7 +14,7 @@ wand = instance_create_layer(x + -25,y + -50,"Instances",oWand)
 hurtbox.persistent = true
 
 invincible = false
-i_frames = 45
+i_frames = 20
 remaining_i_frames = 0
 
 max_health = 100
