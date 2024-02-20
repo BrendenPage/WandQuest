@@ -156,7 +156,7 @@ function is_tile_closed_door(_tile) {
 }
 
 function enemy_spawn_rate(_i, _j) {
-	if (global.map_gen.map[_i, _j] > 4) {
+	if (!is_normal_room(_i, _j)) {
 		return 0
 	}
 	return global.game.wing_spawn_rate[num_wings_cleared()]

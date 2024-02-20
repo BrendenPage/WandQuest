@@ -2,7 +2,7 @@ if (room==Pause){
 	setup_deck_menu_objects()
 	exit
 }
-
+show_debug_message("Wings cleared: " + string(num_wings_cleared()))
 if (room == Death or room == Menu) {
 	exit
 }
