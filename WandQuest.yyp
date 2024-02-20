@@ -158,6 +158,7 @@
     {"id":{"name":"bound_minimap","path":"scripts/bound_minimap/bound_minimap.yy",},},
     {"id":{"name":"deal_damage","path":"scripts/deal_damage/deal_damage.yy",},},
     {"id":{"name":"die","path":"scripts/die/die.yy",},},
+    {"id":{"name":"create_special_spell","path":"scripts/create_special_spell/create_special_spell.yy",},},
     {"id":{"name":"enemy","path":"scripts/enemy/enemy.yy",},},
     {"id":{"name":"sMinimapWest","path":"sprites/sMinimapWest/sMinimapWest.yy",},},
     {"id":{"name":"oFreezeTime","path":"objects/oFreezeTime/oFreezeTime.yy",},},

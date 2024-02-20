@@ -63,8 +63,8 @@ global.attack_spell_struct ={
 		3,
 		sFireboltProjectile,
 		oFireboltProjectile,
-		35,
-		15,
+		20,
+		2500,
 		"Firebolt. Long Range. Single Attack. Low Damage. Low Cooldown. ",
 		20
 	),
@@ -76,7 +76,7 @@ global.attack_spell_struct ={
 		oFlameBrustProjectile,
 		20,
 		150,
-		"Flame Burst. Short Range, AOE Attack. High Damage. Medium Cooldown.",
+		"Flame Burst. Short Range, AOE Attack. High Damage. Low Cooldown.",
 		40
 	)
 }
@@ -99,10 +99,9 @@ global.attack_spell_struct ={
  * // Accessing an attack spell instance by index
  * var spellIndex = 3
  * var spellInstance = ds_map_find_value(global.attack_spell_map, spellIndex)
- * ```
  */
-global.attack_spell_map = ds_map_create();
+global.attack_spell_map = ds_map_create()
 
-ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt);
-ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst);
+ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt)
+ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst)
 

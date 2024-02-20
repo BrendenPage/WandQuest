@@ -19,6 +19,15 @@ if (choice_type == CHOICE_TYPE.ATTACK) {
 	}
 } else if (choice_type == CHOICE_TYPE.SPECIAL) {
 	show_debug_message("This is a special")
+	if(ind !=5){// 5 = shield
+		show_debug_message("This spell has not been implemented yet")
+	}else{
+		var _chosen_special_spell = ds_map_find_value(global.special_spell_map, ind)
+		array_push(oPlayer.special_deck_obj.deck, _chosen_special_spell)
+		oPlayer.special_deck_obj.cur_deck_size++
+		oPlayer.special_deck_obj.cur_deck_index = 0
+		oPlayer.special_deck_obj.deck = array_shuffle(oPlayer.special_deck_obj.deck)
+	}
 } else if (choice_type == CHOICE_TYPE.AUGMENT) {
 	show_debug_message("This is an augment")
 } else {

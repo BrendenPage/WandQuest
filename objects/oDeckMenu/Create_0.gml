@@ -22,10 +22,10 @@ for (var _i = 0; _i < 4; _i++) {
 
 // TODO: Actually get the number of attacks and specials
 num_attacks = oPlayer.attack_deck_obj.cur_deck_size
-
-num_specials = 2
+num_specials = oPlayer.special_deck_obj.cur_deck_size
 var _ind = 0
-var _temp_deck = oPlayer.attack_deck_obj
+var _temp_attack_deck = oPlayer.attack_deck_obj
+var _temp_special_deck = oPlayer.special_deck_obj
 
 for (var _i = 0; _i < 4; _i++) {
 	for (var _j = 0; _j < 2; _j++) {
@@ -33,7 +33,7 @@ for (var _i = 0; _i < 4; _i++) {
 		if (_ind < num_attacks) {
 			attacks[_i,_j].sprite_index = sAttacks
 			// TODO: Actually get the right attack
-			attacks[_i,_j].image_index = _temp_deck.deck[_ind].spell_index
+			attacks[_i,_j].image_index = _temp_attack_deck.deck[_ind].spell_index
 			attacks[_i,_j].image_speed = 0
 			// TODO: Set description text accordingly
 		}
@@ -41,7 +41,7 @@ for (var _i = 0; _i < 4; _i++) {
 		if (_ind < num_specials) {
 			specials[_i,_j].sprite_index = sSpecials
 			// TODO: Actually get the right special
-			specials[_i,_j].image_index = 2
+			specials[_i,_j].image_index =  _temp_special_deck.deck[_ind].spell_index
 			specials[_i,_j].image_speed = 0
 			// TODO: Set description text accordingly
 		}
