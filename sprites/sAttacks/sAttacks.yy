@@ -30,8 +30,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Attacks",
-    "path": "folders/Sprites/Attacks.yy",
+    "name": "Attacks icons",
+    "path": "folders/Sprites/Attacks icons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
