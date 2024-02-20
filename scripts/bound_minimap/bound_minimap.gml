@@ -29,7 +29,7 @@ function draw_bounded_minimap(){
 						draw_sprite_ext(sMinimapNormal, 0, _x, _y, _element_scale, _element_scale, 0, c_white, 1)
 					}
 					if (_i == current_room_x and _j == current_room_y) {
-						draw_sprite_ext(sMinimapYAH, 0, _x, _y, _element_scale, _element_scale, 0, c_white, 1)
+						draw_sprite_ext(sYAH, 0, _x, _y, _element_scale*15/26, _element_scale*15/26, 0, c_white, 1)
 					}
 					draw_openings_minimap(_x, _y, _i, _j, _element_scale)
 				} else {
