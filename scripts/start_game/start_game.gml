@@ -8,5 +8,4 @@ function start_game(){
 	global.current_room = START_ROOM
 	create_deck_menu_objects()
 	
-	http("https://yesno.wtf/api","GET","",{},function(status,result){})
 }

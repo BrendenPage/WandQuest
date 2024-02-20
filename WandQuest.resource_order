@@ -164,6 +164,7 @@
     {"name":"setup_deck_menu_objects","order":16,"path":"scripts/setup_deck_menu_objects/setup_deck_menu_objects.yy",},
     {"name":"oFlameBurst","order":2,"path":"objects/oFlameBurst/oFlameBurst.yy",},
     {"name":"fnt_main","order":1,"path":"fonts/fnt_main/fnt_main.yy",},
+    {"name":"http_testing","order":17,"path":"scripts/http_testing/http_testing.yy",},
     {"name":"oSlimePuddle","order":7,"path":"objects/oSlimePuddle/oSlimePuddle.yy",},
     {"name":"sLightningBolt","order":3,"path":"sprites/sLightningBolt/sLightningBolt.yy",},
     {"name":"sChest","order":7,"path":"sprites/sChest/sChest.yy",},

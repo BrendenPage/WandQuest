@@ -214,6 +214,7 @@
     {"id":{"name":"oFireboltProjectile","path":"objects/oFireboltProjectile/oFireboltProjectile.yy",},},
     {"id":{"name":"oFlameBurst","path":"objects/oFlameBurst/oFlameBurst.yy",},},
     {"id":{"name":"fnt_main","path":"fonts/fnt_main/fnt_main.yy",},},
+    {"id":{"name":"http_testing","path":"scripts/http_testing/http_testing.yy",},},
     {"id":{"name":"sAttacks","path":"sprites/sAttacks/sAttacks.yy",},},
     {"id":{"name":"sWall_Set_36x36","path":"sprites/sWall_Set_36x36/sWall_Set_36x36.yy",},},
     {"id":{"name":"oSlimePuddle","path":"objects/oSlimePuddle/oSlimePuddle.yy",},},
