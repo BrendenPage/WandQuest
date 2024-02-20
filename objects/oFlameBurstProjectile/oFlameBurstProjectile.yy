@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sFlameBrustProjectile",
-    "path": "sprites/sFlameBrustProjectile/sFlameBrustProjectile.yy",
+    "name": "sFlameBurstProjectile",
+    "path": "sprites/sFlameBurstProjectile/sFlameBurstProjectile.yy",
   },
   "spriteMaskId": null,
   "visible": true,

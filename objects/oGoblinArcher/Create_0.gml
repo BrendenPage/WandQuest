@@ -7,7 +7,7 @@
 event_inherited();
 
 damage = 3
-speed_ = 0.5
+speed_ = 1.5
 
 move_dir = irandom(360)
 state_ctr = GOBLIN_ARCHER_TIMERS.GOBLIN_ARCHER_IDLE

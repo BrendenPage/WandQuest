@@ -72,7 +72,7 @@ global.attack_spell_struct ={
 	flame_burst: new create_attack_spell(
 		"Flame Burst",
 		4,
-		sFlameBrustProjectile,
+		sFlameBurstProjectile,
 		oFlameBurstProjectile,
 		20,
 		150,
