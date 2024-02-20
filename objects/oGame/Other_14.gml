@@ -5,7 +5,7 @@ var _h = ceil(room_height/TS)
 var _map = layer_tilemap_get_id("tiles_wall")
 var _enemies_spawned = 0
 var _enemy_count = irandom_range(MIN_ENEMIES, MAX_ENEMIES)*enemy_spawn_rate(current_room_x, current_room_y)
-var _projectile_enemies = irandom_range(0, _enemy_count/2-1)
+var _projectile_enemies = irandom_range(0, _enemy_count/2)
 while(_enemies_spawned < _enemy_count) {
 	for (var yy = 0; yy < _h; ++yy) {
 	    for (var xx = 0; xx < _w; ++xx) {

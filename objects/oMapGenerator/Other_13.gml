@@ -69,7 +69,7 @@ for (var _i = 0; _i < map_size; _i++) {
 	for (var _j = 0; _j < map_size; _j++) {
 		if (_i = map_size/2 and _j = map_size/2) {
 			room_map[_i, _j] = DStart
-			ds_map_add(room_sizes, room_map[_i, _j], [1080, 720])
+			ds_map_add(room_sizes, room_map[_i, _j], [960, 576])
 		} else if (map[_i, _j] != 0) {
 			if (map[_i, _j] <= 4) {
 				if (ds_list_size(free_rooms) == 0) {
