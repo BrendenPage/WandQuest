@@ -6,6 +6,10 @@
 // Inherit the parent event
 event_inherited();
 
+if (remaining_health == 0) {
+	exit
+}
+
 var _dist = distance_to_object(global.game.player)
 var _dir = point_direction(x, y, global.game.player.x, global.game.player.y)
 if(_dist < TS) {

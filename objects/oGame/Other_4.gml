@@ -5,6 +5,10 @@ if (room==Pause){
 
 if (!game_setup and room==START_ROOM) {
 	event_user(2)
+} else if (room == START_ROOM) {
+	if (num_wings_cleared() == 4) {
+		instance_create_layer(432, 252, "Instances", oBossWarp)
+	}
 }
 
 if (!ds_map_find_value(global.seen_room_set, room)) {

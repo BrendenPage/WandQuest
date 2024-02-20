@@ -1,5 +1,7 @@
 /// @description Populate enemies
-show_debug_message("Populating Enemies")
+if (DEBUG) {
+	show_debug_message("Populating Enemies")
+}
 var _w = ceil(room_width/TS)
 var _h = ceil(room_height/TS)
 var _map = layer_tilemap_get_id("tiles_wall")
@@ -15,7 +17,6 @@ while(_enemies_spawned < _enemy_count) {
 					if (random(1) <= 0.005) {
 						var _enemy = instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", choose_enemy(_projectile_enemies-- > 0))
 						_enemies_spawned++
-						scale_enemy(_enemy)
 						if (_enemies_spawned >= _enemy_count){
 							exit
 						}

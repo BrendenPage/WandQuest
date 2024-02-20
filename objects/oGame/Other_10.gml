@@ -12,22 +12,25 @@ global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
 var _map = layer_tilemap_get_id("tiles_wall")
 var _door_map = layer_tilemap_get_id("tiles_door")
 // Determine at this point what doors need to exist in this room and insert them accordingly
-if (global.map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
-	//show_debug_message("Open west")
-	open_west_door()
+if (!is_boss_room()) {
+	if (global.map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
+		//show_debug_message("Open west")
+		open_west_door()
+	}
+	if (global.map_gen.dependency_map[current_room_x, current_room_y] & SOUTH) {
+		//show_debug_message("Open south")
+		open_south_door()
+	}
+	if (global.map_gen.dependency_map[current_room_x, current_room_y] & EAST) {
+		//show_debug_message("Open east")
+		open_east_door()
+	}
+	if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
+		//show_debug_message("Open north")
+		open_north_door()
+	}
 }
-if (global.map_gen.dependency_map[current_room_x, current_room_y] & SOUTH) {
-	//show_debug_message("Open south")
-	open_south_door()
-}
-if (global.map_gen.dependency_map[current_room_x, current_room_y] & EAST) {
-	//show_debug_message("Open east")
-	open_east_door()
-}
-if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
-	//show_debug_message("Open north")
-	open_north_door()
-}
+
 // create each 1x1 solid
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
@@ -73,11 +76,6 @@ for (var yy = 0; yy < _h; ++yy) {
 					instance_destroy(_inst_above);
 				}
 			}
-		} else {
-			//tile is empty, so should we add an enemy	
-			//if random(1) <= 0.025 {
-			//	instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", oSlime)
-			//}
 		}
 	}
 }

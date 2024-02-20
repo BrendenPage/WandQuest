@@ -5,6 +5,7 @@
 #macro START_ROOM DStart
 #macro MENU_ROOM Menu
 #macro DEATH_ROOM Death
+#macro DEBUG true
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
@@ -46,12 +47,12 @@ ranged_spawn_rates = [0.8, 0.15, 0.05]
 wing_spawn_rate = [0.8, 1, 1.5, 2]
 attack_deck = undefined
 global.paths_list = []
-enemy_scale = ds_map_create()
-ds_map_add(enemy_scale, oSlime, 0.7)
-ds_map_add(enemy_scale, oGun, 0.9)
-ds_map_add(enemy_scale, oRedGun, 0.9)
-ds_map_add(enemy_scale, oGoblinArcher, 1)
-ds_map_add(enemy_scale, oGoblinWarrior, 1)
+//enemy_scale = ds_map_create()
+//ds_map_add(enemy_scale, oSlime, 0.1)
+//ds_map_add(enemy_scale, oGun, 0.9)
+//ds_map_add(enemy_scale, oRedGun, 0.9)
+//ds_map_add(enemy_scale, oGoblinArcher, 1)
+//ds_map_add(enemy_scale, oGoblinWarrior, 1)
 locked_doors = []
 // ESWN
 wings_cleared = [false, false, false, false]

@@ -73,7 +73,9 @@ for (var _i = 0; _i < map_size; _i++) {
 		} else if (map[_i, _j] != 0) {
 			if (map[_i, _j] <= 4) {
 				if (ds_list_size(free_rooms) == 0) {
-					var _new_room = room_duplicate(room_list[irandom_range(0,array_length(room_list)-1)])
+					var _index = irandom_range(0,array_length(room_list)-1)
+					var _new_room = room_duplicate(room_list[_index])
+					ds_map_add(warp_map, _new_room, warp_locations[_index])
 					room_map[_i, _j] = _new_room
 					ds_list_add(in_use_rooms, _new_room)
 				} else {
@@ -85,7 +87,9 @@ for (var _i = 0; _i < map_size; _i++) {
 				}
 				ds_map_add(room_sizes, room_map[_i, _j], [1080, 720])
 			} else {
-				room_map[_i, _j] = room_duplicate(DSpecial)
+				var _room = room_duplicate(DSpecial)
+				room_map[_i, _j] = _room
+				ds_map_add(warp_map, _room, [[216, 144], [756,468]])
 				ds_map_add(room_sizes, room_map[_i, _j], [1080, 720])
 			}
 		}
