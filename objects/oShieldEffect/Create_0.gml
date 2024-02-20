@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-spell_duration = 100
+spell_duration = global.special_spell_struct.shield.duration
 duration_timer = spell_duration
-cooldown = 120
+cooldown = global.special_spell_struct.shield.cooldown
 
 hurtbox = hurtbox_create(64, 64, 0, 0, false);
 

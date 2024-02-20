@@ -21,14 +21,16 @@ attack_timer = undefined
 attack_spell = undefined
 attack_deck_obj = undefined
 
-special_deck_obj = undefined
 special_timer =undefined
+special_deck_obj = undefined
+special_spell = undefined
+special_duration_timer = undefined
+
 
 AT_shuffle_timer = undefined
 SP_shuffle_timer = undefined
 
-
-wand_len = undefined//length from the center of Player to the tip of the wand + 5
+dist_from_center_to_wand_tip = undefined
 
 knockback_dir = 0
 knockback_frames = 0

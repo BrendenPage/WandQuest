@@ -30,18 +30,15 @@ attack_spell = attack_deck_obj.deck[0]
 // Special deck initialization
 special_deck_obj = global.game.special_deck
 special_deck_obj.persistent = true
-//special_spell = special_deck_obj.deck[0]
+special_spell = special_deck_obj.deck[0]
 
 //Cooldown for attack, special, and shuffle
 attack_timer = attack_spell.cooldown
 AT_shuffle_timer = 0
 
-//TODO: change special_timer after create_special_spell is implemented
-special_timer = 120
-//special_timer = oShieldEffect.cooldown
-
-
+special_timer = special_spell.cooldown
 SP_shuffle_timer = 0
+special_duration_timer = 0
 
 //length from the center of Player to the tip of the wand + spell offset
 dist_from_center_to_wand_tip = 0

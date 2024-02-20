@@ -31,7 +31,13 @@ for (var _i = 0; _i < 3; _i++) {
 			choices[_i].choice_explanation = temp_spell.description_text
 		}
 	}else{
-		choices[_i].choice_explanation = "Description Placeholder. "
+		// TODO: remove placeholder after all cards are implemented
+		if choice_ind != 5 {
+			choices[_i].choice_explanation = "Description Placeholder. "
+		}else{
+			var temp_spell = ds_map_find_value(global.special_spell_map,choice_ind)
+			choices[_i].choice_explanation = temp_spell.description_text
+		}
 	}
 
 }
