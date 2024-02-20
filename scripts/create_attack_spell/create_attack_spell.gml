@@ -64,7 +64,7 @@ global.attack_spell_struct ={
 		sFireboltProjectile,
 		oFireboltProjectile,
 		20,
-		2500,
+		25,
 		"Firebolt. Long Range. Single Attack. Low Damage. Low Cooldown. ",
 		20
 	),
