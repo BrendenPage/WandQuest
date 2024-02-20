@@ -5,7 +5,7 @@ hitbox = noone
 hurtbox = noone
 
 invincible = false
-i_frames = 10
+i_frames = 15
 remaining_i_frames = 0
 // Are we close enough to aggro
 attacking = false
