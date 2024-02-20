@@ -1,4 +1,5 @@
 if (room==Pause){
+	setup_deck_menu_objects()
 	exit
 }
 

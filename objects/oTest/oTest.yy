@@ -1,16 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oDeckMenu",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "oTest",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Menu",
-    "path": "folders/Objects/Menu.yy",
+    "name": "Room",
+    "path": "folders/Objects/Room.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,9 +26,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sDeckMenu",
-    "path": "sprites/sDeckMenu/sDeckMenu.yy",
+    "name": "sTest",
+    "path": "sprites/sTest/sTest.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

@@ -6,4 +6,5 @@ function start_game(){
 	layer_set_target_room(START_ROOM)
 	global.game_paused = false
 	global.current_room = START_ROOM
+	create_deck_menu_objects()
 }
