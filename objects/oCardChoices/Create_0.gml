@@ -23,13 +23,8 @@ for (var _i = 0; _i < 3; _i++) {
 	
 
 	if (if_attack == true){
-		// TODO: remove placeholder after all cards are implemented
-		if choice_ind < 3 ||  choice_ind > 6{ 
-			choices[_i].choice_explanation = "Description Placeholder. "
-		}else{
 			var _temp_spell = ds_map_find_value(global.attack_spell_map,choice_ind)
 			choices[_i].choice_explanation = _temp_spell.description_text
-		}
 	}else{
 		// TODO: remove placeholder after all cards are implemented
 		if choice_ind != 5 {

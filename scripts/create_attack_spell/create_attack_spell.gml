@@ -57,6 +57,17 @@ function create_attack_spell(
  * These instances provide access to the properties and behavior of each spell in the game.
  */
 global.attack_spell_struct ={
+	
+	blast:new create_attack_spell(
+		"Blast",
+		2,
+		sBlastProjectile,
+		oBlastProjectile,
+		50,
+		150,
+		"Blast. Unlimited Cast Range. AOE Attack. Very High Damage & Cooldown.",
+		0
+	),
 
 	firebolt: new create_attack_spell(
 		"Firebolt",
@@ -75,7 +86,7 @@ global.attack_spell_struct ={
 		sFlameBurstProjectile,
 		oFlameBurstProjectile,
 		20,
-		150,
+		80,
 		"Flame Burst. Short Range. AOE Attack. High Damage. Low Cooldown.",
 		40
 	),
@@ -87,7 +98,7 @@ global.attack_spell_struct ={
 		oLightningBoltProjectile,
 		35,
 		40,
-		"Lightning Bolt. Medium range. AOE attack. Medium Damage. Medium cooldown",
+		"Lightning Bolt. Medium range. AOE attack. Medium Damage & Cooldown",
 		175
 	),
 	
@@ -125,6 +136,7 @@ global.attack_spell_struct ={
  */
 global.attack_spell_map = ds_map_create()
 
+ds_map_add(global.attack_spell_map, 2, global.attack_spell_struct.blast)
 ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt)
 ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst)
 ds_map_add(global.attack_spell_map, 5, global.attack_spell_struct.lightning_bolt)

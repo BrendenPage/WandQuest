@@ -22,6 +22,9 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 			with(_projectile_inst){	 dir  = point_direction(x,y,mouse_x,mouse_y)	 }
 		}
 
+	}else if(_attack_spell.spell_index == global.attack_spell_struct.blast.spell_index){// blast
+		var _projectile_inst = instance_create_depth(mouse_x, mouse_y, depth-99, _attack_spell.projectile_obj)
+		with(_projectile_inst){	 dir  = 0	 }
 	}else{// everything else
 		 //length from the center of Player to the tip of the wand + spell offset
 		dist_from_center_to_wand_tip = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 

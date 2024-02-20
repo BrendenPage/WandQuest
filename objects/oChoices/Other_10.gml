@@ -8,15 +8,12 @@ ind = clicked_choice.choice_ind
 // TODO: Actually add the attack to the deck
 if (choice_type == CHOICE_TYPE.ATTACK) {
 	show_debug_message("This is an attack")
-	if(choice_ind < 3 ||  choice_ind > 6){
-		show_debug_message("This spell has not been implemented yet")
-	}else{
-		var _chosen_attack_spell = ds_map_find_value(global.attack_spell_map, ind)
-		array_push(oPlayer.attack_deck_obj.deck, _chosen_attack_spell)
-		oPlayer.attack_deck_obj.cur_deck_size++
-		oPlayer.attack_deck_obj.cur_deck_index = 0
-		oPlayer.attack_deck_obj.deck = array_shuffle(oPlayer.attack_deck_obj.deck)
-	}
+	var _chosen_attack_spell = ds_map_find_value(global.attack_spell_map, ind)
+	array_push(oPlayer.attack_deck_obj.deck, _chosen_attack_spell)
+	oPlayer.attack_deck_obj.cur_deck_size++
+	oPlayer.attack_deck_obj.cur_deck_index = 0
+	oPlayer.attack_deck_obj.deck = array_shuffle(oPlayer.attack_deck_obj.deck)
+	
 } else if (choice_type == CHOICE_TYPE.SPECIAL) {
 	show_debug_message("This is a special")
 	if(ind !=5){// 5 = shield
