@@ -63,7 +63,7 @@ global.attack_spell_struct ={
 		2,
 		sBlastProjectile,
 		oBlastProjectile,
-		50,
+		500,
 		150,
 		"Blast. Unlimited Cast Range. AOE Attack. Very High Damage & Cooldown.",
 		0
