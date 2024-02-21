@@ -19,3 +19,21 @@
 #macro EAST_DOOR_OFFSET (2 * DOOR_SPRITE_NUM)
 #macro SOUTH_DOOR_OFFSET (3 * DOOR_SPRITE_NUM)
 #macro OPEN_DOOR_OFFSET 2
+
+
+// Logging macros
+#macro CARD_CHOSEN "1"
+#macro AUGMENT_CHOSEN "2"
+
+#macro WING_CLEARED "10"
+#macro BOSS_ENTRY "11"
+
+#macro ENEMY_KILLED "20"
+#macro ATTACK_SPELL_USED "21"
+#macro SPECIAL_SPELL_USED "22"
+
+#macro PLAYER_DEATH "30"
+#macro START_GAME "31"
+
+#macro PAUSED "50"
+

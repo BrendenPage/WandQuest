@@ -253,9 +253,19 @@ function clear_wing(_wing) {
 	}
 	set_wing_warp()
 	global.game.wings_cleared[_wing] = true
-	show_debug_message("Num wings cleared: " + string(num_wings_cleared()))
+	if (global.logging) {
+		var _data = {
+			curr_time: time(),
+			wings_cleared: num_wings_cleared()
+		}
+		cap_logger_action_no_level(WING_CLEARED, json_stringify(_data))
+	}
 }
 
 function is_normal_room(_x, _y) {
 	return global.map_gen.map[_x, _y] <= 4
+}
+
+function is_current_room_normal() {
+	return global.map_gen.map[global.game.current_room_x, global.game.current_room_y] <= 4
 }

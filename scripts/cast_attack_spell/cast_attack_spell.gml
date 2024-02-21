@@ -42,4 +42,11 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 		
 	}
 	
+	if (global.logging) {
+		var _data = {
+			curr_time: time(),
+			spell: _attack_spell.spell_name
+		}
+		cap_logger_action_level(ATTACK_SPELL_USED, json_stringify(_data))
+	}
 }

@@ -41,7 +41,7 @@ if (DEBUG) {
 		show_debug_message(string(room_map))
 }
 // Minimap?
-length_max = 2
+length_max = 4
 length_min = length_max/1.5
 done = false
 // Begin map generation

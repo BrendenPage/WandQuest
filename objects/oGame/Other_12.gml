@@ -75,3 +75,6 @@ ds_list_shuffle(special_types)
 locked_doors = []
 // ESWN
 wings_cleared = [false, false, false, false]
+
+// Logging
+global.enemies_killed = 0

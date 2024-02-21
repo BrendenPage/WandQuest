@@ -12,13 +12,13 @@
   "androidsourcedir": "",
   "author": "",
   "classname": "",
-  "copyToTargets": 32,
+  "copyToTargets": 96,
   "date": "2024-02-20T16:10:43.0195404-08:00",
   "description": "",
   "exportToGame": true,
   "extensionVersion": "0.0.1",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"CapstoneLoggerExt.js","constants":[],"copyToTargets":32,"filename":"CapstoneLoggerExt.js","final":"","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"CapstoneLoggerExt.js","constants":[],"copyToTargets":96,"filename":"CapstoneLoggerExt.js","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_init","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"initLogger","help":"Init: categoryId: int","hidden":false,"kind":5,"returnType":2,},
@@ -30,11 +30,23 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_new_session","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"startNewSession","help":"Start new session with passed uuid","hidden":false,"kind":5,"returnType":1,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_log_level_start","argCount":0,"args":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_level_start","argCount":0,"args":[
             1,
             1,
           ],"documentation":"","externalName":"logLevelStart","help":"string: levelId, json formatted string: details","hidden":false,"kind":5,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_check_callback","argCount":0,"args":[],"documentation":"","externalName":"checkCallback","help":"Returns the integer value of the callback function","hidden":false,"kind":5,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_action_no_level","argCount":0,"args":[
+            1,
+            1,
+          ],"documentation":"","externalName":"logActionWithNoLevel","help":"actionId, json formatted string: details","hidden":false,"kind":5,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_action_level","argCount":0,"args":[
+            1,
+            1,
+          ],"documentation":"","externalName":"logLevelAction","help":"actionId, json formatted string: details","hidden":false,"kind":5,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cap_logger_level_end","argCount":0,"args":[
+            1,
+            1,
+          ],"documentation":"","externalName":"logLevelEnd","help":"levelId, details","hidden":false,"kind":5,"returnType":1,},
       ],"init":"","kind":5,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",

@@ -35,3 +35,5 @@ dist_from_center_to_wand_tip = undefined
 knockback_dir = 0
 knockback_frames = 0
 knockback_spd = 0
+
+depth = 10

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "tile_macros",
+  "name": "static_macros",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

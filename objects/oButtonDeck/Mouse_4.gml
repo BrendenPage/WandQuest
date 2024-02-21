@@ -11,4 +11,3 @@ for (var _i = 0; _i < 4; _i++) {
 		global.specials[_i,_j].visible = not global.specials[_i,_j].visible
 	}
 }
-

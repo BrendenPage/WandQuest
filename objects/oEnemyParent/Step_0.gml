@@ -2,6 +2,15 @@
 // You can write your code in this editor
 
 if (remaining_health == 0){
+	global.enemies_killed++
+	if (global.logging) {
+		var _data = {
+			curr_time: time(),
+			ranged: projectile_enemy,
+			enemy: string(typeof(self))
+		}
+		cap_logger_action_level(ENEMY_KILLED, json_stringify(_data))
+	}
 	instance_destroy()
 	set_warp_points()
 	if (instance_number(oEnemyParent) == 0 and is_wing_cleared()) {

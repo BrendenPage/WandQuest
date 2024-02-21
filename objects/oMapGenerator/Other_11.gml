@@ -29,7 +29,7 @@ for (var _i = 0; _i < map_size; _i++) {
 }
 
 for (var _i = 0; _i < ds_list_size(in_use_rooms); _i++) {
-	//ds_list_add(free_rooms, ds_list_find_value(in_use_rooms, _i))
+	ds_list_add(free_rooms, ds_list_find_value(in_use_rooms, _i))
 }
 
 ds_list_clear(in_use_rooms)

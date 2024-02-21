@@ -1088,12 +1088,12 @@ function logLevelEnd(levelId, details) {
     logger.logLevelEnd(levelId, details);
 }
 
-function logLevelAction(levelId, details) {
-    logger.logLevelAction(levelId, details);
+function logLevelAction(actionId, details) {
+    logger.logLevelAction(actionId, details);
 }
 
-function logActionWithNoLevel(levelId, details) {
-    logger.logActionWithNoLevel(levelId, details);
+function logActionWithNoLevel(actionId, details) {
+    logger.logActionWithNoLevel(actionId, details);
 }
 
 function checkCallback() {

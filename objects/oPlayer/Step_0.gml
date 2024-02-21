@@ -1,6 +1,17 @@
-if (keyboard_check_pressed(ord("P"))) {
-	room_goto(Pause)
-	global.game_paused = true
+if (keyboard_check_pressed(ord("P")) or keyboard_check_pressed(vk_escape)) {
+	if (room == Pause) {
+		room_goto(global.current_room)
+		global.game_paused = false
+	} else {
+		room_goto(Pause)
+		global.game_paused = true
+		if (global.logging) {
+			var _data = {
+				curr_time: time()
+			}
+			cap_logger_action_level(PAUSED, json_stringify(_data))
+		}
+	}
 }
 
 if (global.game_paused) {
@@ -136,7 +147,13 @@ if(_key_special && (special_timer <= 0) && (SP_shuffle_timer <= 0)){
 	
 	//Generate the spell
 	var _special_inst = instance_create_depth(x , y, depth-98, special_spell.special_obj)
-	
+	if (global.logging) {
+		var _data = {
+			curr_time: time(),
+			spell: special_spell.spell_name
+		}
+		cap_logger_action_level(SPECIAL_SPELL_USED, json_stringify(_data))
+	}
 	// set the next card
 	if (special_deck_obj.cur_deck_index + 1 < special_deck_obj.cur_deck_size){
 		special_deck_obj.cur_deck_index++

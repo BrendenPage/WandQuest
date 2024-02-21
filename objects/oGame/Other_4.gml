@@ -3,7 +3,6 @@ if (room==Pause){
 	exit
 }
 
-show_debug_message("Wings cleared: " + string(num_wings_cleared()))
 if (room == Death or room == Menu) {
 	exit
 }
@@ -23,9 +22,16 @@ if (!ds_map_find_value(global.seen_room_set, room)) {
 var _current_room_type = global.map_gen.map[current_room_x,current_room_y]
 
 if (!ds_map_find_value(this_run_seen_room_set,room)) {
-	if (_current_room_type >= 1 and _current_room_type <= 4) {
+	if (global.logging) {
+		var _data = {
+			curr_time: time(),
+			special_room: !is_current_room_normal()
+		}
+		cap_logger_level_end(string(ds_map_size(this_run_seen_room_set)), json_stringify(_data))
+		cap_logger_level_start(string(ds_map_size(this_run_seen_room_set)+ 1), json_stringify(_data))
+	}
+	if (is_current_room_normal()) {
 		// insert enemies at random
-		show_debug_message("SETTING UP THIS BITCH")
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {
 		event_user(3)
