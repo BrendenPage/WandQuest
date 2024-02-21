@@ -13,7 +13,10 @@ function start_game(){
 		global.current_room = TUTORIAL_START
 	}
 	global.game_paused = false
-	create_deck_menu_objects()
+	
+	if (!variable_global_exists("attacks")) {
+		create_deck_menu_objects()
+	}
 }
 
 // Return epoch time in milliseconds

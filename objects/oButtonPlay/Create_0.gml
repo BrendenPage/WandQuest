@@ -5,12 +5,23 @@ button_text = "Loading"
 http_request_ = undefined
 ready = false
 
+
+
 if (!variable_global_exists("tutorial_seen")) {
 	global.tutorial_seen = false
 }
 
+if (!variable_global_exists("logging")) {
+	global.logging = false
+}
+
 if (!variable_global_exists("logging_initialized")) {
 	global.logging_initialized = false
+	if (os_device == os_ios or os_device == os_android) {
+		show_message("This game is best experienced on a computer")
+		global.logging_initialized = true
+		global.logging = false
+	}
 }
 
 failed_streak = 0
@@ -20,7 +31,7 @@ instance_create_layer(0,0, "Instances", oMapGenerator)
 if (!global.logging_initialized) {
 	cap_logger_init(RELEASE)
 	global.uuid = cap_logger_get_uuid()
-	if (!global.uuid) {
+	if (global.uuid == 0) {
 		global.uuid = cap_logger_gen_uuid()
 		cap_logger_set_uuid(global.uuid)
 	}

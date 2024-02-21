@@ -30,13 +30,13 @@ var _text_height = _bot_bd * 7 / 8 + _top_bd / 8
 
 for(var _i = 0; _i < 4; _i++) {
 	for(var _j = 0; _j < 2; _j++) {
-		if (position_meeting(mouse_x,mouse_y,attacks[_i,_j]) and attacks[_i,_j].sprite_index == sAttacks) {
+		if (position_meeting(mouse_x,mouse_y,global.attacks[_i,_j]) and global.attacks[_i,_j].sprite_index == sAttacks) {
 
-			draw_text(_middle_x,_text_height, attacks[_i,_j].choice_explanation)
+			draw_text(_middle_x,_text_height, global.attacks[_i,_j].choice_explanation)
 		}
 		
-		if (position_meeting(mouse_x,mouse_y,specials[_i,_j]) and specials[_i,_j].sprite_index == sSpecials) {
-			draw_text(_middle_x,_text_height, specials[_i,_j].choice_explanation)
+		if (position_meeting(mouse_x,mouse_y,global.specials[_i,_j]) and global.specials[_i,_j].sprite_index == sSpecials) {
+			draw_text(_middle_x,_text_height, global.specials[_i,_j].choice_explanation)
 		}
 	}
 }
