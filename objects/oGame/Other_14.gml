@@ -1,7 +1,7 @@
 /// @description Populate enemies
 if (!global.tutorial_seen) { exit }
 if (room == DBoss1) {
-	instance_create_layer(252, 144, "Enemies", oSlimeBoss)
+	instance_create_layer(252, 144, "Enemy", oSlimeBoss)
 	exit
 }
 if (DEBUG) {

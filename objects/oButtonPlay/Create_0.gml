@@ -14,6 +14,7 @@ if (!variable_global_exists("logging_initialized")) {
 }
 
 failed_streak = 0
+no_response_streak = 0
 instance_create_layer(0,0, "Instances", oMapGenerator)
 
 if (!global.logging_initialized) {

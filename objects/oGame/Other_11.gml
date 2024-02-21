@@ -1,4 +1,10 @@
 /// @description Set up camera and viewport
+camera_width = (960*CAMERA_SCALE_NATIVE)
+camera_height= (540*CAMERA_SCALE_NATIVE)
+if (os_browser != browser_not_a_browser) {
+	camera_width = browser_width*CAMERA_SCALE_BROWSER
+	camera_height= (9/16)*browser_width*CAMERA_SCALE_BROWSER
+}
 view_enabled = true
 view_visible[0] = true
 view_set_xport(0, 0)
