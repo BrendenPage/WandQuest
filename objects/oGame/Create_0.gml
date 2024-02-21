@@ -8,6 +8,9 @@
 #macro DEBUG true
 #macro BOX_VISIBLE false
 
+// categoryId
+#macro RELEASE 1
+
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
 #macro ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD 200
