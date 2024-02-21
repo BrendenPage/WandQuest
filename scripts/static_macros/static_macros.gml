@@ -38,6 +38,7 @@
 
 #macro PLAYER_DEATH "30"
 #macro START_GAME "31"
+#macro PLAYER_RESTART "32"
 
 #macro PAUSED "50"
 

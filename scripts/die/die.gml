@@ -9,7 +9,11 @@ function die(){
 			rooms_cleared: ds_map_size(global.game.this_run_seen_room_set),
 			enemies_killed: global.enemies_killed
 		}
-		cap_logger_action_level(PLAYER_DEATH, json_stringify(_data))
+		if (room == Pause or room == DBoss1 and instance_number(oEnemyParent) == 0){
+			cap_logger_action_level(PLAYER_RESTART, json_stringify(_data))
+		} else {
+			cap_logger_action_level(PLAYER_DEATH, json_stringify(_data))
+		}
 	}
 	with(global.game) {
 		event_user(5)

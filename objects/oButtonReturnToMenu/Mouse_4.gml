@@ -2,8 +2,9 @@
 // You can write your code in this editor
 
 event_inherited()
-
-if (
-
+with (global.game.player) {
+	die()
+}
 room_goto(MENU_ROOM)
+
 

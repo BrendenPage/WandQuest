@@ -5,4 +5,8 @@
 
 // Inherit the parent event
 event_inherited();
-game_end()
+with (global.game.player) {
+	die()
+}
+room_goto(Menu)
+
