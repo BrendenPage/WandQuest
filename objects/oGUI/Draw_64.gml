@@ -22,7 +22,7 @@ with (global.game.player){
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
-if (minimap_enabled) {
+if (minimap_enabled and global.tutorial_seen) {
 	draw_bounded_minimap()
 }
 

@@ -3,12 +3,17 @@
 // @description Starts the game
 function start_game(){
 	global.start_time = time()
-	room_goto(START_ROOM)
-	layer_set_target_room(START_ROOM)
+	if (global.tutorial_seen) {
+		room_goto(START_ROOM)
+		layer_set_target_room(START_ROOM)
+		global.current_room = START_ROOM
+	} else {
+		room_goto(TUTORIAL_START)
+		layer_set_target_room(TUTORIAL_START)
+		global.current_room = TUTORIAL_START
+	}
 	global.game_paused = false
-	global.current_room = START_ROOM
 	create_deck_menu_objects()
-	
 }
 
 // Return epoch time in milliseconds

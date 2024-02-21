@@ -3,6 +3,7 @@
 #macro ROOM_START_X room_width/2
 #macro ROOM_START_Y room_height/2
 #macro START_ROOM DStart
+#macro TUTORIAL_START DTutorialMove
 #macro MENU_ROOM Menu
 #macro DEATH_ROOM Death
 #macro DEBUG true
@@ -33,6 +34,7 @@
 #macro TS 36
 
 game_setup = false
+tutorial_setup = false
 
 player = undefined
 gui = undefined

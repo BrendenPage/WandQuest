@@ -5,6 +5,10 @@ button_text = "Loading"
 http_request_ = undefined
 ready = false
 
+if (!variable_global_exists("tutorial_seen")) {
+	global.tutorial_seen = false
+}
+
 if (!variable_global_exists("logging_initialized")) {
 	global.logging_initialized = false
 }

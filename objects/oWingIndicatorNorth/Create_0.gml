@@ -1,4 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+wing = 0
 
-show_debug_message("Destroyed")
+
+
+
+
+
+
