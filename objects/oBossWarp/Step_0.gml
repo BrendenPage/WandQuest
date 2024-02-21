@@ -7,6 +7,8 @@ if (num_wings_cleared() == 4 and !activated) {
 }
 
 if (activated and place_meeting(x, y, global.game.player)) {
+
+	global.game.player.remaining_health = min(global.game.player.remaining_health + global.game.player.max_health*HEAL_PERCENT, global.game.player.max_health)
 	// Clean up room
 	if (instance_number(oEnemyParent) == 0) {
 		while(instance_number(oProjectileParent) > 0) {

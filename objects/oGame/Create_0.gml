@@ -19,6 +19,9 @@
 #macro MAX_ENEMIES 5
 #macro MIN_ENEMIES 2
 
+// percentage healed after going through warp as integer (max health*heal percent)
+#macro HEAL_PERCENT 0.25
+
 // At what distance should a ranged enemy
 // shift to shooting and moving erratically
 #macro PROJECTILE_AGGRO 300

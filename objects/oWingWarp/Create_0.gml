@@ -4,6 +4,7 @@ target_y = room_height/2
 show_debug_message("Hello")
 target_room = DStart
 activated = false
+first_use = false
 
 visible = false
 switch (get_room_wing_type(global.game.current_room_x, global.game.current_room_y)) {

@@ -8,6 +8,10 @@ if (!place_meeting(x, y, global.game.player) and instance_number(oEnemyParent) =
 }
 
 if (activated and place_meeting(x, y, global.game.player)) {
+	if (!first_use) {
+		first_use = true
+		global.game.player.remaining_health = min(global.game.player.remaining_health + global.game.player.max_health*HEAL_PERCENT, global.game.player.max_health)
+	}
 	// Clean up room
 	if (instance_number(oEnemyParent) == 0) {
 		while(instance_number(oProjectileParent) > 0) {
