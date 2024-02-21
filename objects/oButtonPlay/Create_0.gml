@@ -12,6 +12,7 @@ if (!variable_global_exists("tutorial_seen")) {
 if (!variable_global_exists("logging_initialized")) {
 	global.logging_initialized = false
 }
+
 failed_streak = 0
 instance_create_layer(0,0, "Instances", oMapGenerator)
 

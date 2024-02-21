@@ -7,6 +7,9 @@ if (global.map_gen.done) {
 }
 
 if (instance_number(oGame) == 1 and global.logging_initialized) {
+	with(global.game) {
+		event_user(1)
+	}
 	button_text = "Play"
 	ready = true
 }

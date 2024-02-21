@@ -9,7 +9,6 @@
   "instanceCreationOrder": [
     {"name":"inst_53C8F862_1","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},
     {"name":"inst_279364E5_1","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},
-    {"name":"inst_79D8878C","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},
     {"name":"inst_73EDE29","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},
     {"name":"inst_733CD1DB","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},
   ],
@@ -27,7 +26,6 @@
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Tutorial","depth":500,"effectEnabled":true,"effectType":null,"gridX":36,"gridY":36,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_53C8F862_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oTutorialDoor","path":"objects/oTutorialDoor/oTutorialDoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":936.0,"y":252.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_279364E5_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oTutorialDoor","path":"objects/oTutorialDoor/oTutorialDoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":936.0,"y":288.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_79D8878C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oGun","path":"objects/oGun/oGun.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":828.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_73EDE29","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oRMouseTutorial","path":"objects/oRMouseTutorial/oRMouseTutorial.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":72.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"tiles_door","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":16,"SerialiseWidth":27,"TileCompressedData":[

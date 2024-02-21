@@ -1,5 +1,9 @@
 /// @description Populate enemies
 if (!global.tutorial_seen) { exit }
+if (room == DBoss1) {
+	instance_create_layer(252, 144, "Enemies", oSlimeBoss)
+	exit
+}
 if (DEBUG) {
 	show_debug_message("Populating Enemies")
 }

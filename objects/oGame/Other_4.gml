@@ -1,3 +1,4 @@
+event_user(1)
 if (room==Pause){
 	setup_deck_menu_objects()
 	exit
@@ -8,25 +9,41 @@ if (room == Death or room == Menu) {
 }
 
 
+
+
 if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial or room == DTutorialWeapons) {
-	
 	if (!tutorial_setup) {
 		event_user(6)
 	}
-	if (room == DTutorialMove) {
-		var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oTutorial)
-		_tutorial.image_xscale = room_width*2/5
-		_tutorial.image_yscale = room_height*2/5
-	}
-	if (room == DTutorialWeapons) {
-		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.lightning_bolt)
-		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.flame_burst)
-		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.magic_missile)
-		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.blast)
-		player.attack_deck_obj.cur_deck_size = 6
-		var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oWeaponTutorial)
-		_tutorial.image_xscale = room_width*2/5
-		_tutorial.image_yscale = room_height*2/5
+	event_user(1)
+	if (!ds_map_find_value(this_run_seen_room_set,room)) {
+		if (room == DTutorialAttack) {
+			var _slime= instance_create_layer(828, 288, "Tutorial", oSlime);
+			_slime.remaining_health = 10
+			_slime.max_health = 10
+			_slime.damage = 5
+		}
+		if (room == DTutorialSpecial) {
+			var _gun= instance_create_layer(828, 288, "Tutorial", oGun);
+			_gun.remaining_health = 10
+			_gun.max_health = 10
+		}
+		if (room == DTutorialMove) {
+			var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oTutorial)
+			_tutorial.image_xscale = room_width*2/5
+			_tutorial.image_yscale = room_height*2/5
+		}
+		if (room == DTutorialWeapons) {
+			array_push(player.attack_deck_obj.deck, global.attack_spell_struct.lightning_bolt)
+			array_push(player.attack_deck_obj.deck, global.attack_spell_struct.flame_burst)
+			array_push(player.attack_deck_obj.deck, global.attack_spell_struct.magic_missile)
+			array_push(player.attack_deck_obj.deck, global.attack_spell_struct.blast)
+			player.attack_deck_obj.cur_deck_size = 6
+			var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oWeaponTutorial)
+			_tutorial.image_xscale = room_width*2/5
+			_tutorial.image_yscale = room_height*2/5
+		}
+		ds_map_add(this_run_seen_room_set,room, true)
 	}
 	// Set collisions and exit
 	event_user(0)
@@ -55,7 +72,7 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 	}
 	// Populate collisions, insert doors, update motion planning grids
 	event_user(0)
-	if (is_current_room_normal()) {
+	if (room == DBoss1 or is_current_room_normal()) {
 		// insert enemies at random
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {
