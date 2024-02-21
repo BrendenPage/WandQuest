@@ -5,6 +5,23 @@ if (DEBUG) {
 	show_debug_message("Room start with room: " + room_get_name(room))
 }
 
+if (not variable_global_exists("grid_map")) {
+	global.grid_map = ds_map_create()
+}
+
+// Destroy warps
+while (instance_number(oWarp) != 0) {
+	instance_destroy(instance_find(oWarp, 0))
+}
+
+while (instance_number(oWingWarp) != 0) {
+	instance_destroy(instance_find(oWingWarp, 0))
+}
+
+while (instance_number(oBossWarp) != 0) {
+	instance_destroy(instance_find(oBossWarp, 0))
+}
+
 // create motion planning grid
 var _w = ceil(room_width/TS)
 var _h = ceil(room_height/TS)
@@ -18,24 +35,26 @@ mp_grid_clear_all(_mp_grid)
 // Loop through each tile and add a single solid if its a wall
 var _map = layer_tilemap_get_id("tiles_wall")
 var _door_map = layer_tilemap_get_id("tiles_door")
-close_every_door()
-// Determine at this point what doors need to exist in this room and insert them accordingly
-if (!is_boss_room()) {
-	if (global.map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
-		//show_debug_message("Open west")
-		open_west_door()
-	}
-	if (global.map_gen.dependency_map[current_room_x, current_room_y] & SOUTH) {
-		//show_debug_message("Open south")
-		open_south_door()
-	}
-	if (global.map_gen.dependency_map[current_room_x, current_room_y] & EAST) {
-		//show_debug_message("Open east")
-		open_east_door()
-	}
-	if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
-		//show_debug_message("Open north")
-		open_north_door()
+if (global.tutorial_seen or room == DStart) { 
+	close_every_door()
+	// Determine at this point what doors need to exist in this room and insert them accordingly
+	if (!is_boss_room()) {
+		if (global.map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
+			//show_debug_message("Open west")
+			open_west_door()
+		}
+		if (global.map_gen.dependency_map[current_room_x, current_room_y] & SOUTH) {
+			//show_debug_message("Open south")
+			open_south_door()
+		}
+		if (global.map_gen.dependency_map[current_room_x, current_room_y] & EAST) {
+			//show_debug_message("Open east")
+			open_east_door()
+		}
+		if (global.map_gen.dependency_map[current_room_x, current_room_y] & NORTH) {
+			//show_debug_message("Open north")
+			open_north_door()
+		}
 	}
 }
 
@@ -92,6 +111,7 @@ for (var yy = 0; yy < _h; ++yy) {
 	}
 }
 
+if (!global.tutorial_seen) { exit }
 // Add closed doors, doors will be opened if enemies are not populated
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {

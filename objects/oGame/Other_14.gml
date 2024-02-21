@@ -1,4 +1,5 @@
 /// @description Populate enemies
+if (!global.tutorial_seen) { exit }
 if (DEBUG) {
 	show_debug_message("Populating Enemies")
 }

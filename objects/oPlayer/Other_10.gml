@@ -33,11 +33,11 @@ special_deck_obj.persistent = true
 special_spell = special_deck_obj.deck[0]
 
 //Cooldown for attack, special, and shuffle
-attack_timer = attack_spell.cooldown
+attack_timer = 0
 AT_shuffle_timer = 0
 AT_shuffling = false
 
-special_timer = special_spell.cooldown
+special_timer = 0
 SP_shuffle_timer = 0
 SP_shuffling = false
 special_duration_timer = 0

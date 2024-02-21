@@ -12,6 +12,7 @@ if (remaining_health == 0){
 		cap_logger_action_level(ENEMY_KILLED, json_stringify(_data))
 	}
 	instance_destroy()
+	if (!global.tutorial_seen) { exit }
 	set_warp_points()
 	if (instance_number(oEnemyParent) == 0 and is_wing_cleared()) {
 		instance_create_depth(0,0,-1000,oCardChoices)

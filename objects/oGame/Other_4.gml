@@ -7,7 +7,32 @@ if (room == Death or room == Menu) {
 	exit
 }
 
+if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial or room == DTutorialWeapons) {
+	if (!tutorial_setup) {
+		event_user(6)
+	}
+	if (room == DTutorialMove) {
+		var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oTutorial)
+		_tutorial.image_xscale = room_width*2/5
+		_tutorial.image_yscale = room_height*2/5
+	}
+	if (room == DTutorialWeapons) {
+		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.lightning_bolt)
+		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.flame_burst)
+		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.magic_missile)
+		array_push(player.attack_deck_obj.deck, global.attack_spell_struct.blast)
+		player.attack_deck_obj.cur_deck_size = 6
+		var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oWeaponTutorial)
+		_tutorial.image_xscale = room_width*2/5
+		_tutorial.image_yscale = room_height*2/5
+	}
+	// Set collisions and exit
+	event_user(0)
+	exit
+}
+
 if (!game_setup and room==START_ROOM) {
+	event_user(5)
 	event_user(2)
 } else if (room == START_ROOM) {
 	if (num_wings_cleared() == 4) {
