@@ -6,11 +6,11 @@
 #macro TUTORIAL_START DTutorialMove
 #macro MENU_ROOM Menu
 #macro DEATH_ROOM Death
-#macro DEBUG true
+#macro DEBUG false
 #macro BOX_VISIBLE false
 
 // categoryId
-#macro RELEASE 1
+#macro RELEASE 2
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
