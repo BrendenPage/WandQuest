@@ -6,11 +6,11 @@
 #macro TUTORIAL_START DTutorialMove
 #macro MENU_ROOM Menu
 #macro DEATH_ROOM Death
-#macro DEBUG true
+#macro DEBUG false
 #macro BOX_VISIBLE false
 
 // categoryId
-#macro RELEASE 1
+#macro RELEASE 2
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
@@ -28,8 +28,10 @@
 
 // Camera macros
 #macro VIEWPORT_SCALE 1
-#macro VIEWPORT_WIDTH 960
-#macro VIEWPORT_HEIGHT 540
+#macro VIEWPORT_WIDTH (960*VIEWPORT_SCALE)
+#macro VIEWPORT_HEIGHT (540*VIEWPORT_SCALE)
+#macro CAMERA_SCALE_BROWSER 0.75
+#macro CAMERA_SCALE_NATIVE 1.5
 // Tile size
 #macro TS 36
 

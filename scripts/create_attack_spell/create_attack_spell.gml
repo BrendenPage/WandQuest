@@ -85,9 +85,9 @@ global.attack_spell_struct ={
 		4,
 		sFlameBurstProjectile,
 		oFlameBurstProjectile,
-		20,
+		30,
 		80,
-		"Flame Burst. Short Range. AOE Attack. High Damage. Low Cooldown.",
+		"Flame Burst. Short Range. AOE Attack. High Damage. Low-ish Cooldown.",
 		40
 	),
 	

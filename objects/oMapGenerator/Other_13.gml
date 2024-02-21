@@ -79,7 +79,6 @@ for (var _i = 0; _i < map_size; _i++) {
 					room_map[_i, _j] = _new_room
 					ds_list_add(in_use_rooms, _new_room)
 				} else {
-					show_message("Uh Oh")
 					var _reused_index = irandom_range(0,ds_list_size(free_rooms)-1)
 					var _reused_room = ds_list_find_value(free_rooms, _reused_index)
 					room_map[_i, _j] = _reused_room

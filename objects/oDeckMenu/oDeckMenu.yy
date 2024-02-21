@@ -33,5 +33,5 @@
     "path": "sprites/sDeckMenu/sDeckMenu.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }
