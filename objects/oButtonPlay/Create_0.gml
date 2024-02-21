@@ -14,12 +14,9 @@ instance_create_layer(0,0, "Instances", oMapGenerator)
 if (!global.logging_initialized) {
 	cap_logger_init(RELEASE)
 	global.uuid = cap_logger_get_uuid()
-
 	if (!global.uuid) {
 		global.uuid = cap_logger_gen_uuid()
 		cap_logger_set_uuid(global.uuid)
 	}
-
 	cap_logger_new_session(global.uuid)
 }
-
