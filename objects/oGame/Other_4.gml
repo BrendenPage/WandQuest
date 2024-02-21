@@ -15,10 +15,6 @@ if (!game_setup and room==START_ROOM) {
 	}
 }
 
-if (!ds_map_find_value(global.seen_room_set, room)) {
-	event_user(0)
-}
-
 var _current_room_type = global.map_gen.map[current_room_x,current_room_y]
 
 if (!ds_map_find_value(this_run_seen_room_set,room)) {
@@ -30,10 +26,13 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 		cap_logger_level_end(string(ds_map_size(this_run_seen_room_set)), json_stringify(_data))
 		cap_logger_level_start(string(ds_map_size(this_run_seen_room_set)+ 1), json_stringify(_data))
 	}
+	// Populate collisions, insert doors, update motion planning grids
+	event_user(0)
 	if (is_current_room_normal()) {
 		// insert enemies at random
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {
+		// Set card selection room
 		event_user(3)
 	}
 	ds_map_add(this_run_seen_room_set, room, true)

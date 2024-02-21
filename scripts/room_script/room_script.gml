@@ -6,11 +6,42 @@
 // Remove wall tile sprites of current room and replace them with an opening
 // that should eventually have a warp inserted
 
+function close_every_door() {
+	_wall_map = layer_tilemap_get_id("tiles_wall")
+	_door_map = layer_tilemap_get_id("tiles_door")
+	var _w = ceil(room_width/TS)
+	var _h = ceil(room_height/TS)
+	tilemap_set(_wall_map, WEST_WALL, 0, _h/2)
+	tilemap_set(_wall_map, WEST_WALL, 0, _h/2-1)
+	tilemap_set(_door_map, TILE_CLEAR, 0, _h/2)
+	tilemap_set(_door_map, TILE_CLEAR, 0, _h/2-1)
+	tilemap_set(_wall_map, EAST_WALL, _w-1, _h/2-1)
+	tilemap_set(_wall_map, EAST_WALL, _w-1, _h/2)
+	tilemap_set(_door_map, TILE_CLEAR, _w-1, _h/2-1)
+	tilemap_set(_door_map, TILE_CLEAR, _w-1, _h/2)
+	tilemap_set(_wall_map, NORTH_WALL, _w/2-1, 0)
+	tilemap_set(_wall_map, NORTH_WALL, _w/2, 0)
+	tilemap_set(_door_map, TILE_CLEAR, _w/2-1, 0)
+	tilemap_set(_door_map, TILE_CLEAR, _w/2, 0)
+	tilemap_set(_door_map, TILE_CLEAR, _w/2-1, _h-1)
+	tilemap_set(_door_map, TILE_CLEAR, _w/2, _h-1)
+	tilemap_set(_wall_map, SOUTH_WALL, _w/2, _h-1)
+	tilemap_set(_wall_map, SOUTH_WALL, _w/2-1, _h-1)
+}
+
 function open_west_door() {
 	_wall_map = layer_tilemap_get_id("tiles_wall")
-	_shadow_map = layer_tilemap_get_id("tile_floor_shadow")
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _h = ceil(room_height/TS)
+	// Destroy previously placed walls
+	var _wall = instance_place(0, (_h/2)*TS, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
+	_wall = instance_place(0, (_h/2-1)*TS, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
 	tilemap_set(_wall_map, TILE_CLEAR, 0, _h/2)
 	tilemap_set(_wall_map, TILE_CLEAR, 0, _h/2-1)
 	tilemap_set(_door_map, DOOR_RIGHT + WEST_DOOR_OFFSET, 0, _h/2)
@@ -19,10 +50,18 @@ function open_west_door() {
 
 function open_east_door() {
 	_wall_map = layer_tilemap_get_id("tiles_wall")
-	_shadow_map = layer_tilemap_get_id("tile_floor_shadow")
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _w = ceil(room_width/TS)
 	var _h = ceil(room_height/TS)
+	// Destroy previously placed walls
+	var _wall = instance_place((_w-1)*TS, (_h/2)*TS, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
+	_wall = instance_place((_w-1)*TS, (_h/2)*TS, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
 	tilemap_set(_door_map, DOOR_RIGHT + EAST_DOOR_OFFSET, _w-1, _h/2-1)
 	tilemap_set(_door_map, DOOR_LEFT + EAST_DOOR_OFFSET, _w-1, _h/2)
 	tilemap_set(_wall_map, TILE_CLEAR, _w-1, _h/2)
@@ -31,9 +70,17 @@ function open_east_door() {
 
 function open_north_door() {
 	_wall_map = layer_tilemap_get_id("tiles_wall")
-	_shadow_map = layer_tilemap_get_id("tile_floor_shadow")
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _w = ceil(room_width/TS)
+	// Destroy previously placed walls
+	var _wall = instance_place((_w/2-1)*TS, 0, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
+	_wall = instance_place((_w/2)*TS, 0, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
 	tilemap_set(_wall_map, TILE_CLEAR, _w/2, 0)
 	tilemap_set(_wall_map, TILE_CLEAR, _w/2-1, 0)
 	tilemap_set(_door_map, DOOR_LEFT, _w/2-1, 0)
@@ -42,10 +89,18 @@ function open_north_door() {
 
 function open_south_door() {
 	_wall_map = layer_tilemap_get_id("tiles_wall")
-	_shadow_map = layer_tilemap_get_id("tile_floor_shadow")
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _w = ceil(room_width/TS)
 	var _h = ceil(room_height/TS)
+	// Destroy previously placed walls
+	var _wall = instance_place((_w/2-1)*TS, (_h-1)*TS, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
+	_wall = instance_place((_w/2)*TS, (_h-1)*TS, oWall)
+	if (_wall) {
+		instance_destroy(_wall)
+	}
 	tilemap_set(_door_map, DOOR_LEFT + SOUTH_DOOR_OFFSET, _w/2-1, _h-1)
 	tilemap_set(_door_map, DOOR_RIGHT+ SOUTH_DOOR_OFFSET, _w/2, _h-1)
 	tilemap_set(_wall_map, TILE_CLEAR, _w/2, _h-1)
