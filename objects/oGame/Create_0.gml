@@ -28,8 +28,16 @@
 
 // Camera macros
 #macro VIEWPORT_SCALE 1
-#macro VIEWPORT_WIDTH 960
-#macro VIEWPORT_HEIGHT 540
+#macro VIEWPORT_WIDTH (960*VIEWPORT_SCALE)
+#macro VIEWPORT_HEIGHT (540*VIEWPORT_SCALE)
+#macro CAMERA_SCALE_BROWSER 0.75
+#macro CAMERA_SCALE_NATIVE 1.5
+camera_width = (960*CAMERA_SCALE_NATIVE)
+camera_height= (540*CAMERA_SCALE_NATIVE)
+if (os_browser != browser_not_a_browser) {
+	camera_width = browser_width*CAMERA_SCALE_BROWSER
+	camera_height= browser_height*CAMERA_SCALE_BROWSER
+}
 // Tile size
 #macro TS 36
 

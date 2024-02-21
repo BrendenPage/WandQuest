@@ -7,7 +7,9 @@ if (room == Death or room == Menu) {
 	exit
 }
 
+
 if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial or room == DTutorialWeapons) {
+	
 	if (!tutorial_setup) {
 		event_user(6)
 	}

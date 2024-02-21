@@ -44,3 +44,5 @@ ds_list_shuffle(special_types)
 
 // Logging
 global.enemies_killed = 0
+// Set viewport and camera
+event_user(1)
