@@ -98,7 +98,6 @@ CapstoneLogger.prototype = {
 			}
 			uuid += Math.floor(Math.random() * 16).toString(16);
 		}
-		alert(uuid);
 		return uuid;
 	}
 	,getSavedUserId: function() {
