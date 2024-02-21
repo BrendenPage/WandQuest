@@ -3,8 +3,11 @@
 
 event_inherited()
 
+var _choices_types = [bool(1),random(1) < 0.1,random(1) < 1]
+var _choices_types = array_shuffle(_choices_types)
+
 for (var _i = 0; _i < 3; _i++) {
-	if_attack = bool(irandom(1))
+	if_attack = _choices_types[_i]
 	if (if_attack) {
 		sprite = sAttacks
 		choices[_i].choice_type = CHOICE_TYPE.ATTACK
