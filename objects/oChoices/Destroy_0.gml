@@ -4,3 +4,5 @@
 for (i = 0; i < 3; i++) {
 	instance_destroy(choices[i])
 }
+
+global.game_paused = false

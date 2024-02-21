@@ -1,7 +1,9 @@
 if (keyboard_check_pressed(ord("P")) or keyboard_check_pressed(vk_escape)) {
 	if (room == Pause) {
 		room_goto(global.current_room)
-		global.game_paused = false
+		if (instance_number(oTutorial) == 0 and instance_number(oWeaponTutorial) == 0 and instance_number(oChoices) == 0) {
+			global.game_paused = false
+		}
 	} else {
 		room_goto(Pause)
 		global.game_paused = true
