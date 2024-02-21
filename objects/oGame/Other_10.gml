@@ -6,7 +6,10 @@ var _h = ceil(room_height/TS)
 show_debug_message("Room start with room: " + room_get_name(room))
 
 // create motion planning grid
-global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
+if (global.mp_grid == unknown) {
+    global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
+}
+
 
 // Loop through each tile and add a single solid if its a wall
 var _map = layer_tilemap_get_id("tiles_wall")

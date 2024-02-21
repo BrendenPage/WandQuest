@@ -14,7 +14,6 @@ if (instance_number(oGame) == 1 and global.logging_initialized) {
 if (!global.logging_initialized) {
 	var _cb = cap_logger_check_callback()
 	if (_cb != -1) {
-		show_message(_cb)
 		if (_cb == 0) {
 			// Failed to start session, try again
 			cap_logger_new_session(global.uuid)

@@ -11,7 +11,7 @@ function die(){
 		}
 		cap_logger_action_level(PLAYER_DEATH, json_stringify(_data))
 	}
-	with(global.game){
+	with(global.game) {
 		event_user(5)
 	}
 	room_goto(DEATH_ROOM)
