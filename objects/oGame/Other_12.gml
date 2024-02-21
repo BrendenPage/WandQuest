@@ -1,6 +1,9 @@
 /// @description Start the game
 // You can write your code in this editor
 
+if (not variable_global_exists("grid_map")) {
+	global.grid_map = ds_map_create()
+}
 
 if (not variable_global_exists("tutorial_seen")) {
 	global.tutorial_seen = true
@@ -39,12 +42,6 @@ with(player){
 current_room_x = global.map_gen.map_size/2
 current_room_y = global.map_gen.map_size/2
 game_setup=true
-
-if (!variable_global_exists("seen_room_set")) {
-	// If the room has ever been seen before on
-	// any playthrough. Used to set up collision etc.
-	global.seen_room_set = ds_map_create()
-}
 
 // If the room has been seen on this playthrough.
 // Used to populate enemies

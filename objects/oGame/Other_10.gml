@@ -1,19 +1,24 @@
 /// @description Set up room
 // Add collision maps
-var _w = ceil(room_width/TS)
-var _h = ceil(room_height/TS)
 
-show_debug_message("Room start with room: " + room_get_name(room))
-
-// create motion planning grid
-if (!variable_global_exists("mp_grid")) {
-    global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
+if (DEBUG) {
+	show_debug_message("Room start with room: " + room_get_name(room))
 }
 
+// create motion planning grid
+var _w = ceil(room_width/TS)
+var _h = ceil(room_height/TS)
+if (!ds_map_find_value(global.grid_map, room)) {
+    ds_map_add(global.grid_map, room, mp_grid_create(0,0,_w,_h, TS, TS))
+}
+
+var _mp_grid = ds_map_find_value(global.grid_map, room)
+mp_grid_clear_all(_mp_grid)
 
 // Loop through each tile and add a single solid if its a wall
 var _map = layer_tilemap_get_id("tiles_wall")
 var _door_map = layer_tilemap_get_id("tiles_door")
+close_every_door()
 // Determine at this point what doors need to exist in this room and insert them accordingly
 if (!is_boss_room()) {
 	if (global.map_gen.dependency_map[current_room_x, current_room_y] & WEST) {
@@ -40,7 +45,10 @@ for (var _y = 0; _y < _h; _y++) {
 		var _t1 = tilemap_get(_map, _x, _y)
 		if (_t1 >= 1 and _t1 <= 47) {
 			// The tile we are looking at is a wall
-			instance_create_layer(_x * TS, _y * TS, "Collisions", oWall)
+			if (!position_meeting(_x * TS, _y * TS, oWall)) {
+				// Only place a wall if there is not one already
+				instance_create_layer(_x * TS, _y * TS, "Collisions", oWall)
+			}
 		}
 	}
 }
@@ -48,7 +56,8 @@ for (var _y = 0; _y < _h; _y++) {
 
 
 //add solid instances to grid
-mp_grid_add_instances(global.mp_grid, oWall, true);
+mp_grid_add_instances(_mp_grid, oWall, true);
+
 //loop through grid positions again.  Get solid id and if a solid is to the right, absorb it.
 for (var yy = 0; yy < _h; ++yy) {
     for (var xx = 0; xx < _w; ++xx) {
@@ -92,6 +101,3 @@ for (var _y = 0; _y < _h; _y++) {
 		}
 	}
 }
-
-
-ds_map_add(global.seen_room_set, room, true)
