@@ -1,3 +1,6 @@
+
+
+
 if (keyboard_check_pressed(ord("P")) or keyboard_check_pressed(vk_escape)) {
 	if (room == Pause) {
 		room_goto(global.current_room)
@@ -102,11 +105,12 @@ if _key_attack && (attack_timer <= 0) && (AT_shuffle_timer <= 0){
 if (keyboard_check_pressed(ord("R"))) {
 	attack_deck_obj.cur_deck_index = attack_deck_obj.cur_deck_size
 }
-
-if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
-	attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
-	attack_deck_obj.cur_deck_index = 0
-	AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
+if (variable_instance_exists(attack_deck_obj, "cur_deck_index")) {
+	if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
+		attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
+		attack_deck_obj.cur_deck_index = 0
+		AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
+	}
 }
 
 #endregion
@@ -166,10 +170,12 @@ if(_key_special && (special_timer <= 0) && (SP_shuffle_timer <= 0)){
 	}
 }
 
-if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
-	special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
-	special_deck_obj.cur_deck_index = 0
-	SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
+if (variable_instance_exists(special_deck_obj, "cur_deck_index")) {
+	if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
+		special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
+		special_deck_obj.cur_deck_index = 0
+		SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
+	}
 }
 
 
