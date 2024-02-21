@@ -23,10 +23,9 @@ if (hitbox) {
 			with(oHurtbox){
 				if (other and owner) {
 					if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
-						if (!ds_map_exists(_damage_blacklist, other.owner)) {
-							show_debug_message(other.owner)
+						if (!ds_map_exists(_damage_blacklist, owner)) {
 							deal_damage(owner, other.owner.damage)
-							ds_map_add(_damage_blacklist, other.owner, BLACKLIST_TIME)
+							ds_map_add(_damage_blacklist, owner, BLACKLIST_TIME)
 						}
 					}
 				}
