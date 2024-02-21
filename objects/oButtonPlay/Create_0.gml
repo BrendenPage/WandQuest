@@ -5,7 +5,7 @@ button_text = "Loading"
 http_request_ = undefined
 ready = false
 
-if (global.logging_initialized == undefined) {
+if (!variable_global_exists("logging_initialized")) {
 	global.logging_initialized = false
 }
 failed_streak = 0

@@ -6,7 +6,7 @@ var _h = ceil(room_height/TS)
 show_debug_message("Room start with room: " + room_get_name(room))
 
 // create motion planning grid
-if (global.mp_grid == unknown) {
+if (!variable_global_exists("mp_grid")) {
     global.mp_grid = mp_grid_create(0,0,_w,_h, TS, TS)
 }
 
