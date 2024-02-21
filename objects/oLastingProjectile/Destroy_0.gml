@@ -4,3 +4,5 @@
 if (hitbox != undefined) {
 	instance_destroy(hitbox);
 }
+
+ds_map_destroy(damage_blacklist)
