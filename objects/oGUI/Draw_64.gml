@@ -32,9 +32,10 @@ draw_set_valign(fa_top)
 var _attack_card_index = oPlayer.attack_deck_obj.deck[oPlayer.attack_deck_obj.cur_deck_index].spell_index
 if(oPlayer.attack_timer != 0){
 	_attack_card_index = 0 //cooldown sprite
-	if(oPlayer.AT_shuffle_timer != 0){//shuffling
-		_attack_card_index = 1 //shuffle sprite
-	}
+}
+
+if(oPlayer.AT_shuffle_timer != 0){//shuffling
+	_attack_card_index = 1 //shuffle sprite
 }
 
 draw_sprite(sAttacks,_attack_card_index,attack_position,gui_bottom)
@@ -42,9 +43,10 @@ draw_sprite(sAttacks,_attack_card_index,attack_position,gui_bottom)
 var _special_card_index = oPlayer.special_deck_obj.deck[oPlayer.special_deck_obj.cur_deck_index].spell_index
 if(oPlayer.special_timer != 0){
 	_special_card_index = 0 //cooldown sprite
-	if(oPlayer.SP_shuffle_timer != 0){//shuffling
-		_special_card_index = 1 //shuffle sprite
-	}
+}
+
+if(oPlayer.SP_shuffle_timer != 0){//shuffling
+	_special_card_index = 1 //shuffle sprite
 }
 
 draw_sprite(sSpecials,_special_card_index,special_position,gui_bottom)

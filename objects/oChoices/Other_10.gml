@@ -11,7 +11,7 @@ if (choice_type == CHOICE_TYPE.ATTACK) {
 	var _chosen_attack_spell = ds_map_find_value(global.attack_spell_map, ind)
 	array_push(oPlayer.attack_deck_obj.deck, _chosen_attack_spell)
 	oPlayer.attack_deck_obj.cur_deck_size++
-	oPlayer.attack_deck_obj.cur_deck_index = 0
+	oPlayer.attack_deck_obj.cur_deck_index = oPlayer.attack_deck_obj.cur_deck_size
 	oPlayer.attack_deck_obj.deck = array_shuffle(oPlayer.attack_deck_obj.deck)
 	
 } else if (choice_type == CHOICE_TYPE.SPECIAL) {
@@ -22,7 +22,7 @@ if (choice_type == CHOICE_TYPE.ATTACK) {
 		var _chosen_special_spell = ds_map_find_value(global.special_spell_map, ind)
 		array_push(oPlayer.special_deck_obj.deck, _chosen_special_spell)
 		oPlayer.special_deck_obj.cur_deck_size++
-		oPlayer.special_deck_obj.cur_deck_index = 0
+		oPlayer.special_deck_obj.cur_deck_index = oPlayer.special_deck_obj.cur_deck_size
 		oPlayer.special_deck_obj.deck = array_shuffle(oPlayer.special_deck_obj.deck)
 	}
 } else if (choice_type == CHOICE_TYPE.AUGMENT) {

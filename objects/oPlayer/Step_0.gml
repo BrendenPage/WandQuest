@@ -86,23 +86,25 @@ if(AT_shuffle_timer == 0) {
 // Shoot attack projectile 
 if _key_attack && (attack_timer <= 0) && (AT_shuffle_timer <= 0){
 
-	// reset the timer
-	attack_timer = attack_spell.cooldown
-	
-	// generate projectile
-	cast_attack_spell(attack_spell,aim_dir)
-
-	// set the next card
-	if (attack_deck_obj.cur_deck_index + 1 < attack_deck_obj.cur_deck_size){
+	if (attack_deck_obj.cur_deck_index < attack_deck_obj.cur_deck_size){
+		attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
 		attack_deck_obj.cur_deck_index++
-	}else{
-		attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
-		attack_deck_obj.cur_deck_index = 0
-		AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
+		// reset the timer
+		attack_timer = attack_spell.cooldown
+		// generate projectile
+		cast_attack_spell(attack_spell,aim_dir)
 	}
 	
-	attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
+}
 
+if (keyboard_check_pressed(ord("R"))) {
+	attack_deck_obj.cur_deck_index = attack_deck_obj.cur_deck_size
+}
+
+if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
+	attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
+	attack_deck_obj.cur_deck_index = 0
+	AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
 }
 
 #endregion
@@ -142,28 +144,30 @@ if(SP_shuffle_timer == 0) {
 //Cast Specials
 if(_key_special && (special_timer <= 0) && (SP_shuffle_timer <= 0)){
 	//reset the timer
-	special_timer = special_spell.cooldown
-	special_duration_timer = special_spell.duration
 	
-	//Generate the spell
-	var _special_inst = instance_create_depth(x , y, depth-98, special_spell.special_obj)
-	if (global.logging) {
-		var _data = {
-			curr_time: time(),
-			spell: special_spell.spell_name
-		}
-		cap_logger_action_level(SPECIAL_SPELL_USED, json_stringify(_data))
-	}
+	
 	// set the next card
-	if (special_deck_obj.cur_deck_index + 1 < special_deck_obj.cur_deck_size){
+	if (special_deck_obj.cur_deck_index < special_deck_obj.cur_deck_size){
+		special_spell = special_deck_obj.deck[special_deck_obj.cur_deck_index]
 		special_deck_obj.cur_deck_index++
-	}else{
-		special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
-		special_deck_obj.cur_deck_index = 0
-		SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
+		//Generate the spell
+		var _special_inst = instance_create_depth(x , y, depth-98, special_spell.special_obj)
+		if (global.logging) {
+			var _data = {
+				curr_time: time(),
+				spell: special_spell.spell_name
+			}
+			cap_logger_action_level(SPECIAL_SPELL_USED, json_stringify(_data))
+		}
+		special_timer = special_spell.cooldown
+		special_duration_timer = special_spell.duration
 	}
-	
-	special_spell = special_deck_obj.deck[special_deck_obj.cur_deck_index]
+}
+
+if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
+	special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
+	special_deck_obj.cur_deck_index = 0
+	SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
 }
 
 
