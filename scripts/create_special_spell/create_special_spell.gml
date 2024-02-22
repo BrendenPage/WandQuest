@@ -59,7 +59,7 @@ global.special_spell_struct = {
 		oShieldEffect,
 		150,
 		40,
-		"Block any damage for a short time, medium cooldown"
+		"Shield\n Block any damage for a short time,\n medium cooldown"
 	)
 	
 }

@@ -28,6 +28,7 @@ function setup_deck_menu_objects(){
 				global.deck_menu.attacks[_i,_j].sprite_index = sAttacks
 				global.deck_menu.attacks[_i,_j].image_index = _temp_attack_deck.deck[_ind].spell_index
 				global.deck_menu.attacks[_i,_j].image_speed = 0
+				global.deck_menu.attacks[_i,_j].choice_explanation =  _temp_attack_deck.deck[_ind].description_text
 				// TODO: Set description text accordingly
 			}
 		
@@ -35,6 +36,7 @@ function setup_deck_menu_objects(){
 				global.deck_menu.specials[_i,_j].sprite_index = sSpecials
 				global.deck_menu.specials[_i,_j].image_index = _temp_special_deck.deck[_ind].spell_index
 				global.deck_menu.specials[_i,_j].image_speed = 0
+				global.deck_menu.specials[_i,_j].choice_explanation =  _temp_special_deck.deck[_ind].description_text
 				// TODO: Set description text accordingly
 			}
 		}

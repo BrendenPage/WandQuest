@@ -65,7 +65,7 @@ global.attack_spell_struct ={
 		oBlastProjectile,
 		200,
 		100,
-		"Blast. Unlimited Cast Range. AOE Attack. Very High Damage & Cooldown.",
+		"Blast\n Unlimited Cast Range. AOE Attack. \nVery High Damage & Cooldown.",
 		0
 	),
 
@@ -76,7 +76,7 @@ global.attack_spell_struct ={
 		oFireboltProjectile,
 		20,
 		25,
-		"Firebolt. Long Range. Single Attack. Low Damage. Low Cooldown. ",
+		"Firebolt \n Long Range. Single Attack.\n Low Damage. Low Cooldown. ",
 		20
 	),
 	
@@ -87,7 +87,7 @@ global.attack_spell_struct ={
 		oFlameBurstProjectile,
 		30,
 		80,
-		"Flame Burst. Short Range. AOE Attack. High Damage. Low-ish Cooldown.",
+		"Flame Burst\n Short Range. AOE Attack.\n High Damage. Mediun-Low Cooldown.",
 		40
 	),
 	
@@ -98,7 +98,7 @@ global.attack_spell_struct ={
 		oLightningBoltProjectile,
 		35,
 		40,
-		"Lightning Bolt. Medium range. AOE attack. Medium Damage & Cooldown",
+		"Lightning Bolt\n Medium range. AOE attack\n Medium Damage & Cooldown",
 		175
 	),
 	
@@ -109,7 +109,7 @@ global.attack_spell_struct ={
 		oMagicMissileProjectile,
 		30,
 		15,
-		"Magic Missile. Long range. Shoot in 5 darts. Low damage per dart. Medium cooldown",
+		"Magic Missile\n Long range. Shoot in 5 darts.\n Low damage per dart. Medium cooldown",
 		0
 	)
 	
