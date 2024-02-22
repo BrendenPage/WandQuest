@@ -18,10 +18,11 @@ var _xspd = lengthdir_x(spd, dir);
 var _yspd = lengthdir_y(spd, dir);
 
 //collision 
-//if place_meeting(x,y,oCollide){instance_destroy(self)}
 
 with (oCollide) {
-	if place_meeting(x,y,other) and !(object_is_ancestor(object_index,oEnemyParent) or object_is_ancestor(object_index,oPlayer)) {
+	if place_meeting(x,y,other) and !(object_is_ancestor(object_index,oEnemyParent) or object_index == oPlayer) {
+		show_debug_message(object_is_ancestor(object_index,oPlayer))
+		show_debug_message("Object belongs to: "+object_get_name(object_index))
 		instance_destroy(other)
 	}
 }
@@ -37,7 +38,7 @@ var ref = self
 with (hitbox) {
 	with(oHurtbox){
 		if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
-			instance_destroy(ref);
+			instance_destroy(ref)
 		}
 	}
 }

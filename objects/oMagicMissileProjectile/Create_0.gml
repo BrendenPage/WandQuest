@@ -3,7 +3,7 @@ event_inherited();
 
 hitbox = hitbox_create(18, 18, 0, 0, false)
 	
-spd = 10
+spd = 8
 damage = global.attack_spell_struct.magic_missile.damage
 
 // clean up
