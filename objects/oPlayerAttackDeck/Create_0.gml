@@ -7,11 +7,11 @@ deck = array_create(0);
 
 // defualt attack deck contains 2 firebolts. 
 
-//array_push(deck, global.attack_spell_struct.firebolt)
-//array_push(deck, global.attack_spell_struct.firebolt)
+array_push(deck, global.attack_spell_struct.firebolt)
+array_push(deck, global.attack_spell_struct.firebolt)
 
-array_push(deck, global.attack_spell_struct.magic_missile)
-array_push(deck, global.attack_spell_struct.magic_missile)
+//array_push(deck, global.attack_spell_struct.magic_missile)
+//array_push(deck, global.attack_spell_struct.magic_missile)
 
 cur_deck_size = array_length(deck)
 
