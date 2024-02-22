@@ -12,8 +12,10 @@
  *														Defaults to sShieldEffect if not specified.
  * @param {object} _special_obj - The object representing the special effect of the spell.
  *																					Defaults to oShieldEffect if not specified.
- * @param {number} _cooldown - The cooldown time in frames between spell casts.
- *															Defaults to 120 if not specified.
+ * @param {int} _cooldown - The cooldown time in frames between spell casts.
+ *													Defaults to 120 if not specified.
+ * @param {int} _duration - The duration of the spell in frames if it has one.
+														Defaults to 40 if not specified.
  * @param {string} _description_text - The description text of the special spell. 
  *																			    Defaults to an empty string if not specified.
  */
@@ -59,7 +61,16 @@ global.special_spell_struct = {
 		oShieldEffect,
 		150,
 		40,
-		"Shield\n Block any damage for a short time,\n medium cooldown"
+		"Shield\n Block any damage for a short time,\n Medium cooldown"
+	),
+	blink: new create_special_spell(
+		"Blink",
+		6,
+		sBlinkEffect,
+		oBlinkEffect,
+		150,
+		10,
+		"Blink\n Teleport forward for a short distance.\n Medium cooldown"
 	)
 	
 }
@@ -85,5 +96,5 @@ global.special_spell_struct = {
 global.special_spell_map = ds_map_create()
 
 ds_map_add(global.special_spell_map,5,global.special_spell_struct.shield)
-
+ds_map_add(global.special_spell_map,6,global.special_spell_struct.blink)
 

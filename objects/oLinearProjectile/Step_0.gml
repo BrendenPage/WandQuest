@@ -21,8 +21,6 @@ var _yspd = lengthdir_y(spd, dir);
 
 with (oCollide) {
 	if place_meeting(x,y,other) and !(object_is_ancestor(object_index,oEnemyParent) or object_index == oPlayer) {
-		show_debug_message(object_is_ancestor(object_index,oPlayer))
-		show_debug_message("Object belongs to: "+object_get_name(object_index))
 		instance_destroy(other)
 	}
 }

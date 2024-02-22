@@ -66,117 +66,100 @@ if (remaining_i_frames == 0) {
 	invincible = false
 }
 
-
+//player aiming
+	aim_dir = point_direction(x,y,mouse_x,mouse_y)
+	
 // attack spell casting
 #region
 
-//player aiming
-aim_dir = point_direction(x,y,mouse_x,mouse_y)
+	// Shuffle & attack timer count down
+	AT_shuffle_timer = max(AT_shuffle_timer - 1, 0)
 
-// Shuffle & attack timer count down
-AT_shuffle_timer = max(AT_shuffle_timer - 1, 0)
-
-// If we have just shuffled, disregard cooldown time
-if(AT_shuffle_timer == 0) {
-	if (AT_shuffling) {
-		AT_shuffling = false
-		attack_timer = 0
+	// If we have just shuffled, disregard cooldown time
+	if(AT_shuffle_timer == 0) {
+		if (AT_shuffling) {
+			AT_shuffling = false
+			attack_timer = 0
+		} else {
+			attack_timer = max(attack_timer - 1, 0)
+		}
 	} else {
-		attack_timer = max(attack_timer - 1, 0)
+		AT_shuffling = true
 	}
-} else {
-	AT_shuffling = true
-}
 
-// Shoot attack projectile 
-if _key_attack && (attack_timer <= 0) && (AT_shuffle_timer <= 0){
+	// Shoot attack projectile 
+	if _key_attack && (attack_timer <= 0) && (AT_shuffle_timer <= 0){
 
-	if (attack_deck_obj.cur_deck_index < attack_deck_obj.cur_deck_size){
-		attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
-		attack_deck_obj.cur_deck_index++
-		// reset the timer
-		attack_timer = attack_spell.cooldown
-		// generate projectile
-		cast_attack_spell(attack_spell,aim_dir)
-	}
+		if (attack_deck_obj.cur_deck_index < attack_deck_obj.cur_deck_size){
+			attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
+			attack_deck_obj.cur_deck_index++
+			// reset the timer
+			attack_timer = attack_spell.cooldown
+			// generate projectile
+			cast_attack_spell(attack_spell,aim_dir)
+		}
 	
-}
-
-if (keyboard_check_pressed(ord("R"))) {
-	attack_deck_obj.cur_deck_index = attack_deck_obj.cur_deck_size
-}
-if (variable_instance_exists(attack_deck_obj, "cur_deck_index")) {
-	if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
-		attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
-		attack_deck_obj.cur_deck_index = 0
-		AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
 	}
-}
+
+	if (keyboard_check_pressed(ord("R"))) {
+		attack_deck_obj.cur_deck_index = attack_deck_obj.cur_deck_size
+	}
+	//shuffle the deck if the end is reached
+	if (variable_instance_exists(attack_deck_obj, "cur_deck_index")) {
+		if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
+			attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
+			attack_deck_obj.cur_deck_index = 0
+			AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
+		}
+	}
 
 #endregion
 
 // Special spell casting
 #region
 
-// Shuffle & special & duration timer count down
-SP_shuffle_timer = max(SP_shuffle_timer - 1, 0)
+	// Shuffle & special & duration timer count down
+	SP_shuffle_timer = max(SP_shuffle_timer - 1, 0)
 
-if(AT_shuffle_timer == 0) {
-	if (AT_shuffling) {
-		AT_shuffling = false
-		attack_timer = 0
-	} else {
-		attack_timer = max(attack_timer - 1, 0)
-	}
-} else {
-	AT_shuffling = true
-}
 
-if(SP_shuffle_timer == 0) {
-	if (SP_shuffling) {
-		SP_shuffling =  false
-		special_timer = 0
-	} else {
-		if(special_duration_timer == 0){
-			special_timer = max(special_timer - 1, 0)
-		}else{
-			special_duration_timer = max(special_duration_timer - 1, 0)
-		}
-	}
-} else {
-	SP_shuffling = true
-}
-
-//Cast Specials
-if(_key_special && (special_timer <= 0) && (SP_shuffle_timer <= 0)){
-	//reset the timer
-	
-	
-	// set the next card
-	if (special_deck_obj.cur_deck_index < special_deck_obj.cur_deck_size){
-		special_spell = special_deck_obj.deck[special_deck_obj.cur_deck_index]
-		special_deck_obj.cur_deck_index++
-		//Generate the spell
-		var _special_inst = instance_create_depth(x , y, depth-98, special_spell.special_obj)
-		if (global.logging) {
-			var _data = {
-				curr_time: time(),
-				spell: special_spell.spell_name
+	if(SP_shuffle_timer == 0) {
+		if (SP_shuffling) {
+			SP_shuffling =  false
+			special_timer = 0
+		} else {
+			if(special_duration_timer == 0){
+				special_timer = max(special_timer - 1, 0)
+			}else{
+				special_duration_timer = max(special_duration_timer - 1, 0)
 			}
-			cap_logger_action_level(SPECIAL_SPELL_USED, json_stringify(_data))
 		}
-		special_timer = special_spell.cooldown
-		special_duration_timer = special_spell.duration
+	} else {
+		SP_shuffling = true
 	}
-}
 
-if (variable_instance_exists(special_deck_obj, "cur_deck_index")) {
-	if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
-		special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
-		special_deck_obj.cur_deck_index = 0
-		SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
+	//Cast Specials
+	if(_key_special && (special_timer <= 0) && (SP_shuffle_timer <= 0)){	
+		// set the next card
+		if (special_deck_obj.cur_deck_index < special_deck_obj.cur_deck_size){
+			special_spell = special_deck_obj.deck[special_deck_obj.cur_deck_index]
+			special_deck_obj.cur_deck_index++
+
+			//Generate the spell	
+			cast_special_spell(special_spell, aim_dir)	
+			
+			//reset the timer
+			special_timer = special_spell.cooldown
+			special_duration_timer = special_spell.duration
+		}
 	}
-}
+	//shuffle the deck if the end is reached
+	if (variable_instance_exists(special_deck_obj, "cur_deck_index")) {
+		if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
+			special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
+			special_deck_obj.cur_deck_index = 0
+			SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
+		}
+	}
 
 
 #endregion

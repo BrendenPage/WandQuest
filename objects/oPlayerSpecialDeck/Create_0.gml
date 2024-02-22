@@ -12,6 +12,9 @@ deck = array_create(0);
 array_push(deck, global.special_spell_struct.shield)
 array_push(deck, global.special_spell_struct.shield)
 
+//array_push(deck, global.special_spell_struct.blink)
+//array_push(deck, global.special_spell_struct.blink)
+
 cur_deck_size = array_length(deck)
 
 
