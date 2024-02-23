@@ -4,7 +4,7 @@
 function slime_idle_wait(){
 	stamina = min(max_stamina, stamina + 0.01)
 	
-	var _dist = distance_to_object(global.game.player)
+	var _dist = distance_to_object(global.game.target)
 	if(_dist < dash_proximity && stamina >= 1) {
 		state = slime_dash_windup
 		state_ctr = dash_windup_time
@@ -13,15 +13,15 @@ function slime_idle_wait(){
 	if(state_ctr == 0){
 		state = slime_idle_move
 		state_ctr = idle_move_time
-		idle_move_dir = (point_direction(x,y,global.game.player.x,global.game.player.y) + irandom_range(-45,45)) % 360
+		idle_move_dir = (point_direction(x,y,global.game.target.x,global.game.target.y) + irandom_range(-45,45)) % 360
 	}
 }
 
 // @description a state where the slime moves a short distance towards the player
 function slime_idle_move(){
-	var _dist = distance_to_object(global.game.player)
-	var _dir = point_direction(x,y,global.game.player.x,global.game.player.y)
-	if(_dist < dash_proximity and stamina >= 1 and collision_line(x, y, global.game.player.x, global.game.player.y, oWall, true, true)) {
+	var _dist = distance_to_object(global.game.target)
+	var _dir = point_direction(x,y,global.game.target.x,global.game.target.y)
+	if(_dist < dash_proximity and stamina >= 1 and collision_line(x, y, global.game.target.x, global.game.target.y, oWall, true, true)) {
 		state = slime_dash_windup
 		state_ctr = dash_windup_time
 	}
@@ -44,13 +44,13 @@ function slime_idle_move(){
 function slime_dash_windup(){
 	path_end()
 	// opposite direction
-	var _dir = (180 + point_direction(x,y,global.game.player.x,global.game.player.y)) % 360
+	var _dir = (180 + point_direction(x,y,global.game.target.x,global.game.target.y)) % 360
 	mag_dir_move_and_collide_enemy(speed_,_dir)
 	if(state_ctr == 0) {
 		stamina -= 1
 		state = slime_dashing
 		state_ctr = active_dash_time
-		dash_dir = point_direction(x,y,global.game.player.x,global.game.player.y)
+		dash_dir = point_direction(x,y,global.game.target.x,global.game.target.y)
 	}
 }
 

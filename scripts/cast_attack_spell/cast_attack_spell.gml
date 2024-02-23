@@ -12,6 +12,7 @@
  */
 function cast_attack_spell(_attack_spell, _aim_dir){
 	if(_attack_spell.spell_index == global.attack_spell_struct.magic_missile.spell_index){//magic missile
+		
 		for (i = 0; i < 5; i++) {
 			var _temp_dir = _aim_dir + random_range(-5,5)
 			_temp_dir = (_temp_dir + 72 * (i)) % 360
@@ -23,9 +24,12 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 		}
 
 	}else if(_attack_spell.spell_index == global.attack_spell_struct.blast.spell_index){// blast
+		
 		var _projectile_inst = instance_create_depth(mouse_x, mouse_y, depth-100, _attack_spell.projectile_obj)
 		with(_projectile_inst){	 dir  = 0	 }
+		
 	}else{// everything else
+		
 		 //length from the center of Player to the tip of the wand + spell offset
 		dist_from_center_to_wand_tip = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
 			+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand))

@@ -11,7 +11,7 @@ global.enemy_scale = {
 
 function move_towards_player(){
 	// Generate the path towards the player
-	var _found_player = mp_grid_path(ds_map_find_value(global.grid_map,room), path, x, y, global.game.player.x, global.game.player.y, choose(0,1))
+	var _found_player = mp_grid_path(ds_map_find_value(global.grid_map,room), path, x, y, global.game.target.x, global.game.target.y, choose(0,1))
 	if (_found_player) {
 		path_start(path, speed_, path_action_stop, false)
 	}

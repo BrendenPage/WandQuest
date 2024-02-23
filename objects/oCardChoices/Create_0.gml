@@ -19,7 +19,7 @@ for (var _i = 0; _i < 3; _i++) {
 	choice_ind = irandom_range(2,sprite_get_number(sprite) - 1)
 	
 	//temporary code that prevents unimplemented cards
-	if(!if_attack){choice_ind = irandom_range(5,sprite_get_number(sprite) - 1)}
+	if(!if_attack){choice_ind = irandom_range(4,sprite_get_number(sprite) - 1)}
 	////////////////////////////////////////////////
 	
 	choices[_i].choice_ind = choice_ind

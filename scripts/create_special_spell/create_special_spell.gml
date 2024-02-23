@@ -6,15 +6,15 @@
  * 
  * @param {string} _spell_name - The name of the special spell. 
  *																 Defaults to "Default Shield" if not specified.
- * @param {int} _spell_index - The index of the special spell card.
+ * @param {Number} _spell_index - The index of the special spell card.
  *															 Defaults to -1 if not specified.
  * @param {sprite} _sprite - The sprite used to visually represent the special spell. 
  *														Defaults to sShieldEffect if not specified.
  * @param {object} _special_obj - The object representing the special effect of the spell.
  *																					Defaults to oShieldEffect if not specified.
- * @param {int} _cooldown - The cooldown time in frames between spell casts.
+ * @param {Number} _cooldown - The cooldown time in frames between spell casts.
  *													Defaults to 120 if not specified.
- * @param {int} _duration - The duration of the spell in frames if it has one.
+ * @param {Number} _duration - The duration of the spell in frames if it has one.
 														Defaults to 40 if not specified.
  * @param {string} _description_text - The description text of the special spell. 
  *																			    Defaults to an empty string if not specified.
@@ -54,6 +54,17 @@ function create_special_spell(
  * 
  */
 global.special_spell_struct = { 
+	
+		duck: new create_special_spell(
+		"Duck",
+		4,
+		sDuckEffect,
+		oDuckEffect,
+		150,
+		250,
+		"A DUCK IS A DUCK."
+	),
+	
 	shield : new create_special_spell(
 		"Shield",
 		5,
@@ -63,6 +74,7 @@ global.special_spell_struct = {
 		40,
 		"Shield\n Block any damage for a short time,\n Medium cooldown"
 	),
+	
 	blink: new create_special_spell(
 		"Blink",
 		6,
@@ -72,6 +84,7 @@ global.special_spell_struct = {
 		10,
 		"Blink\n Teleport forward for a short distance.\n Medium cooldown"
 	)
+
 	
 }
 
@@ -79,7 +92,7 @@ global.special_spell_struct = {
  * Global Special Spell Map:
  * 
  * This data structure stores instances of special spells, mapped to their respective spell indexes.
- * 
+ *
  * Usage:
  * - Use ds_map_add to add special spell instances to the map, with the spell's index as the key.
  * - To access an special spell instance by its index, use ds_map_find_value with the desired index.
@@ -95,6 +108,7 @@ global.special_spell_struct = {
  */
 global.special_spell_map = ds_map_create()
 
+ds_map_add(global.special_spell_map,4,global.special_spell_struct.duck)
 ds_map_add(global.special_spell_map,5,global.special_spell_struct.shield)
 ds_map_add(global.special_spell_map,6,global.special_spell_struct.blink)
 

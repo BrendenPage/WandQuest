@@ -27,6 +27,7 @@ with(player){
 	// set up the player
 	event_user(0)
 }
+target = player
 
 tutorial_setup=true
 

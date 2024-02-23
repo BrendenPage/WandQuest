@@ -16,7 +16,7 @@ if (choice_type == CHOICE_TYPE.ATTACK) {
 	
 } else if (choice_type == CHOICE_TYPE.SPECIAL) {
 	show_debug_message("This is a special")
-	if(ind != 5 && ind != 6 ){// 5 = shield, 6 = blink
+	if(ind < 4 && ind > 6 ){// 4 = duck, 5 = shield, 6 = blink
 		show_debug_message("This spell has not been implemented yet")
 	}else{
 		var _chosen_special_spell = ds_map_find_value(global.special_spell_map, ind)

@@ -18,29 +18,38 @@ function gun_shoot(_dir) {
 }
 
 function gun_idle(){
+
+	//var original_angle = image_angle
+	//with (oPlayer) {
+	//	var _dir = point_direction(other.x,other.y,x,y)
+	//	if (_dir > 90 and _dir < 270) {
+	//		other.image_xscale = -1
+	//		_dir = (_dir + 180) % 360
+	//	} else {
+	//		other.image_xscale = 1
+	//	}
+	//	other.image_angle = _dir
+	//}
 	
 	// face the player
-	
 	var original_angle = image_angle
-	with (oPlayer) {
-		var _dir = point_direction(other.x,other.y,x,y)
-		if (_dir > 90 and _dir < 270) {
-			other.image_xscale = -1
+	var _dir = point_direction(x,y,global.game.target.x,global.game.target.y)
+	if (_dir > 90 and _dir < 270) {
+			image_xscale = -1
 			_dir = (_dir + 180) % 360
 		} else {
-			other.image_xscale = 1
+			image_xscale = 1
 		}
-		other.image_angle = _dir
-	}
+		image_angle = _dir
 	
 	// don't rotate if it'll move into a collision
 	if (place_meeting(x,y,[oWall, oPlayer])) {
 		image_angle = original_angle
 	}
 	
-	var _dist = distance_to_object(global.game.player)
+	var _dist = distance_to_object(global.game.target)
 	// move in the direction
-	if (_dist > attack_distance or collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true)) {
+	if (_dist > attack_distance or collision_line(x,y,global.game.target.x, global.game.target.y,oWall, false, true)) {
 		move_towards_player()
 	} else {
 		path_end()
@@ -56,11 +65,13 @@ function gun_idle(){
 	}
 	
 	shot_ctr = max(0,shot_ctr - 1)
-	if (shot_ctr == 0 and !collision_line(x,y,global.game.player.x, global.game.player.y,oWall, false, true) and _dist < attack_distance + ATTACK_RANGE_BUFFER) {
+	if (shot_ctr == 0 and !collision_line(x,y,global.game.target.x, global.game.target.y,oWall, false, true) and _dist < attack_distance + ATTACK_RANGE_BUFFER) {
 		var _dir_to_player = 0
-		with (oPlayer) {
-			_dir_to_player = point_direction(other.x,other.y,x,y)
-		}
+		//with (oPlayer) {
+		//	_dir_to_player = point_direction(other.x,other.y,x,y)
+		//}
+		_dir_to_player = point_direction(x,y, global.game.target.x,global.game.target.y )
+		
 		_dir_to_player += random_range(-5,5)
 		gun_shoot(_dir_to_player)
 		shot_ctr = GUN_TIMERS.GUN_SHOT_COOLDOWN + irandom_range(-10,10)

@@ -42,6 +42,7 @@ game_setup = false
 tutorial_setup = false
 
 player = undefined
+target = undefined
 gui = undefined
 current_room_x = undefined
 current_room_y = undefined

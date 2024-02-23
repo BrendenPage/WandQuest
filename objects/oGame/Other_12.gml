@@ -31,7 +31,7 @@ with(player){
 	// set up the player
 	event_user(0)
 }
-
+target = player
 
 // Used to track current room index into oMapGenerator.dependency_map
 current_room_x = global.map_gen.map_size/2

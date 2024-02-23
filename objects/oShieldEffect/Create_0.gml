@@ -1,5 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
 
 spell_duration = global.special_spell_struct.shield.duration
 duration_timer = spell_duration

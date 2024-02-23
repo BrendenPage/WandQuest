@@ -3,19 +3,19 @@
  *
  * @param {string} _spell_name - The name of the spell
  *								 Defaults to "Default Firebolt" if not specified.
- * @param {int} _spell_index - The index of the attack spell card. The index is align with the order of sAttacks
+ * @param {Number} _spell_index - The index of the attack spell card. The index is align with the order of sAttacks
  *							   Defaults to -1 if not specified.
  * @param {sprite} _sprite - The sprite used to visually represent the spell. 
  *                           Defaults to sFireboltProjectile if not specified.
  * @param {object} _projectile_obj - The projectile object that the spell casts. 
  *                                  Defaults to oFireboltProjectile if not specified.
- * @param {int} _cooldown - The cooldown time in frames between spell casts. 
+ * @param {Number} _cooldown - The cooldown time in frames between spell casts. 
  *                             Defaults to 15 if not specified.
- * @param {int} _damage  - The damage of the spell.
+ * @param {Number} _damage  - The damage of the spell.
  *							  Defaults to 10 if not specified.
  * @param {string} _description_text - The description text of the spell.
  *									   Defaults to "" if not specified.
- * @param {int} _offset_from_center - The offset in pixel from the origin of the sprite to the leftside of the collision mask
+ * @param {Number} _offset_from_center - The offset in pixel from the origin of the sprite to the leftside of the collision mask
  *										 Defaults to 0 if not specified.
  */
 function create_attack_spell(
