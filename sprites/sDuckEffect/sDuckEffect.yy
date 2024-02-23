@@ -4,7 +4,7 @@
   "name": "sDuckEffect",
   "bbox_bottom": 140,
   "bbox_left": 58,
-  "bbox_right": 126,
+  "bbox_right": 125,
   "bbox_top": 92,
   "bboxMode": 2,
   "collisionKind": 1,

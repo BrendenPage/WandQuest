@@ -60,8 +60,8 @@ global.special_spell_struct = {
 		4,
 		sDuckEffect,
 		oDuckEffect,
-		15,
-		100,
+		150,
+		200,
 		"A DUCK IS A DUCK."
 	),
 	

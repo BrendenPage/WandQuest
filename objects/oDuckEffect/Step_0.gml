@@ -7,13 +7,28 @@ var _yspd = lengthdir_y(spd, dir);
 
 
 //collision 
-if place_meeting(x+_xspd, y , oWall){ _xspd = 0 }
-if place_meeting(x, y + _yspd, oWall){ _yspd = 0 }
+//if place_meeting(x+_xspd, y , oWall){ _xspd = 0 }
+//if place_meeting(x, y + _yspd, oWall){ _yspd = 0 }
 
-x += _xspd
-y += _yspd
+var x_bounce = false
+var y_bounce = false
+	
+if place_meeting(x + _xspd,y,oWall) {
+	x_bounce = true
+}
+if place_meeting(x,y + _yspd,oWall) {
+	y_bounce = true
+}
+	
+if (x_bounce) {
+	dir = (180 - dir) % 360
+}
+	
+if (y_bounce) {
+	dir = (-dir) % 360
+}
 
-
+move_and_collide(_xspd,_yspd,oWall)
 
 
 if duration_timer == 0 || remaining_health <= 0{

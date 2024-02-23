@@ -9,7 +9,7 @@ global.game.target = self
 remaining_health = 10000
 
 dir = point_direction(oPlayer.x,oPlayer.y,mouse_x,mouse_y)
-spd = 10
+spd = 8
 
 
 
