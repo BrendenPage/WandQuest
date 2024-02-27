@@ -18,7 +18,6 @@ function die(){
 	with(global.game) {
 		event_user(5)
 	}
-	room_goto(DEATH_ROOM)
 	global.game_paused = true
 	
 	// Reset the player's stats to their original values
@@ -26,4 +25,7 @@ function die(){
 	if (DEBUG) {
 		show_debug_message("Dead")
 	}
+	global.died = true
+	
+	start_game()
 }

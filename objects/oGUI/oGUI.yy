@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Objects/GUI.yy",
+    "name": "Hitbox and Hurtbox",
+    "path": "folders/Objects/Hitbox and Hurtbox.yy",
   },
   "parentObjectId": null,
   "persistent": true,
