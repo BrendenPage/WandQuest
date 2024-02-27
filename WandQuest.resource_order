@@ -69,7 +69,7 @@
     {"name":"oFlameBurstProjectile","order":2,"path":"objects/oFlameBurstProjectile/oFlameBurstProjectile.yy",},
     {"name":"oButtonTutorialEnd","order":9,"path":"objects/oButtonTutorialEnd/oButtonTutorialEnd.yy",},
     {"name":"oDeckMenu","order":7,"path":"objects/oDeckMenu/oDeckMenu.yy",},
-    {"name":"Sprite79","order":3,"path":"sprites/Sprite79/Sprite79.yy",},
+    {"name":"sWindWall","order":3,"path":"sprites/sWindWall/sWindWall.yy",},
     {"name":"Room3","order":2,"path":"rooms/Room3/Room3.yy",},
     {"name":"oTutorialWarp","order":9,"path":"objects/oTutorialWarp/oTutorialWarp.yy",},
     {"name":"sPlayerHat","order":3,"path":"sprites/sPlayerHat/sPlayerHat.yy",},

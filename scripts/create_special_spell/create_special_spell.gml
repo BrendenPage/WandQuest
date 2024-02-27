@@ -80,7 +80,7 @@ global.special_spell_struct = {
 		6,
 		sBlinkEffect,
 		oBlinkEffect,
-		150,
+		10,
 		10,
 		"Blink\n Teleport forward for a short distance.\n Medium cooldown"
 	),
@@ -90,7 +90,7 @@ global.special_spell_struct = {
 		7,
 		sTripleSurgeIcon,
 		oTripleSurge,
-		10,
+		150,
 		0,
 		"Triple Surge\n Triple the next attack spell you cast.\n Medium cooldown"
 	)
