@@ -26,9 +26,6 @@ if (minimap_enabled and global.tutorial_seen) {
 	draw_bounded_minimap()
 }
 
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-
 var _attack_card_index = oPlayer.attack_deck_obj.deck[oPlayer.attack_deck_obj.cur_deck_index].spell_index
 if(oPlayer.attack_timer != 0){
 	_attack_card_index = 0 //cooldown sprite
@@ -50,3 +47,19 @@ if(oPlayer.SP_shuffle_timer != 0){//shuffling
 }
 
 draw_sprite(sSpecials,_special_card_index,special_position,gui_bottom)
+
+draw_set_font(fDeath)
+
+
+if (death_message_alpha > 0) {
+	draw_text_ext_color(gui_center,gui_middle/2,"You died",0,1000,c_red,c_red,c_red,c_red,death_message_alpha)
+	death_message_alpha = max(0,death_message_alpha - 0.005)
+	show_debug_message(death_message_alpha)
+}
+
+draw_set_font(fStandard)
+
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+
+

@@ -4,6 +4,7 @@ randomize()
 button_text = "Loading"
 http_request_ = undefined
 ready = false
+draw_set_font(fStandard)
 
 
 
@@ -37,3 +38,5 @@ if (!global.logging_initialized) {
 	}
 	cap_logger_new_session(global.uuid)
 }
+
+global.died = false

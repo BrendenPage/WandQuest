@@ -29,11 +29,15 @@ function cast_special_spell(_special_spell, _aim_dir){
 			break
 		case global.special_spell_struct.duck.spell_index:
 			dist_from_center_to_wand_tip = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
-				+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand)) + 100
+				+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand)) 
+				
+			var _x_offset = lengthdir_x(dist_from_center_to_wand_tip , _aim_dir)
+			var _y_offset = lengthdir_y(dist_from_center_to_wand_tip , _aim_dir)
 			
-			_x_offset = lengthdir_x(dist_from_center_to_wand_tip , _aim_dir)
-			_y_offset = lengthdir_y(dist_from_center_to_wand_tip , _aim_dir)
-			
+			while (place_meeting(x + _x_offset,y + _y_offset,oWall) ){
+				if _x_offset < 0 { _x_offset++ } else { _x_offset-- }
+				if _y_offset < 0 { _y_offset++ } else { _y_offset-- }
+			}
 			var _projectile_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _special_spell.special_obj)
 			break
 		default:

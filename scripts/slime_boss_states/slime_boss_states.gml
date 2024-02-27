@@ -16,9 +16,10 @@ function slime_boss_shoot(_dir) {
 
 function slime_boss_idle(){
 	if (state_ctr == 0) {
-		with (oPlayer) {
-			other.dash_dir = point_direction(other.x,other.y,x,y)
-		}
+		//with (oPlayer) {
+		//	other.dash_dir = point_direction(other.x,other.y,x,y)
+		//}
+		dash_dir = point_direction(x,y,global.game.target.x,global.game.target.y)
 		if (irandom(1) == 0) {
 			state_ctr = SLIME_BOSS_TIMERS.SLIME_BOSS_DRAWBACK
 			state = slime_boss_drawback
