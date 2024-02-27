@@ -44,3 +44,9 @@ special_duration_timer = 0
 
 //length from the center of Player to the tip of the wand + spell offset
 dist_from_center_to_wand_tip = 0
+
+// Spell casting related 
+is_triple_surge_active = false
+
+
+

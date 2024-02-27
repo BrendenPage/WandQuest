@@ -96,7 +96,16 @@ if (remaining_i_frames == 0) {
 			// reset the timer
 			attack_timer = attack_spell.cooldown
 			// generate projectile
-			cast_attack_spell(attack_spell,aim_dir)
+			if(is_triple_surge_active == false){
+				cast_attack_spell(attack_spell,aim_dir)
+			}else{
+				cast_attack_spell(attack_spell,aim_dir)
+				cast_attack_spell(attack_spell,(aim_dir + 20) % 360)
+				cast_attack_spell(attack_spell,(aim_dir - 20) % 360)
+				is_triple_surge_active = false
+			}
+			
+			
 		}
 	
 	}

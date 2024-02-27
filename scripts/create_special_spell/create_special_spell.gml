@@ -83,8 +83,17 @@ global.special_spell_struct = {
 		150,
 		10,
 		"Blink\n Teleport forward for a short distance.\n Medium cooldown"
+	),
+	
+	triple_surge: new create_special_spell(
+		"Triple Surge",
+		7,
+		sTripleSurgeIcon,
+		oTripleSurge,
+		10,
+		0,
+		"Triple Surge\n Triple the next attack spell you cast.\n Medium cooldown"
 	)
-
 	
 }
 
@@ -111,4 +120,5 @@ global.special_spell_map = ds_map_create()
 ds_map_add(global.special_spell_map,4,global.special_spell_struct.duck)
 ds_map_add(global.special_spell_map,5,global.special_spell_struct.shield)
 ds_map_add(global.special_spell_map,6,global.special_spell_struct.blink)
+ds_map_add(global.special_spell_map,7,global.special_spell_struct.triple_surge)
 

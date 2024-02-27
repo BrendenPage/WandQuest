@@ -37,3 +37,5 @@ knockback_frames = 0
 knockback_spd = 0
 
 depth = 10
+
+is_triple_surge_active = undefined
