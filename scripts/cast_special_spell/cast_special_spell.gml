@@ -5,24 +5,29 @@ function cast_special_spell(_special_spell, _aim_dir){
 			var _special_inst = instance_create_depth(x , y, depth-98, _special_spell.special_obj)
 			break
 		case global.special_spell_struct.blink.spell_index:
-			var _max_travel_dist = 150
-
-			var _x_offset = lengthdir_x(_max_travel_dist, _aim_dir)
-			var _y_offset = lengthdir_y(_max_travel_dist, _aim_dir)
+		
+			var _dist = point_distance(global.game.player.x, global.game.player.y, mouse_x, mouse_y)
+			var _x_offset = mouse_x - global.game.player.x
+			var _y_offset = mouse_y - global.game.player.y
 			
-			/*while (place_meeting(x + _x_offset,y + _y_offset,oWall) ){
+			if (_dist > MAX_BLINK_RANGE) {
+				_x_offset = lengthdir_x(MAX_BLINK_RANGE, _aim_dir)
+				_y_offset = lengthdir_y(MAX_BLINK_RANGE, _aim_dir)
+			}
+
+			while (place_meeting(x + _x_offset,y + _y_offset,[oWall, oEnemyParent]) ){
 				if _x_offset < 0 { _x_offset++ } else { _x_offset-- }
 				if _y_offset < 0 { _y_offset++ } else { _y_offset-- }
-			}*/
-			with(global.game.player) {
-				move_and_collide(_x_offset, _y_offset, oWall);
-				_special_inst = instance_create_depth(x+_x_offset ,y+ _y_offset, depth-98, _special_spell.special_obj)
 			}
-			//var _special_inst = instance_create_depth(x+_x_offset ,y+ _y_offset, depth-98, _special_spell.special_obj)
-			//oPlayer.x = x+_x_offset
-			//oPlayer.y = y+_y_offset
+			
+			with(global.game.player) {
+				_special_inst = instance_create_depth(x+_x_offset ,y+ _y_offset, depth-100, _special_spell.special_obj)
+				x += _x_offset
+				y += _y_offset
+				
+			}
 			break
-		case _special_spell.spell_index == global.special_spell_struct.duck.spell_index:
+		case global.special_spell_struct.duck.spell_index:
 			dist_from_center_to_wand_tip = (sprite_get_bbox_right(sPlayer)- sprite_get_xoffset(sPlayer)) 
 				+ (sprite_get_bbox_right(sWand)- sprite_get_xoffset(sWand)) + 100
 			
