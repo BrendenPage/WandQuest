@@ -10,7 +10,7 @@
 #macro BOX_VISIBLE false
 
 // categoryId
-#macro RELEASE 2
+#macro RELEASE 1
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
@@ -21,6 +21,9 @@
 
 // percentage healed after going through warp as integer (max health*heal percent)
 #macro HEAL_PERCENT 0.25
+
+// Spells
+#macro MAX_BLINK_RANGE 500
 
 // At what distance should a ranged enemy
 // shift to shooting and moving erratically
