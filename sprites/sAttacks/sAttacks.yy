@@ -26,13 +26,14 @@
   "height": 64,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cf6a49e0-0920-4f06-b785-08125afe8464","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"77e687d9-38b3-448b-8e46-53a677404e39","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Attacks icons",
-    "path": "folders/Sprites/Attacks icons.yy",
+    "name": "Spell Icons",
+    "path": "folders/Sprites/Spell Icons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

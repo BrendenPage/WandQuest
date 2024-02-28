@@ -43,4 +43,10 @@ function augment(_augment_index){
 	}
 }
 
-
+global.augments_description_list =[
+"Increase player movement speed",
+"Decrease attack spell cooldowns",
+"Decrease special spell cooldowns",
+"Decrease all spell shuffle time",
+"Projectiles will tend towards enemies\nNot effective on static attacks"
+] 

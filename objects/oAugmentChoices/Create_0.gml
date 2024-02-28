@@ -17,7 +17,5 @@ for (var _i = 0; _i < 3; _i++) {
 	choices[_i].image_index = choice_ind
 	choices[_i].x_offset = 200 * _i - 200
 	
-	// TODO: Set the choice explanation accordingly
-	
-	
+	choices[_i].choice_explanation = global.augments_description_list[choice_ind]
 }

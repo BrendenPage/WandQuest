@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Specials icons",
-    "path": "folders/Sprites/Specials icons.yy",
+    "name": "Spell Icons",
+    "path": "folders/Sprites/Spell Icons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
