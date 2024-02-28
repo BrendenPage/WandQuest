@@ -19,6 +19,7 @@ aim_dir = undefined
 
 //Colddown for attack
 homing = undefined
+homing_strength = undefined
 attack_cooldown_modifier = undefined
 attack_timer = undefined
 attack_spell = undefined

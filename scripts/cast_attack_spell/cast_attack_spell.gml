@@ -23,6 +23,7 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 			with(_projectile_inst){
 				dir  = point_direction(x,y,mouse_x,mouse_y)
 				homing = global.game.player.homing
+				homing_strength = global.game.player.homing_strength
 			}
 		}
 	}else if(_attack_spell.spell_index == global.attack_spell_struct.blast.spell_index){// blast
@@ -44,6 +45,7 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 	    var _projectile_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _attack_spell.projectile_obj)
 		if (object_get_parent(_projectile_inst.object_index) == oLinearProjectile) {
 			_projectile_inst.homing = global.game.player.homing
+			_projectile_inst.homing_strength = global.game.player.homing_strength
 		}
 	    // change the bullet's direction
 		_projectile_inst.dir = _aim_dir

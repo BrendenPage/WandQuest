@@ -25,6 +25,7 @@ aim_dir = 0
 
 // Attack deck initialization
 homing = false
+homing_strength = HOMING_START
 attack_cooldown_modifier = 1
 attack_deck_obj = global.game.attack_deck
 attack_deck_obj.persistent = true

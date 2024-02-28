@@ -6,6 +6,7 @@
 #macro AUGMENT_SHUFFLE_DEC 3
 #macro AUGMENT_HOMING_SHOT 4
 
+#macro HOMING_START 0.05
 
 function augment(_augment_index){
 	switch(_augment_index) {

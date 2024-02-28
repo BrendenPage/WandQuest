@@ -306,7 +306,9 @@ function clear_wing(_wing) {
 			}
 		}
 	}
-	// Heal the player a bit
+	if (DEBUG) {
+		show_debug_message("Cleared wing")
+	}
 	set_wing_warp()
 	global.game.wings_cleared[_wing] = true
 	if (global.logging) {
