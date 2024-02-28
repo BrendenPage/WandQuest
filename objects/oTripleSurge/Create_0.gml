@@ -1,10 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-event_inherited()
+sprite_index = 7
 
-dir = 0
 
-homing = false
-homing_strength = 0.05
 
-hitbox = undefined
+
+
+
