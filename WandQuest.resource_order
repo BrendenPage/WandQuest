@@ -93,6 +93,7 @@
     {"name":"oArrow","order":8,"path":"objects/oArrow/oArrow.yy",},
     {"name":"sDeckMenu","order":2,"path":"sprites/sDeckMenu/sDeckMenu.yy",},
     {"name":"oWingWarp","order":10,"path":"objects/oWingWarp/oWingWarp.yy",},
+    {"name":"augments","order":4,"path":"scripts/augments/augments.yy",},
     {"name":"oPlayerAttackDeck","order":1,"path":"objects/oPlayerAttackDeck/oPlayerAttackDeck.yy",},
     {"name":"gun_states","order":2,"path":"scripts/gun_states/gun_states.yy",},
     {"name":"sMagicMissileIcon","order":4,"path":"sprites/sMagicMissileIcon/sMagicMissileIcon.yy",},

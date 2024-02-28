@@ -67,9 +67,6 @@ function gun_idle(){
 	shot_ctr = max(0,shot_ctr - 1)
 	if (shot_ctr == 0 and !collision_line(x,y,global.game.target.x, global.game.target.y,oWall, false, true) and _dist < attack_distance + ATTACK_RANGE_BUFFER) {
 		var _dir_to_player = 0
-		//with (oPlayer) {
-		//	_dir_to_player = point_direction(other.x,other.y,x,y)
-		//}
 		_dir_to_player = point_direction(x,y, global.game.target.x,global.game.target.y )
 		
 		_dir_to_player += random_range(-5,5)

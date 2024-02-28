@@ -123,6 +123,7 @@
     {"id":{"name":"oArrow","path":"objects/oArrow/oArrow.yy",},},
     {"id":{"name":"sDeckMenu","path":"sprites/sDeckMenu/sDeckMenu.yy",},},
     {"id":{"name":"oWingWarp","path":"objects/oWingWarp/oWingWarp.yy",},},
+    {"id":{"name":"augments","path":"scripts/augments/augments.yy",},},
     {"id":{"name":"oPlayerAttackDeck","path":"objects/oPlayerAttackDeck/oPlayerAttackDeck.yy",},},
     {"id":{"name":"gun_states","path":"scripts/gun_states/gun_states.yy",},},
     {"id":{"name":"sMagicMissileIcon","path":"sprites/sMagicMissileIcon/sMagicMissileIcon.yy",},},

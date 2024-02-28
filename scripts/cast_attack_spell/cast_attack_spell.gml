@@ -20,13 +20,15 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 			var _x_offset = lengthdir_x(_total_offset, _temp_dir);
 			var _y_offset = lengthdir_y(_total_offset, _temp_dir);
 			var _projectile_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _attack_spell.projectile_obj)
-			with(_projectile_inst){	 dir  = point_direction(x,y,mouse_x,mouse_y)	 }
+			with(_projectile_inst){
+				dir  = point_direction(x,y,mouse_x,mouse_y)
+				homing = global.game.player.homing
+			}
 		}
-
 	}else if(_attack_spell.spell_index == global.attack_spell_struct.blast.spell_index){// blast
 		
 		var _projectile_inst = instance_create_depth(mouse_x, mouse_y, depth-100, _attack_spell.projectile_obj)
-		with(_projectile_inst){	 dir  = 0	 }
+		_projectile_inst.dir = 0
 		
 	}else{// everything else
 		
@@ -40,10 +42,11 @@ function cast_attack_spell(_attack_spell, _aim_dir){
 		var _y_offset = lengthdir_y(dist_from_center_to_wand_tip , _aim_dir)
 
 	    var _projectile_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _attack_spell.projectile_obj)
-
+		if (object_get_parent(_projectile_inst.object_index) == oLinearProjectile) {
+			_projectile_inst.homing = global.game.player.homing
+		}
 	    // change the bullet's direction
-		with(_projectile_inst){	 dir  = _aim_dir	 }
-		
+		_projectile_inst.dir = _aim_dir
 	}
 	
 	if (global.logging) {

@@ -4,4 +4,7 @@ event_inherited()
 
 dir = 0
 
+homing = false
+homing_strength = 0.1
+
 hitbox = undefined

@@ -3,6 +3,6 @@
 
 // true if this is a card selection, false if its
 // an augment selection
-if_card = false
-image_xscale = 3/9
-image_yscale = 3/9
+card_selection = false
+image_xscale = 2/9
+image_yscale = 2/9

@@ -4,13 +4,14 @@ var _special_placed = false
 for (var _room = 1; _room < 5; _room++) {
 	for (var _i = 0; _i < map_size; _i++) {
 		for (var _j = 0; _j < map_size; _j++) {
+			// Is this the type of room we're looking for
 			if (map[_i,_j] == _room) {
+				// Is there an availability to the west
 				if (!(dependency_map[_i,_j] & WEST)) {
 					if (_i != 0) {
 						if (map[_i-1,_j] == 0) {
 							map[_i-1,_j] = _room + 4
-							dependency_map[_i,_j] |= WEST
-							dependency_map[_i-1,_j] |= EAST
+							set_dependencies_for_special_placement(_room, _i-1, _j)
 							_special_placed = true
 							break
 						}
@@ -20,8 +21,7 @@ for (var _room = 1; _room < 5; _room++) {
 					if (_j != 0) {
 						if (map[_i,_j-1] == 0) {
 							map[_i,_j-1] = _room + 4
-							dependency_map[_i,_j] |= NORTH
-							dependency_map[_i,_j-1] |= SOUTH
+							set_dependencies_for_special_placement(_room, _i, _j-1)
 							_special_placed = true
 							break
 						}
@@ -31,8 +31,7 @@ for (var _room = 1; _room < 5; _room++) {
 					if (_j != map_size-1) {
 						if (map[_i,_j+1] == 0) {
 							map[_i,_j+1] = _room + 4
-							dependency_map[_i,_j] |= SOUTH
-							dependency_map[_i,_j+1] |= NORTH
+							set_dependencies_for_special_placement(_room, _i, _j+1)
 							_special_placed = true
 							break
 						}
@@ -42,8 +41,7 @@ for (var _room = 1; _room < 5; _room++) {
 					if (_i != map_size-1) {
 						if (map[_i+1,_j] == 0) {
 							map[_i+1,_j] = _room + 4
-							dependency_map[_i,_j] |= EAST
-							dependency_map[_i+1,_j] |= WEST
+							set_dependencies_for_special_placement(_room, _i+1, _j)
 							_special_placed = true
 							break
 						}

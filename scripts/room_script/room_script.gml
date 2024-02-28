@@ -325,3 +325,36 @@ function is_normal_room(_x, _y) {
 function is_current_room_normal() {
 	return global.map_gen.map[global.game.current_room_x, global.game.current_room_y] <= 4
 }
+
+function set_dependencies_for_special_placement(_room, _x, _y) {
+	with (global.map_gen) {
+		// Check left
+		if (_x > 0) {
+			if (map[_x - 1, _y] == _room) {
+				dependency_map[_x-1, _y] |= EAST
+				dependency_map[_x, _y] |= WEST
+			}
+		}
+		if (_x < map_size - 1) {
+			if (map[_x + 1, _y] == _room) {
+				dependency_map[_x, _y] |= EAST
+				dependency_map[_x + 1, _y] |= WEST
+			}
+		}
+		if (_y < map_size - 1) {
+			if (map[_x, _y+1] == _room) {
+				dependency_map[_x, _y] |= SOUTH
+				dependency_map[_x, _y+ 1] |= NORTH
+			}
+		}
+		if (_y > 0) {
+			if (map[_x, _y-1] == _room) {
+				dependency_map[_x, _y - 1] |= SOUTH
+				dependency_map[_x, _y] |= NORTH
+			}
+		}
+	}
+}
+
+
+
