@@ -33,7 +33,7 @@ for (var _i = 0; _i < ds_list_size(in_use_rooms); _i++) {
 }
 
 ds_list_clear(in_use_rooms)
-//ds_list_clear(free_rooms) // TODO: REMOVE, TEMP FIX
+ds_list_clear(free_rooms) // TODO: REMOVE, TEMP FIX
 
 for (var _i = 0; _i < 4; _i++) {
 	map[pos_arm_x[_i], pos_arm_y[_i]] = _i + 1

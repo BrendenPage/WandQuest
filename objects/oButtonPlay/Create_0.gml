@@ -27,7 +27,13 @@ if (!variable_global_exists("logging_initialized")) {
 
 failed_streak = 0
 no_response_streak = 0
-instance_create_layer(0,0, "Instances", oMapGenerator)
+if (instance_number(oMapGenerator) == 0) {
+	instance_create_layer(0,0, "Instances", oMapGenerator)
+} else {
+	with (global.map_gen) {
+		event_user(1)
+	}
+}
 
 if (!global.logging_initialized) {
 	cap_logger_init(RELEASE)

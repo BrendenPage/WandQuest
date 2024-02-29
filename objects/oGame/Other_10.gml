@@ -32,7 +32,6 @@ if (!ds_map_find_value(global.grid_map, room)) {
 var _mp_grid = ds_map_find_value(global.grid_map, room)
 mp_grid_clear_all(_mp_grid)
 
-// Loop through each tile and add a single solid if its a wall
 var _map = layer_tilemap_get_id("tiles_wall")
 var _door_map = layer_tilemap_get_id("tiles_door")
 if (global.tutorial_seen or room == DStart) { 
@@ -58,6 +57,7 @@ if (global.tutorial_seen or room == DStart) {
 	}
 }
 
+// Loop through each tile and add a single solid if its a wall
 // create each 1x1 solid
 for (var _y = 0; _y < _h; _y++) {
 	for (var _x = 0; _x < _w; _x++) {
@@ -71,8 +71,6 @@ for (var _y = 0; _y < _h; _y++) {
 		}
 	}
 }
-
-
 
 //add solid instances to grid
 mp_grid_add_instances(_mp_grid, oWall, true);

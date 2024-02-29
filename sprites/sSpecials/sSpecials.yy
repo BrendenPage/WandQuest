@@ -27,13 +27,15 @@
   "height": 64,
   "HTile": false,
   "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f329724e-4d87-4f83-b140-2a70d201fba4","blendMode":0,"displayName":"Layer 1","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8520dd30-e60a-4f21-ab1f-88869b47dc88","blendMode":0,"displayName":"Layer 2","isLocked":false,"opacity":100.0,"visible":true,},
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4376ca89-e7c3-4e26-a81d-2d23271aaf78","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Specials icons",
-    "path": "folders/Sprites/Specials icons.yy",
+    "name": "Spell Icons",
+    "path": "folders/Sprites/Spell Icons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

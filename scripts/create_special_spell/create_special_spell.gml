@@ -62,7 +62,7 @@ global.special_spell_struct = {
 		oDuckEffect,
 		150,
 		300,
-		"A DUCK IS A DUCK."
+		"A DUCK IS A DUCK.\n(Duckstraction)"
 	),
 	
 	shield : new create_special_spell(
@@ -88,7 +88,7 @@ global.special_spell_struct = {
 	triple_surge: new create_special_spell(
 		"Triple Surge",
 		7,
-		sTripleSurgeIcon,
+		sSpecials,
 		oTripleSurge,
 		150,
 		0,
