@@ -6,7 +6,7 @@
 #macro TUTORIAL_START DTutorialMove
 #macro MENU_ROOM Menu
 #macro DEATH_ROOM Death
-#macro DEBUG true
+#macro DEBUG false
 #macro BOX_VISIBLE false
 
 // categoryId
