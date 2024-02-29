@@ -18,11 +18,11 @@ if (!variable_global_exists("logging")) {
 
 if (!variable_global_exists("logging_initialized")) {
 	global.logging_initialized = false
-	if (os_device == os_ios or os_device == os_android) {
+	/*if (os_device == os_ios or os_device == os_android) {
 		show_message("This game is best experienced on a computer")
 		global.logging_initialized = true
 		global.logging = false
-	}
+	}*/
 }
 
 failed_streak = 0

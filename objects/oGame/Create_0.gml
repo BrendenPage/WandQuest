@@ -50,6 +50,7 @@ gui = undefined
 current_room_x = undefined
 current_room_y = undefined
 this_run_seen_room_set = undefined
+rooms_seen = 0
 visible_minimap = undefined
 minimap_width = 0
 minimap_height = 0

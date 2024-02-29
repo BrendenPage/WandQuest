@@ -54,7 +54,6 @@ draw_set_font(fDeath)
 if (death_message_alpha > 0) {
 	draw_text_ext_color(gui_center,gui_middle/2,"You died",0,1000,c_red,c_red,c_red,c_red,death_message_alpha)
 	death_message_alpha = max(0,death_message_alpha - 0.005)
-	show_debug_message(death_message_alpha)
 }
 
 draw_set_font(fStandard)

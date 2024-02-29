@@ -18,6 +18,9 @@ function die(){
 	with(global.game) {
 		event_user(5)
 	}
+	with(global.map_gen) {
+		event_user(1)
+	}
 	global.game_paused = true
 	
 	// Reset the player's stats to their original values
