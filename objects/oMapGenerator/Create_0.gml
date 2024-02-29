@@ -2,7 +2,7 @@
 // You can write your code in this editor
 //randomize()
 #macro ROOM_COUNT 40
-
+show_debug_message("Create map gen object")
 global.map_gen = self
 //room_list = [D1]
 room_list = [D1, D2, D3, D4, D5]
@@ -37,12 +37,9 @@ for (var _i = 0; _i < map_size; _i++) {
 	}
 }
 
-if (DEBUG) {
-		show_debug_message(string(room_map))
-}
-// Minimap?
-length_max = 4
-length_min = length_max/1.5
+length_max = 2
+length_min = 1
+//length_min = length_max/1.5
 done = false
 // Begin map generation
 event_user(1)

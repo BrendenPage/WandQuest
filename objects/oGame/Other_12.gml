@@ -41,6 +41,7 @@ game_setup=true
 // If the room has been seen on this playthrough.
 // Used to populate enemies
 this_run_seen_room_set = ds_map_create()
+rooms_seen = 0
 
 for (var _i = 0; _i < global.map_gen.map_size; _i++) {
 	for (var _j = 0; _j < global.map_gen.map_size; _j++) {

@@ -12,7 +12,10 @@
     "name": "Room",
     "path": "folders/Objects/Room.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oPortal",
+    "path": "objects/oPortal/oPortal.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

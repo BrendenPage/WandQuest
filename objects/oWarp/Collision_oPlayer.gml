@@ -20,6 +20,8 @@ if (instance_number(oEnemyParent) == 0) {
 	global.game.current_room_y += down
 	layer_set_target_room(target_room)
 	room_goto(target_room);
-	show_debug_message("New x: " + string(global.game.current_room_x))
-	show_debug_message("New y: " + string(global.game.current_room_y))
+	if (DEBUG) {
+		show_debug_message("New x: " + string(global.game.current_room_x))
+		show_debug_message("New y: " + string(global.game.current_room_y))
+	}
 }

@@ -2,6 +2,8 @@
 // You can write your code in this editor
 event_inherited()
 
+if (global.game_paused) { exit }
+
 var ref = self
 
 if instance_exists(hitbox) {
