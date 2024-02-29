@@ -61,7 +61,7 @@ global.special_spell_struct = {
 		sDuckEffect,
 		oDuckEffect,
 		150,
-		200,
+		300,
 		"A DUCK IS A DUCK."
 	),
 	
@@ -80,7 +80,7 @@ global.special_spell_struct = {
 		6,
 		sBlinkEffect,
 		oBlinkEffect,
-		10,
+		150,
 		10,
 		"Blink\n Teleport forward for a short distance.\n Medium cooldown"
 	),
