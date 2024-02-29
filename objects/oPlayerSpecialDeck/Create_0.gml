@@ -9,11 +9,11 @@ deck = array_create(0);
 // defualt special deck contain 2 shields. 
 // might change to different cards for testing purposes
 
-array_push(deck, global.special_spell_struct.shield)
-array_push(deck, global.special_spell_struct.shield)
+//array_push(deck, global.special_spell_struct.shield)
+//array_push(deck, global.special_spell_struct.shield)
 
-//array_push(deck, global.special_spell_struct.blink)
-//array_push(deck, global.special_spell_struct.blink)
+array_push(deck, global.special_spell_struct.gale_barrier)
+array_push(deck, global.special_spell_struct.gale_barrier)
 
 cur_deck_size = array_length(deck)
 
