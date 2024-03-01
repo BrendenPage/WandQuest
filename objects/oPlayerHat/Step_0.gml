@@ -6,3 +6,8 @@ if (global.game_paused) {
 } else {
 	visible = true
 }
+
+if (global.game.player.knockback_frames > 0) {
+	image_blend = c_red
+}
+image_blend = -1
