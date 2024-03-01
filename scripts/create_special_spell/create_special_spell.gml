@@ -101,7 +101,7 @@ global.special_spell_struct = {
 		sSingleTornado,
 		oGaleBarrierEffect,
 		10,
-		10,
+		150,
 		"Gale Barrier\n Summons a wind wall to halt enemy advancement.\nWinds can be ignited by fire spells.\n Medium cooldown"
 	)
 	
