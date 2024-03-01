@@ -15,7 +15,7 @@ function deal_damage(entity, damage){
 		entity.remaining_i_frames = entity.i_frames
 	}
 	entity.remaining_health = max(0,entity.remaining_health - damage)
-	if (DEBUG) {
-		show_debug_message("Remaining health for: " + string(entity) + " = " + string(entity.remaining_health))
-	}
+	/*if (DEBUG) {
+		show_debug_message("Remaining health: " + string(entity.remaining_health))
+	}*/
 }

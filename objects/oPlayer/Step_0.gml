@@ -38,13 +38,13 @@ with(oSlimePuddle) {
 }
 
 if (in_puddle) {
-	speed_modifier = 0.5
+	speed_debuff = 0.5
 } else {
-	speed_modifier = 1
+	speed_debuff = 1
 }
 
 
-move_speed = SPEED*speed_modifier;
+move_speed = SPEED*speed_modifier*speed_debuff;
 var _key_left = keyboard_check(ord("A"))
 var _key_right = keyboard_check(ord("D"))
 var _key_up = keyboard_check(ord("W"))
@@ -94,9 +94,18 @@ if (remaining_i_frames == 0) {
 			attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
 			attack_deck_obj.cur_deck_index++
 			// reset the timer
-			attack_timer = attack_spell.cooldown
+			attack_timer = attack_spell.cooldown*attack_cooldown_modifier
 			// generate projectile
-			cast_attack_spell(attack_spell,aim_dir)
+			if(is_triple_surge_active == false){
+				cast_attack_spell(attack_spell,aim_dir)
+			}else{
+				cast_attack_spell(attack_spell,aim_dir)
+				cast_attack_spell(attack_spell,(aim_dir + 20) % 360)
+				cast_attack_spell(attack_spell,(aim_dir - 20) % 360)
+				is_triple_surge_active = false
+			}
+			
+			
 		}
 	
 	}
@@ -109,7 +118,7 @@ if (remaining_i_frames == 0) {
 		if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
 			attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
 			attack_deck_obj.cur_deck_index = 0
-			AT_shuffle_timer = attack_deck_obj.shuffle_cooldown
+			AT_shuffle_timer = attack_deck_obj.shuffle_cooldown*shuffle_modifier
 		}
 	}
 
@@ -148,7 +157,7 @@ if (remaining_i_frames == 0) {
 			cast_special_spell(special_spell, aim_dir)	
 			
 			//reset the timer
-			special_timer = special_spell.cooldown
+			special_timer = special_spell.cooldown*special_cooldown_modifier
 			special_duration_timer = special_spell.duration
 		}
 	}
@@ -157,7 +166,7 @@ if (remaining_i_frames == 0) {
 		if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
 			special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
 			special_deck_obj.cur_deck_index = 0
-			SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown, special_timer)
+			SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown*shuffle_modifier, special_timer)
 		}
 	}
 

@@ -18,16 +18,22 @@ if (!variable_global_exists("logging")) {
 
 if (!variable_global_exists("logging_initialized")) {
 	global.logging_initialized = false
-	if (os_device == os_ios or os_device == os_android) {
+	/*if (os_device == os_ios or os_device == os_android) {
 		show_message("This game is best experienced on a computer")
 		global.logging_initialized = true
 		global.logging = false
-	}
+	}*/
 }
 
 failed_streak = 0
 no_response_streak = 0
-instance_create_layer(0,0, "Instances", oMapGenerator)
+if (instance_number(oMapGenerator) == 0) {
+	instance_create_layer(0,0, "Instances", oMapGenerator)
+} else {
+	with (global.map_gen) {
+		event_user(1)
+	}
+}
 
 if (!global.logging_initialized) {
 	cap_logger_init(RELEASE)

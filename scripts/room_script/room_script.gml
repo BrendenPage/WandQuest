@@ -29,16 +29,23 @@ function close_every_door() {
 	tilemap_set(_wall_map, SOUTH_WALL, _w/2-1, _h-1)
 }
 
+
 function open_west_door() {
+	if (DEBUG) {
+		show_debug_message("Open West Door")
+	}
 	_wall_map = layer_tilemap_get_id("tiles_wall")
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _h = ceil(room_height/TS)
 	// Destroy previously placed walls
-	var _wall = instance_place(0, (_h/2)*TS, oWall)
-	if (_wall) {
+	var _wall = instance_position(0, (_h/2)*TS, oWall)
+	if (_wall != noone) {
+		if (DEBUG) {
+			show_debug_message("Clearing west wall")
+		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_place(0, (_h/2-1)*TS, oWall)
+	_wall = instance_position(0, (_h/2-1)*TS, oWall)
 	if (_wall) {
 		instance_destroy(_wall)
 	}
@@ -54,12 +61,15 @@ function open_east_door() {
 	var _w = ceil(room_width/TS)
 	var _h = ceil(room_height/TS)
 	// Destroy previously placed walls
-	var _wall = instance_place((_w-1)*TS, (_h/2)*TS, oWall)
-	if (_wall) {
+	var _wall = instance_position((_w-1)*TS, (_h/2)*TS, oWall)
+	if (_wall != noone) {
+		if (DEBUG) {
+			show_debug_message("Clearing east wall")
+		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_place((_w-1)*TS, (_h/2)*TS, oWall)
-	if (_wall) {
+	_wall = instance_position((_w-1)*TS, (_h/2)*TS, oWall)
+	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
 	tilemap_set(_door_map, DOOR_RIGHT + EAST_DOOR_OFFSET, _w-1, _h/2-1)
@@ -73,12 +83,15 @@ function open_north_door() {
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _w = ceil(room_width/TS)
 	// Destroy previously placed walls
-	var _wall = instance_place((_w/2-1)*TS, 0, oWall)
-	if (_wall) {
+	var _wall = instance_position((_w/2-1)*TS, 0, oWall)
+	if (_wall != noone) {
+		if (DEBUG) {
+			show_debug_message("Clearing north wall")
+		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_place((_w/2)*TS, 0, oWall)
-	if (_wall) {
+	_wall = instance_position((_w/2)*TS, 0, oWall)
+	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
 	tilemap_set(_wall_map, TILE_CLEAR, _w/2, 0)
@@ -93,12 +106,15 @@ function open_south_door() {
 	var _w = ceil(room_width/TS)
 	var _h = ceil(room_height/TS)
 	// Destroy previously placed walls
-	var _wall = instance_place((_w/2-1)*TS, (_h-1)*TS, oWall)
-	if (_wall) {
+	var _wall = instance_position((_w/2-1)*TS, (_h-1)*TS, oWall)
+	if (_wall != noone) {
+		if (DEBUG) {
+			show_debug_message("Clearing south wall")
+		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_place((_w/2)*TS, (_h-1)*TS, oWall)
-	if (_wall) {
+	_wall = instance_position((_w/2)*TS, (_h-1)*TS, oWall)
+	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
 	tilemap_set(_door_map, DOOR_LEFT + SOUTH_DOOR_OFFSET, _w/2-1, _h-1)
@@ -115,6 +131,10 @@ function set_warp_points() {
 		instance_destroy(instance_find(oWarp, 0))
 	}
 	if (instance_number(oEnemyParent) == 0) {
+		if (room == DBoss1) {
+			var _floor_warp = instance_create_layer(room_width/2, room_height/2, "Instances", oFloorWarp)
+			exit
+		}
 		// All enemies have been defeated
 		// Populate warp points
 		if (global.map_gen.dependency_map[global.game.current_room_x, global.game.current_room_y] & WEST) {
@@ -306,7 +326,9 @@ function clear_wing(_wing) {
 			}
 		}
 	}
-	// Heal the player a bit
+	if (DEBUG) {
+		show_debug_message("Cleared wing")
+	}
 	set_wing_warp()
 	global.game.wings_cleared[_wing] = true
 	if (global.logging) {
@@ -325,3 +347,36 @@ function is_normal_room(_x, _y) {
 function is_current_room_normal() {
 	return global.map_gen.map[global.game.current_room_x, global.game.current_room_y] <= 4
 }
+
+function set_dependencies_for_special_placement(_room, _x, _y) {
+	with (global.map_gen) {
+		// Check left
+		if (_x > 0) {
+			if (map[_x - 1, _y] == _room) {
+				dependency_map[_x-1, _y] |= EAST
+				dependency_map[_x, _y] |= WEST
+			}
+		}
+		if (_x < map_size - 1) {
+			if (map[_x + 1, _y] == _room) {
+				dependency_map[_x, _y] |= EAST
+				dependency_map[_x + 1, _y] |= WEST
+			}
+		}
+		if (_y < map_size - 1) {
+			if (map[_x, _y+1] == _room) {
+				dependency_map[_x, _y] |= SOUTH
+				dependency_map[_x, _y+ 1] |= NORTH
+			}
+		}
+		if (_y > 0) {
+			if (map[_x, _y-1] == _room) {
+				dependency_map[_x, _y - 1] |= SOUTH
+				dependency_map[_x, _y] |= NORTH
+			}
+		}
+	}
+}
+
+
+

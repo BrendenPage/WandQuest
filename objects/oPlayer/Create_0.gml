@@ -1,5 +1,6 @@
 SPEED = undefined
 speed_modifier = undefined
+speed_debuff = undefined
 hurtbox = undefined
 hat = undefined
 body = undefined
@@ -17,16 +18,20 @@ aim_dir = undefined
 // Attack Projectile info
 
 //Colddown for attack
+homing = undefined
+homing_strength = undefined
+attack_cooldown_modifier = undefined
 attack_timer = undefined
 attack_spell = undefined
 attack_deck_obj = undefined
 
+special_cooldown_modifier = undefined
 special_timer =undefined
 special_deck_obj = undefined
 special_spell = undefined
 special_duration_timer = undefined
 
-
+shuffle_modifier = undefined
 AT_shuffle_timer = undefined
 SP_shuffle_timer = undefined
 
@@ -37,3 +42,5 @@ knockback_frames = 0
 knockback_spd = 0
 
 depth = 10
+
+is_triple_surge_active = undefined

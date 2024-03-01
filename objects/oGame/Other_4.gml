@@ -1,4 +1,7 @@
 event_user(1)
+
+if (!global.map_gen.done) { exit }
+
 if (room==Pause){
 	setup_deck_menu_objects()
 	exit
@@ -10,7 +13,7 @@ if (room == Death or room == Menu) {
 
 
 
-
+// Initialize tutorialization
 if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial or room == DTutorialWeapons) {
 	if (!tutorial_setup) {
 		event_user(6)
@@ -67,8 +70,8 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 			curr_time: time(),
 			special_room: !is_current_room_normal()
 		}
-		cap_logger_level_end(string(ds_map_size(this_run_seen_room_set)), json_stringify(_data))
-		cap_logger_level_start(string(ds_map_size(this_run_seen_room_set)+ 1), json_stringify(_data))
+		cap_logger_level_end(string(rooms_seen), json_stringify(_data))
+		cap_logger_level_start(string(rooms_seen+ 1), json_stringify(_data))
 	}
 	// Populate collisions, insert doors, update motion planning grids
 	event_user(0)
@@ -79,7 +82,11 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 		// Set card selection room
 		event_user(3)
 	}
+	while(instance_number(oPortal)) {
+		instance_destroy(instance_find(oPortal, 0))
+	}
 	ds_map_add(this_run_seen_room_set, room, true)
+	rooms_seen++
 }
 
 

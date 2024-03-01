@@ -1,5 +1,6 @@
 show_debug_message("Map generator creation event user 1")
 /// @description Begin Map Generation
+done = false
 arm_length[0] = irandom_range(length_min,length_max)
 arm_length[1] = irandom_range(length_min,length_max)
 arm_length[2] = irandom_range(length_min,length_max)
@@ -41,11 +42,13 @@ for (var _i = 0; _i < 4; _i++) {
 map[map_size/2, map_size/2] = 9
 var _done = true
 for (var _i = 0; _i < 4; _i++) {
-	if ((--arm_length[_i]) != 0) {
+	if ((--arm_length[_i]) > 0) {
 		_done = false
 	}
 }
 
 if (!_done) {
 	event_user(4)
+} else {
+	done = true
 }
