@@ -175,6 +175,7 @@ if (remaining_i_frames == 0) {
 
 
 if (knockback_frames > 0) {
-	mag_dir_move_and_collide(knockback_spd,knockback_dir)
+	mag_dir_move_and_collide_wall_door(knockback_spd,knockback_dir)
 	knockback_frames = max(0,knockback_frames - 1)
 }
+

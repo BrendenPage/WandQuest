@@ -21,11 +21,16 @@ if (remaining_health == 0){
 	exit
 }
 
+var _self = self
+
 if instance_exists(hitbox) {
 	with (hitbox) {
 		with(oHurtbox){
 			if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
 				deal_damage(owner, other.owner.damage)
+				_self.knockback_dir = point_direction(x,y,other.x,other.y)
+				_self.knockback_frames = 5
+				_self.knockback_spd = 5
 			}
 		}
 	}
@@ -37,8 +42,11 @@ if (remaining_i_frames == 0) {
 }
 
 if (knockback_frames > 0) {
-	mag_dir_move_and_collide(knockback_spd,knockback_dir)
+	mag_dir_move_and_collide_wall_door(knockback_spd,knockback_dir)
 	knockback_frames = max(0,knockback_frames - 1)
+	image_blend = c_red
+} else {
+	image_blend = -1
 }
 
 scale_enemy()

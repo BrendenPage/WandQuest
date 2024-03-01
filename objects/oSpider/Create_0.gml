@@ -3,19 +3,19 @@
 event_inherited()
 
 damage = 10
-speed_ = 2
+speed_ = 3
+standard_speed = 3
+aggro_speed = 4.5
+
 
 hitbox = hitbox_create(box_x_size,box_y_size,box_x_start,box_y_start,true)
 hurtbox = hurtbox_create(box_x_size,box_y_size,box_x_start,box_y_start,true)
-dash_proximity = 225
-idle_wait_time = 25
-idle_move_time = 30
-dash_windup_time = 15
-active_dash_time = 45
-stamina = 0.5
-max_stamina = 1.75
-move_counter = 20
 
-state = slime_idle_wait
-state_ctr = irandom(idle_wait_time)
+idle_wait_time = 45
+dash_time = 45
+aggro_shot_time = 40
+state_ctr = idle_wait_time
+attack_distance = PROJECTILE_AGGRO - 125
+
+state = spider_idle_wait
 
