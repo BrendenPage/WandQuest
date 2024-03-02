@@ -215,6 +215,7 @@
     {"id":{"name":"oHurtbox","path":"objects/oHurtbox/oHurtbox.yy",},},
     {"id":{"name":"oButtonDeck","path":"objects/oButtonDeck/oButtonDeck.yy",},},
     {"id":{"name":"oMapGenerator","path":"objects/oMapGenerator/oMapGenerator.yy",},},
+    {"id":{"name":"oOoze","path":"objects/oOoze/oOoze.yy",},},
     {"id":{"name":"oPlayerSpecialDeck","path":"objects/oPlayerSpecialDeck/oPlayerSpecialDeck.yy",},},
     {"id":{"name":"cast_attack_spell","path":"scripts/cast_attack_spell/cast_attack_spell.yy",},},
     {"id":{"name":"slime_boss_states","path":"scripts/slime_boss_states/slime_boss_states.yy",},},
@@ -277,6 +278,7 @@
     {"id":{"name":"sPauseTutorial","path":"sprites/sPauseTutorial/sPauseTutorial.yy",},},
     {"id":{"name":"oPlayerBody","path":"objects/oPlayerBody/oPlayerBody.yy",},},
     {"id":{"name":"oGoblinArcher","path":"objects/oGoblinArcher/oGoblinArcher.yy",},},
+    {"id":{"name":"sOoze","path":"sprites/sOoze/sOoze.yy",},},
     {"id":{"name":"start_game","path":"scripts/start_game/start_game.yy",},},
   ],
   "RoomOrderNodes": [
