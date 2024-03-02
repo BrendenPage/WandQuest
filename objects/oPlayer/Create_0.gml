@@ -18,6 +18,8 @@ aim_dir = undefined
 // Attack Projectile info
 
 //Colddown for attack
+piercing_modifier = 0
+damage_modifier = 1
 homing = undefined
 homing_strength = undefined
 attack_cooldown_modifier = undefined

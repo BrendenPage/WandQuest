@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "WandQuest",
-    "path": "WandQuest.yyp",
+    "name": "Projectiles",
+    "path": "folders/Objects/Projectiles.yy",
   },
   "parentObjectId": null,
   "persistent": false,

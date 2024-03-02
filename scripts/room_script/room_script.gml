@@ -230,45 +230,6 @@ function is_tile_closed_door(_tile) {
 	return _temp == DOOR_LEFT or _temp == WEST_DOOR_OFFSET + 1 or _temp == EAST_DOOR_OFFSET+ 1 or _temp == SOUTH_DOOR_OFFSET+ 1
 }
 
-function enemy_spawn_rate() {
-	with (global.game) {
-		if (!is_normal_room(current_room_x, current_room_y)) {
-			return 0
-		}
-		var _modifier = 1
-		if (floor_ != 1) {
-			_modifier = floor_*0.8
-		}
-		return wing_spawn_rate[num_wings_cleared()]*_modifier
-	}
-}
-
-// Return an enemy chosen from either the ranged or melee enemy lists
-// based on passed variable
-function choose_enemy(_ranged) {
-	with (global.game) {
-		var _enemy_list = []
-		var _spawn_rates = []
-		if (_ranged) {
-			_enemy_list = ranged_enemies
-			_spawn_rates = ranged_spawn_rates
-		} else {
-			_enemy_list = melee_enemies
-			_spawn_rates = melee_spawn_rates
-		}
-		var _seed = random(1)
-		var _index = 0
-		for (var _i = 0; _i < array_length(_spawn_rates); _i++) {
-			if (_seed < _spawn_rates[_i]) {
-				_index = _i
-			} else {
-				_seed -= _spawn_rates[_i]
-			}
-		}
-		return _enemy_list[_index]
-	}
-}
-
 function lock_door(_door) {
 	var _door_map = layer_tilemap_get_id("tiles_door")
 	var _t2 = tilemap_get(_door_map, _door.x/TS, _door.y/TS)
@@ -384,5 +345,127 @@ function set_dependencies_for_special_placement(_room, _x, _y) {
 	}
 }
 
+function enemy_spawn_rate() {
+	wing_spawn_rate = [0.8, 1, 1.5, 2]
+	with (global.game) {
+		if (!is_normal_room(current_room_x, current_room_y)) {
+			return 0
+		}
+		var _modifier = 1
+		if (floor_ != 1) {
+			_modifier = 1 + floor_*0.3
+		} else if (floor_ == 1 and num_wings_cleared() == 3) {
+			return 1.5
+		}
+		return wing_spawn_rate[num_wings_cleared()]*_modifier
+	}
+}
 
+// Return an enemy chosen from either the ranged or melee enemy lists
+// based on passed variable
+function choose_enemy(_ranged) {
+	with (global.game) {
+		ranged_enemies = [oGun, oGoblinArcher, oRedGun, oWizard]
+		melee_enemies = [oSlime, oGoblinWarrior, oSkeleton, oSpider, oOoze]
+		melee_spawn_rates = [0.9, 0.1]
+		ranged_spawn_rates = [0.8, 0.15, 0.05]
+		var _enemy_list = []
+		var _spawn_rates = []
+		if (_ranged) {
+			_enemy_list = ranged_enemies
+			_spawn_rates = ranged_spawn_rates
+		} else {
+			_enemy_list = melee_enemies
+			_spawn_rates = melee_spawn_rates
+		}
+		
+		switch(floor_) {
+			case 1:
+				if (_ranged) {
+					// Ranged floor 1
+					if (num_wings_cleared() == 1) {
+						_spawn_rates = [1]
+					} else {
+						_spawn_rates = [0.8, 0.2]
+					}
+				} else {
+					// Melee floor 1
+					switch (num_wings_cleared()) {
+						case 0:
+							_spawn_rates = [0.95, 0.05]
+							break
+						case 1:
+						case 2:
+							_spawn_rates = [0.8, 0.2]
+							break
+						default:
+							_spawn_rates = [0.5, 0.5]
+					}
+				}
+				break
+			case 2:
+				if (_ranged) {
+					if (num_wings_cleared() == 0) {
+						_spawn_rates = [0.8, 0.1, 0.1]
+					} else {
+						_spawn_rates = [0.5, 0.3, 0.2]
+					}
+				} else {
+					switch (num_wings_cleared()) {
+						case 0:
+							_spawn_rates = [0.4, 0.3, 0.2, 0.1]
+							break
+						case 1:
+						case 2:
+							_spawn_rates = [0.4, 0.3, 0.2, 0.1]
+							break
+						case 3:
+							_spawn_rates = [0.1, 0.3, 0.5, 0.05, 0.05]
+					}
+				}
+				break
+			case 3:
+				if (_ranged) {
+					switch (num_wings_cleared()) {
+						case 0:
+							_spawn_rates = [0.3, 0.4, 0.25, 0.05]
+							break
+						case 1:
+							_spawn_rates = [0.3, 0.4, 0.2, 0.1]
+						default:
+							_spawn_rates = [0.3, 0.4, 0.1, 0.2]
+					}
+				} else {
+					switch (num_wings_cleared()) {
+						case 0:
+							_spawn_rates = [0.1, 0.4, 0.2, 0.2, 0.1]
+						case 1:
+						case 2:
+							_spawn_rates = [0.1, 0.25, 0.3, 0.2, 0.15]
+						case 3:
+							_spawn_rates = [0, 0.1, 0.4, 0.3, 0.2]
+					}
+				}
+				break
+			default:
+				if (_ranged) {
+					_spawn_rates = [0.3, 0.4, 0.1, 0.2]
+				} else {
+					_spawn_rates = [0.1, 0.2, 0.3, 0.2, 0.2]
+				}
+		}
+		
+		var _seed = random(1)
+		var _index = 0
+		for (var _i = 0; _i < array_length(_spawn_rates); _i++) {
+			if (_seed < _spawn_rates[_i]) {
+				_index = _i
+				break
+			} else {
+				_seed -= _spawn_rates[_i]
+			}
+		}
+		return _enemy_list[_index]
+	}
+}
 
