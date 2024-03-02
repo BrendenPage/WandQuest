@@ -14,7 +14,6 @@ var _choices_types = array_shuffle(_choices_types)
 
 for (var _i = 0; _i < 3; _i++) {
 	if_attack = _choices_types[_i]
-	// Temp code to prevent attack cards or special cards to appear if the deck is full
 	if(oPlayerAttackDeck.cur_deck_size == oPlayerAttackDeck.max_deck_size){if_attack = false}
 	if(oPlayerSpecialDeck.cur_deck_size == oPlayerSpecialDeck.max_deck_size){if_attack = true}
 	
@@ -27,10 +26,6 @@ for (var _i = 0; _i < 3; _i++) {
 	}
 	
 	choice_ind = irandom_range(2,sprite_get_number(sprite) - 1)
-	
-	//temporary code that prevents unimplemented cards to appear 
-	if(!if_attack){choice_ind = irandom_range(4,sprite_get_number(sprite) - 1)}
-	////////////////////////////////////////////////
 	
 	choices[_i].choice_ind = choice_ind
 	

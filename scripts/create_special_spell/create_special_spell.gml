@@ -57,7 +57,7 @@ global.special_spell_struct = {
 	
 		duck: new create_special_spell(
 		"Duck",
-		4,
+		2,
 		sDuckEffect,
 		oDuckEffect,
 		150,
@@ -67,7 +67,7 @@ global.special_spell_struct = {
 	
 	shield : new create_special_spell(
 		"Shield",
-		5,
+		3,
 		sShieldEffect,
 		oShieldEffect,
 		150,
@@ -77,7 +77,7 @@ global.special_spell_struct = {
 	
 	blink: new create_special_spell(
 		"Blink",
-		6,
+		4,
 		sBlinkEffect,
 		oBlinkEffect,
 		150,
@@ -87,7 +87,7 @@ global.special_spell_struct = {
 	
 	triple_surge: new create_special_spell(
 		"Triple Surge",
-		7,
+		5,
 		sSpecials,
 		oTripleSurge,
 		150,
@@ -97,10 +97,10 @@ global.special_spell_struct = {
 	
 	gale_barrier: new create_special_spell(
 		"Gale Barrier",
-		8,
+		6,
 		sSingleTornado,
 		oGaleBarrierEffect,
-		10,
+		150,
 		150,
 		"Gale Barrier\n Summons a wind wall to halt enemy advancement.\nWinds can be ignited by fire spells.\n Medium cooldown"
 	)
@@ -127,8 +127,18 @@ global.special_spell_struct = {
  */
 global.special_spell_map = ds_map_create()
 
-ds_map_add(global.special_spell_map,4,global.special_spell_struct.duck)
-ds_map_add(global.special_spell_map,5,global.special_spell_struct.shield)
-ds_map_add(global.special_spell_map,6,global.special_spell_struct.blink)
-ds_map_add(global.special_spell_map,7,global.special_spell_struct.triple_surge)
-ds_map_add(global.special_spell_map,8,global.special_spell_struct.gale_barrier)
+ds_map_add(global.special_spell_map, 
+	global.special_spell_struct.duck.spell_index,
+	global.special_spell_struct.duck)
+ds_map_add(global.special_spell_map,
+	global.special_spell_struct.shield.spell_index,
+	global.special_spell_struct.shield)
+ds_map_add(global.special_spell_map,
+	global.special_spell_struct.blink.spell_index,
+	global.special_spell_struct.blink)
+ds_map_add(global.special_spell_map,
+	global.special_spell_struct.triple_surge.spell_index,
+	global.special_spell_struct.triple_surge)
+ds_map_add(global.special_spell_map,
+	global.special_spell_struct.gale_barrier.spell_index,
+	global.special_spell_struct.gale_barrier)
