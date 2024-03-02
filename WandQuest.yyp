@@ -141,6 +141,7 @@
     {"id":{"name":"sMapBackground","path":"sprites/sMapBackground/sMapBackground.yy",},},
     {"id":{"name":"sMinimapYAH","path":"sprites/sMinimapYAH/sMinimapYAH.yy",},},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},},
+    {"id":{"name":"ooze_states","path":"scripts/ooze_states/ooze_states.yy",},},
     {"id":{"name":"oTutorial","path":"objects/oTutorial/oTutorial.yy",},},
     {"id":{"name":"sRefresh","path":"sprites/sRefresh/sRefresh.yy",},},
     {"id":{"name":"sTutorial","path":"sprites/sTutorial/sTutorial.yy",},},

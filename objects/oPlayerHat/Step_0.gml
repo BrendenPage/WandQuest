@@ -9,5 +9,6 @@ if (global.game_paused) {
 
 if (global.game.player.knockback_frames > 0) {
 	image_blend = c_red
+} else {
+	image_blend = -1
 }
-image_blend = -1

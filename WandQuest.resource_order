@@ -107,6 +107,7 @@
     {"name":"oSpecialParent","order":2,"path":"objects/oSpecialParent/oSpecialParent.yy",},
     {"name":"Sprite47","order":2,"path":"sprites/Sprite47/Sprite47.yy",},
     {"name":"sMinimapYAH","order":10,"path":"sprites/sMinimapYAH/sMinimapYAH.yy",},
+    {"name":"ooze_states","order":6,"path":"scripts/ooze_states/ooze_states.yy",},
     {"name":"sControls","order":9,"path":"sprites/sControls/sControls.yy",},
     {"name":"oWand","order":3,"path":"objects/oWand/oWand.yy",},
     {"name":"oRedGun","order":4,"path":"objects/oRedGun/oRedGun.yy",},
