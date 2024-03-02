@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "wizard_teleport",
+  "name": "wizard_states",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

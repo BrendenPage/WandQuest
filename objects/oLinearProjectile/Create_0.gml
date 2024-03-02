@@ -6,6 +6,7 @@ dir = 0
 
 homing = false
 homing_strength = 0.05
+passes_through_walls = false
 
 hitbox = undefined
 lifetime = 120

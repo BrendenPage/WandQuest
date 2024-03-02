@@ -38,9 +38,11 @@ var _yspd = lengthdir_y(spd, dir);
 
 //collision 
 
-with (oCollide) {
-	if place_meeting(x,y,other) and !(object_is_ancestor(object_index,oEnemyParent) or object_index == oPlayer) {
-		instance_destroy(other)
+if (not passes_through_walls) {
+	with (oCollide) {
+		if place_meeting(x,y,other) and !(object_is_ancestor(object_index,oEnemyParent) or object_index == oPlayer) {
+			instance_destroy(other)
+		}
 	}
 }
 
