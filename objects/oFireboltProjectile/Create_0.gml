@@ -1,5 +1,7 @@
 event_inherited();
 
+attribute = "Fire"
+
 hitbox = hitbox_create(64, 20, 0, 0, false);
 	
 spd = 10;

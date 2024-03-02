@@ -55,6 +55,7 @@ function cast_special_spell(_special_spell, _aim_dir){
 			}
 			
 			var _gale_barrier_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _special_spell.special_obj)
+		
 
 			break
 			

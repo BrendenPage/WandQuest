@@ -1,10 +1,7 @@
-
-duration_timer = max(0,duration_timer - 1)
+event_inherited()
 
 var _xspd = lengthdir_x(spd, dir);
 var _yspd = lengthdir_y(spd, dir);
-
-
 
 //collision 
 
@@ -28,10 +25,6 @@ if (y_bounce) {
 
 move_and_collide(_xspd,_yspd,[oWall, oClosedDoor])
 
-if duration_timer == 0 || remaining_health <= 0{
-	global.game.target = global.game.player
-	instance_destroy(self)
-}
 
 
 
@@ -45,4 +38,19 @@ if duration_timer == 0 || remaining_health <= 0{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Inherit the parent event
+event_inherited();
 
