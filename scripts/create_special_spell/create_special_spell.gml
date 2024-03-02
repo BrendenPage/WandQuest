@@ -127,18 +127,18 @@ global.special_spell_struct = {
  */
 global.special_spell_map = ds_map_create()
 
-ds_map_add(global.special_spell_map, 
-	global.special_spell_struct.duck.spell_index,
-	global.special_spell_struct.duck)
-ds_map_add(global.special_spell_map,
-	global.special_spell_struct.shield.spell_index,
-	global.special_spell_struct.shield)
-ds_map_add(global.special_spell_map,
-	global.special_spell_struct.blink.spell_index,
-	global.special_spell_struct.blink)
-ds_map_add(global.special_spell_map,
-	global.special_spell_struct.triple_surge.spell_index,
-	global.special_spell_struct.triple_surge)
-ds_map_add(global.special_spell_map,
-	global.special_spell_struct.gale_barrier.spell_index,
-	global.special_spell_struct.gale_barrier)
+ds_map_add(special_spell_map, 
+	special_spell_struct.duck.spell_index,
+	special_spell_struct.duck)
+ds_map_add(special_spell_map,
+	special_spell_struct.shield.spell_index,
+	special_spell_struct.shield)
+ds_map_add(special_spell_map,
+	special_spell_struct.blink.spell_index,
+	special_spell_struct.blink)
+ds_map_add(special_spell_map,
+	special_spell_struct.triple_surge.spell_index,
+	special_spell_struct.triple_surge)
+ds_map_add(special_spell_map,
+	special_spell_struct.gale_barrier.spell_index,
+	special_spell_struct.gale_barrier)

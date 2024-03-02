@@ -136,9 +136,19 @@ global.attack_spell_struct ={
  */
 global.attack_spell_map = ds_map_create()
 
-ds_map_add(global.attack_spell_map, 2, global.attack_spell_struct.blast)
-ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt)
-ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst)
-ds_map_add(global.attack_spell_map, 5, global.attack_spell_struct.lightning_bolt)
-ds_map_add(global.attack_spell_map, 6, global.attack_spell_struct.magic_missile)
+ds_map_add(attack_spell_map,
+	attack_spell_struct.blast.spell_index,
+	attack_spell_struct.blast)
+ds_map_add(attack_spell_map,
+	attack_spell_struct.firebolt.spell_index,
+	attack_spell_struct.firebolt)
+ds_map_add(attack_spell_map,
+	attack_spell_struct.flame_burst.spell_index,
+	attack_spell_struct.flame_burst)
+ds_map_add(attack_spell_map,
+	attack_spell_struct.lightning_bolt.spell_index,
+	attack_spell_struct.lightning_bolt)
+ds_map_add(attack_spell_map,
+	attack_spell_struct.magic_missile.spell_index,
+	attack_spell_struct.magic_missile)
 
