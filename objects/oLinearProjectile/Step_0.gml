@@ -4,13 +4,15 @@ event_inherited()
 
 if (global.game_paused) { exit }
 
-var ref = self
+var _ref = self
 
 if instance_exists(hitbox) {
 	with (hitbox) {
 		with(oHurtbox){
 			if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
-				instance_destroy(ref);
+				if (_ref.piercing_count == 0 and !array_contains(_ref.damage_blacklist, self)) {
+					instance_destroy(_ref)
+				}
 			}
 		}
 	}
@@ -47,15 +49,7 @@ y += _yspd;
 
 //clean up
 //destroy
-
-var ref = self
-
-with (hitbox) {
-	with(oHurtbox){
-		if (place_meeting(x,y,other) && if_enemy != other.if_enemy) {
-			instance_destroy(ref)
-		}
-	}
+lifetime = max(lifetime - 1, 0)
+if (lifetime == 0) {
+	instance_destroy()
 }
-
-if point_distance(xstart,ystart,x,y) > max_dist{ instance_destroy(self)}

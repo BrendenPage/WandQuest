@@ -1,7 +1,7 @@
 event_inherited()
 duration = 500
 
-damage = 40
+damage = 10
 
 hitbox = hitbox_create(40, 55, 0, 5, false);
 

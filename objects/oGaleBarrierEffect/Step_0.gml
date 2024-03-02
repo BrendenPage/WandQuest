@@ -16,6 +16,7 @@ if (_colliding_projectile != noone && _colliding_projectile.attribute == "Fire" 
 		var _x_offset = lengthdir_x(total_offset * _index, dir)
 		var _y_offset = lengthdir_y(total_offset * _index, dir)
 		arr_tornado_obj[_i] = instance_create_depth(x + _x_offset, y + _y_offset, depth - 100, oSingleTornadoIgnited)
+		arr_tornado_obj[_i].damage *= global.game.player.damage_modifier
 		if((dir < 270 && dir > 180) || (dir < 0 && dir > -90)){ _index-- } else { _index++ }
 	}
 	

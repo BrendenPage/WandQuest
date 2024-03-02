@@ -5,6 +5,8 @@
 #macro AUGMENT_SPECIAL_DEC 2
 #macro AUGMENT_SHUFFLE_DEC 3
 #macro AUGMENT_HOMING_SHOT 4
+#macro AUGMENT_DAMAGE_INCREASE 5
+#macro AUGMENT_PIERCING_SHOT 6
 
 #macro HOMING_START 0.05
 
@@ -29,6 +31,12 @@ function augment(_augment_index){
 			}
 			global.game.player.homing = true
 			break
+		case AUGMENT_DAMAGE_INCREASE:
+			global.game.player.damage_modifier *= 1.2
+			break
+		case AUGMENT_PIERCING_SHOT:
+			global.game.player.piercing_modifier++
+			break
 		default:
 			if (DEBUG) {
 				show_debug_message("Unknown augment selected")
@@ -49,5 +57,7 @@ global.augments_description_list =[
 "Decrease attack spell cooldowns",
 "Decrease special spell cooldowns",
 "Decrease all spell shuffle time",
-"Projectiles will tend towards enemies\nNot effective on static attacks"
+"Projectiles will tend towards enemies\nNot effective on static attacks",
+"Increase damage of attack spells",
+"Non-piercing projectiles will pass through one more enemy"
 ] 
