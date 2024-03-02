@@ -9,7 +9,9 @@ global.enemy_scale = {
 	"oSlimeBoss": 1.5,
 	"oSpider": 1.5,
 	"oSkeleton": 1.2,
-	"oPileOfBones": 1
+	"oPileOfBones": 1,
+	"oOoze": 1.5,
+	"oWizard": 1
 }
 
 function move_towards_player(){
