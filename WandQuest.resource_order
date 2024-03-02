@@ -113,7 +113,7 @@
     {"name":"sControls","order":9,"path":"sprites/sControls/sControls.yy",},
     {"name":"oWand","order":3,"path":"objects/oWand/oWand.yy",},
     {"name":"oRedGun","order":4,"path":"objects/oRedGun/oRedGun.yy",},
-    {"name":"wizard_teleport","order":7,"path":"scripts/wizard_teleport/wizard_teleport.yy",},
+    {"name":"wizard_states","order":7,"path":"scripts/wizard_states/wizard_states.yy",},
     {"name":"oButtonResume","order":3,"path":"objects/oButtonResume/oButtonResume.yy",},
     {"name":"sWand","order":2,"path":"sprites/sWand/sWand.yy",},
     {"name":"sSlimeBall","order":6,"path":"sprites/sSlimeBall/sSlimeBall.yy",},
