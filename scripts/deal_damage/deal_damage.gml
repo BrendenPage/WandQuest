@@ -22,9 +22,7 @@ function deal_damage(entity, damage){
 		var _damage_to_shield = min(entity.shield, damage)
 		entity.shield -= _damage_to_shield
 		damage -= _damage_to_shield
-		show_debug_message(entity.shield)
 	}
-	show_debug_message(entity.shield)
 	
 	entity.remaining_health = max(0,entity.remaining_health - damage)
 	/*if (DEBUG) {
