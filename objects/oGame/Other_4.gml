@@ -21,10 +21,10 @@ if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial
 	event_user(1)
 	if (!ds_map_find_value(this_run_seen_room_set,room)) {
 		if (room == DTutorialAttack and instance_number(oEnemyParent) == 0) {
-			var _slime= instance_create_layer(828, 288, "Tutorial", oOoze);
-			//_slime.remaining_health = 10
-			//_slime.max_health = 10
-			//_slime.damage = 5
+			var _slime= instance_create_layer(828, 288, "Tutorial", oSlime);
+			_slime.remaining_health = 10
+			_slime.max_health = 10
+			_slime.damage = 5
 		}
 		if (room == DTutorialSpecial and instance_number(oEnemyParent) == 0) {
 			var _gun= instance_create_layer(828, 288, "Tutorial", oGun);
