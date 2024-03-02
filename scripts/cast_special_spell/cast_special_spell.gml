@@ -40,6 +40,24 @@ function cast_special_spell(_special_spell, _aim_dir){
 
 		case global.special_spell_struct.triple_surge.spell_index:	
 			oPlayer.is_triple_surge_active = true
+			break
+			
+		case global.special_spell_struct.gale_barrier.spell_index:
+		
+			var _dist = point_distance(global.game.player.x, global.game.player.y, mouse_x, mouse_y)
+			var _x_offset = mouse_x - global.game.player.x
+			var _y_offset = mouse_y - global.game.player.y
+			var _max_cast_range = 300
+			
+			if (_dist > _max_cast_range) {
+				_x_offset = lengthdir_x(_max_cast_range, _aim_dir)
+				_y_offset = lengthdir_y(_max_cast_range, _aim_dir)
+			}
+			
+			var _gale_barrier_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _special_spell.special_obj)
+		
+
+			break
 			
 		default:
 			if(DEBUG) {

@@ -12,6 +12,9 @@ ds_map_destroy(this_run_seen_room_set)
 while(instance_number(oProjectileParent) > 0) {
 	instance_destroy(instance_find(oProjectileParent, 0))
 }
+while(instance_number(oSpecialParent) > 0){
+	instance_destroy(instance_find(oSpecialParent, 0))
+}
 while(instance_number(oEnemyParent)) {
 	instance_destroy(instance_find(oEnemyParent, 0))
 }

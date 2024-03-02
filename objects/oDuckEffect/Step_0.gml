@@ -7,8 +7,6 @@ var _yspd = lengthdir_y(spd, dir);
 
 
 //collision 
-//if place_meeting(x+_xspd, y , oWall){ _xspd = 0 }
-//if place_meeting(x, y + _yspd, oWall){ _yspd = 0 }
 
 var x_bounce = false
 var y_bounce = false
@@ -28,8 +26,7 @@ if (y_bounce) {
 	dir = (-dir) % 360
 }
 
-move_and_collide(_xspd,_yspd,oWall)
-
+move_and_collide(_xspd,_yspd,[oWall, oClosedDoor])
 
 if duration_timer == 0 || remaining_health <= 0{
 	global.game.target = global.game.player

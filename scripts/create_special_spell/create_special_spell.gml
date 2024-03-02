@@ -61,7 +61,7 @@ global.special_spell_struct = {
 		sDuckEffect,
 		oDuckEffect,
 		150,
-		200,
+		300,
 		"A DUCK IS A DUCK.\n(Duckstraction)"
 	),
 	
@@ -80,7 +80,7 @@ global.special_spell_struct = {
 		6,
 		sBlinkEffect,
 		oBlinkEffect,
-		10,
+		150,
 		10,
 		"Blink\n Teleport forward for a short distance.\n Medium cooldown"
 	),
@@ -93,6 +93,16 @@ global.special_spell_struct = {
 		150,
 		0,
 		"Triple Surge\n Triple the next attack spell you cast.\n Medium cooldown"
+	),
+	
+	gale_barrier: new create_special_spell(
+		"Gale Barrier",
+		8,
+		sSingleTornado,
+		oGaleBarrierEffect,
+		10,
+		150,
+		"Gale Barrier\n Summons a wind wall to halt enemy advancement.\nWinds can be ignited by fire spells.\n Medium cooldown"
 	)
 	
 }
@@ -121,4 +131,4 @@ ds_map_add(global.special_spell_map,4,global.special_spell_struct.duck)
 ds_map_add(global.special_spell_map,5,global.special_spell_struct.shield)
 ds_map_add(global.special_spell_map,6,global.special_spell_struct.blink)
 ds_map_add(global.special_spell_map,7,global.special_spell_struct.triple_surge)
-
+ds_map_add(global.special_spell_map,7,global.special_spell_struct.gale_barrier)
