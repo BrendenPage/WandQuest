@@ -44,14 +44,19 @@ function cast_special_spell(_special_spell, _aim_dir){
 			
 		case global.special_spell_struct.gale_barrier.spell_index:
 		
-			var _dist = point_distance(global.game.player.x, global.game.player.y, mouse_x, mouse_y)
-			var _x_offset = mouse_x - global.game.player.x
-			var _y_offset = mouse_y - global.game.player.y
-			var _max_cast_range = 300
+			_dist = point_distance(global.game.player.x, global.game.player.y, mouse_x, mouse_y)
+			_x_offset = mouse_x - global.game.player.x
+			_y_offset = mouse_y - global.game.player.y
+			_max_cast_range = 300
 			
 			if (_dist > _max_cast_range) {
 				_x_offset = lengthdir_x(_max_cast_range, _aim_dir)
 				_y_offset = lengthdir_y(_max_cast_range, _aim_dir)
+			}
+
+			while (place_meeting(x + _x_offset,y + _y_offset,[oWall, oEnemyParent]) ){
+				if _x_offset < 0 { _x_offset++ } else { _x_offset-- }
+				if _y_offset < 0 { _y_offset++ } else { _y_offset-- }
 			}
 			
 			var _gale_barrier_inst = instance_create_depth(x +_x_offset , y +_y_offset, depth-100, _special_spell.special_obj)

@@ -14,7 +14,7 @@ var _map = layer_tilemap_get_id("tiles_wall")
 var _enemies_spawned = 0
 var _enemy_count = irandom_range(MIN_ENEMIES, MAX_ENEMIES)*enemy_spawn_rate()
 var _projectile_enemies = irandom_range(0, _enemy_count/2)
-if (num_wings_cleared() < 1) {
+if (num_wings_cleared() < 1 and floor == 1) {
 	_projectile_enemies = 0
 }
 while(_enemies_spawned < _enemy_count) {
