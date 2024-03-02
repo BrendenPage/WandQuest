@@ -149,6 +149,7 @@
     {"id":{"name":"oWand","path":"objects/oWand/oWand.yy",},},
     {"id":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},},
     {"id":{"name":"oRedGun","path":"objects/oRedGun/oRedGun.yy",},},
+    {"id":{"name":"wizard_teleport","path":"scripts/wizard_teleport/wizard_teleport.yy",},},
     {"id":{"name":"oGUI","path":"objects/oGUI/oGUI.yy",},},
     {"id":{"name":"oButtonResume","path":"objects/oButtonResume/oButtonResume.yy",},},
     {"id":{"name":"sWand","path":"sprites/sWand/sWand.yy",},},

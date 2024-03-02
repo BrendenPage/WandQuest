@@ -14,6 +14,18 @@ function deal_damage(entity, damage){
 		entity.invincible = true
 		entity.remaining_i_frames = entity.i_frames
 	}
+	
+	
+
+	
+	if (variable_instance_exists(entity,"shield")) {
+		var _damage_to_shield = min(entity.shield, damage)
+		entity.shield -= _damage_to_shield
+		damage -= _damage_to_shield
+		show_debug_message(entity.shield)
+	}
+	show_debug_message(entity.shield)
+	
 	entity.remaining_health = max(0,entity.remaining_health - damage)
 	/*if (DEBUG) {
 		show_debug_message("Remaining health: " + string(entity.remaining_health))

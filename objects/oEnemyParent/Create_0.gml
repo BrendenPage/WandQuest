@@ -21,3 +21,5 @@ knockback_frames = 0
 knockback_spd = 0
 
 damage = 0
+
+shield = 0
