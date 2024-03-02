@@ -3,7 +3,7 @@
 global.game_paused = true
 clicked_choice = undefined
 choices = [undefined,undefined,undefined]
-
+tutorial_lines = ["", "", ""]
 for(var _i = 0; _i<3; _i++) {
 	choices[_i] = instance_create_depth(0,0,depth-1,oChoice)
 	choices[_i].parent = self

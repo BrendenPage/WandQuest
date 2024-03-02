@@ -230,11 +230,17 @@ function is_tile_closed_door(_tile) {
 	return _temp == DOOR_LEFT or _temp == WEST_DOOR_OFFSET + 1 or _temp == EAST_DOOR_OFFSET+ 1 or _temp == SOUTH_DOOR_OFFSET+ 1
 }
 
-function enemy_spawn_rate(_i, _j) {
-	if (!is_normal_room(_i, _j)) {
-		return 0
+function enemy_spawn_rate() {
+	with (global.game) {
+		if (!is_normal_room(current_room_x, current_room_y)) {
+			return 0
+		}
+		var _modifier = 1
+		if (floor_ != 1) {
+			_modifier = floor_*0.8
+		}
+		return wing_spawn_rate[num_wings_cleared()]*_modifier
 	}
-	return global.game.wing_spawn_rate[num_wings_cleared()]
 }
 
 // Return an enemy chosen from either the ranged or melee enemy lists

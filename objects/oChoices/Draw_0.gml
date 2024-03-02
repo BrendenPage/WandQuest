@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (instance_number(oTutorial) != 0) {
+	exit
+}
+
 draw_self()
 
 var camera = view_camera[0]
