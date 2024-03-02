@@ -12,3 +12,11 @@ function mag_dir_move_and_collide_enemy(mag, dir) {
 
 	move_and_collide(_x_speed, _y_speed, [oWall, oPlayer, oClosedDoor]);
 }
+
+function mag_dir_move_and_collide_wall_door(mag, dir) {
+	var _x_speed = lengthdir_x(mag,dir)
+	var _y_speed = lengthdir_y(mag,dir)
+
+	move_and_collide(_x_speed, _y_speed, [oWall, oClosedDoor]);
+}
+
