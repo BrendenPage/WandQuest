@@ -1,8 +1,8 @@
 /// @description Set up the GUI
 // You can write your code in this editor
 
-attack_position = 100
-special_position = 200
+attack_position = display_get_gui_width()/18
+special_position = display_get_gui_width()/9
 
 
 healthbar_length = 150

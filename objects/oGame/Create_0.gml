@@ -14,7 +14,7 @@
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
-#macro ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD 200
+#macro ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD (room_width/3)
 #macro SLIME_SCALE 0.7
 #macro MAX_ENEMIES 5
 #macro MIN_ENEMIES 2
@@ -44,6 +44,8 @@
 game_setup = false
 tutorial_setup = false
 
+augment_choices_seen = false
+card_choices_seen = false
 player = undefined
 target = undefined
 gui = undefined
@@ -61,6 +63,7 @@ ranged_enemies = [oGun, oGoblinArcher, oRedGun]
 melee_spawn_rates = [0.9, 0.1]
 ranged_spawn_rates = [0.8, 0.15, 0.05]
 wing_spawn_rate = [0.8, 1, 1.5, 2]
+floor_ = 1
 attack_deck = undefined
 global.paths_list = []
 locked_doors = undefined

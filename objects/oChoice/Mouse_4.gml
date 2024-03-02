@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (instance_number(oTutorial)) {
+	exit
+}
 
 with (parent) {
 	clicked_choice = other

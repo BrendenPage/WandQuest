@@ -37,7 +37,7 @@ for (var _i = 0; _i < map_size; _i++) {
 	}
 }
 
-length_max = 4
+length_max = 2
 length_min = length_max/1.5
 done = false
 // Begin map generation
