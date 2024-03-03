@@ -43,7 +43,6 @@
     {"name":"Spell Icons","order":2,"path":"folders/Sprites/Spell Icons.yy",},
     {"name":"Tile Sets","order":10,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":16,"path":"folders/Timelines.yy",},
-    {"name":"Card Replace Menu","order":14,"path":"folders/Objects/Menu/Card Replace Menu.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"DTutorialAttack","order":15,"path":"rooms/DTutorialAttack/DTutorialAttack.yy",},
@@ -121,7 +120,6 @@
     {"name":"sSlimeBall","order":6,"path":"sprites/sSlimeBall/sSlimeBall.yy",},
     {"name":"oGaleBarrierEffect","order":1,"path":"objects/oGaleBarrierEffect/oGaleBarrierEffect.yy",},
     {"name":"oProjectileParent","order":12,"path":"objects/oProjectileParent/oProjectileParent.yy",},
-    {"name":"oCardReplaceMenu","order":1,"path":"objects/oCardReplaceMenu/oCardReplaceMenu.yy",},
     {"name":"oBossWarp","order":11,"path":"objects/oBossWarp/oBossWarp.yy",},
     {"name":"oTutorialDoor","order":8,"path":"objects/oTutorialDoor/oTutorialDoor.yy",},
     {"name":"oDoor","order":2,"path":"objects/oDoor/oDoor.yy",},
@@ -130,7 +128,6 @@
     {"name":"oPauseTutorial","order":4,"path":"objects/oPauseTutorial/oPauseTutorial.yy",},
     {"name":"oChest","order":5,"path":"objects/oChest/oChest.yy",},
     {"name":"sFlameBurstProjectile","order":4,"path":"sprites/sFlameBurstProjectile/sFlameBurstProjectile.yy",},
-    {"name":"oReplaceChoice","order":2,"path":"objects/oReplaceChoice/oReplaceChoice.yy",},
     {"name":"sDoor_Set_36x36","order":3,"path":"sprites/sDoor_Set_36x36/sDoor_Set_36x36.yy",},
     {"name":"sMinimapHome","order":5,"path":"sprites/sMinimapHome/sMinimapHome.yy",},
     {"name":"fDeath","order":1,"path":"fonts/fDeath/fDeath.yy",},

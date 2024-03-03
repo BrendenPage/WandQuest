@@ -55,7 +55,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Spell Icons","folderPath":"folders/Sprites/Spell Icons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Card Replace Menu","folderPath":"folders/Objects/Menu/Card Replace Menu.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gcmt-dll.dll","CopyToMask":0,"filePath":"datafiles/GMRoomPack",},
@@ -161,7 +160,6 @@
     {"id":{"name":"sSlimeBall","path":"sprites/sSlimeBall/sSlimeBall.yy",},},
     {"id":{"name":"oGaleBarrierEffect","path":"objects/oGaleBarrierEffect/oGaleBarrierEffect.yy",},},
     {"id":{"name":"oProjectileParent","path":"objects/oProjectileParent/oProjectileParent.yy",},},
-    {"id":{"name":"oCardReplaceMenu","path":"objects/oCardReplaceMenu/oCardReplaceMenu.yy",},},
     {"id":{"name":"oBossWarp","path":"objects/oBossWarp/oBossWarp.yy",},},
     {"id":{"name":"oTutorialDoor","path":"objects/oTutorialDoor/oTutorialDoor.yy",},},
     {"id":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},},
@@ -172,7 +170,6 @@
     {"id":{"name":"oChest","path":"objects/oChest/oChest.yy",},},
     {"id":{"name":"sFireboltProjectile","path":"sprites/sFireboltProjectile/sFireboltProjectile.yy",},},
     {"id":{"name":"sFlameBurstProjectile","path":"sprites/sFlameBurstProjectile/sFlameBurstProjectile.yy",},},
-    {"id":{"name":"oReplaceChoice","path":"objects/oReplaceChoice/oReplaceChoice.yy",},},
     {"id":{"name":"sDoor_Set_36x36","path":"sprites/sDoor_Set_36x36/sDoor_Set_36x36.yy",},},
     {"id":{"name":"sMinimapHome","path":"sprites/sMinimapHome/sMinimapHome.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
