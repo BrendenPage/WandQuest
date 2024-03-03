@@ -1,20 +1,24 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oChoice",
+  "name": "oButtonConfirmChoice",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"oButtonParent","path":"objects/oButtonParent/oButtonParent.yy",},"propertyId":{"name":"button_text","path":"objects/oButtonParent/oButtonParent.yy",},"value":"Confirm",},
+  ],
   "parent": {
-    "name": "Cards & Augment Selection",
-    "path": "folders/Objects/Room/Cards & Augment Selection.yy",
+    "name": "Button",
+    "path": "folders/Objects/Room/Cards & Augment Selection/Button.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oButtonParent",
+    "path": "objects/oButtonParent/oButtonParent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sAttacks",
-    "path": "sprites/sAttacks/sAttacks.yy",
+    "name": "sButton",
+    "path": "sprites/sButton/sButton.yy",
   },
   "spriteMaskId": null,
   "visible": true,

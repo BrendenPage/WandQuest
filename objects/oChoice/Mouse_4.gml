@@ -6,7 +6,13 @@ if (instance_number(oTutorial)) {
 
 with (parent) {
 	clicked_choice = other
-	event_user(0)
+	has_chosen = true
+	confirm_button.is_confirmed = true
+	for(var _i = 0; _i < 3; _i++) {
+		if (position_meeting(mouse_x,mouse_y,choices[_i])) {
+			chosen_index = _i
+		}
+	}
 }
 
 if (global.logging) {

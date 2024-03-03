@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Room",
-    "path": "folders/Objects/Room.yy",
+    "name": "Cards & Augment Selection",
+    "path": "folders/Objects/Room/Cards & Augment Selection.yy",
   },
   "parentObjectId": {
     "name": "oChoices",

@@ -67,8 +67,9 @@ if (remaining_i_frames == 0) {
 }
 
 //player aiming
-	aim_dir = point_direction(x,y,mouse_x,mouse_y)
+aim_dir = point_direction(x,y,mouse_x,mouse_y)
 	
+
 // attack spell casting
 #region
 
@@ -172,6 +173,11 @@ if (remaining_i_frames == 0) {
 
 
 #endregion
+
+
+
+
+
 
 
 if (knockback_frames > 0) {
