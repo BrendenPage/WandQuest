@@ -47,6 +47,8 @@ function wizard_firebolt_shoot(_dir) {
 	_firebolt.spd = 4
 	_firebolt.damage = 7
 	_firebolt.passes_through_walls = true
+	_firebolt.homing = true
+	_firebolt.homing_strength = 0.01
 	_firebolt.image_blend = c_blue
 }
 

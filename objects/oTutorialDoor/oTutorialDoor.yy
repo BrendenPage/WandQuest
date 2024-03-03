@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Tutorial",
-    "path": "folders/Objects/Room/Tutorial.yy",
+    "path": "folders/Objects/Tutorial.yy",
   },
   "parentObjectId": {
     "name": "oCollide",

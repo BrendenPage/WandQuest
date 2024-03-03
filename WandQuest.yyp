@@ -24,7 +24,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Objects/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Projectiles","folderPath":"folders/Objects/Projectiles.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Room","folderPath":"folders/Objects/Room.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tutorial","folderPath":"folders/Objects/Room/Tutorial.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tutorial","folderPath":"folders/Objects/Tutorial.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Special objs","folderPath":"folders/Objects/Special objs.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Gale Barrier","folderPath":"folders/Objects/Special objs/Gale Barrier.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle Systems","folderPath":"folders/Particle Systems.yy",},
