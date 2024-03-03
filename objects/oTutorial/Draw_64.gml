@@ -10,7 +10,7 @@ y = display_get_gui_height()/2
 
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
-draw_set_font(fTutorial)
+draw_set_font(fStandard)
 draw_text_ext(x,y-_height/12,text, _sep, _width)
 draw_set_font(fStandard)
 draw_set_halign(fa_left)

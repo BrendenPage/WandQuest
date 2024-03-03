@@ -19,17 +19,21 @@ if instance_exists(hitbox) {
 }
 
 if (homing and instance_exists(hitbox)) {
-	if (!hitbox.if_enemy) {
-		var _enemy = instance_nearest(x, y, oEnemyParent)
-		if (_enemy != noone) {
-			// There is a closest enemy, modify dir to be towards them
-			var _dir_enemy = degtorad(point_direction(x,y, _enemy.x, _enemy.y))
-			var _dir_rad = degtorad(dir)
-			// Take weighted average of dir and dir to enemy
-			var _x = (1-homing_strength) * cos(_dir_rad) + homing_strength * cos(_dir_enemy)
-			var _y = (1-homing_strength) * sin(_dir_rad) + homing_strength * sin(_dir_enemy)
-			dir = radtodeg(arctan2(_y,_x))
-		}
+	if (hitbox.if_enemy) {
+		var _target = oPlayer
+	} else {
+		var _target = oEnemyParent
+	}
+	
+	var _enemy = instance_nearest(x, y, _target)
+	if (_enemy != noone) {
+		// There is a closest enemy, modify dir to be towards them
+		var _dir_enemy = degtorad(point_direction(x,y, _enemy.x, _enemy.y))
+		var _dir_rad = degtorad(dir)
+		// Take weighted average of dir and dir to enemy
+		var _x = (1-homing_strength) * cos(_dir_rad) + homing_strength * cos(_dir_enemy)
+		var _y = (1-homing_strength) * sin(_dir_rad) + homing_strength * sin(_dir_enemy)
+		dir = radtodeg(arctan2(_y,_x))
 	}
 }
 
