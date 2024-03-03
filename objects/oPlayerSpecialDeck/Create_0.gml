@@ -13,7 +13,10 @@ array_push(deck, global.special_spell_struct.shield)
 
 
 //array_push(deck, global.special_spell_struct.gale_barrier)
-//array_push(deck, global.special_spell_struct.gale_barrier)
+//array_push(deck, global.special_spell_struct.duck)
+//array_push(deck, global.special_spell_struct.blink)
+//array_push(deck, global.special_spell_struct.triple_surge)
+
 
 cur_deck_size = array_length(deck)
 

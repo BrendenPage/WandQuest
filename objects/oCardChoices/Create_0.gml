@@ -14,8 +14,8 @@ var _choices_types = array_shuffle(_choices_types)
 
 for (var _i = 0; _i < 3; _i++) {
 	if_attack = _choices_types[_i]
-	if(oPlayerAttackDeck.cur_deck_size == oPlayerAttackDeck.max_deck_size){if_attack = false}
-	if(oPlayerSpecialDeck.cur_deck_size == oPlayerSpecialDeck.max_deck_size){if_attack = true}
+	//if(is_deck_full(true)){if_attack = false}
+	//if(is_deck_full(false)){if_attack = true}
 	
 	if (if_attack) {
 		sprite = sAttacks

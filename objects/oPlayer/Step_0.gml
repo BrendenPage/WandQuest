@@ -95,7 +95,7 @@ aim_dir = point_direction(x,y,mouse_x,mouse_y)
 			attack_spell = attack_deck_obj.deck[attack_deck_obj.cur_deck_index]
 			attack_deck_obj.cur_deck_index++
 			// reset the timer
-			attack_timer = attack_spell.cooldown*attack_cooldown_modifier
+			attack_timer = attack_spell.cooldown * attack_cooldown_modifier
 			// generate projectile
 			if(is_triple_surge_active == false){
 				cast_attack_spell(attack_spell,aim_dir)
@@ -117,8 +117,7 @@ aim_dir = point_direction(x,y,mouse_x,mouse_y)
 	//shuffle the deck if the end is reached
 	if (variable_instance_exists(attack_deck_obj, "cur_deck_index")) {
 		if (attack_deck_obj.cur_deck_index == attack_deck_obj.cur_deck_size) {
-			attack_deck_obj.deck = array_shuffle(attack_deck_obj.deck)
-			attack_deck_obj.cur_deck_index = 0
+			shuffle_deck(true)
 			AT_shuffle_timer = attack_deck_obj.shuffle_cooldown*shuffle_modifier
 		}
 	}
@@ -165,8 +164,7 @@ aim_dir = point_direction(x,y,mouse_x,mouse_y)
 	//shuffle the deck if the end is reached
 	if (variable_instance_exists(special_deck_obj, "cur_deck_index")) {
 		if (special_deck_obj.cur_deck_index == special_deck_obj.cur_deck_size) {
-			special_deck_obj.deck = array_shuffle(special_deck_obj.deck)
-			special_deck_obj.cur_deck_index = 0
+			shuffle_deck(false)
 			SP_shuffle_timer = max(special_deck_obj.shuffle_cooldown*shuffle_modifier, special_timer)
 		}
 	}

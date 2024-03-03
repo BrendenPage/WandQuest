@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "cast_attack_spell",
+  "name": "manage_deck",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

@@ -58,7 +58,7 @@ function create_attack_spell(
  */
 global.attack_spell_struct ={
 	
-	blast:new create_attack_spell(
+	blast: new create_attack_spell(
 		"Blast",
 		2,
 		sBlastProjectile,

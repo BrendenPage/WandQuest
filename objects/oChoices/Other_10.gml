@@ -10,22 +10,24 @@ switch(choice_type) {
 		if (DEBUG) {
 			show_debug_message("This is an attack")
 		}
-		var _chosen_attack_spell = ds_map_find_value(global.attack_spell_map, ind)
-		array_push(oPlayer.attack_deck_obj.deck, _chosen_attack_spell)
-		oPlayer.attack_deck_obj.cur_deck_size++
-		oPlayer.attack_deck_obj.cur_deck_index = oPlayer.attack_deck_obj.cur_deck_size
-		oPlayer.attack_deck_obj.deck = array_shuffle(oPlayer.attack_deck_obj.deck)
+		if(is_deck_full(true)){
+			card_replace_menu_popup(true,ind)
+		}else{
+			add_card_to_deck(true,ind)
+		}
+		shuffle_deck(true)
 		break
 
 	case CHOICE_TYPE.SPECIAL:
 		if (DEBUG) {
 			show_debug_message("This is an special")
 		}
-		var _chosen_special_spell = ds_map_find_value(global.special_spell_map, ind)
-		array_push(oPlayer.special_deck_obj.deck, _chosen_special_spell)
-		oPlayer.special_deck_obj.cur_deck_size++
-		oPlayer.special_deck_obj.cur_deck_index = oPlayer.special_deck_obj.cur_deck_size
-		oPlayer.special_deck_obj.deck = array_shuffle(oPlayer.special_deck_obj.deck)
+		if(is_deck_full(false)){
+			card_replace_menu_popup(false,ind)
+		}else{
+			add_card_to_deck(false,ind)
+		}
+		shuffle_deck(false)
 		break
 
 	case CHOICE_TYPE.AUGMENT:
