@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 attack_position = display_get_gui_width()/18
-special_position = display_get_gui_width()/9
+special_position = display_get_gui_width()*3/18
 
 
 healthbar_length = 150

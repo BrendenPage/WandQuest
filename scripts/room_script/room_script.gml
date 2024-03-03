@@ -29,6 +29,25 @@ function close_every_door() {
 	tilemap_set(_wall_map, SOUTH_WALL, _w/2-1, _h-1)
 }
 
+function is_door_position(_x, _y) {
+	var _w = ceil(room_width/TS)
+	var _h = ceil(room_height/TS)
+	_x = floor(_x/TS)
+	_y = floor(_y/TS)
+	if (_x == 0 and (_y == _h/2 or _y == _h/2-1)) {
+		return true
+	}
+	if (_x == _w-1 and (_y == _h/2 or _y == _h/2-1)) {
+		return true
+	}
+	if (_y == 0 and (_x == floor(_w/2) or _x == floor(_w/2-1))) {
+		return true
+	}
+	if (_y == _h-1 and (_x == floor(_w/2) or _x == floor(_w/2-1))) {
+		return true
+	}
+	return false
+}
 
 function open_west_door() {
 	if (DEBUG) {
@@ -367,23 +386,19 @@ function choose_enemy(_ranged) {
 	with (global.game) {
 		ranged_enemies = [oGun, oGoblinArcher, oRedGun, oWizard]
 		melee_enemies = [oSlime, oGoblinWarrior, oSkeleton, oSpider, oOoze]
-		melee_spawn_rates = [0.9, 0.1]
-		ranged_spawn_rates = [0.8, 0.15, 0.05]
 		var _enemy_list = []
 		var _spawn_rates = []
 		if (_ranged) {
 			_enemy_list = ranged_enemies
-			_spawn_rates = ranged_spawn_rates
 		} else {
 			_enemy_list = melee_enemies
-			_spawn_rates = melee_spawn_rates
 		}
 		
 		switch(floor_) {
 			case 1:
 				if (_ranged) {
 					// Ranged floor 1
-					if (num_wings_cleared() == 1) {
+					if (num_wings_cleared() <= 1) {
 						_spawn_rates = [1]
 					} else {
 						_spawn_rates = [0.8, 0.2]

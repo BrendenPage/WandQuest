@@ -34,7 +34,7 @@ mp_grid_clear_all(_mp_grid)
 
 var _map = layer_tilemap_get_id("tiles_wall")
 var _door_map = layer_tilemap_get_id("tiles_door")
-if (global.tutorial_seen or room == DStart) { 
+if (global.tutorial_seen or room == DStart) {
 	close_every_door()
 	// Determine at this point what doors need to exist in this room and insert them accordingly
 	if (!is_boss_room()) {
@@ -78,6 +78,7 @@ mp_grid_add_instances(_mp_grid, oWall, true);
 //loop through grid positions again.  Get solid id and if a solid is to the right, absorb it.
 for (var yy = 0; yy < _h; ++yy) {
     for (var xx = 0; xx < _w; ++xx) {
+		if (is_door_position(xx*TS, yy*TS)) { continue }
 	    var _t1 = tilemap_get(_map, xx, yy);
 		if _t1 >= 1 and _t1 <= 47 {
 			//get solid id at this position(using a smaller tile size, as there is overlap)
@@ -90,19 +91,22 @@ for (var yy = 0; yy < _h; ++yy) {
 				do {
 					var _change = false;
 					var _inst_next = instance_place(x + 1, y, oWall);
-					if _inst_next != noone {
+					if _inst_next != noone and !is_door_position((xx+1)*TS, y) {
 						image_xscale++;
+						xx++
 						instance_destroy(_inst_next);
 						_change = true;
+						image_blend = make_color_hsv(random(255),255,155)
 					}
 				} until _change == false;
-				
+
 				//merge with any solids above that are the same shape
 				var _inst_above = instance_place(x, y - 1, oWall);
-				if _inst_above != noone and _inst_above.bbox_left == bbox_left and _inst_above.bbox_right == bbox_right {
+				if _inst_above != noone and _inst_above.bbox_left == bbox_left and _inst_above.bbox_right == bbox_right and !is_door_position(x, y-1) {
 					y = _inst_above.y;
 					image_yscale += _inst_above.image_yscale;
 					instance_destroy(_inst_above);
+					image_blend = make_color_hsv(random(255),255,155)
 				}
 			}
 		}
