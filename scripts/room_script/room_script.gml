@@ -87,7 +87,7 @@ function open_east_door() {
 		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_position((_w-1)*TS, (_h/2)*TS, oWall)
+	_wall = instance_position((_w-1)*TS, (_h/2-1)*TS, oWall)
 	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
