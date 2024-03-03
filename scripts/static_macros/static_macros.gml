@@ -40,6 +40,7 @@
 #macro START_GAME "31"
 #macro PLAYER_RESTART "32"
 #macro NEXT_FLOOR "33"
+#macro TUTORIAL_WARP "34"
 
 #macro PAUSED "50"
 

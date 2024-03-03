@@ -196,7 +196,7 @@ function set_warp_points() {
 		while (true) {
 			_closed_door = instance_find(oClosedDoor, _doors_found)
 			if (_closed_door) {
-				if (!_closed_door.locked or global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]) {
+				if (!is_door_locked(_closed_door)) {
 					array_push(_found_closed_doors, _closed_door)
 				}
 				_doors_found++
@@ -249,25 +249,25 @@ function is_tile_closed_door(_tile) {
 	return _temp == DOOR_LEFT or _temp == WEST_DOOR_OFFSET + 1 or _temp == EAST_DOOR_OFFSET+ 1 or _temp == SOUTH_DOOR_OFFSET+ 1
 }
 
-function lock_door(_door) {
+function is_door_locked(_door) {
 	var _door_map = layer_tilemap_get_id("tiles_door")
 	var _t2 = tilemap_get(_door_map, _door.x/TS, _door.y/TS)
 	_t2 = _t2 - 1 - (_t2+1) % 2
 	// Check if east of start room
 	if (global.game.current_room_x == 6 and global.game.current_room_y = 5 and (_t2 == WEST_DOOR_OFFSET) and !global.game.wings_cleared[0]) {
-		_door.locked = true
+		return true
 	}
 	// Check if West of start room
 	if (global.game.current_room_x == 4 and global.game.current_room_y = 5 and (_t2 == EAST_DOOR_OFFSET) and !global.game.wings_cleared[2]) {
-		_door.locked = true
+		return true
 	}
 	// Check if North of start room
 	if (global.game.current_room_y == 4 and global.game.current_room_x = 5 and (_t2 == SOUTH_DOOR_OFFSET) and !global.game.wings_cleared[3]) {
-		_door.locked = true
+		return true
 	}
 	// Check if South of start room
 	if (global.game.current_room_y == 6 and global.game.current_room_x = 5 and (_t2 == 0) and !global.game.wings_cleared[1]) {
-		_door.locked = true
+		return true
 	}
 }
 
@@ -484,3 +484,14 @@ function choose_enemy(_ranged) {
 	}
 }
 
+function clear_instances() {
+	while(instance_number(oProjectileParent) > 0) {
+		instance_destroy(instance_find(oProjectileParent, 0))
+	}
+	while(instance_number(oSpecialParent) > 0) {
+		instance_destroy(instance_find(oSpecialParent, 0))
+	}
+	while(instance_number(oPileOfBones) >0) {
+		instance_destroy(instance_find(oPileOfBones, 0))
+	}
+}
