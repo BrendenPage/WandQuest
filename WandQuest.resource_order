@@ -147,6 +147,7 @@
     {"name":"sHurtbox","order":1,"path":"sprites/sHurtbox/sHurtbox.yy",},
     {"name":"DBoss1","order":13,"path":"rooms/DBoss1/DBoss1.yy",},
     {"name":"oPortal","order":15,"path":"objects/oPortal/oPortal.yy",},
+    {"name":"sHighlight","order":5,"path":"sprites/sHighlight/sHighlight.yy",},
     {"name":"oSpider","order":8,"path":"objects/oSpider/oSpider.yy",},
     {"name":"spider_states","order":5,"path":"scripts/spider_states/spider_states.yy",},
     {"name":"oCardChoices","order":7,"path":"objects/oCardChoices/oCardChoices.yy",},

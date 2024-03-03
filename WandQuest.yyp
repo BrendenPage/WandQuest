@@ -193,6 +193,7 @@
     {"id":{"name":"DBoss1","path":"rooms/DBoss1/DBoss1.yy",},},
     {"id":{"name":"sSlime","path":"sprites/sSlime/sSlime.yy",},},
     {"id":{"name":"oPortal","path":"objects/oPortal/oPortal.yy",},},
+    {"id":{"name":"sHighlight","path":"sprites/sHighlight/sHighlight.yy",},},
     {"id":{"name":"oSpider","path":"objects/oSpider/oSpider.yy",},},
     {"id":{"name":"spider_states","path":"scripts/spider_states/spider_states.yy",},},
     {"id":{"name":"oCardChoices","path":"objects/oCardChoices/oCardChoices.yy",},},
