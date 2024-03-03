@@ -13,7 +13,7 @@
 #macro AB_TESTING true
 
 // categoryId
-#macro RELEASE 1
+#macro RELEASE 2
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02
