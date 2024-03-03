@@ -21,18 +21,15 @@ if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial
 	event_user(1)
 	if (!ds_map_find_value(this_run_seen_room_set,room)) {
 		if (room == DTutorialAttack and instance_number(oEnemyParent) == 0) {
-			var _slime= instance_create_layer(828, 288, "Tutorial", oWizard);
-			//_slime.remaining_health = 10
-			//_slime.max_health = 10
-			//_slime.damage = 5
+			var _slime= instance_create_layer(828, 288, "Tutorial", oSlime);
+			_slime.remaining_health = 10
+			_slime.max_health = 10
+			_slime.damage = 5
 		}
 		if (room == DTutorialSpecial and instance_number(oEnemyParent) == 0) {
 			var _gun= instance_create_layer(828, 288, "Tutorial", oGun);
 			_gun.remaining_health = 10
 			_gun.max_health = 10
-		}
-		if (room == DTutorialMove) {
-			var _tutorial = instance_create_layer(room_width/2,room_height/2, "Instances", oStartTutorial)
 		}
 		if (room == DTutorialWeapons) {
 			array_push(player.attack_deck_obj.deck, global.attack_spell_struct.lightning_bolt)

@@ -24,7 +24,7 @@ while(_enemies_spawned < _enemy_count) {
 			if !(_t1 >= 1 and _t1 <= 47) {
 				if (point_distance(xx*TS, yy*TS, player.x, player.y) >= ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD) {
 					if (random(1) <= 0.005) {
-						var _enemy = instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", choose_enemy(_projectile_enemies-- > 0))
+						var _enemy = instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", choose_enemy(_projectile_enemies-- >= 1))
 						_enemies_spawned++
 						if (_enemies_spawned >= _enemy_count){
 							exit

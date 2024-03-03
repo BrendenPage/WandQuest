@@ -25,3 +25,4 @@ global.paths_list = []
 wings_cleared = [false, false, false, false]
 game_setup = false
 tutorial_setup = false
+floor_ = 1

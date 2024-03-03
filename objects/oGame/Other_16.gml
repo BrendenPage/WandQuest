@@ -1,5 +1,7 @@
 /// @description Start tutorial
 
+global.tutorial_seen = false
+
 if (not variable_global_exists("grid_map")) {
 	global.grid_map = ds_map_create()
 }

@@ -9,6 +9,9 @@
 #macro DEBUG false
 #macro BOX_VISIBLE false
 
+// If we're doing AB testing
+#macro AB_TESTING true
+
 // categoryId
 #macro RELEASE 1
 
@@ -64,3 +67,7 @@ global.paths_list = []
 locked_doors = undefined
 // ESWN
 wings_cleared = undefined
+
+if (!variable_global_exists("set_up_rooms")) {
+  global.set_up_rooms = ds_map_create()
+}

@@ -43,6 +43,10 @@ if (!global.logging_initialized) {
 		cap_logger_set_uuid(global.uuid)
 	}
 	cap_logger_new_session(global.uuid)
+	
+	var _hash = "00" + string_digits(sha1_string_utf8(global.uuid))
+	var _last_digs = int64(string_char_at(_hash,string_length(_hash)-1) + string_char_at(_hash,string_length(_hash)))
+	global.ab_test_category = _last_digs % 4
 }
 
 global.died = false

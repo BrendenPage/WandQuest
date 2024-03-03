@@ -19,16 +19,35 @@ function close_every_door() {
 	tilemap_set(_wall_map, EAST_WALL, _w-1, _h/2)
 	tilemap_set(_door_map, TILE_CLEAR, _w-1, _h/2-1)
 	tilemap_set(_door_map, TILE_CLEAR, _w-1, _h/2)
-	tilemap_set(_wall_map, NORTH_WALL, _w/2-1, 0)
-	tilemap_set(_wall_map, NORTH_WALL, _w/2, 0)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2-1, 0)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2, 0)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2-1, _h-1)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2, _h-1)
-	tilemap_set(_wall_map, SOUTH_WALL, _w/2, _h-1)
-	tilemap_set(_wall_map, SOUTH_WALL, _w/2-1, _h-1)
+	tilemap_set(_wall_map, NORTH_WALL, floor(_w/2)-1, 0)
+	tilemap_set(_wall_map, NORTH_WALL, floor(_w/2), 0)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2)-1, 0)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2), 0)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2)-1, _h-1)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, SOUTH_WALL, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, SOUTH_WALL, floor(_w/2)-1, _h-1)
 }
 
+function is_door_position(_x, _y) {
+	var _w = ceil(room_width/TS)
+	var _h = ceil(room_height/TS)
+	_x = floor(_x/TS)
+	_y = floor(_y/TS)
+	if (_x == 0 and (_y == _h/2 or _y == _h/2-1)) {
+		return true
+	}
+	if (_x == _w-1 and (_y == _h/2 or _y == _h/2-1)) {
+		return true
+	}
+	if (_y == 0 and (_x == floor(_w/2)) or _x == floor(_w/2)-1) {
+		return true
+	}
+	if (_y == _h-1 and (_x == floor(_w/2)) or _x == floor(_w/2)-1) {
+		return true
+	}
+	return false
+}
 
 function open_west_door() {
 	if (DEBUG) {
@@ -83,21 +102,21 @@ function open_north_door() {
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _w = ceil(room_width/TS)
 	// Destroy previously placed walls
-	var _wall = instance_position((_w/2-1)*TS, 0, oWall)
+	var _wall = instance_position((floor(_w/2)-1)*TS, 0, oWall)
 	if (_wall != noone) {
 		if (DEBUG) {
 			show_debug_message("Clearing north wall")
 		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_position((_w/2)*TS, 0, oWall)
+	_wall = instance_position((floor(_w/2))*TS, 0, oWall)
 	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2, 0)
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2-1, 0)
-	tilemap_set(_door_map, DOOR_LEFT, _w/2-1, 0)
-	tilemap_set(_door_map, DOOR_RIGHT, _w/2, 0)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2), 0)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2)-1, 0)
+	tilemap_set(_door_map, DOOR_LEFT, floor(_w/2)-1, 0)
+	tilemap_set(_door_map, DOOR_RIGHT, floor(_w/2), 0)
 }
 
 function open_south_door() {
@@ -106,21 +125,21 @@ function open_south_door() {
 	var _w = ceil(room_width/TS)
 	var _h = ceil(room_height/TS)
 	// Destroy previously placed walls
-	var _wall = instance_position((_w/2-1)*TS, (_h-1)*TS, oWall)
+	var _wall = instance_position((floor(_w/2)-1)*TS, (_h-1)*TS, oWall)
 	if (_wall != noone) {
 		if (DEBUG) {
 			show_debug_message("Clearing south wall")
 		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_position((_w/2)*TS, (_h-1)*TS, oWall)
+	_wall = instance_position((floor(_w/2))*TS, (_h-1)*TS, oWall)
 	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
-	tilemap_set(_door_map, DOOR_LEFT + SOUTH_DOOR_OFFSET, _w/2-1, _h-1)
-	tilemap_set(_door_map, DOOR_RIGHT+ SOUTH_DOOR_OFFSET, _w/2, _h-1)
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2, _h-1)
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2-1, _h-1)
+	tilemap_set(_door_map, DOOR_LEFT + SOUTH_DOOR_OFFSET, floor(_w/2)-1, _h-1)
+	tilemap_set(_door_map, DOOR_RIGHT+ SOUTH_DOOR_OFFSET, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2)-1, _h-1)
 }
 
 // Check for enemies in current room instance, if none exist, insert correct
@@ -177,7 +196,7 @@ function set_warp_points() {
 		while (true) {
 			_closed_door = instance_find(oClosedDoor, _doors_found)
 			if (_closed_door) {
-				if (!_closed_door.locked or global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]) {
+				if (!is_door_locked(_closed_door)) {
 					array_push(_found_closed_doors, _closed_door)
 				}
 				_doors_found++
@@ -230,25 +249,25 @@ function is_tile_closed_door(_tile) {
 	return _temp == DOOR_LEFT or _temp == WEST_DOOR_OFFSET + 1 or _temp == EAST_DOOR_OFFSET+ 1 or _temp == SOUTH_DOOR_OFFSET+ 1
 }
 
-function lock_door(_door) {
+function is_door_locked(_door) {
 	var _door_map = layer_tilemap_get_id("tiles_door")
 	var _t2 = tilemap_get(_door_map, _door.x/TS, _door.y/TS)
 	_t2 = _t2 - 1 - (_t2+1) % 2
 	// Check if east of start room
 	if (global.game.current_room_x == 6 and global.game.current_room_y = 5 and (_t2 == WEST_DOOR_OFFSET) and !global.game.wings_cleared[0]) {
-		_door.locked = true
+		return true
 	}
 	// Check if West of start room
 	if (global.game.current_room_x == 4 and global.game.current_room_y = 5 and (_t2 == EAST_DOOR_OFFSET) and !global.game.wings_cleared[2]) {
-		_door.locked = true
+		return true
 	}
 	// Check if North of start room
 	if (global.game.current_room_y == 4 and global.game.current_room_x = 5 and (_t2 == SOUTH_DOOR_OFFSET) and !global.game.wings_cleared[3]) {
-		_door.locked = true
+		return true
 	}
 	// Check if South of start room
 	if (global.game.current_room_y == 6 and global.game.current_room_x = 5 and (_t2 == 0) and !global.game.wings_cleared[1]) {
-		_door.locked = true
+		return true
 	}
 }
 
@@ -367,23 +386,19 @@ function choose_enemy(_ranged) {
 	with (global.game) {
 		ranged_enemies = [oGun, oGoblinArcher, oRedGun, oWizard]
 		melee_enemies = [oSlime, oGoblinWarrior, oSkeleton, oSpider, oOoze]
-		melee_spawn_rates = [0.9, 0.1]
-		ranged_spawn_rates = [0.8, 0.15, 0.05]
 		var _enemy_list = []
 		var _spawn_rates = []
 		if (_ranged) {
 			_enemy_list = ranged_enemies
-			_spawn_rates = ranged_spawn_rates
 		} else {
 			_enemy_list = melee_enemies
-			_spawn_rates = melee_spawn_rates
 		}
 		
 		switch(floor_) {
 			case 1:
 				if (_ranged) {
 					// Ranged floor 1
-					if (num_wings_cleared() == 1) {
+					if (num_wings_cleared() <= 1) {
 						_spawn_rates = [1]
 					} else {
 						_spawn_rates = [0.8, 0.2]
@@ -469,3 +484,14 @@ function choose_enemy(_ranged) {
 	}
 }
 
+function clear_instances() {
+	while(instance_number(oProjectileParent) > 0) {
+		instance_destroy(instance_find(oProjectileParent, 0))
+	}
+	while(instance_number(oSpecialParent) > 0) {
+		instance_destroy(instance_find(oSpecialParent, 0))
+	}
+	while(instance_number(oPileOfBones) >0) {
+		instance_destroy(instance_find(oPileOfBones, 0))
+	}
+}
