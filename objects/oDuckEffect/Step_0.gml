@@ -29,7 +29,6 @@ if (y_bounce) {
 move_and_collide(_xspd,_yspd,[oWall, oClosedDoor])
 
 if duration_timer == 0 || remaining_health <= 0{
-	global.game.target = global.game.player
 	instance_destroy(self)
 }
 

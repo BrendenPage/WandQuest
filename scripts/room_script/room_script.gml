@@ -19,14 +19,14 @@ function close_every_door() {
 	tilemap_set(_wall_map, EAST_WALL, _w-1, _h/2)
 	tilemap_set(_door_map, TILE_CLEAR, _w-1, _h/2-1)
 	tilemap_set(_door_map, TILE_CLEAR, _w-1, _h/2)
-	tilemap_set(_wall_map, NORTH_WALL, _w/2-1, 0)
-	tilemap_set(_wall_map, NORTH_WALL, _w/2, 0)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2-1, 0)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2, 0)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2-1, _h-1)
-	tilemap_set(_door_map, TILE_CLEAR, _w/2, _h-1)
-	tilemap_set(_wall_map, SOUTH_WALL, _w/2, _h-1)
-	tilemap_set(_wall_map, SOUTH_WALL, _w/2-1, _h-1)
+	tilemap_set(_wall_map, NORTH_WALL, floor(_w/2)-1, 0)
+	tilemap_set(_wall_map, NORTH_WALL, floor(_w/2), 0)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2)-1, 0)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2), 0)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2)-1, _h-1)
+	tilemap_set(_door_map, TILE_CLEAR, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, SOUTH_WALL, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, SOUTH_WALL, floor(_w/2)-1, _h-1)
 }
 
 function is_door_position(_x, _y) {
@@ -40,10 +40,10 @@ function is_door_position(_x, _y) {
 	if (_x == _w-1 and (_y == _h/2 or _y == _h/2-1)) {
 		return true
 	}
-	if (_y == 0 and (_x == floor(_w/2) or _x == floor(_w/2-1))) {
+	if (_y == 0 and (_x == floor(_w/2)) or _x == floor(_w/2)-1) {
 		return true
 	}
-	if (_y == _h-1 and (_x == floor(_w/2) or _x == floor(_w/2-1))) {
+	if (_y == _h-1 and (_x == floor(_w/2)) or _x == floor(_w/2)-1) {
 		return true
 	}
 	return false
@@ -102,21 +102,21 @@ function open_north_door() {
 	_door_map = layer_tilemap_get_id("tiles_door")
 	var _w = ceil(room_width/TS)
 	// Destroy previously placed walls
-	var _wall = instance_position((_w/2-1)*TS, 0, oWall)
+	var _wall = instance_position((floor(_w/2)-1)*TS, 0, oWall)
 	if (_wall != noone) {
 		if (DEBUG) {
 			show_debug_message("Clearing north wall")
 		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_position((_w/2)*TS, 0, oWall)
+	_wall = instance_position((floor(_w/2))*TS, 0, oWall)
 	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2, 0)
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2-1, 0)
-	tilemap_set(_door_map, DOOR_LEFT, _w/2-1, 0)
-	tilemap_set(_door_map, DOOR_RIGHT, _w/2, 0)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2), 0)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2)-1, 0)
+	tilemap_set(_door_map, DOOR_LEFT, floor(_w/2)-1, 0)
+	tilemap_set(_door_map, DOOR_RIGHT, floor(_w/2), 0)
 }
 
 function open_south_door() {
@@ -125,21 +125,21 @@ function open_south_door() {
 	var _w = ceil(room_width/TS)
 	var _h = ceil(room_height/TS)
 	// Destroy previously placed walls
-	var _wall = instance_position((_w/2-1)*TS, (_h-1)*TS, oWall)
+	var _wall = instance_position((floor(_w/2)-1)*TS, (_h-1)*TS, oWall)
 	if (_wall != noone) {
 		if (DEBUG) {
 			show_debug_message("Clearing south wall")
 		}
 		instance_destroy(_wall)
 	}
-	_wall = instance_position((_w/2)*TS, (_h-1)*TS, oWall)
+	_wall = instance_position((floor(_w/2))*TS, (_h-1)*TS, oWall)
 	if (_wall != noone) {
 		instance_destroy(_wall)
 	}
-	tilemap_set(_door_map, DOOR_LEFT + SOUTH_DOOR_OFFSET, _w/2-1, _h-1)
-	tilemap_set(_door_map, DOOR_RIGHT+ SOUTH_DOOR_OFFSET, _w/2, _h-1)
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2, _h-1)
-	tilemap_set(_wall_map, TILE_CLEAR, _w/2-1, _h-1)
+	tilemap_set(_door_map, DOOR_LEFT + SOUTH_DOOR_OFFSET, floor(_w/2)-1, _h-1)
+	tilemap_set(_door_map, DOOR_RIGHT+ SOUTH_DOOR_OFFSET, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2), _h-1)
+	tilemap_set(_wall_map, TILE_CLEAR, floor(_w/2)-1, _h-1)
 }
 
 // Check for enemies in current room instance, if none exist, insert correct
