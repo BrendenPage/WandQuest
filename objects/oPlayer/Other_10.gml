@@ -54,5 +54,8 @@ dist_from_center_to_wand_tip = 0
 // Spell casting related 
 is_triple_surge_active = false
 
+menu_cooldown = 30
+
+
 
 
