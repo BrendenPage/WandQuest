@@ -45,6 +45,7 @@
     {"name":"Timelines","order":16,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"DBoss2","order":18,"path":"rooms/DBoss2/DBoss2.yy",},
     {"name":"DTutorialAttack","order":15,"path":"rooms/DTutorialAttack/DTutorialAttack.yy",},
     {"name":"sDeckMenuEmptyChoice","order":3,"path":"sprites/sDeckMenuEmptyChoice/sDeckMenuEmptyChoice.yy",},
     {"name":"Pause","order":4,"path":"rooms/Pause/Pause.yy",},

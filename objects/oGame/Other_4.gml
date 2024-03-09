@@ -102,7 +102,7 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 	}
 	// Populate collisions, insert doors, update motion planning grids
 	event_user(0)
-	if (room == DBoss1 or is_current_room_normal()) {
+	if (is_boss_room() or is_current_room_normal()) {
 		// insert enemies at random
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {

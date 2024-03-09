@@ -291,7 +291,7 @@ function is_boss_room() {
 }
 
 function is_wing_cleared() {
-	if (room == DBoss1) {
+	if (is_boss_room()) {
 		return false
 	}
 	return global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]

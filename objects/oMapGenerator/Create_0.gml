@@ -7,7 +7,7 @@ global.map_gen = self
 //room_list = [D1]
 room_list = [D1, D2, D3, D4, D5]
 warp_locations = [[[470,360]], [[144, 288], [756, 288]], [[324, 324], [648,324]], [[504, 144], [504,396]], [[504, 324]]]
-boss_rooms= [DBoss1]
+boss_rooms= [DBoss1, DBoss2]
 total_rooms = ROOM_COUNT
 map_size = 10
 // Weight placed on preferentially generating rooms towards

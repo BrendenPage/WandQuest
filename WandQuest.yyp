@@ -73,6 +73,7 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"DBoss2","path":"rooms/DBoss2/DBoss2.yy",},},
     {"id":{"name":"DTutorialAttack","path":"rooms/DTutorialAttack/DTutorialAttack.yy",},},
     {"id":{"name":"sDeckMenuEmptyChoice","path":"sprites/sDeckMenuEmptyChoice/sDeckMenuEmptyChoice.yy",},},
     {"id":{"name":"Pause","path":"rooms/Pause/Pause.yy",},},
@@ -312,6 +313,7 @@
     {"roomId":{"name":"DTutorialAttack","path":"rooms/DTutorialAttack/DTutorialAttack.yy",},},
     {"roomId":{"name":"DTutorialSpecial","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},},
     {"roomId":{"name":"DTutorialWeapons","path":"rooms/DTutorialWeapons/DTutorialWeapons.yy",},},
+    {"roomId":{"name":"DBoss2","path":"rooms/DBoss2/DBoss2.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
