@@ -19,8 +19,8 @@
 #macro BASE_SPAWN_RATE 0.02
 #macro ENEMY_SPAWN_NEAR_PLAYER_THRESHOLD (room_width/3)
 #macro SLIME_SCALE 0.7
-#macro MAX_ENEMIES 5
-#macro MIN_ENEMIES 2
+#macro MAX_ENEMIES 4
+#macro MIN_ENEMIES 3
 
 // percentage healed after going through warp as integer (max health*heal percent)
 #macro HEAL_PERCENT 0.25
@@ -71,3 +71,5 @@ wings_cleared = undefined
 if (!variable_global_exists("set_up_rooms")) {
   global.set_up_rooms = ds_map_create()
 }
+
+global.enemies_killed_without_taking_damage = 0
