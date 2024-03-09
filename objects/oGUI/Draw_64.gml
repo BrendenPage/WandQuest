@@ -24,6 +24,7 @@ draw_set_valign(fa_middle)
 
 if (minimap_enabled and global.tutorial_seen) {
 	draw_bounded_minimap()
+	draw_text(display_get_gui_width() * 8.9 / 10, display_get_gui_height() / 20,"Floor: " + string(global.game.floor_))
 }
 
 var _attack_card_index = oPlayer.attack_deck_obj.deck[oPlayer.attack_deck_obj.cur_deck_index].spell_index
