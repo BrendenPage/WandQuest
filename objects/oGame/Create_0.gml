@@ -73,3 +73,4 @@ if (!variable_global_exists("set_up_rooms")) {
 }
 
 global.enemies_killed_without_taking_damage = 0
+global.second_floor_tutorial_seen = false
