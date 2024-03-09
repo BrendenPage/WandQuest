@@ -485,6 +485,9 @@ function choose_enemy(_ranged) {
 }
 
 function clear_instances() {
+	while(instance_number(oEnemyParent) > 0) {
+		instance_destroy(instance_find(oEnemyParent, 0))
+	}
 	while(instance_number(oProjectileParent) > 0) {
 		instance_destroy(instance_find(oProjectileParent, 0))
 	}
@@ -494,4 +497,10 @@ function clear_instances() {
 	while(instance_number(oPileOfBones) >0) {
 		instance_destroy(instance_find(oPileOfBones, 0))
 	}
+	for(var _i = 0; _i < array_length(global.paths_list); _i++) {
+		if (path_exists(global.paths_list[_i])) {
+			path_delete(global.paths_list[_i])
+		}
+	}
+	global.paths_list = []
 }

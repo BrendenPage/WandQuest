@@ -70,38 +70,31 @@ function add_card_to_deck(_is_attack_deck, _card_index){
  * @param {Number} _card_index - The index of the card in the global spell struct to be added to the deck.
  *								 The index can be accessed by global.attack_spell_struct.<spell_name>.spell_index
  */
-function remove_card(_is_attack_deck, _card_index){
+function remove_card(_is_attack_deck, _card_index) {
 	var _card_found = false
-	if(_is_attack_deck){
-		if(oPlayer.attack_deck_obj.cur_deck_size <= 1){
-			show_debug_message("The deck only contain 1 card. Cannot remove the last card.")
-			return
-		}
-		for(var _i = 0 ; _i < oPlayer.attack_deck_obj.cur_deck_size; _i++){
-			if(oPlayer.attack_deck_obj.deck[_i].spell_index == _card_index){
-				array_delete(oPlayer.attack_deck_obj.deck, _i, 1)
-				oPlayer.attack_deck_obj.cur_deck_size--
-				oPlayer.attack_deck_obj.cur_deck_index = 0
-				_card_found = true
-				break
-			}
-		}
-	}else{
-		if(oPlayer.special_deck_obj.cur_deck_size <= 1){
-			show_debug_message("The deck only contain 1 card. Cannot remove the last card.")
-			return
-		}
-		for(var _i = 0 ; _i < oPlayer.special_deck_obj.cur_deck_size; _i++){
-			if(oPlayer.special_deck_obj.deck[_i].spell_index == _card_index){
-				array_delete(oPlayer.special_deck_obj.deck, _i, 1)
-				oPlayer.special_deck_obj.cur_deck_size--
-				oPlayer.special_deck_obj.cur_deck_index = 0
-				_card_found = true
-				break
-			}
+	
+	var _deck = oPlayer.attack_deck_obj
+	if(!_is_attack_deck) {
+		_deck = oPlayer.special_deck_obj
+	}
+	
+	if(_deck.cur_deck_size <= 1) {
+		return
+	}
+
+	for(var _i = 0 ; _i < _deck.cur_deck_size; _i++) {
+		if(_deck.deck[_i].spell_index == _card_index) {
+			array_delete(_deck.deck, _i, 1)
+			_deck.cur_deck_size--
+			_deck.cur_deck_index = 0
+			_card_found = true
+			break
 		}
 	}
-	if(_card_found == false){ show_debug_message("Target card not found, nothing to remove.") }
+	
+	if(_card_found == false and DEBUG) {
+		show_debug_message("Target card not found, nothing to remove.")
+	}
 }
 
 /**
@@ -117,17 +110,7 @@ function remove_card(_is_attack_deck, _card_index){
  */
  
 function replace_card(_is_attack_deck, _target_card_index, _new_card_index){
-	
-	var _deck_size = -1
-	if(_is_attack_deck){
-		_deck_size = oPlayer.attack_deck_obj.cur_deck_size
-	}else{
-		_deck_size = oPlayer.special_deck_obj.cur_deck_size
-	}
-	
 	remove_card(_is_attack_deck,_target_card_index)
-
-	
 	add_card_to_deck(_is_attack_deck, _new_card_index)
 }
 
@@ -146,20 +129,4 @@ function card_replace_menu_popup(_is_attack_deck, _card_index){
 	global.deck_menu_state.incoming_card_ind = _card_index
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

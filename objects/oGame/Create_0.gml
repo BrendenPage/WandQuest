@@ -10,10 +10,10 @@
 #macro BOX_VISIBLE false
 
 // If we're doing AB testing
-#macro AB_TESTING true
+#macro AB_TESTING false
 
 // categoryId
-#macro RELEASE 3
+#macro RELEASE 1
 
 // Enemy spawn
 #macro BASE_SPAWN_RATE 0.02

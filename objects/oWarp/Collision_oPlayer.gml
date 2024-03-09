@@ -10,14 +10,16 @@ if (instance_number(oEnemyParent) == 0) {
 		global.paths_list = []
 	}
 
-
+	
 	global.current_room = target_room
 	global.game.player.x = target_x
 	global.game.player.y = target_y
 	global.game.current_room_x += right
 	global.game.current_room_y += down
+	instance_deactivate_all(false)
 	layer_set_target_room(target_room)
 	room_goto(target_room);
+	instance_activate_all()
 	if (DEBUG) {
 		show_debug_message("New x: " + string(global.game.current_room_x))
 		show_debug_message("New y: " + string(global.game.current_room_y))

@@ -4,7 +4,7 @@
 SPEED = 4;
 image_index = 0;
 depth = -100
-speed_modifier = 1;
+speed_modifier = 2;
 speed_debuff = 1;
 hurtbox = hurtbox_create(25,40,0,0,false)
 hat = instance_create_layer(x + -25,y + -50,"Instances",oPlayerHat)
