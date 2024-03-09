@@ -64,7 +64,7 @@ global.attack_spell_struct ={
 		sBlastProjectile,
 		oBlastProjectile,
 		80,
-		60,
+		120,
 		"Blast\n Unlimited Cast Range. AOE Attack. \nVery High Damage & Cooldown.",
 		0
 	),
@@ -108,7 +108,7 @@ global.attack_spell_struct ={
 		sMagicMissileProjectile,
 		oMagicMissileProjectile,
 		30,
-		15,
+		18,
 		"Magic Missile\n Long range. Shoot in 5 darts.\n Low damage per dart. Medium cooldown",
 		0
 	)
@@ -127,8 +127,9 @@ global.attack_spell_struct ={
  * Example:
  * ```
  * // Add attack spell instances to the map
- * ds_map_add(global.attack_spell_map, 3, global.attack_spell_struct.firebolt)
- * ds_map_add(global.attack_spell_map, 4, global.attack_spell_struct.flame_burst)
+ * ds_map_add(global.attack_spell_map, 
+ *			  attack_spell_struct.firebolt.spell_index,
+ *			  global.attack_spell_struct.firebolt)
  * 
  * // Accessing an attack spell instance by index
  * var spellIndex = 3

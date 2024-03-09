@@ -193,6 +193,7 @@
     {"name":"oWingIndicatorNorth","order":13,"path":"objects/oWingIndicatorNorth/oWingIndicatorNorth.yy",},
     {"name":"sGaleBarrier","order":5,"path":"sprites/sGaleBarrier/sGaleBarrier.yy",},
     {"name":"DSpecial","order":12,"path":"rooms/DSpecial/DSpecial.yy",},
+    {"name":"performance_globals","order":19,"path":"scripts/performance_globals/performance_globals.yy",},
     {"name":"sChoices","order":8,"path":"sprites/sChoices/sChoices.yy",},
     {"name":"D4","order":9,"path":"rooms/D4/D4.yy",},
     {"name":"CapstoneLoggerExt","order":2,"path":"extensions/CapstoneLoggerExt/CapstoneLoggerExt.yy",},

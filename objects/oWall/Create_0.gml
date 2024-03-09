@@ -1,7 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.wall_count++
 
-instance_destroy(hitbox)
-instance_destroy(hurtbox)
-path_delete(path)
+
+
+
+
+
+
+

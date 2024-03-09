@@ -47,4 +47,5 @@ depth = 10
 
 is_triple_surge_active = undefined
 
+menu_cooldown = undefined
 
