@@ -376,7 +376,7 @@ function enemy_spawn_rate() {
 		} else if (floor_ == 1 and num_wings_cleared() == 3) {
 			return 1.5
 		}
-		return wing_spawn_rate[num_wings_cleared()]*_modifier
+		return wing_spawn_rate[num_wings_cleared()]*_modifier + global.enemies_killed_without_taking_damage * 0.05
 	}
 }
 

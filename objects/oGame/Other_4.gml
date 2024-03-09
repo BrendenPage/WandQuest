@@ -12,7 +12,10 @@ if (room == Death or room == Menu) {
 	exit
 }
 
-
+if (room == START_ROOM and floor_ == 2 and not global.second_floor_tutorial_seen) {
+	global.second_floor_tutorial_seen = true
+	var _floor_tutorial = instance_create_layer(0,0,"Instances",oSecondFloorTutorial)
+}
 
 // Initialize tutorialization
 if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial or room == DTutorialWeapons) {
