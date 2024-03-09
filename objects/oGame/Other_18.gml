@@ -1,12 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-global.wall_count--
-
-
-
-
-
-
-
-
+instance_deactivate_object(oWall)

@@ -62,9 +62,11 @@ minimap_height = 0
 minimap_seed_x = 0
 minimap_seed_y = 0
 floor_ = 1
+prev_browser_w = 0
+prev_browser_h = 0
 attack_deck = undefined
 global.paths_list = []
-locked_doors = undefined
+frame_delay = 10
 // ESWN
 wings_cleared = undefined
 

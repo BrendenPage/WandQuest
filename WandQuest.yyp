@@ -246,7 +246,6 @@
     {"id":{"name":"oWingIndicatorNorth","path":"objects/oWingIndicatorNorth/oWingIndicatorNorth.yy",},},
     {"id":{"name":"sGaleBarrier","path":"sprites/sGaleBarrier/sGaleBarrier.yy",},},
     {"id":{"name":"DSpecial","path":"rooms/DSpecial/DSpecial.yy",},},
-    {"id":{"name":"performance_globals","path":"scripts/performance_globals/performance_globals.yy",},},
     {"id":{"name":"sChoices","path":"sprites/sChoices/sChoices.yy",},},
     {"id":{"name":"D4","path":"rooms/D4/D4.yy",},},
     {"id":{"name":"CapstoneLoggerExt","path":"extensions/CapstoneLoggerExt/CapstoneLoggerExt.yy",},},

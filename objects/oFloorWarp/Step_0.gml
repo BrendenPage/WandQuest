@@ -15,6 +15,10 @@ if (activated and place_meeting(x, y, global.game.player)) {
 	with (global.game) {
 		event_user(7)
 	}
+	
+	with(global.game) {
+		event_user(8)
+	}
 	layer_set_target_room(target_room)
 	room_goto(target_room);
 	if (global.logging) {

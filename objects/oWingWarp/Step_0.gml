@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (execute) {
+	layer_set_target_room(target_room)
+	room_goto(target_room)
+	execute = false
+	exit
+}
 
 if (!place_meeting(x, y, global.game.player) and instance_number(oEnemyParent) == 0) {
 	activated = true
@@ -21,6 +27,9 @@ if (activated and place_meeting(x, y, global.game.player)) {
 	global.game.player.y = target_y
 	global.game.current_room_x = 5
 	global.game.current_room_y = 5
-	layer_set_target_room(target_room)
-	room_goto(target_room);
+	
+	with(global.game) {
+		event_user(8)
+	}
+	execute = true
 }

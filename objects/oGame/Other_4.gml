@@ -1,5 +1,6 @@
 event_user(1)
-
+instance_activate_all()
+frame_delay = 2
 if (!global.map_gen.done) { exit }
 
 if (room==Pause){

@@ -16,8 +16,12 @@ if (activated and place_meeting(x, y, global.game.player)) {
 	global.game.player.y = target_y
 	global.game.current_room_x = 5
 	global.game.current_room_y = 5
+	
+	with(global.game) {
+		event_user(8)
+	}
 	layer_set_target_room(target_room)
-	room_goto(target_room);
+	room_goto(target_room)
 	if (global.logging) {
 		var _data = {
 			curr_time: time()
