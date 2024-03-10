@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "augments",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Spells and Deck Management",
-    "path": "folders/Scripts/Spells and Deck Management.yy",
+  "$GMScript":"",
+  "%Name":"augments",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"augments",
+  "parent":{
+    "name":"Spells and Deck Management",
+    "path":"folders/Scripts/Spells and Deck Management.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

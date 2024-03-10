@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "gun_states",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Enemy States",
-    "path": "folders/Scripts/Enemy States.yy",
+  "$GMScript":"",
+  "%Name":"gun_states",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gun_states",
+  "parent":{
+    "name":"Enemy States",
+    "path":"folders/Scripts/Enemy States.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
