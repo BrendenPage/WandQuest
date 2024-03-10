@@ -6,5 +6,7 @@
 minimap_enabled = true
 refreshing_specials = false
 special_refresh_init = 0
+sp_shuffling = false
 refreshing_attacks = false
 attack_refresh_init = 0
+at_shuffling = false

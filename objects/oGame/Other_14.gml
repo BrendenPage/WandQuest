@@ -9,6 +9,7 @@ if (room == DBoss1) {
 if (DEBUG) {
 	show_debug_message("Populating Enemies")
 }
+
 var _w = ceil(room_width/TS)
 var _h = ceil(room_height/TS)
 var _map = layer_tilemap_get_id("tiles_wall")
@@ -25,10 +26,8 @@ if (is_boss_room()) {
 	switch(floor_) {
 		case 1:
 			_boss_count = 1
-			show_message("3")
 			break
 		case 2:
-			show_message("3*")
 			_boss_count = 1
 			_support_enemy_count = 3
 			break
@@ -60,7 +59,6 @@ while(true) {
 								exit
 							}
 						} else {
-							show_message("4")
 							if (_bosses_spawned < _boss_count) {
 								_bosses_spawned++
 								instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", oSlimeBoss)

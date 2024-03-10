@@ -41,8 +41,8 @@ if (room == DTutorialAttack or room == DTutorialMove or room == DTutorialSpecial
 		}
 		if (room == DTutorialSpecial and instance_number(oEnemyParent) == 0) {
 			var _gun= instance_create_layer(828, 288, "Tutorial", oGun);
-			_gun.remaining_health = 10
-			_gun.max_health = 10
+			_gun.remaining_health = 50
+			_gun.max_health = 50
 			
 			if (global.logging) {
 				var _data = {
@@ -115,8 +115,6 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 	// Populate collisions, insert doors, update motion planning grids
 	event_user(0)
 	if (is_boss_room() or is_current_room_normal()) {
-		// insert enemies at 
-		show_message("1")
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {
 		// Set card selection room

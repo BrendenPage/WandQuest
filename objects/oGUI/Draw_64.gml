@@ -41,12 +41,16 @@ if(oPlayer.attack_timer != 0 or oPlayer.AT_shuffle_timer != 0) {
 		refreshing_attacks = true
 		if (oPlayer.AT_shuffling) {
 			attack_refresh_init = oPlayer.AT_shuffle_timer
+			at_shuffling = true
 		} else {
 			attack_refresh_init = oPlayer.attack_timer
 		}
 	}
-	if (oPlayer.AT_shuffling) {
+	if (at_shuffling) {
 		_remaining_cooldown = oPlayer.AT_shuffle_timer
+		show_debug_message("init: " + string(attack_refresh_init))
+		show_debug_message("rema: " + string(_remaining_cooldown))
+		show_debug_message("calc: " + string(floor(((attack_refresh_init-_remaining_cooldown)/attack_refresh_init)*48)))
 	} else {
 		_remaining_cooldown = oPlayer.attack_timer
 	}
@@ -55,6 +59,7 @@ if(oPlayer.attack_timer != 0 or oPlayer.AT_shuffle_timer != 0) {
 					sprite_get_height(sAttacks)/sprite_get_height(sLoading), 0, c_white, REFRESH_OPACITY)
 } else {
 	refreshing_attacks = false
+	at_shuffling = false
 }
 
 
