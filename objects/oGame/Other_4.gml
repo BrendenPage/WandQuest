@@ -93,6 +93,9 @@ if (!game_setup and room==START_ROOM) {
 			_boss_warp.target_y = 1080/2
 			_boss_warp.target_x = 1800/2
 		}
+		_boss_warp.target_room = choose(DBoss2)
+		_boss_warp.target_y = 1080/2
+		_boss_warp.target_x = 1800/2
 	}
 }
 
@@ -103,6 +106,7 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 		var _data = {
 			curr_time: time(),
 			special_room: !is_current_room_normal(),
+			floor: floor_,
 			tutorial: false
 		}
 		cap_logger_level_end(string(rooms_seen), json_stringify(_data))
@@ -112,6 +116,7 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 	event_user(0)
 	if (is_boss_room() or is_current_room_normal()) {
 		// insert enemies at 
+		show_message("1")
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {
 		// Set card selection room

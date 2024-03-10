@@ -12,8 +12,11 @@ if (global.map_gen.done) {
 if (instance_number(oGame) == 1 and global.logging_initialized) {
 	with(global.game) {
 		event_user(1)
+		
 	}
-	button_text = "Play"
+	x = VIEWPORT_WIDTH/2
+	y = VIEWPORT_HEIGHT/2
+	button_text = "Start Game!"
 	ready = true
 }
 
