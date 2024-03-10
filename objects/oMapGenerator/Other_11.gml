@@ -12,7 +12,7 @@ if (instance_number(oGame)) {
 		length_max = min(floor(global.game.floor_*5/3), 5)
 	}
 }
-length_max = length_max
+
 length_min = max(1, floor(length_max/1.5))
 arm_length[0] = irandom_range(length_min,length_max)
 arm_length[1] = irandom_range(length_min,length_max)
