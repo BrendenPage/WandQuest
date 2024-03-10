@@ -5,7 +5,7 @@ event_inherited();
 
 if (ready) {
 	if (global.logging) {
-			_data = {
+			var _data = {
 				curr_time: time(),
 				ab_test_category: global.ab_test_category
 				}
