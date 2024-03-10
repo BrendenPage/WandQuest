@@ -8,8 +8,8 @@
   "managed":true,
   "name":"oSlime",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"max_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"30",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"remaining_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"30",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"max_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"25",},
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"remaining_health","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"25",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"55",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_y_size","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"50",},
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"oEnemyParent","path":"objects/oEnemyParent/oEnemyParent.yy",},"propertyId":{"name":"box_x_start","path":"objects/oEnemyParent/oEnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},

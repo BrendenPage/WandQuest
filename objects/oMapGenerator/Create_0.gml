@@ -37,16 +37,6 @@ for (var _i = 0; _i < map_size; _i++) {
 	}
 }
 
-var _max = 1
-
-if (instance_number(oGame)) {
-	if (global.game.floor_ > 1) {
-		_max = 4
-	}
-}
-
-length_max = _max
-length_min = max(1, floor(length_max/1.5))
 done = false
 // Begin map generation
 event_user(1)

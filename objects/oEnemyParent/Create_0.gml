@@ -23,9 +23,3 @@ knockback_spd = 0
 damage = 0
 
 shield = 0
-
-if (AB_TESTING) {
-	var _test_health_ratios = [0.5,0.75,1,1.25]
-	remaining_health = remaining_health * _test_health_ratios[global.ab_test_category]
-	max_health = max_health * _test_health_ratios[global.ab_test_category]
-}

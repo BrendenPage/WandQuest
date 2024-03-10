@@ -1,11 +1,15 @@
 show_debug_message("Map generator creation event user 1")
 /// @description Begin Map Generation
 done = false
-length_max = 1
+if (AB_TESTING and global.ab_test_category == 0) {
+	length_max = 1
+} else {
+	length_max = 2
+}
 
 if (instance_number(oGame)) {
 	if (global.game.floor_ > 1) {
-		length_max = min(floor(global.game.floor_*5/3), 7)
+		length_max = min(floor(global.game.floor_*5/3), 5)
 	}
 }
 length_max = length_max

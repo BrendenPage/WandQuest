@@ -10,7 +10,7 @@
 #macro BOX_VISIBLE false
 
 // If we're doing AB testing
-#macro AB_TESTING false
+#macro AB_TESTING true
 
 // categoryId
 #macro RELEASE 1

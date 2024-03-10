@@ -108,7 +108,7 @@ global.attack_spell_struct ={
 		sMagicMissileProjectile,
 		oMagicMissileProjectile,
 		30,
-		18,
+		15,
 		"Magic Missile\n Long range. Shoot in 5 darts.\n Low damage per dart. Medium cooldown",
 		0
 	)

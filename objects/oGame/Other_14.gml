@@ -58,8 +58,14 @@ while(true) {
 							}
 						} else {
 							if (_bosses_spawned < _boss_count) {
-								_bosses_spawned++
-								instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", oSlimeBoss)
+								var _boss = instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", oSlimeBoss)
+								with (_boss) {
+									if (place_meeting(x,y,oWall)) {
+										instance_destroy(_boss)
+									} else {
+										_bosses_spawned++
+									}
+								}
 							} else if (_support_enemies_spawned < _support_enemy_count) {
 								_support_enemies_spawned++
 								instance_create_layer(xx * TS + TS/2, yy * TS + TS/2, "Enemy", choose(oWizard, oWizard, oSpider))
