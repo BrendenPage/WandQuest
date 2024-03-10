@@ -4,7 +4,7 @@ done = false
 if (AB_TESTING and global.ab_test_category == 0) {
 	length_max = 1
 } else {
-	length_max = 2
+	length_max = 3
 }
 
 if (instance_number(oGame)) {
