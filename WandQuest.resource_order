@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Animation Curves","order":20,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":22,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":15,"path":"folders/Fonts.yy",},
@@ -44,7 +44,7 @@
     {"name":"Tile Sets","order":10,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":16,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"DBoss2","order":18,"path":"rooms/DBoss2/DBoss2.yy",},
     {"name":"DTutorialAttack","order":15,"path":"rooms/DTutorialAttack/DTutorialAttack.yy",},
     {"name":"sDeckMenuEmptyChoice","order":3,"path":"sprites/sDeckMenuEmptyChoice/sDeckMenuEmptyChoice.yy",},
@@ -224,6 +224,7 @@
     {"name":"sGoblinWarrior","order":5,"path":"sprites/sGoblinWarrior/sGoblinWarrior.yy",},
     {"name":"sWizard","order":11,"path":"sprites/sWizard/sWizard.yy",},
     {"name":"oDeathScreen","order":4,"path":"objects/oDeathScreen/oDeathScreen.yy",},
+    {"name":"sFlameBrustBackup","order":8,"path":"sprites/sFlameBrustBackup/sFlameBrustBackup.yy",},
     {"name":"oClosedDoor","order":6,"path":"objects/oClosedDoor/oClosedDoor.yy",},
     {"name":"oWASDTutorial","order":3,"path":"objects/oWASDTutorial/oWASDTutorial.yy",},
     {"name":"sDuckEffectBackup","order":4,"path":"sprites/sDuckEffectBackup/sDuckEffectBackup.yy",},
