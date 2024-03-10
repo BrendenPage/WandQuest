@@ -40,7 +40,6 @@ if (!global.logging_initialized) {
 	var _hash = "00" + string_digits(sha1_string_utf8(global.uuid))
 	var _last_digs = int64(string_char_at(_hash,string_length(_hash)-1) + string_char_at(_hash,string_length(_hash)))
 	global.ab_test_category = _last_digs % 2
-	show_message("category: " + string(global.ab_test_category))
 }
 
 if (instance_number(oMapGenerator) == 0) {
