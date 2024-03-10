@@ -150,7 +150,7 @@ function set_warp_points() {
 		instance_destroy(instance_find(oWarp, 0))
 	}
 	if (instance_number(oEnemyParent) == 0) {
-		if (room == DBoss1) {
+		if (is_boss_room()) {
 			var _floor_warp = instance_create_layer(room_width/2, room_height/2, "Instances", oFloorWarp)
 			exit
 		}

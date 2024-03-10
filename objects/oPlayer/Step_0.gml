@@ -1,6 +1,3 @@
-
-
-
 if (keyboard_check_pressed(ord("P")) or keyboard_check_pressed(vk_escape)) {
 	if (room == Pause) {
 		room_goto(global.current_room)
@@ -99,9 +96,9 @@ if(menu_cooldown <= 0 ){
 				// reset the timer
 				attack_timer = attack_spell.cooldown * attack_cooldown_modifier
 				// generate projectile
-				if(is_triple_surge_active == false){
+				if(is_triple_surge_active == false) {
 					cast_attack_spell(attack_spell,aim_dir)
-				}else{
+				} else {
 					cast_attack_spell(attack_spell,aim_dir)
 					cast_attack_spell(attack_spell,(aim_dir + 20) % 360)
 					cast_attack_spell(attack_spell,(aim_dir - 20) % 360)

@@ -1,16 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (instance_number(oMapGenerator) == 0 and global.logging_initialized) {
-	instance_create_layer(0,0, "Instances", oMapGenerator)
-}
-
-if (global.logging_initialized) {
-	if (global.map_gen.done) {
-		if (instance_number(oGame) == 0) {
-			global.game = instance_create_layer(0,0,"Instances", oGame)
-			if (DEBUG) {
-				show_debug_message("Creating game object in button play")
-			}
+if (global.map_gen.done) {
+	if (instance_number(oGame) == 0) {
+		global.game = instance_create_layer(0,0,"Instances", oGame)
+		if (DEBUG) {
+			show_debug_message("Creating game object in button play")
 		}
 	}
 }
@@ -18,7 +12,6 @@ if (global.logging_initialized) {
 if (instance_number(oGame) == 1 and global.logging_initialized) {
 	with(global.game) {
 		event_user(1)
-		
 	}
 	x = VIEWPORT_WIDTH/2
 	y = VIEWPORT_HEIGHT/2

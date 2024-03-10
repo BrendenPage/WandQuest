@@ -93,9 +93,6 @@ if (!game_setup and room==START_ROOM) {
 			_boss_warp.target_y = 1080/2
 			_boss_warp.target_x = 1800/2
 		}
-		_boss_warp.target_room = choose(DBoss2)
-		_boss_warp.target_y = 1080/2
-		_boss_warp.target_x = 1800/2
 	}
 }
 

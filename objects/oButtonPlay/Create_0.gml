@@ -27,7 +27,9 @@ if (!variable_global_exists("logging_initialized")) {
 
 failed_streak = 0
 no_response_streak = 0
-if (instance_number(oMapGenerator) != 0) {
+if (instance_number(oMapGenerator) == 0) {
+	instance_create_layer(0,0, "Instances", oMapGenerator)
+} else {
 	with (global.map_gen) {
 		event_user(1)
 	}
@@ -44,7 +46,7 @@ if (!global.logging_initialized) {
 	
 	var _hash = "00" + string_digits(sha1_string_utf8(global.uuid))
 	var _last_digs = int64(string_char_at(_hash,string_length(_hash)-1) + string_char_at(_hash,string_length(_hash)))
-	global.ab_test_category = _last_digs % 2
+	global.ab_test_category = _last_digs % 4
 }
 
 global.died = false

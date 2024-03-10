@@ -13,7 +13,7 @@
 function augment(_augment_index){
 	switch(_augment_index) {
 		case AUGMENT_MOVEMENT_INC:
-			global.game.player.speed_modifier *= 1.5
+			global.game.player.speed_modifier *= 1.2
 			break
 		case AUGMENT_ATTACK_DEC:
 			global.game.player.attack_cooldown_modifier *= 0.75

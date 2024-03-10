@@ -10,7 +10,7 @@ if (execute) {
 
 if (activated and !variable_global_exists("first_wing_cleared")) {
 	global.first_wing_cleared = true
-	
+	instance_create_layer(0, 0, "Instances", oFirstWingTutorial)
 }
 
 if (!place_meeting(x, y, global.game.player) and instance_number(oEnemyParent) == 0) {
