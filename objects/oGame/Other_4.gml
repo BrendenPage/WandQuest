@@ -84,7 +84,18 @@ if (!game_setup and room==START_ROOM) {
 	event_user(2)
 } else if (room == START_ROOM) {
 	if (num_wings_cleared() == 4) {
-		instance_create_layer(432, 252, "Instances", oBossWarp)
+		while (instance_number(oBossWarp) > 0) {
+			instance_destroy(instance_find(oBossWarp, 0))
+		}
+		var _boss_warp = instance_create_layer(432, 252, "Instances", oBossWarp)
+		if (floor_ > 1) {
+			_boss_warp.target_room = choose(DBoss2)
+			_boss_warp.target_y = 1080/2
+			_boss_warp.target_x = 1800/2
+		}
+		_boss_warp.target_room = choose(DBoss2)
+		_boss_warp.target_y = 1080/2
+		_boss_warp.target_x = 1800/2
 	}
 }
 
@@ -103,7 +114,8 @@ if (!ds_map_find_value(this_run_seen_room_set,room)) {
 	// Populate collisions, insert doors, update motion planning grids
 	event_user(0)
 	if (is_boss_room() or is_current_room_normal()) {
-		// insert enemies at random
+		// insert enemies at 
+		show_message("1")
 		event_user(4)
 	} else if (_current_room_type >= 5 and _current_room_type <= 8) {
 		// Set card selection room

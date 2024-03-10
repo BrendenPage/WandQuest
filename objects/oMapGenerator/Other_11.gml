@@ -5,7 +5,7 @@ length_max = 1
 
 if (instance_number(oGame)) {
 	if (global.game.floor_ > 1) {
-		length_max = floor(global.game.floor_*5/3)
+		length_max = min(floor(global.game.floor_*5/3), 7)
 	}
 }
 length_max = length_max
