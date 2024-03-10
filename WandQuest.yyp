@@ -283,6 +283,7 @@
     {"id":{"name":"oDeathScreen","path":"objects/oDeathScreen/oDeathScreen.yy",},},
     {"id":{"name":"box_create","path":"scripts/box_create/box_create.yy",},},
     {"id":{"name":"sShieldEffect","path":"sprites/sShieldEffect/sShieldEffect.yy",},},
+    {"id":{"name":"sFlameBrustBackup","path":"sprites/sFlameBrustBackup/sFlameBrustBackup.yy",},},
     {"id":{"name":"oClosedDoor","path":"objects/oClosedDoor/oClosedDoor.yy",},},
     {"id":{"name":"oWASDTutorial","path":"objects/oWASDTutorial/oWASDTutorial.yy",},},
     {"id":{"name":"sDuckEffectBackup","path":"sprites/sDuckEffectBackup/sDuckEffectBackup.yy",},},

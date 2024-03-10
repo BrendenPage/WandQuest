@@ -222,6 +222,7 @@
     {"name":"sGoblinWarrior","order":5,"path":"sprites/sGoblinWarrior/sGoblinWarrior.yy",},
     {"name":"sWizard","order":11,"path":"sprites/sWizard/sWizard.yy",},
     {"name":"oDeathScreen","order":4,"path":"objects/oDeathScreen/oDeathScreen.yy",},
+    {"name":"sFlameBrustBackup","order":8,"path":"sprites/sFlameBrustBackup/sFlameBrustBackup.yy",},
     {"name":"oClosedDoor","order":6,"path":"objects/oClosedDoor/oClosedDoor.yy",},
     {"name":"oWASDTutorial","order":3,"path":"objects/oWASDTutorial/oWASDTutorial.yy",},
     {"name":"sDuckEffectBackup","order":4,"path":"sprites/sDuckEffectBackup/sDuckEffectBackup.yy",},
