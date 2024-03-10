@@ -8,16 +8,21 @@ if (execute) {
 	exit
 }
 
+if (activated and !variable_global_exists("first_wing_cleared")) {
+	global.first_wing_cleared = true
+	
+}
+
 if (!place_meeting(x, y, global.game.player) and instance_number(oEnemyParent) == 0) {
 	activated = true
 	visible = true
-}
-
-if (activated and place_meeting(x, y, global.game.player)) {
 	if (!first_use) {
 		first_use = true
 		global.game.player.remaining_health = min(global.game.player.remaining_health + global.game.player.max_health*HEAL_PERCENT, global.game.player.max_health)
 	}
+}
+
+if (activated and place_meeting(x, y, global.game.player)) {
 	// Clean up room
 	
 	clear_instances()

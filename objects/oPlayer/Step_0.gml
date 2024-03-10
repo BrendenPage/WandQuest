@@ -108,9 +108,6 @@ if(menu_cooldown <= 0 ){
 					is_triple_surge_active = false
 				}
 			}
-		
-		
-	
 		}
 
 		if (keyboard_check_pressed(ord("R"))) {
@@ -140,7 +137,7 @@ if(menu_cooldown <= 0 ){
 			} else {
 				if(special_duration_timer == 0){
 					special_timer = max(special_timer - 1, 0)
-				}else{
+				} else {
 					special_duration_timer = max(special_duration_timer - 1, 0)
 				}
 			}

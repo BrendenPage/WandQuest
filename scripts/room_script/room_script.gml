@@ -150,7 +150,7 @@ function set_warp_points() {
 		instance_destroy(instance_find(oWarp, 0))
 	}
 	if (instance_number(oEnemyParent) == 0) {
-		if (is_boss_room()) {
+		if (room == DBoss1) {
 			var _floor_warp = instance_create_layer(room_width/2, room_height/2, "Instances", oFloorWarp)
 			exit
 		}
@@ -273,7 +273,7 @@ function is_door_locked(_door) {
 
 // ESWN 0-3, start room is -1
 function get_room_wing_type(_x, _y) {
-	if (_x == global.map_gen.map_size/2 and _y == global.map_gen.map_size/2){
+	if (_x == global.map_gen.map_size/2 and _y == global.map_gen.map_size/2) {
 		return -1
 	}
 	return (global.map_gen.map[_x,_y] -  1) % 4
@@ -376,7 +376,7 @@ function enemy_spawn_rate() {
 		} else if (floor_ == 1 and num_wings_cleared() == 3) {
 			return 1.5
 		}
-		return wing_spawn_rate[num_wings_cleared()]*_modifier + global.enemies_killed_without_taking_damage * 0.05
+		return wing_spawn_rate[num_wings_cleared()]*_modifier + global.enemies_killed_without_taking_damage * 0.025
 	}
 }
 

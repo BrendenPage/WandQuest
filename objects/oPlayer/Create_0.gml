@@ -36,6 +36,8 @@ special_duration_timer = undefined
 shuffle_modifier = undefined
 AT_shuffle_timer = undefined
 SP_shuffle_timer = undefined
+AT_shuffling     = false
+SP_shuffling     = false
 
 dist_from_center_to_wand_tip = undefined
 

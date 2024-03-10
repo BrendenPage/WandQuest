@@ -1,6 +1,7 @@
 /// @description Populate enemies
 if (!global.tutorial_seen) { exit }
 if (room == DBoss1) {
+	show_message("2")
 	instance_create_layer(252, 144, "Enemy", oSlimeBoss)
 	exit
 }
@@ -8,6 +9,7 @@ if (room == DBoss1) {
 if (DEBUG) {
 	show_debug_message("Populating Enemies")
 }
+
 var _w = ceil(room_width/TS)
 var _h = ceil(room_height/TS)
 var _map = layer_tilemap_get_id("tiles_wall")

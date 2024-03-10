@@ -4,3 +4,9 @@
 #macro mouse_gui_y device_mouse_y_to_gui(0)
 
 minimap_enabled = true
+refreshing_specials = false
+special_refresh_init = 0
+sp_shuffling = false
+refreshing_attacks = false
+attack_refresh_init = 0
+at_shuffling = false
