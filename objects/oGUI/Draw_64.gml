@@ -37,8 +37,9 @@ if(oPlayer.AT_shuffle_timer != 0){//shuffling
 draw_sprite(sAttacks,_attack_card_index,attack_position,gui_bottom)
 var _remaining_cooldown = 0
 if(oPlayer.attack_timer != 0 or oPlayer.AT_shuffle_timer != 0) {
-	if (!refreshing_attacks) {
+	if (!refreshing_attacks or (oPlayer.AT_shuffling and !at_shuffling)) {
 		refreshing_attacks = true
+		
 		if (oPlayer.AT_shuffling) {
 			attack_refresh_init = oPlayer.AT_shuffle_timer
 			at_shuffling = true
@@ -48,9 +49,6 @@ if(oPlayer.attack_timer != 0 or oPlayer.AT_shuffle_timer != 0) {
 	}
 	if (at_shuffling) {
 		_remaining_cooldown = oPlayer.AT_shuffle_timer
-		show_debug_message("init: " + string(attack_refresh_init))
-		show_debug_message("rema: " + string(_remaining_cooldown))
-		show_debug_message("calc: " + string(floor(((attack_refresh_init-_remaining_cooldown)/attack_refresh_init)*48)))
 	} else {
 		_remaining_cooldown = oPlayer.attack_timer
 	}
@@ -73,15 +71,17 @@ if(oPlayer.SP_shuffle_timer != 0) {//shuffling
 draw_sprite(sSpecials,_special_card_index,special_position,gui_bottom)
 
 if(oPlayer.special_timer != 0 or oPlayer.SP_shuffle_timer != 0) {
-	if (!refreshing_specials) {
+	if (!refreshing_specials or (oPlayer.SP_shuffling and !sp_shuffling)) {
 		refreshing_specials = true
+		
 		if (oPlayer.SP_shuffling) {
 			special_refresh_init = oPlayer.SP_shuffle_timer
+			sp_shuffling = true
 		} else {
 			special_refresh_init = oPlayer.special_timer
 		}
 	}
-	if (oPlayer.SP_shuffling) {
+	if (sp_shuffling) {
 		_remaining_cooldown = oPlayer.SP_shuffle_timer
 	} else {
 		_remaining_cooldown = oPlayer.special_timer
@@ -91,6 +91,7 @@ if(oPlayer.special_timer != 0 or oPlayer.SP_shuffle_timer != 0) {
 					sprite_get_height(sSpecials)/sprite_get_height(sLoading), 0, c_white, REFRESH_OPACITY)
 } else {
 	refreshing_specials = false
+	sp_shuffling = false
 }
 
 
