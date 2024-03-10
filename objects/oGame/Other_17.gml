@@ -5,7 +5,7 @@
 
 current_room_x = global.map_gen.map_size/2
 current_room_y = global.map_gen.map_size/2
-
+floor_++
 ds_map_clear(this_run_seen_room_set)
 // Reset the map
 with (global.map_gen) {
@@ -37,7 +37,6 @@ ds_list_add(special_types,irandom(1))
 ds_list_add(special_types,irandom(1))
 ds_list_shuffle(special_types)
 
-locked_doors = []
 // ESWN
 wings_cleared = [false, false, false, false]
-floor_++
+

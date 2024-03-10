@@ -73,6 +73,7 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"DBoss2","path":"rooms/DBoss2/DBoss2.yy",},},
     {"id":{"name":"DTutorialAttack","path":"rooms/DTutorialAttack/DTutorialAttack.yy",},},
     {"id":{"name":"sDeckMenuEmptyChoice","path":"sprites/sDeckMenuEmptyChoice/sDeckMenuEmptyChoice.yy",},},
     {"id":{"name":"Pause","path":"rooms/Pause/Pause.yy",},},
@@ -140,6 +141,7 @@
     {"id":{"name":"sHitbox","path":"sprites/sHitbox/sHitbox.yy",},},
     {"id":{"name":"sDuckEffect","path":"sprites/sDuckEffect/sDuckEffect.yy",},},
     {"id":{"name":"oSpecialParent","path":"objects/oSpecialParent/oSpecialParent.yy",},},
+    {"id":{"name":"oSecondFloorTutorial","path":"objects/oSecondFloorTutorial/oSecondFloorTutorial.yy",},},
     {"id":{"name":"Sprite47","path":"sprites/Sprite47/Sprite47.yy",},},
     {"id":{"name":"sMapBackground","path":"sprites/sMapBackground/sMapBackground.yy",},},
     {"id":{"name":"sMinimapYAH","path":"sprites/sMinimapYAH/sMinimapYAH.yy",},},
@@ -245,7 +247,6 @@
     {"id":{"name":"sChest","path":"sprites/sChest/sChest.yy",},},
     {"id":{"name":"oWingIndicatorNorth","path":"objects/oWingIndicatorNorth/oWingIndicatorNorth.yy",},},
     {"id":{"name":"sGaleBarrier","path":"sprites/sGaleBarrier/sGaleBarrier.yy",},},
-    {"id":{"name":"GMRoomPack","path":"scripts/GMRoomPack/GMRoomPack.yy",},},
     {"id":{"name":"DSpecial","path":"rooms/DSpecial/DSpecial.yy",},},
     {"id":{"name":"sChoices","path":"sprites/sChoices/sChoices.yy",},},
     {"id":{"name":"D4","path":"rooms/D4/D4.yy",},},
@@ -313,6 +314,7 @@
     {"roomId":{"name":"DTutorialAttack","path":"rooms/DTutorialAttack/DTutorialAttack.yy",},},
     {"roomId":{"name":"DTutorialSpecial","path":"rooms/DTutorialSpecial/DTutorialSpecial.yy",},},
     {"roomId":{"name":"DTutorialWeapons","path":"rooms/DTutorialWeapons/DTutorialWeapons.yy",},},
+    {"roomId":{"name":"DBoss2","path":"rooms/DBoss2/DBoss2.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

@@ -25,6 +25,10 @@ function deal_damage(entity, damage){
 	}
 	
 	entity.remaining_health = max(0,entity.remaining_health - damage)
+	
+	if (entity == global.game.player) {
+		global.enemies_killed_without_taking_damage = 0
+	}
 	/*if (DEBUG) {
 		show_debug_message("Remaining health: " + string(entity.remaining_health))
 	}*/

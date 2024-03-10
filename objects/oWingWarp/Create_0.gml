@@ -4,6 +4,7 @@ target_y = room_height/2
 target_room = DStart
 activated = false
 first_use = false
+execute = false
 
 visible = false
 // Set the x, y coordinates

@@ -291,7 +291,7 @@ function is_boss_room() {
 }
 
 function is_wing_cleared() {
-	if (room == DBoss1) {
+	if (is_boss_room()) {
 		return false
 	}
 	return global.game.wings_cleared[get_room_wing_type(global.game.current_room_x, global.game.current_room_y)]
@@ -376,115 +376,122 @@ function enemy_spawn_rate() {
 		} else if (floor_ == 1 and num_wings_cleared() == 3) {
 			return 1.5
 		}
-		return wing_spawn_rate[num_wings_cleared()]*_modifier
+		return wing_spawn_rate[num_wings_cleared()]*_modifier + global.enemies_killed_without_taking_damage * 0.05
 	}
 }
 
 // Return an enemy chosen from either the ranged or melee enemy lists
 // based on passed variable
 function choose_enemy(_ranged) {
-	with (global.game) {
-		ranged_enemies = [oGun, oGoblinArcher, oRedGun, oWizard]
-		melee_enemies = [oSlime, oGoblinWarrior, oSkeleton, oSpider, oOoze]
-		var _enemy_list = []
-		var _spawn_rates = []
-		if (_ranged) {
-			_enemy_list = ranged_enemies
-		} else {
-			_enemy_list = melee_enemies
+	if (_ranged) {
+		if (global.game.floor_ == 1) {
+			show_debug_message("Wings cleared: " + string(num_wings_cleared()))
 		}
-		
-		switch(floor_) {
-			case 1:
-				if (_ranged) {
-					// Ranged floor 1
-					if (num_wings_cleared() <= 1) {
-						_spawn_rates = [1]
-					} else {
-						_spawn_rates = [0.8, 0.2]
-					}
-				} else {
-					// Melee floor 1
-					switch (num_wings_cleared()) {
-						case 0:
-							_spawn_rates = [0.95, 0.05]
-							break
-						case 1:
-						case 2:
-							_spawn_rates = [0.8, 0.2]
-							break
-						default:
-							_spawn_rates = [0.5, 0.5]
-					}
-				}
-				break
-			case 2:
-				if (_ranged) {
-					if (num_wings_cleared() == 0) {
-						_spawn_rates = [0.8, 0.1, 0.1]
-					} else {
-						_spawn_rates = [0.5, 0.3, 0.2]
-					}
-				} else {
-					switch (num_wings_cleared()) {
-						case 0:
-							_spawn_rates = [0.4, 0.3, 0.2, 0.1]
-							break
-						case 1:
-						case 2:
-							_spawn_rates = [0.4, 0.3, 0.2, 0.1]
-							break
-						case 3:
-							_spawn_rates = [0.1, 0.3, 0.5, 0.05, 0.05]
-					}
-				}
-				break
-			case 3:
-				if (_ranged) {
-					switch (num_wings_cleared()) {
-						case 0:
-							_spawn_rates = [0.3, 0.4, 0.25, 0.05]
-							break
-						case 1:
-							_spawn_rates = [0.3, 0.4, 0.2, 0.1]
-						default:
-							_spawn_rates = [0.3, 0.4, 0.1, 0.2]
-					}
-				} else {
-					switch (num_wings_cleared()) {
-						case 0:
-							_spawn_rates = [0.1, 0.4, 0.2, 0.2, 0.1]
-						case 1:
-						case 2:
-							_spawn_rates = [0.1, 0.25, 0.3, 0.2, 0.15]
-						case 3:
-							_spawn_rates = [0, 0.1, 0.4, 0.3, 0.2]
-					}
-				}
-				break
-			default:
-				if (_ranged) {
-					_spawn_rates = [0.3, 0.4, 0.1, 0.2]
-				} else {
-					_spawn_rates = [0.1, 0.2, 0.3, 0.2, 0.2]
-				}
-		}
-		
-		var _seed = random(1)
-		var _index = 0
-		for (var _i = 0; _i < array_length(_spawn_rates); _i++) {
-			if (_seed < _spawn_rates[_i]) {
-				_index = _i
-				break
-			} else {
-				_seed -= _spawn_rates[_i]
-			}
-		}
-		return _enemy_list[_index]
 	}
+	
+	ranged_enemies = [oGun, oGoblinArcher, oRedGun, oWizard]
+	melee_enemies = [oSlime, oGoblinWarrior, oSkeleton, oSpider, oOoze]
+	var _enemy_list = []
+	var _spawn_rates = []
+	if (_ranged) {
+		_enemy_list = ranged_enemies
+	} else {
+		_enemy_list = melee_enemies
+	}
+	
+	switch(global.game.floor_) {
+		case 1:
+			if (_ranged) {
+				// Ranged floor 1
+				if (num_wings_cleared() <= 1) {
+					_spawn_rates = [1]
+				} else {
+					_spawn_rates = [0.8, 0.2]
+				}
+			} else {
+				// Melee floor 1
+				switch (num_wings_cleared()) {
+					case 0:
+						_spawn_rates = [0.95, 0.05]
+						break
+					case 1:
+					case 2:
+						_spawn_rates = [0.8, 0.2]
+						break
+					default:
+						_spawn_rates = [0.5, 0.5]
+				}
+			}
+			break
+		case 2:
+			if (_ranged) {
+				if (num_wings_cleared() == 0) {
+					_spawn_rates = [0.8, 0.1, 0.1]
+				} else {
+					_spawn_rates = [0.5, 0.3, 0.2]
+				}
+			} else {
+				switch (num_wings_cleared()) {
+					case 0:
+						_spawn_rates = [0.4, 0.3, 0.2, 0.1]
+						break
+					case 1:
+					case 2:
+						_spawn_rates = [0.4, 0.3, 0.2, 0.1]
+						break
+					case 3:
+						_spawn_rates = [0.1, 0.3, 0.5, 0.05, 0.05]
+				}
+			}
+			break
+		case 3:
+			if (_ranged) {
+				switch (num_wings_cleared()) {
+					case 0:
+						_spawn_rates = [0.3, 0.4, 0.25, 0.05]
+						break
+					case 1:
+						_spawn_rates = [0.3, 0.4, 0.2, 0.1]
+					default:
+						_spawn_rates = [0.3, 0.4, 0.1, 0.2]
+				}
+			} else {
+				switch (num_wings_cleared()) {
+					case 0:
+						_spawn_rates = [0.1, 0.4, 0.2, 0.2, 0.1]
+					case 1:
+					case 2:
+						_spawn_rates = [0.1, 0.25, 0.3, 0.2, 0.15]
+					case 3:
+						_spawn_rates = [0, 0.1, 0.4, 0.3, 0.2]
+				}
+			}
+			break
+		default:
+			if (_ranged) {
+				_spawn_rates = [0.3, 0.4, 0.1, 0.2]
+			} else {
+				_spawn_rates = [0.1, 0.2, 0.3, 0.2, 0.2]
+			}
+	}
+		
+	var _seed = random(1)
+	var _index = 0
+	for (var _i = 0; _i < array_length(_spawn_rates); _i++) {
+		if (_seed < _spawn_rates[_i]) {
+			_index = _i
+			break
+		} else {
+			_seed -= _spawn_rates[_i]
+		}
+	}
+	return _enemy_list[_index]
 }
 
 function clear_instances() {
+	while(instance_number(oEnemyParent) > 0) {
+		instance_destroy(instance_find(oEnemyParent, 0))
+	}
 	while(instance_number(oProjectileParent) > 0) {
 		instance_destroy(instance_find(oProjectileParent, 0))
 	}
@@ -494,4 +501,10 @@ function clear_instances() {
 	while(instance_number(oPileOfBones) >0) {
 		instance_destroy(instance_find(oPileOfBones, 0))
 	}
+	for(var _i = 0; _i < array_length(global.paths_list); _i++) {
+		if (path_exists(global.paths_list[_i])) {
+			path_delete(global.paths_list[_i])
+		}
+	}
+	global.paths_list = []
 }

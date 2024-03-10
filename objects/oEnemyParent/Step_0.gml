@@ -3,6 +3,7 @@
 
 if (remaining_health == 0){
 	global.enemies_killed++
+	global.enemies_killed_without_taking_damage++
 	if (global.logging) {
 		var _data = {
 			curr_time: time(),
